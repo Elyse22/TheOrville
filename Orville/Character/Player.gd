@@ -28,5 +28,5 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity) 
 
 func _ready():
-
-	self.global_position = Global.player_initial_map_position
+	pass
+	#self.global_position = Global.player_initial_map_position
