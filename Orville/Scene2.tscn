@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Character/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sets/hallway.png" type="Texture" id=2]
+[ext_resource path="res://Portal.tscn" type="PackedScene" id=3]
+
+[node name="Hallway" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 248, 262 )
+texture = ExtResource( 2 )
+
+[node name="Portal" parent="." instance=ExtResource( 3 )]
+next_scene_path = "res://Scene1.tscn"
+player_spawn_location = Vector2( 44, 42 )
+
+[node name="YSort" type="YSort" parent="."]
+position = Vector2( 248, 262 )
+
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 45, -131 )
