@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Character/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Portal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sets/Deck A.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 297.132, 237.551 )
+texture = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 437.185, 85.8898 )
+
+[node name="Portal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 46.4269, 71.1878 )
+next_scene_path = "res://Scene3.tscn"
+player_spawn_location = Vector2( 330, 186 )
+
+[node name="Portal2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -174.874, -97.4961 )
+next_scene_path = "res://Captains Office.tscn"
+player_spawn_location = Vector2( -108, 14 )
+
+[node name="Portal3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 158.625, -65.7712 )
+next_scene_path = "res://The Bridge.tscn"
+player_spawn_location = Vector2( 13, 118 )
