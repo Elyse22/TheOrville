@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/First Plant.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
@@ -17,6 +17,9 @@
 [ext_resource path="res://Assets/side table 1.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Portal.tscn" type="PackedScene" id=16]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11.1993, 18.5487 )
+
 [node name="Scene1" type="Node2D"]
 position = Vector2( -9, -17 )
 
@@ -28,6 +31,10 @@ texture = ExtResource( 3 )
 position = Vector2( -249, -115 )
 collision_mask = 0
 next_scene_path = "res://Scene2.tscn"
+
+[node name="CollisionShape2D" parent="Portal" index="0"]
+position = Vector2( 293, 137.682 )
+shape = SubResource( 1 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -80,3 +87,5 @@ position = Vector2( -1, 1 )
 visible = false
 position = Vector2( -1, 0 )
 polygon = PoolVector2Array( -39, 42, -31, 42, -34, 188, 25, 188, 153, 190, 160, 185, 160, 79, 214, 78, 214, 140, 220, 143, 351, 143, 360, 137, 356, 33, 214, 32, 214, 44, 160, 46, 160, 31, 13, 33, -32, 33, -38, 34, -67, 41, -66, 33, -70, -45, 396, -44, 392, 218, -50, 205 )
+
+[editable path="Portal"]
