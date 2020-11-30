@@ -15,5 +15,5 @@ position = Vector2( 185.094, 145.953 )
 
 [node name="Portal" parent="." instance=ExtResource( 3 )]
 position = Vector2( -108.138, 14.5953 )
-next_scene_path = "res://DeckA.tscn"
+next_scene_path = "res://Deck A.tscn"
 player_spawn_location = Vector2( 116, 67 )
