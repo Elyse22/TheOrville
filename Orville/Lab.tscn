@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Character/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sets/Lab.png" type="Texture" id=2]
+[ext_resource path="res://Portal.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 189.738, 150.596 )
+texture = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 142.635, 37.815 )
+
+[node name="Portal" parent="." instance=ExtResource( 3 )]
+position = Vector2( -149.933, -135.338 )
+next_scene_path = "res://Scene3.tscn"
+player_spawn_location = Vector2( 226, -59 )
