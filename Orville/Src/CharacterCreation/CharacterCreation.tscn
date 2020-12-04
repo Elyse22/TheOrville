@@ -1,0 +1,707 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/AllCharacters/MainCharacter/Skin_1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/AllCharacters/MainCharacter/Hair_1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/AllCharacters/MainCharacter/Shirt.png" type="Texture" id=3]
+[ext_resource path="res://Assets/AllCharacters/MainCharacter/Base.png" type="Texture" id=4]
+[ext_resource path="res://Assets/AllCharacters/MainCharacter/Eye.png" type="Texture" id=5]
+[ext_resource path="res://Assets/AllCharacters/MainCharacter/EyeBrows.png" type="Texture" id=6]
+[ext_resource path="res://Assets/AllCharacters/MainCharacter/Pupil.png" type="Texture" id=7]
+[ext_resource path="res://Assets/AllCharacters/MainCharacter/Beard_1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/AllCharacters/MainCharacter/Mustache.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Fonts/bakso_sapi/BaksoSapi.otf" type="DynamicFontData" id=10]
+[ext_resource path="res://Src/CharacterCreation/CharacterCreation.gd" type="Script" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="CharacterCreation" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Character" type="Node2D" parent="."]
+
+[node name="Base" type="Sprite" parent="Character"]
+position = Vector2( 640, 360 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 4 )
+hframes = 12
+
+[node name="Skin" type="Sprite" parent="Character"]
+position = Vector2( 640, 360 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 1 )
+hframes = 12
+
+[node name="Shirt" type="Sprite" parent="Character"]
+position = Vector2( 640, 360 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 3 )
+hframes = 12
+
+[node name="Eye" type="Sprite" parent="Character"]
+position = Vector2( 640, 360 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 5 )
+hframes = 12
+
+[node name="Pupil" type="Sprite" parent="Character"]
+position = Vector2( 640, 360 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 7 )
+hframes = 12
+
+[node name="EyeBrows" type="Sprite" parent="Character"]
+position = Vector2( 640, 360 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 6 )
+hframes = 12
+
+[node name="Mustache" type="Sprite" parent="Character"]
+position = Vector2( 640, 360 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 9 )
+hframes = 12
+
+[node name="Beard" type="Sprite" parent="Character"]
+position = Vector2( 640, 360 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 8 )
+hframes = 12
+
+[node name="Hair" type="Sprite" parent="Character"]
+position = Vector2( 640, 360 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 2 )
+hframes = 12
+
+[node name="Screen" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftMenu" type="VBoxContainer" parent="Screen"]
+margin_right = 586.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+
+[node name="Margin_1" type="HBoxContainer" parent="Screen/LeftMenu"]
+margin_right = 586.0
+margin_bottom = 99.0
+size_flags_vertical = 3
+
+[node name="Hair" type="HBoxContainer" parent="Screen/LeftMenu"]
+margin_top = 103.0
+margin_right = 586.0
+margin_bottom = 202.0
+size_flags_vertical = 3
+
+[node name="Margin_1" type="Label" parent="Screen/LeftMenu/Hair"]
+margin_top = 27.0
+margin_right = 114.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Screen/LeftMenu/Hair"]
+margin_left = 118.0
+margin_top = 27.0
+margin_right = 232.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+text = "Hair"
+align = 1
+valign = 1
+
+[node name="Margin_2" type="Label" parent="Screen/LeftMenu/Hair"]
+margin_left = 236.0
+margin_top = 27.0
+margin_right = 350.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="ColorPicker" type="ColorPickerButton" parent="Screen/LeftMenu/Hair"]
+margin_left = 354.0
+margin_top = 24.0
+margin_right = 468.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Margin_3" type="Label" parent="Screen/LeftMenu/Hair"]
+margin_left = 472.0
+margin_top = 27.0
+margin_right = 586.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="Beard" type="HBoxContainer" parent="Screen/LeftMenu"]
+margin_top = 206.0
+margin_right = 586.0
+margin_bottom = 306.0
+size_flags_vertical = 3
+
+[node name="Margin_1" type="Label" parent="Screen/LeftMenu/Beard"]
+margin_top = 28.0
+margin_right = 114.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Screen/LeftMenu/Beard"]
+margin_left = 118.0
+margin_top = 28.0
+margin_right = 232.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+text = "Beard"
+align = 1
+valign = 1
+
+[node name="Margin_2" type="Label" parent="Screen/LeftMenu/Beard"]
+margin_left = 236.0
+margin_top = 28.0
+margin_right = 350.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="ColorPicker" type="ColorPickerButton" parent="Screen/LeftMenu/Beard"]
+margin_left = 354.0
+margin_top = 25.0
+margin_right = 468.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Margin_3" type="Label" parent="Screen/LeftMenu/Beard"]
+margin_left = 472.0
+margin_top = 28.0
+margin_right = 586.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="Mustache" type="HBoxContainer" parent="Screen/LeftMenu"]
+margin_top = 310.0
+margin_right = 586.0
+margin_bottom = 409.0
+size_flags_vertical = 3
+
+[node name="Margin_1" type="Label" parent="Screen/LeftMenu/Mustache"]
+margin_top = 27.0
+margin_right = 114.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Screen/LeftMenu/Mustache"]
+margin_left = 118.0
+margin_top = 27.0
+margin_right = 232.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+text = "Must"
+align = 1
+valign = 1
+
+[node name="Margin_2" type="Label" parent="Screen/LeftMenu/Mustache"]
+margin_left = 236.0
+margin_top = 27.0
+margin_right = 350.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="ColorPicker" type="ColorPickerButton" parent="Screen/LeftMenu/Mustache"]
+margin_left = 354.0
+margin_top = 24.0
+margin_right = 468.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Margin_3" type="Label" parent="Screen/LeftMenu/Mustache"]
+margin_left = 472.0
+margin_top = 27.0
+margin_right = 586.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="Pupil" type="HBoxContainer" parent="Screen/LeftMenu"]
+margin_top = 413.0
+margin_right = 586.0
+margin_bottom = 513.0
+size_flags_vertical = 3
+
+[node name="Margin_1" type="Label" parent="Screen/LeftMenu/Pupil"]
+margin_top = 28.0
+margin_right = 114.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Screen/LeftMenu/Pupil"]
+margin_left = 118.0
+margin_top = 28.0
+margin_right = 232.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+text = "Pupil"
+align = 1
+valign = 1
+
+[node name="Margin_2" type="Label" parent="Screen/LeftMenu/Pupil"]
+margin_left = 236.0
+margin_top = 28.0
+margin_right = 350.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="ColorPicker" type="ColorPickerButton" parent="Screen/LeftMenu/Pupil"]
+margin_left = 354.0
+margin_top = 25.0
+margin_right = 468.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Margin_3" type="Label" parent="Screen/LeftMenu/Pupil"]
+margin_left = 472.0
+margin_top = 28.0
+margin_right = 586.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="Shirt" type="HBoxContainer" parent="Screen/LeftMenu"]
+margin_top = 517.0
+margin_right = 586.0
+margin_bottom = 616.0
+size_flags_vertical = 3
+
+[node name="Margin_1" type="Label" parent="Screen/LeftMenu/Shirt"]
+margin_top = 27.0
+margin_right = 114.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Screen/LeftMenu/Shirt"]
+margin_left = 118.0
+margin_top = 27.0
+margin_right = 232.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+text = "Shirt"
+align = 1
+valign = 1
+
+[node name="Margin_2" type="Label" parent="Screen/LeftMenu/Shirt"]
+margin_left = 236.0
+margin_top = 27.0
+margin_right = 350.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="ColorPicker" type="ColorPickerButton" parent="Screen/LeftMenu/Shirt"]
+margin_left = 354.0
+margin_top = 24.0
+margin_right = 468.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Margin_3" type="Label" parent="Screen/LeftMenu/Shirt"]
+margin_left = 472.0
+margin_top = 27.0
+margin_right = 586.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="Margin_2" type="HBoxContainer" parent="Screen/LeftMenu"]
+margin_top = 620.0
+margin_right = 586.0
+margin_bottom = 720.0
+size_flags_vertical = 3
+
+[node name="Margin" type="VBoxContainer" parent="Screen"]
+margin_left = 590.0
+margin_right = 690.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="LeftMenu2" type="VBoxContainer" parent="Screen"]
+margin_left = 694.0
+margin_right = 1280.0
+margin_bottom = 720.0
+size_flags_horizontal = 3
+
+[node name="Margin_1" type="HBoxContainer" parent="Screen/LeftMenu2"]
+margin_right = 586.0
+margin_bottom = 99.0
+size_flags_vertical = 3
+
+[node name="Hair" type="HBoxContainer" parent="Screen/LeftMenu2"]
+margin_top = 103.0
+margin_right = 586.0
+margin_bottom = 202.0
+size_flags_vertical = 3
+
+[node name="Margin_1" type="Label" parent="Screen/LeftMenu2/Hair"]
+margin_top = 27.0
+margin_right = 70.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="LeftArrow" type="Label" parent="Screen/LeftMenu2/Hair"]
+margin_left = 74.0
+margin_top = 27.0
+margin_right = 145.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+text = "<-"
+align = 1
+valign = 1
+
+[node name="Button" type="TextureButton" parent="Screen/LeftMenu2/Hair/LeftArrow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin_2" type="Label" parent="Screen/LeftMenu2/Hair"]
+margin_left = 149.0
+margin_top = 27.0
+margin_right = 219.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Screen/LeftMenu2/Hair"]
+margin_left = 223.0
+margin_top = 27.0
+margin_right = 362.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 139, 0 )
+size_flags_horizontal = 3
+text = "Hair 1"
+align = 1
+valign = 1
+
+[node name="Margin_3" type="Label" parent="Screen/LeftMenu2/Hair"]
+margin_left = 366.0
+margin_top = 27.0
+margin_right = 437.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="RightArrow" type="Label" parent="Screen/LeftMenu2/Hair"]
+margin_left = 441.0
+margin_top = 27.0
+margin_right = 511.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+text = "->"
+align = 1
+valign = 1
+
+[node name="Button" type="TextureButton" parent="Screen/LeftMenu2/Hair/RightArrow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin_4" type="Label" parent="Screen/LeftMenu2/Hair"]
+margin_left = 515.0
+margin_top = 27.0
+margin_right = 586.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="Beard" type="HBoxContainer" parent="Screen/LeftMenu2"]
+margin_top = 206.0
+margin_right = 586.0
+margin_bottom = 306.0
+size_flags_vertical = 3
+
+[node name="Margin_1" type="Label" parent="Screen/LeftMenu2/Beard"]
+margin_top = 28.0
+margin_right = 70.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="LeftArrow" type="Label" parent="Screen/LeftMenu2/Beard"]
+margin_left = 74.0
+margin_top = 28.0
+margin_right = 145.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+text = "<-"
+align = 1
+valign = 1
+
+[node name="Button" type="TextureButton" parent="Screen/LeftMenu2/Beard/LeftArrow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin_2" type="Label" parent="Screen/LeftMenu2/Beard"]
+margin_left = 149.0
+margin_top = 28.0
+margin_right = 219.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Screen/LeftMenu2/Beard"]
+margin_left = 223.0
+margin_top = 28.0
+margin_right = 362.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 139, 0 )
+size_flags_horizontal = 3
+text = "Beard 1"
+align = 1
+valign = 1
+
+[node name="Margin_3" type="Label" parent="Screen/LeftMenu2/Beard"]
+margin_left = 366.0
+margin_top = 28.0
+margin_right = 437.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="RightArrow" type="Label" parent="Screen/LeftMenu2/Beard"]
+margin_left = 441.0
+margin_top = 28.0
+margin_right = 511.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+text = "->"
+align = 1
+valign = 1
+
+[node name="Button" type="TextureButton" parent="Screen/LeftMenu2/Beard/RightArrow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin_4" type="Label" parent="Screen/LeftMenu2/Beard"]
+margin_left = 515.0
+margin_top = 28.0
+margin_right = 586.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="Skin" type="HBoxContainer" parent="Screen/LeftMenu2"]
+margin_top = 310.0
+margin_right = 586.0
+margin_bottom = 409.0
+size_flags_vertical = 3
+
+[node name="Margin_1" type="Label" parent="Screen/LeftMenu2/Skin"]
+margin_top = 27.0
+margin_right = 70.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="LeftArrow" type="Label" parent="Screen/LeftMenu2/Skin"]
+margin_left = 74.0
+margin_top = 27.0
+margin_right = 145.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+text = "<-"
+align = 1
+valign = 1
+
+[node name="Button" type="TextureButton" parent="Screen/LeftMenu2/Skin/LeftArrow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin_2" type="Label" parent="Screen/LeftMenu2/Skin"]
+margin_left = 149.0
+margin_top = 27.0
+margin_right = 219.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Screen/LeftMenu2/Skin"]
+margin_left = 223.0
+margin_top = 27.0
+margin_right = 362.0
+margin_bottom = 71.0
+rect_min_size = Vector2( 139, 0 )
+size_flags_horizontal = 3
+text = "skin 1"
+align = 1
+valign = 1
+
+[node name="Margin_3" type="Label" parent="Screen/LeftMenu2/Skin"]
+margin_left = 366.0
+margin_top = 27.0
+margin_right = 437.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="RightArrow" type="Label" parent="Screen/LeftMenu2/Skin"]
+margin_left = 441.0
+margin_top = 27.0
+margin_right = 511.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+text = "->"
+align = 1
+valign = 1
+
+[node name="Button" type="TextureButton" parent="Screen/LeftMenu2/Skin/RightArrow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin_4" type="Label" parent="Screen/LeftMenu2/Skin"]
+margin_left = 515.0
+margin_top = 27.0
+margin_right = 586.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="Mustache" type="HBoxContainer" parent="Screen/LeftMenu2"]
+margin_top = 413.0
+margin_right = 586.0
+margin_bottom = 513.0
+size_flags_vertical = 3
+
+[node name="Margin_1" type="Label" parent="Screen/LeftMenu2/Mustache"]
+margin_top = 28.0
+margin_right = 70.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="LeftArrow" type="Label" parent="Screen/LeftMenu2/Mustache"]
+margin_left = 74.0
+margin_top = 28.0
+margin_right = 145.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+text = "<-"
+align = 1
+valign = 1
+
+[node name="Button" type="TextureButton" parent="Screen/LeftMenu2/Mustache/LeftArrow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin_2" type="Label" parent="Screen/LeftMenu2/Mustache"]
+margin_left = 149.0
+margin_top = 28.0
+margin_right = 219.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Screen/LeftMenu2/Mustache"]
+margin_left = 223.0
+margin_top = 28.0
+margin_right = 362.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 139, 0 )
+size_flags_horizontal = 3
+text = "Must"
+align = 1
+valign = 1
+
+[node name="Margin_3" type="Label" parent="Screen/LeftMenu2/Mustache"]
+margin_left = 366.0
+margin_top = 28.0
+margin_right = 437.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="RightArrow" type="Label" parent="Screen/LeftMenu2/Mustache"]
+margin_left = 441.0
+margin_top = 28.0
+margin_right = 511.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+text = "->"
+align = 1
+valign = 1
+
+[node name="Button" type="TextureButton" parent="Screen/LeftMenu2/Mustache/RightArrow"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin_4" type="Label" parent="Screen/LeftMenu2/Mustache"]
+margin_left = 515.0
+margin_top = 28.0
+margin_right = 586.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="Back" type="HBoxContainer" parent="Screen/LeftMenu2"]
+margin_top = 517.0
+margin_right = 586.0
+margin_bottom = 616.0
+size_flags_vertical = 3
+
+[node name="Margin_1" type="Label" parent="Screen/LeftMenu2/Back"]
+margin_top = 27.0
+margin_right = 169.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="Screen/LeftMenu2/Back"]
+margin_left = 173.0
+margin_top = 24.0
+margin_right = 413.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 240, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Confrim"
+
+[node name="Margin_2" type="Label" parent="Screen/LeftMenu2/Back"]
+margin_left = 417.0
+margin_top = 27.0
+margin_right = 586.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+
+[node name="Margin_2" type="HBoxContainer" parent="Screen/LeftMenu2"]
+margin_top = 620.0
+margin_right = 586.0
+margin_bottom = 720.0
+size_flags_vertical = 3
+[connection signal="color_changed" from="Screen/LeftMenu/Hair/ColorPicker" to="." method="hair_color_changed"]
+[connection signal="color_changed" from="Screen/LeftMenu/Beard/ColorPicker" to="." method="beard_color_changed"]
+[connection signal="color_changed" from="Screen/LeftMenu/Mustache/ColorPicker" to="." method="mustache_color_changed"]
+[connection signal="color_changed" from="Screen/LeftMenu/Pupil/ColorPicker" to="." method="pupil_color_changed"]
+[connection signal="color_changed" from="Screen/LeftMenu/Shirt/ColorPicker" to="." method="shirt_color_changed"]
+[connection signal="pressed" from="Screen/LeftMenu2/Hair/LeftArrow/Button" to="." method="previous_hair"]
+[connection signal="pressed" from="Screen/LeftMenu2/Hair/RightArrow/Button" to="." method="next_hair"]
+[connection signal="pressed" from="Screen/LeftMenu2/Beard/LeftArrow/Button" to="." method="previous_beard"]
+[connection signal="pressed" from="Screen/LeftMenu2/Beard/RightArrow/Button" to="." method="next_beard"]
+[connection signal="pressed" from="Screen/LeftMenu2/Skin/LeftArrow/Button" to="." method="previous_skin"]
+[connection signal="pressed" from="Screen/LeftMenu2/Skin/RightArrow/Button" to="." method="next_skin"]
+[connection signal="pressed" from="Screen/LeftMenu2/Mustache/LeftArrow/Button" to="." method="toggle_mustache"]
+[connection signal="pressed" from="Screen/LeftMenu2/Mustache/RightArrow/Button" to="." method="toggle_mustache"]
