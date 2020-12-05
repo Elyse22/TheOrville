@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Deck B Railings.png" type="Texture" id=1]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -12.2657, 27.3188 )
+b = Vector2( -8.14461, -3.16029 )
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( -12.4867, -1.54135 )
+b = Vector2( -1.82013, 23.9823 )
+
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( -20.16, -4.69795 )
+b = Vector2( 0.634888, 9.10399 )
+
+[sub_resource type="SegmentShape2D" id=4]
+a = Vector2( -24.4283, 8.90055 )
+b = Vector2( -0.873024, 9.63666 )
+
+[sub_resource type="SegmentShape2D" id=5]
+a = Vector2( 1.60564, -0.26157 )
+b = Vector2( -17.9261, 10.4053 )
+
+[sub_resource type="SegmentShape2D" id=6]
+a = Vector2( 1.51995, 0.128029 )
+b = Vector2( -15.5945, 22.7632 )
+
+[sub_resource type="SegmentShape2D" id=7]
+a = Vector2( -0.448635, -0.835915 )
+b = Vector2( -1.55279, 23.2715 )
+
+[sub_resource type="SegmentShape2D" id=8]
+a = Vector2( -2.30954, 2.81707 )
+b = Vector2( 4.50436, 18.9754 )
+
+[sub_resource type="SegmentShape2D" id=9]
+a = Vector2( -0.766037, 0.528992 )
+b = Vector2( 14.2546, 18.4484 )
+
+[sub_resource type="SegmentShape2D" id=10]
+b = Vector2( 19.525, 7.64403 )
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2( 1.84465, 1.3176 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 52.6245, -5.16149 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 45.4844, -29.1168 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( 32.7309, -39.026 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2( 14.7321, -52.9926 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2( -9.8047, -44.0079 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2( -29.2507, -33.7306 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2( -44.2125, -11.7877 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
+position = Vector2( -44.0079, 7.37856 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
+position = Vector2( -39.2645, 25.5614 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
+position = Vector2( -25.2979, 43.2173 )
+shape = SubResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -2.34717, 27.6716, -2.34717, 31.8879, -14.2056, 26.6175, -21.0571, 13.4415, -21.5841, -3.16029, -14.4691, -17.6539, -6.03645, -22.9243, 6.87604, -23.1878, 15.8357, -14.2281, 20.3156, -2.63325, 19.7885, 14.4956, 16.3628, 20.82, 15.5722, 19.766, 15.5722, 6.85347, 11.6508, -3.97437, 5.39388, -9.31112, -4.72755, -8.57502, -12.6407, -0.661903, -13.942, 11.5968, -9.4622, 20.82, -3.40125, 26.354 )
