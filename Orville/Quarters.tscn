@@ -18,11 +18,7 @@
 [ext_resource path="res://Portal.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
-<<<<<<< HEAD:Orville/Scene1.tscn
-extents = Vector2( 11.1993, 18.5487 )
-=======
 extents = Vector2( 12.6088, 9 )
->>>>>>> upstream/main:Orville/Quarters.tscn
 
 [node name="Scene1" type="Node2D"]
 position = Vector2( -9, -17 )
@@ -38,10 +34,6 @@ next_scene_path = "res://Deck C.tscn"
 
 [node name="CollisionShape2D" parent="Portal" index="0"]
 position = Vector2( 292.647, 147.287 )
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D" parent="Portal" index="0"]
-position = Vector2( 293, 137.682 )
 shape = SubResource( 1 )
 
 [node name="YSort" type="YSort" parent="."]
@@ -94,10 +86,6 @@ position = Vector2( -1, 1 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 position = Vector2( -1, 0 )
-<<<<<<< HEAD:Orville/Scene1.tscn
-polygon = PoolVector2Array( -39, 42, -31, 42, -34, 188, 25, 188, 153, 190, 160, 185, 160, 79, 214, 78, 214, 140, 220, 143, 351, 143, 360, 137, 356, 33, 214, 32, 214, 44, 160, 46, 160, 31, 13, 33, -32, 33, -38, 34, -67, 41, -66, 33, -70, -45, 396, -44, 392, 218, -50, 205 )
-=======
 polygon = PoolVector2Array( -39, 42, -31, 42, -34, 188, 25, 188, 153, 190, 160, 185, 160.503, 74.678, 215.827, 75.0016, 214, 140, 220, 143, 351, 143, 360, 137, 356, 33, 214, 32, 214, 44, 160, 46, 160, 31, 13, 33, -32, 33, -38, 34, -67, 41, -66, 33, -70, -45, 396, -44, 392, 218, -50, 205 )
->>>>>>> upstream/main:Orville/Quarters.tscn
 
 [editable path="Portal"]
