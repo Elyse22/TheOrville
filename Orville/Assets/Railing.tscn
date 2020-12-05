@@ -42,9 +42,10 @@ b = Vector2( 14.2546, 18.4484 )
 b = Vector2( 19.525, 7.64403 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
-position = Vector2( 1.84465, 1.3176 )
+position = Vector2( 1.84465, 13.2097 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
