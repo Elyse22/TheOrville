@@ -4,7 +4,7 @@
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -12.2657, 27.3188 )
-b = Vector2( -8.14461, -3.16029 )
+b = Vector2( -9.13731, -1.31969 )
 
 [sub_resource type="SegmentShape2D" id=2]
 a = Vector2( -12.4867, -1.54135 )
