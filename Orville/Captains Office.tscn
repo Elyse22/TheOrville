@@ -1,19 +1,49 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sets/captains office.png" type="Texture" id=2]
-[ext_resource path="res://Portal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://CaptainsDesk.tscn" type="PackedScene" id=4]
+[ext_resource path="res://CaptainsChair1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://CaptainsChair2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://CaptainsChair3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://CaptainsChair4.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/plant 3.tscn" type="PackedScene" id=9]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 153.25, 132.684 )
+scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 185.094, 145.953 )
+[node name="YSort" type="YSort" parent="."]
 
-[node name="Portal" parent="." instance=ExtResource( 3 )]
-position = Vector2( -108.138, 14.5953 )
-next_scene_path = "res://Deck A.tscn"
-player_spawn_location = Vector2( 116, 67 )
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 186.065, 142.718 )
+
+[node name="StaticBody2D" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 129.351, 119.58 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="StaticBody2D2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 104.066, 117.011 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="StaticBody2D3" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 153.242, 90.7327 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="StaticBody2D4" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 152.059, 136.225 )
+
+[node name="StaticBody2D5" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 228.778, 88.2312 )
+
+[node name="StaticBody2D6" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( 229.038, 131.349 )
+scale = Vector2( 1.2, 1.3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 93.5606, 59.354, 235.592, 59.354, 234.621, 155.12, 92.59, 155.767, 93.237, 61.9422, 59.5896, 65.8246, 60.2366, 166.767, 62.5014, 184.561, 267.945, 185.208, 265.357, -12.7939, 62.8249, -9.88213, 58.619, 61.9422 )
