@@ -19,8 +19,8 @@ texture = ExtResource( 1 )
 position = Vector2( 348.067, 196.652 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 319.958, 145.592 )
-scale = Vector2( 1.01, 1.05 )
+position = Vector2( 320.8, 143.066 )
+scale = Vector2( 1.1, 1.06 )
 
 [node name="StaticBody2D5" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 319.685, 145.183 )
@@ -41,6 +41,15 @@ texture = ExtResource( 6 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 30, 11, 91, 46 )
+
+[node name="RailingBottom" type="Sprite" parent="YSort"]
+visible = false
+position = Vector2( 275.282, 141.289 )
+scale = Vector2( 1, 0.986702 )
+texture = ExtResource( 6 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 30, 57, 91, 59 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
