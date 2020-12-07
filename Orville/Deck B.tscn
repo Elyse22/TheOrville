@@ -43,9 +43,13 @@ region_enabled = true
 region_rect = Rect2( 30, 11, 91, 46 )
 
 [node name="RailingBottom" type="Sprite" parent="YSort"]
+<<<<<<< HEAD
 visible = false
 position = Vector2( 275.282, 141.289 )
 scale = Vector2( 1, 0.986702 )
+=======
+position = Vector2( 272.409, 142.227 )
+>>>>>>> b28e058c0c909f2327d99adf86f51ca2ed9771e6
 texture = ExtResource( 6 )
 centered = false
 region_enabled = true
