@@ -206,7 +206,7 @@ start_node = "Idle"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
 [sub_resource type="CircleShape2D" id=23]
-radius = 5.0
+radius = 4.0
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 2
@@ -238,7 +238,7 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.249996, 0.5 )
+position = Vector2( -0.25, -0.162 )
 shape = SubResource( 23 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
