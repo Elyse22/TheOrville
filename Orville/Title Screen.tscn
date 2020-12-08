@@ -1,31 +1,15 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Fade In/FadeIn.tscn" type="PackedScene" id=1]
-[ext_resource path="res://ScollingBackground.gd" type="Script" id=2]
+[ext_resource path="res://MovingStars.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Fonts/Space24.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Orvile Fly.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Buttons/Continue Button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Buttons/New Game Button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Buttons/Options Button.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Sets/stars.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Title.png" type="Texture" id=9]
 [ext_resource path="res://title_screen.gd" type="Script" id=10]
 [ext_resource path="res://Audio/orville theme final wav.wav" type="AudioStream" id=11]
-
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item; 
-uniform float scroll_speed; 
-void fragment() {
-	vec2 shifteduv = UV;
-	shifteduv.x += TIME * scroll_speed;
-	vec4 col = texture(TEXTURE,shifteduv);
-	COLOR = col;
-}
-"
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/scroll_speed = null
 
 [node name="Title Screen" type="Control"]
 anchor_right = 1.0
@@ -35,18 +19,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="."]
-material = SubResource( 2 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_scale = Vector2( 0.667089, 0.667353 )
-texture = ExtResource( 8 )
-stretch_mode = 2
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-scroll_speed = 0.05
+[node name="TextureRect" parent="." instance=ExtResource( 2 )]
 
 [node name="Menu" type="VBoxContainer" parent="."]
 margin_left = 120.0
