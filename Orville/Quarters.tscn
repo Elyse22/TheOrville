@@ -42,7 +42,7 @@ shape = SubResource( 1 )
 position = Vector2( 28.8961, 103.134 )
 
 [node name="Plant 1" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 147, 48 )
+position = Vector2( 227.983, 44.0389 )
 
 [node name="Bed" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 59, -8 )
@@ -54,7 +54,7 @@ position = Vector2( -12, -18 )
 position = Vector2( 36, -15 )
 
 [node name="Plant 2" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 53, -8 )
+position = Vector2( 350.526, 35.5726 )
 
 [node name="Synth Kitchen" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( -51, 2 )
@@ -75,7 +75,7 @@ position = Vector2( 102, 83 )
 position = Vector2( 103, 126 )
 
 [node name="Plant 3" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 160, 88 )
+position = Vector2( -22.6528, 150.498 )
 
 [node name="Side Table" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 74, 82 )
