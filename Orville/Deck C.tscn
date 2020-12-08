@@ -22,14 +22,14 @@ next_scene_path = "res://Quarters.tscn"
 player_spawn_location = Vector2( 43, 47 )
 
 [node name="CollisionShape2D" parent="Portal" index="0"]
-position = Vector2( 294.132, 160.453 )
+position = Vector2( 295.132, 151.453 )
 shape = SubResource( 1 )
 
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( 248, 262 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 45.1749, -134.971 )
+position = Vector2( 35.1749, -165.971 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -491.364, -148.526 )
