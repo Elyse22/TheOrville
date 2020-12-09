@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sets/Deck F.png" type="Texture" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://EngineeringStation.tscn" type="PackedScene" id=3]
 [ext_resource path="res://EngineeringRailing.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Src/NPC/NPC.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/AllCharacters/Characters/JohnLammar.png" type="Texture" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,10 +24,16 @@ polygon = PoolVector2Array( 429.437, -193.157, 589.504, -192.749, 574.836, -198.
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( -55.4166, 131.521 )
+position = Vector2( 464.706, -64.8519 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 499.154, 9.98354 )
 
 [node name="StaticBody2D2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 499.202, -124.864 )
+
+[node name="NPC" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 537.805, -163.737 )
+scale = Vector2( 1.2, 1.2 )
+npc_name = "LeMarr"
+npc_texture = ExtResource( 6 )

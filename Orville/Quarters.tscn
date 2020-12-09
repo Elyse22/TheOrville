@@ -24,7 +24,7 @@ extents = Vector2( 12.6088, 9 )
 position = Vector2( -9, -17 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 171, 101 )
+position = Vector2( 172.573, 101.699 )
 texture = ExtResource( 3 )
 
 [node name="Portal" parent="." instance=ExtResource( 16 )]
@@ -40,7 +40,7 @@ shape = SubResource( 1 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 43.5612, 47.9653 )
+position = Vector2( 44.3556, 77.3592 )
 
 [node name="Plant 1" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 227.983, 44.0389 )

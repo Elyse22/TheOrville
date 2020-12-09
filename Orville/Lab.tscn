@@ -3,12 +3,8 @@
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sets/Lab.png" type="Texture" id=2]
 [ext_resource path="res://LabDesk.tscn" type="PackedScene" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.514, 19.8687 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 6.64235 )
+[ext_resource path="res://Src/NPC/NPC.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/AllCharacters/Characters/Isaac.png" type="Texture" id=5]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,43 +13,24 @@ position = Vector2( 189.738, 150.596 )
 scale = Vector2( 1.1, 1 )
 texture = ExtResource( 2 )
 
-[node name="StaticBody2D2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 142.473, 108.72 )
-scale = Vector2( 1.1, 1 )
-
-[node name="Sprite" parent="StaticBody2D2" index="0"]
-visible = false
-
-[node name="CollisionShape2D" parent="StaticBody2D2" index="1"]
-visible = false
-position = Vector2( -0.750283, 3.62684 )
-shape = SubResource( 1 )
-disabled = true
-
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( 129.013, 48.9281 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 8.60599, 5.22507 )
+position = Vector2( 0.307376, 10.7575 )
 collision_mask = 0
+
+[node name="NPC" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 34.2043, 51.4601 )
+scale = Vector2( 1.2, 1.2 )
+npc_name = "Isaac"
+npc_texture = ExtResource( 5 )
+
+[node name="StaticBody2D2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 13.46, 59.7919 )
+scale = Vector2( 1.1, 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 111.016, 19.7226, 159.885, 20.0299, 160.5, 57.8348, 166.647, 62.4452, 166.647, 70.1291, 170.336, 73.51, 170.028, 83.3454, 197.998, 111.008, 206.911, 110.7, 211.521, 113.466, 217.976, 114.081, 220.127, 118.999, 221.049, 141.743, 202.301, 162.644, 163.266, 162.029, 163.266, 150.349, 131.609, 151.271, 130.379, 145.739, 101.488, 146.354, 102.102, 140.514, 110.094, 134.981, 109.786, 82.116, 102.41, 77.5057, 102.717, 43.0817, 113.782, 43.0817, 113.474, 22.7962, 80.8947, 21.8741, 78.7432, 183.236, 252.092, 185.388, 249.941, 89.1852, 185.089, 35.7051, 182.015, -42.9782, 90.4227, -42.3635, 79.6652, 16.9564 )
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2( 141.965, 111.758 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-shape = SubResource( 1 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2( 0, -23 )
-scale = Vector2( 0.85, 1 )
-shape = SubResource( 2 )
-
-[editable path="StaticBody2D2"]
