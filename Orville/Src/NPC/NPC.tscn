@@ -19,7 +19,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "idle_left"
 length = 0.1
 tracks/0/type = "value"
@@ -51,8 +51,7 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "idle_up"
+[sub_resource type="Animation" id=4]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -84,7 +83,7 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=6]
 resource_name = "move_left"
 length = 0.6
 loop = true
@@ -118,8 +117,7 @@ tracks/0/keys = {
 "values": [ 7, 8 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "move_up"
+[sub_resource type="Animation" id=8]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -151,13 +149,13 @@ frame = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle_down = SubResource( 1 )
-anims/idle_left = SubResource( 4 )
+anims/idle_left = SubResource( 2 )
 anims/idle_right = SubResource( 3 )
-anims/idle_up = SubResource( 2 )
+anims/idle_up = SubResource( 4 )
 anims/move_down = SubResource( 5 )
-anims/move_left = SubResource( 8 )
+anims/move_left = SubResource( 6 )
 anims/move_right = SubResource( 7 )
-anims/move_up = SubResource( 6 )
+anims/move_up = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.297302, 1.18921 )
