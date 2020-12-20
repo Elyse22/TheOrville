@@ -28,18 +28,8 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
-dialogs = {
-"Captain's Office": {
-"Speaker 1": "asdasdasdasd"
-},
-"Plant_1": {
-"MESSAGE": "This is Plant 1"
-},
-"Quarters": {
-"Gordon Malloy": "Blah Blah Blah",
-"Kelly": "Bho Bho Bho"
-}
-}
+speakers = [ "Kelly", "Gordon Malloy", "", "", "", "", "", "", "", "" ]
+dialogs = [ "Hey", "How are you?", "", "", "", "", "", "", "", "" ]
 
 [node name="Overlay" type="ColorRect" parent="."]
 anchor_right = 1.0
