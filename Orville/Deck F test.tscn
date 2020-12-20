@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Character/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sets/Deck F 2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Shuttle Craft flip.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 244.418, 88.6889 )
+texture = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8.38004, 156.428 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -92.7146, -358.645 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
