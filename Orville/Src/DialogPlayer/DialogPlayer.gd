@@ -34,7 +34,7 @@ func next_dialog():
 	)
 	$Tween.start()
 	if speakers[index] != "MESSAGE":
-		var file_name = str(speakers[index]).replace(" ", "")
+		var file_name = str(speakers[index]).replace(" ", "").to_lower()
 		var file = File.new()
 		if file.file_exists("res://Assets/AllCharacters/Face/" + file_name + ".png"):
 			$Speaker/Icon.texture = load("res://Assets/AllCharacters/Face/" + file_name + ".png")
