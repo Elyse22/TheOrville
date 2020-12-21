@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Src/DialogPlayer/DialogPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Assets/Bridge Middle Console.png" type="Texture" id=3]
+[ext_resource path="res://Assets/AllCharacters/Face/Kelly.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -22,10 +22,12 @@ margin_left = -500.0
 margin_top = -228.509
 margin_right = 500.0
 margin_bottom = -28.5087
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 1100, 230 )
 theme = SubResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 speakers = [ "Kelly", "Gordon Malloy", "", "", "", "", "", "", "", "" ]
@@ -40,24 +42,26 @@ __meta__ = {
 }
 
 [node name="Speaker" type="VBoxContainer" parent="."]
-margin_top = -200.0
-margin_right = 150.0
-margin_bottom = -11.0
+margin_left = 920.489
+margin_top = 4.5437
+margin_right = 1083.49
+margin_bottom = 206.544
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Icon" type="TextureRect" parent="Speaker"]
-margin_right = 150.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 150, 150 )
+margin_right = 163.84
+margin_bottom = 163.84
+rect_min_size = Vector2( 163.84, 163.84 )
 texture = ExtResource( 3 )
 expand = true
 
 [node name="Name" type="Label" parent="Speaker"]
-margin_top = 154.0
-margin_right = 150.0
-margin_bottom = 189.0
+margin_top = 167.0
+margin_right = 163.0
+margin_bottom = 202.0
 rect_min_size = Vector2( 150, 0 )
 size_flags_vertical = 8
 text = "Speaker 1"
@@ -70,6 +74,8 @@ __meta__ = {
 [node name="Message" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -178.0
+margin_bottom = -0.000274658
 text = "Dummy message Dummy message Dummy message Dummy message "
 __meta__ = {
 "_edit_use_anchors_": false
