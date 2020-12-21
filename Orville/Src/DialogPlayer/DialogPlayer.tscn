@@ -36,32 +36,48 @@ dialogs = [ "Hey", "How are you?", "", "", "", "", "", "", "", "" ]
 [node name="Overlay" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.423529, 0.231373, 0.00784314, 1 )
+margin_left = 0.814453
+margin_top = 1.62903
+margin_right = 0.814453
+margin_bottom = 1.62903
+color = Color( 0.180392, 0.27451, 0.87451, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Speaker" type="VBoxContainer" parent="."]
-margin_left = 920.489
-margin_top = 4.5437
-margin_right = 1083.49
-margin_bottom = 206.544
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 875.0
+margin_top = 10.0
+margin_right = 1070.0
+margin_bottom = 225.0
+color = Color( 0.470588, 0.541176, 0.937255, 1 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="Speaker" type="Control" parent="."]
+margin_left = 875.03
+margin_top = 2.42139
+margin_right = 1075.03
+margin_bottom = 241.421
 
 [node name="Icon" type="TextureRect" parent="Speaker"]
-margin_right = 163.84
-margin_bottom = 163.84
-rect_min_size = Vector2( 163.84, 163.84 )
+margin_left = -2.45544
+margin_top = 6.13867
+margin_right = 197.545
+margin_bottom = 206.139
+rect_min_size = Vector2( 200, 200 )
 texture = ExtResource( 3 )
 expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Name" type="Label" parent="Speaker"]
-margin_top = 167.0
-margin_right = 163.0
-margin_bottom = 202.0
+margin_top = 187.064
+margin_right = 200.0
+margin_bottom = 222.064
 rect_min_size = Vector2( 150, 0 )
 size_flags_vertical = 8
 text = "Speaker 1"
@@ -74,9 +90,12 @@ __meta__ = {
 [node name="Message" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -178.0
-margin_bottom = -0.000274658
+margin_left = 16.0
+margin_top = 29.0
+margin_right = -272.0
+margin_bottom = -4.0
 text = "Dummy message Dummy message Dummy message Dummy message "
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

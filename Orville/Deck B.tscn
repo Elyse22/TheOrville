@@ -13,13 +13,13 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 270.324, 202.406 )
+position = Vector2( 270.324, 204.727 )
 texture = ExtResource( 1 )
 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 561.63, 55.824 )
+position = Vector2( 556.214, 62.788 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 319.958, 145.592 )
@@ -48,8 +48,9 @@ region_rect = Rect2( 30, 11, 91, 46 )
 [node name="NPC" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -99.5709, 161.703 )
 npc_name = "Lex"
+dialogs = [ "Is it just me or is everything a bit..." ]
 
-[node name="Sprite" parent="YSort/NPC" index="0"]
+[node name="Sprite" parent="YSort/NPC" index="1"]
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 8 )
 
@@ -58,6 +59,7 @@ position = Vector2( 601.474, 49.5051 )
 scale = Vector2( 1.15, 1.15 )
 npc_name = "Dr. Finn"
 npc_texture = ExtResource( 9 )
+dialogs = [ "Sick bay has been full of concerned crew members requesting psychological scans, they keep insisting that ‘everything is different’. ", "I needed to take a walk. Something does seem strange…" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

@@ -1,18 +1,16 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/AllCharacters/Characters/Kelly.png" type="Texture" id=1]
 [ext_resource path="res://Src/NPC/NPC.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Bridge Middle Console.png" type="Texture" id=3]
+[ext_resource path="res://Src/DialogPlayer/DialogPlayer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Src/DialogPlayer/DialogPlayer.gd" type="Script" id=5]
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=12]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "idle_down"
+[sub_resource type="Animation" id=13]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -27,8 +25,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "idle_left"
+[sub_resource type="Animation" id=14]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -43,8 +40,7 @@ tracks/0/keys = {
 "values": [ 11 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "idle_right"
+[sub_resource type="Animation" id=15]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -59,7 +55,7 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=16]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -74,8 +70,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "move_down"
+[sub_resource type="Animation" id=17]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -91,8 +86,7 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "move_left"
+[sub_resource type="Animation" id=18]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -108,8 +102,7 @@ tracks/0/keys = {
 "values": [ 10, 9 ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "move_right"
+[sub_resource type="Animation" id=19]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -125,7 +118,7 @@ tracks/0/keys = {
 "values": [ 7, 8 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=20]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -141,20 +134,11 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 5.36453, 6.87897 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 24.8898, 21.8502 )
-
-[sub_resource type="DynamicFont" id=12]
-size = 32
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 4 )
-
-[sub_resource type="Theme" id=13]
-default_font = SubResource( 12 )
 
 [node name="NPC" type="KinematicBody2D"]
 position = Vector2( -0.527039, -0.790558 )
@@ -168,7 +152,7 @@ margin_left = -46.0
 margin_top = -42.0
 margin_right = 52.0
 margin_bottom = -28.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "Press [E] to talk"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -180,90 +164,26 @@ hframes = 12
 frame = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle_down = SubResource( 1 )
-anims/idle_left = SubResource( 2 )
-anims/idle_right = SubResource( 3 )
-anims/idle_up = SubResource( 4 )
-anims/move_down = SubResource( 5 )
-anims/move_left = SubResource( 6 )
-anims/move_right = SubResource( 7 )
-anims/move_up = SubResource( 8 )
+anims/idle_down = SubResource( 13 )
+anims/idle_left = SubResource( 14 )
+anims/idle_right = SubResource( 15 )
+anims/idle_up = SubResource( 16 )
+anims/move_down = SubResource( 17 )
+anims/move_left = SubResource( 18 )
+anims/move_right = SubResource( 19 )
+anims/move_up = SubResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.175, 8.356 )
-shape = SubResource( 9 )
+shape = SubResource( 21 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="DialogPlayer" type="Control" parent="HUD"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -500.0
-margin_top = -228.509
-margin_right = 500.0
-margin_bottom = -28.5087
-theme = SubResource( 13 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-speakers = [ "Kelly", "Kelly", "", "", "", "", "", "", "", "" ]
-dialogs = [ "Hey", "How are you?", "", "", "", "", "", "", "", "" ]
-
-[node name="Overlay" type="ColorRect" parent="HUD/DialogPlayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.423529, 0.231373, 0.00784314, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Speaker" type="VBoxContainer" parent="HUD/DialogPlayer"]
-margin_top = -200.0
-margin_right = 150.0
-margin_bottom = -11.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Icon" type="TextureRect" parent="HUD/DialogPlayer/Speaker"]
-margin_right = 150.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 150, 150 )
-texture = ExtResource( 3 )
-expand = true
-
-[node name="Name" type="Label" parent="HUD/DialogPlayer/Speaker"]
-margin_top = 154.0
-margin_right = 150.0
-margin_bottom = 189.0
-rect_min_size = Vector2( 150, 0 )
-size_flags_vertical = 8
-text = "Speaker 1"
-align = 1
-valign = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Message" type="Label" parent="HUD/DialogPlayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Dummy message Dummy message Dummy message Dummy message "
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tween" type="Tween" parent="HUD/DialogPlayer"]
+[node name="DialogPlayer" parent="HUD" instance=ExtResource( 3 )]
 [connection signal="body_entered" from="Area2D" to="." method="player_around"]
 [connection signal="body_exited" from="Area2D" to="." method="player_not_around"]
-[connection signal="stopped" from="HUD/DialogPlayer" to="." method="dialog_player_stopped"]
-[connection signal="tween_completed" from="HUD/DialogPlayer/Tween" to="HUD/DialogPlayer" method="tween_completed"]
