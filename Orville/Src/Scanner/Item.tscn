@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Src/Scanner/Item.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Bortus' Desk.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 64, 64 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 26
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[node name="Item" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="Progress" type="Timer" parent="."]
+wait_time = 0.01
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 123.781
+margin_top = 629.622
+margin_right = 293.781
+margin_bottom = 658.622
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = SubResource( 2 )
+text = "PRESS [E] TO SCAN"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="HUD"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 74.6078
+margin_top = -174.006
+margin_right = 324.608
+margin_bottom = -100.006
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 250, 74 )
+theme = SubResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Scanner" type="VBoxContainer" parent="HUD/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+rect_min_size = Vector2( 300, 80 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD/Control/Scanner"]
+margin_right = 300.0
+margin_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SCANNING"
+align = 1
+valign = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="HUD/Control/Scanner"]
+margin_top = 39.0
+margin_right = 300.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 250, 35 )
+step = 1.0
+percent_visible = false
+
+[node name="Result" type="VBoxContainer" parent="HUD/Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+rect_min_size = Vector2( 250, 74 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD/Control/Result"]
+margin_right = 250.0
+margin_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TREE BRANCH"
+align = 1
+valign = 1
+
+[node name="Inventory" type="Button" parent="HUD/Control/Result"]
+margin_top = 39.0
+margin_right = 250.0
+margin_bottom = 80.0
+text = "ADD TO INVENTORY"
+
+[node name="Close" type="Button" parent="HUD/Control/Result"]
+margin_top = 84.0
+margin_right = 250.0
+margin_bottom = 125.0
+text = "CANCEL"
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="timeout" from="Progress" to="." method="progress"]
+[connection signal="pressed" from="HUD/Control/Result/Inventory" to="." method="add_to_inventory"]
+[connection signal="pressed" from="HUD/Control/Result/Close" to="." method="close"]
