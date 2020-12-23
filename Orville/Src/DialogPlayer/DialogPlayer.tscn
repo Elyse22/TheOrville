@@ -4,14 +4,14 @@
 [ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/AllCharacters/Face/Kelly.png" type="Texture" id=3]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 32
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="Theme" id=2]
-default_font = SubResource( 1 )
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
 
 [node name="DialogPlayer" type="Control"]
 anchor_left = 0.5
@@ -25,7 +25,7 @@ margin_bottom = -28.5087
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 1100, 230 )
-theme = SubResource( 2 )
+theme = SubResource( 4 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
