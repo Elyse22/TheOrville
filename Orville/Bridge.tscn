@@ -28,7 +28,7 @@ texture = ExtResource( 1 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 171.719, 116.915 )
+position = Vector2( 152.719, 120.858 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 79.0942, 143.53 )
@@ -59,3 +59,4 @@ position = Vector2( 190.188, 89.5479 )
 scale = Vector2( 1.15, 1.15 )
 npc_name = "Gordon"
 npc_texture = ExtResource( 10 )
+dialogs = [ "Oh hey _________, how are you enjoying your stay so far?", "YOU: It's been amazing, except for the... you know...", "Pixel universe? I think it's pretty sweet actually! Except the quantum drive seems to be offline...", "YOU: Yes, LeMarr asked me to report to you. He just downgraded the engine and asked if you could test it? ", "No problem! Let's take this baby for a test drive. " ]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sets/Deck F.png" type="Texture" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
@@ -6,12 +6,16 @@
 [ext_resource path="res://EngineeringRailing.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Src/NPC/NPC.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/AllCharacters/Characters/JohnLammar.png" type="Texture" id=6]
+[ext_resource path="res://Assets/AllCharacters/Characters/Kelly.png" type="Texture" id=7]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 486.174, -127.531 )
+position = Vector2( 17.1763, -94.3819 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -24,7 +28,7 @@ polygon = PoolVector2Array( 429.437, -193.157, 589.504, -192.749, 574.836, -198.
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 464.706, -64.8519 )
+position = Vector2( 480.996, -143.859 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 499.154, 9.98354 )
@@ -37,3 +41,10 @@ position = Vector2( 537.805, -163.737 )
 scale = Vector2( 1.2, 1.2 )
 npc_name = "LeMarr"
 npc_texture = ExtResource( 6 )
+dialogs = [ "Oh hey, what's up? ", "YOU: Isaac asked me to find you, he is concerned about the quantum engines, given our current... pixel state. ", "Yeah, I was wondering how long it would take him to ask.", "The quantum drive is down, meaning, we stranded until we can get them back online. See if you can find Bortus in his quarters, I'm thinking his Moclan engineering skills may throw a fresh light on things.  " ]
+
+[node name="NPC" parent="." instance=ExtResource( 5 )]
+position = Vector2( -159.749, -172.582 )
+npc_name = "Kelly"
+npc_texture = ExtResource( 7 )
+dialogs = [ "Commander _________, how are you? ", "Silly question I guess, considering the current circumstances... " ]

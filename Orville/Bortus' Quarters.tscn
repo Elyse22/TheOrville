@@ -68,3 +68,4 @@ position = Vector2( 8.73878, 73.336 )
 scale = Vector2( 1.2, 1.2 )
 npc_name = "Bortus"
 npc_texture = ExtResource( 14 )
+dialogs = [ "Commander _________, what are you doing here?", "You didn't see anything... Do not tell Klyden. ", "YOU: LeMarr asked me to talk to you, we are having some trouble with the quantum engine. The quantum drive is offline and we think it has something to do with this new pixel reality. ", "Yes. I am not surprised, the quantum engine is not built for this… simple pixel state. Our normal 3D reality is much more complex. We are going to need to ‘downgrade’ the technology. ", "See if you can find a wrench and iron coil, and take them back to Lieutenant Commander LaMarr in engineering. He will know what to do with them. " ]

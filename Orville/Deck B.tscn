@@ -46,7 +46,7 @@ region_enabled = true
 region_rect = Rect2( 30, 11, 91, 46 )
 
 [node name="NPC" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( -99.5709, 161.703 )
+position = Vector2( -101.118, 172.536 )
 npc_name = "Lex"
 dialogs = [ "Is it just me or is everything a bit..." ]
 
@@ -59,7 +59,7 @@ position = Vector2( 601.474, 49.5051 )
 scale = Vector2( 1.15, 1.15 )
 npc_name = "Dr. Finn"
 npc_texture = ExtResource( 9 )
-dialogs = [ "Sick bay has been full of concerned crew members requesting psychological scans, they keep insisting that ‘everything is different’. ", "I needed to take a walk. Something does seem strange…" ]
+dialogs = [ "Sick bay has been full of concerned crew members requesting psychological scans, they keep insisting that ‘everything is different’. ", "I needed to take a walk. But something does seem strange..." ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
