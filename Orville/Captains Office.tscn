@@ -56,6 +56,7 @@ position = Vector2( 107.533, 87.8576 )
 scale = Vector2( 1.2, 1.2 )
 npc_name = "Ed "
 npc_texture = ExtResource( 10 )
+dialogs = [ "Commander _________, I'm glad you're here. Please, take a seat. ", "I'm not sure if you've noticed this but...", "We appear to be in a 2D pixel universe!", "YOU: Yes, I have noticed and I think everyone else has too. Do you have any idea what's going on?", "No idea, but I'm not waiting around to find out. See if you can find Isaac in the Science Lab and get a status report. I've been trying to hail him on comms, but they don't appear to be working properly. " ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
