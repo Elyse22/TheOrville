@@ -21,6 +21,7 @@ run/main_scene="res://Quarters.tscn"
 [autoload]
 
 Global="*res://Global.gd"
+Data="*res://Src/Singletons/Data.gd"
 
 [display]
 
