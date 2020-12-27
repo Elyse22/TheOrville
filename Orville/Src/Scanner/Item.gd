@@ -17,6 +17,7 @@ func _ready():
 		$HUD/Control/Result/Label.text = item_name
 	if item_sprite:
 		$Sprite.texture = item_sprite
+		$SpriteTexture.texture = item_sprite
 
 
 func _on_Area2D_body_entered(body):
@@ -74,6 +75,10 @@ func close():
 
 
 func add_to_inventory():
+	var data = []
+	data.append(item_name)
+	data.append($SpriteTexture.texture)
+	Data.inventory.append(data)
 	picked = true
 	close()
 	queue_free()

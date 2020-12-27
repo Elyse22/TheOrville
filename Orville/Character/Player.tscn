@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Character/Player.gd" type="Script" id=1]
 [ext_resource path="res://Character/animations all.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/AllCharacters/MainCharacter/Skin_1.png" type="Texture" id=9]
 [ext_resource path="res://Assets/AllCharacters/MainCharacter/EyeBrows.png" type="Texture" id=10]
 [ext_resource path="res://Assets/AllCharacters/MainCharacter/Eye.png" type="Texture" id=11]
+[ext_resource path="res://Src/Inventory/Inventory.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle Down"
@@ -214,7 +215,7 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
-[sub_resource type="RectangleShape2D" id=28]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 4.34606, 7.90883 )
 
 [sub_resource type="Animation" id=24]
@@ -330,7 +331,7 @@ tracks/8/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=25]
 resource_name = "walk_left"
 length = 0.6
 loop = true
@@ -556,8 +557,7 @@ tracks/8/keys = {
 "values": [ 7, 8 ]
 }
 
-[sub_resource type="Animation" id=25]
-resource_name = "walk_up"
+[sub_resource type="Animation" id=27]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -760,10 +760,15 @@ frame = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.25, -0.162 )
 scale = Vector2( 1.2, 1.2 )
-shape = SubResource( 28 )
+shape = SubResource( 23 )
 
 [node name="CustomAnimations" type="AnimationPlayer" parent="."]
 anims/walk_down = SubResource( 24 )
-anims/walk_left = SubResource( 27 )
+anims/walk_left = SubResource( 25 )
 anims/walk_right = SubResource( 26 )
-anims/walk_up = SubResource( 25 )
+anims/walk_up = SubResource( 27 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="HUD" instance=ExtResource( 12 )]
+visible = false
