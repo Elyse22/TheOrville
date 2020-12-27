@@ -12,3 +12,5 @@ var character = {
 	"beard_style": load("res://Assets/AllCharacters/MainCharacter/Beard_1.png"),
 	"mustache_style": false,
 }
+
+var inventory = []

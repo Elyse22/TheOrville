@@ -18,10 +18,11 @@ func _ready():
 	default_style.texture = default_tex
 	empty_style.texture = empty_tex
 	
+	refresh_style()
+	return
 	if randi() % 2 == 0:
 		item = item_class.instance()
 		add_child(item)
-	refresh_style()
 
 
 func refresh_style():
