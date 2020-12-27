@@ -771,3 +771,4 @@ anims/walk_up = SubResource( 27 )
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Inventory" parent="HUD" instance=ExtResource( 12 )]
+visible = false
