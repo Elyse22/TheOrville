@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Character/Player.gd" type="Script" id=1]
 [ext_resource path="res://Character/animations all.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/AllCharacters/MainCharacter/Eye.png" type="Texture" id=11]
 [ext_resource path="res://Src/Inventory/Inventory.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Inventory/Items/Iron Sword.png" type="Texture" id=13]
+[ext_resource path="res://Src/Menu/PauseMenu.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle Down"
@@ -875,3 +876,6 @@ anims/walk_up = SubResource( 27 )
 
 [node name="Inventory" parent="HUD" instance=ExtResource( 12 )]
 visible = false
+
+[node name="PauseMenu" parent="HUD" instance=ExtResource( 14 )]
+pause_mode = 2

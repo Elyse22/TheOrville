@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sets/captains office.png" type="Texture" id=2]
@@ -10,11 +10,13 @@
 [ext_resource path="res://CaptainsChair4.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/plant 3.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/AllCharacters/Characters/EdMercer.png" type="Texture" id=10]
+[ext_resource path="res://Captains Office.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.72687, 10.2589 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 153.25, 132.684 )
