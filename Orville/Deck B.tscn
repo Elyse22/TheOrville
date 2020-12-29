@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Sets/Deck B.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Railing.tscn" type="PackedScene" id=2]
@@ -9,8 +9,20 @@
 [ext_resource path="res://Src/NPC/NPC.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/AllCharacters/Characters/Lex.png" type="Texture" id=8]
 [ext_resource path="res://Assets/AllCharacters/Characters/ClaireFinn.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Lift.gd" type="Script" id=11]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 28.5782, 47.978 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 10 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[node name="DeckB" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 270.324, 204.727 )
@@ -65,5 +77,48 @@ dialogs = [ "Sick bay has been full of concerned crew members requesting psychol
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 22.1693, 70.2903, 1.80573, 71.3523, 0.969391, 300.482, -47.9507, 299.646, -47.9507, 193.025, -79.3098, 193.443, -79.3098, 269.123, -234.851, 268.705, -233.189, 152.735, -77.9646, 152.735, -77.7183, 171.68, -46.6962, 171.283, -47.1143, 61.7355, -71.4597, 61.0275, -71.71, 74.0454, -127.394, 72.6066, -126.975, 22.4322, -71.7835, 22.8503, -71.4597, 39.2476, -48.9287, 39.2476, -48.7869, 21.5959, 0.969421, 22.0141, 2.39185, 33.9904, 22.6697, 34.4911, 23.5482, 18.6691, 628.568, 19.9235, 630.241, 3.61677, 681.251, 5.28925, 681.251, 77.624, 342.359, 78.3013, 342.609, 90.8185, 386.895, 91.4221, 387.313, 208.496, 342.359, 210.483, 342.359, 213.487, 290.288, 213.737, 290.037, 209.482, 246.406, 209.332, 245.988, 90.5858, 290.788, 91.0688, 290.288, 77.5503, 23.1704, 78.5516, 22.4193, 72.7937, 15.66, 95.3247, 220.692, 108.092, 218.635, 238.812, 419.421, 233.124, 416.577, 98.3184, 711.215, 105.144, 708.371, -52.9824, 606.556, -54.12, 605.987, 10.7232, 321.587, 7.31042, -153.93, 4.46648, -151.654, 90.3553, -150.517, 115.951, -258.02, 119.933, -260.864, 294.554, -74.8662, 295.692, -73.7286, 327.545, 36.6186, 323.563, 21.8298, 115.382, 12.4012, 96.2075 )
+
+[node name="Lift" type="Area2D" parent="."]
+position = Vector2( 28.5088, -54.3448 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lift"]
+position = Vector2( -129.431, 79.511 )
+shape = SubResource( 1 )
+
+[node name="HUD" type="CanvasLayer" parent="Lift"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Lift/HUD"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -65.5
+margin_right = 400.0
+margin_bottom = 65.5
+theme = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeckB" type="Button" parent="Lift/HUD/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 41.0
+text = "DECK B"
+
+[node name="DeckC" type="Button" parent="Lift/HUD/VBoxContainer"]
+margin_top = 45.0
+margin_right = 400.0
+margin_bottom = 86.0
+text = "DECK C"
+
+[node name="DeckF" type="Button" parent="Lift/HUD/VBoxContainer"]
+margin_top = 90.0
+margin_right = 400.0
+margin_bottom = 131.0
+text = "DECK F"
+[connection signal="body_entered" from="Lift" to="Lift" method="player_entered"]
+[connection signal="body_exited" from="Lift" to="Lift" method="player_exited"]
 
 [editable path="YSort/NPC"]

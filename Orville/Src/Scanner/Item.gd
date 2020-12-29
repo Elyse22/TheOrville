@@ -80,5 +80,18 @@ func add_to_inventory():
 	data.append($SpriteTexture.texture)
 	Data.inventory.append(data)
 	picked = true
+	check()
 	close()
 	queue_free()
+
+
+func check():
+	if item_name == "Wrench":
+		for item in Data.inventory:
+			if item[0] == "Iron Coil":
+				Data.can_talk_with["LeMarr"] = true
+	if item_name == "Iron Coil":
+		for item in Data.inventory:
+			if item[0] == "Wrench":
+				Data.can_talk_with["LeMarr"] = true
+		
