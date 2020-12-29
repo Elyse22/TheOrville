@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sets/hallway.png" type="Texture" id=2]
@@ -9,11 +9,23 @@
 [ext_resource path="res://Src/NPC/NPC.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/AllCharacters/Characters/Tom.png" type="Texture" id=8]
 [ext_resource path="res://Assets/AllCharacters/Characters/Kit.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Lift.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.6259, 4.57886 )
 
-[node name="Hallway" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 28.5782, 47.978 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 10 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[node name="DeckC" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 248, 262 )
@@ -111,5 +123,48 @@ dialogs = [ "Everything is really... squarey, don't you think?" ]
 light_mask = 0
 position = Vector2( 0, -0.789917 )
 polygon = PoolVector2Array( -3.00046, 82.9997, 670.999, 83.9997, 671.999, 140, -2.00046, 139, -2.00046, 130, -17.0005, 131, -19.4393, 588.412, -73.2121, 586.979, -76.0004, 553.999, -98.0004, 553.999, -98.3061, 587.696, -262, 587.999, -261.776, 510.98, -99.74, 511.697, -99.0004, 525.999, -75.0004, 524.999, -75.0004, 337.999, -93.0004, 337.999, -93.727, 348.094, -154.006, 348.094, -152.985, 298.372, -94.7487, 299.054, -94.0004, 312.999, -74.0004, 311.999, -73.0004, 124, -99.0004, 124, -100.098, 219.457, -261.524, 219.457, -261, 82.9997, -100, 83.9997, -100, 96.9997, -74.0004, 97.9997, -74.0004, 82.9997, -16.2382, 89.6308, -4.00046, 91.9997, -11.0005, 11.9998, -293, 16.9998, -296, 633.999, 60.9995, 634.999, 49.9995, 177, 732.999, 173, 715.999, -24.0002, -9.00046, -9.00018 )
+
+[node name="Lift" type="Area2D" parent="."]
+position = Vector2( 5, 222 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lift"]
+position = Vector2( -129.431, 79.511 )
+shape = SubResource( 2 )
+
+[node name="HUD" type="CanvasLayer" parent="Lift"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Lift/HUD"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -65.5
+margin_right = 400.0
+margin_bottom = 65.5
+theme = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeckB" type="Button" parent="Lift/HUD/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 41.0
+text = "DECK B"
+
+[node name="DeckC" type="Button" parent="Lift/HUD/VBoxContainer"]
+margin_top = 45.0
+margin_right = 400.0
+margin_bottom = 86.0
+text = "DECK C"
+
+[node name="DeckF" type="Button" parent="Lift/HUD/VBoxContainer"]
+margin_top = 90.0
+margin_right = 400.0
+margin_bottom = 131.0
+text = "DECK F"
+[connection signal="body_entered" from="Lift" to="Lift" method="player_entered"]
+[connection signal="body_exited" from="Lift" to="Lift" method="player_exited"]
 
 [editable path="Portal"]

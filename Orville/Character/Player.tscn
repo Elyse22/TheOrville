@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Character/Player.gd" type="Script" id=1]
 [ext_resource path="res://Character/animations all.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/AllCharacters/MainCharacter/EyeBrows.png" type="Texture" id=10]
 [ext_resource path="res://Assets/AllCharacters/MainCharacter/Eye.png" type="Texture" id=11]
 [ext_resource path="res://Src/Inventory/Inventory.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Inventory/Items/Iron Sword.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle Down"
@@ -330,6 +331,30 @@ tracks/8/keys = {
 "update": 1,
 "values": [ 1, 2 ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Character/OnHand:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 1.85813, 10.7029 ), Vector2( 0.125738, 10.4666 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Character/OnHand:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 180.0, 186.11 ]
+}
 
 [sub_resource type="Animation" id=25]
 resource_name = "walk_left"
@@ -442,6 +467,30 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 10, 9 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Character/OnHand:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 192.914, 192.914 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Character/OnHand:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -9.96899, 11.8849 ), Vector2( 0.459448, 11.9683 ) ]
 }
 
 [sub_resource type="Animation" id=26]
@@ -556,6 +605,30 @@ tracks/8/keys = {
 "update": 1,
 "values": [ 7, 8 ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Character/OnHand:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 88.033, 88.033 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Character/OnHand:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 10.5357, 12.4987 ), Vector2( -0.777988, 12.4103 ) ]
+}
 
 [sub_resource type="Animation" id=27]
 length = 0.6
@@ -668,6 +741,30 @@ tracks/8/keys = {
 "update": 1,
 "values": [ 4, 5 ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("Character/OnHand:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 124.697, 124.697 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Character/OnHand:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 10.5357, 12.4987 ), Vector2( 10.4473, 10.6425 ) ]
+}
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 2
@@ -707,57 +804,63 @@ zoom = Vector2( 0.42, 0.42 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 6 )
 hframes = 12
-frame = 7
+frame = 5
 
 [node name="Skin" type="Sprite" parent="Character"]
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 9 )
 hframes = 12
-frame = 7
+frame = 5
 
 [node name="Shirt" type="Sprite" parent="Character"]
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 4 )
 hframes = 12
-frame = 7
+frame = 5
 
 [node name="Eye" type="Sprite" parent="Character"]
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 11 )
 hframes = 12
-frame = 7
+frame = 5
 
 [node name="Pupil" type="Sprite" parent="Character"]
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 3 )
 hframes = 12
-frame = 7
+frame = 5
 
 [node name="EyeBrows" type="Sprite" parent="Character"]
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 10 )
 hframes = 12
-frame = 7
+frame = 5
 
 [node name="Mustache" type="Sprite" parent="Character"]
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 5 )
 hframes = 12
-frame = 7
+frame = 5
 
 [node name="Beard" type="Sprite" parent="Character"]
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 7 )
 hframes = 12
-frame = 7
+frame = 5
 
 [node name="Hair" type="Sprite" parent="Character"]
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 8 )
 hframes = 12
-frame = 7
+frame = 5
+
+[node name="OnHand" type="Sprite" parent="Character"]
+position = Vector2( 10.4473, 10.6425 )
+rotation = 2.17637
+texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -0.25, -0.162 )
 scale = Vector2( 1.2, 1.2 )
 shape = SubResource( 23 )

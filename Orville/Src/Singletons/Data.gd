@@ -13,4 +13,10 @@ var character = {
 	"mustache_style": false,
 }
 
+var can_talk_with = {
+	"LeMarr": true
+}
+
+var spawn_wrench_iron_coil = false
+
 var inventory = []
