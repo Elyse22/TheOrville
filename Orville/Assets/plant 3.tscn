@@ -8,11 +8,11 @@ extents = Vector2( 5.20515, 6.32979 )
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1.24983, -1.94551 )
+position = Vector2( -0.573453, -20.7489 )
 scale = Vector2( 0.817575, 0.888976 )
 texture = ExtResource( 1 )
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.676384, 11.0926 )
+position = Vector2( -1.52588e-05, -6.22272 )
 shape = SubResource( 1 )
