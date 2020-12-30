@@ -44,7 +44,7 @@ shape = SubResource( 1 )
 position = Vector2( 248, 262 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -310.235, -152.682 )
+position = Vector2( -459.643, 305.163 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -491.364, -148.526 )
@@ -104,7 +104,7 @@ position = Vector2( -427.044, 303.78 )
 position = Vector2( -376, 303.856 )
 
 [node name="NPC" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( -359.484, -171.192 )
+position = Vector2( -182.865, -160.046 )
 scale = Vector2( 1.2, 1.2 )
 npc_name = "Tom"
 npc_texture = ExtResource( 8 )
