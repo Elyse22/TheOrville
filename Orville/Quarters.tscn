@@ -23,7 +23,7 @@
 extents = Vector2( 12.6088, 9 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 19.8972, 25.5679 )
+extents = Vector2( 9.66752, 20.663 )
 
 [node name="Scene1" type="Node2D"]
 position = Vector2( -9, -17 )
@@ -82,7 +82,7 @@ position = Vector2( 102, 83 )
 position = Vector2( 103, 126 )
 
 [node name="Plant 3" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( -22.6528, 150.498 )
+position = Vector2( -22.2127, 169.423 )
 
 [node name="Side Table" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 74, 82 )
@@ -91,7 +91,6 @@ position = Vector2( 74, 82 )
 position = Vector2( -1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
 position = Vector2( -1, 0 )
 polygon = PoolVector2Array( -39, 42, -31, 42, -34, 188, 25, 188, 153, 190, 160, 185, 160.503, 74.678, 215.827, 75.0016, 214, 140, 220, 143, 351, 143, 360, 137, 356, 33, 214, 32, 214, 44, 160, 46, 160, 31, 13, 33, -32, 33, -38, 34, -67, 41, -66, 33, -70, -45, 396, -44, 392, 218, -50, 205 )
 
@@ -101,12 +100,14 @@ layer = 10
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 18 )]
 margin_top = -224.0
 margin_bottom = -24.0
-dialogs = [ "Welcome", "Did you eat breakfast?", "", "", "", "", "", "", "", "" ]
+speakers = [ "" ]
+dialogs = [ "" ]
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -14.2866, 158.343 )
+scale = Vector2( 1.14774, 0.690379 )
 shape = SubResource( 2 )
 
 [editable path="Portal"]
