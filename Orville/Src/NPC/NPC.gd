@@ -17,7 +17,7 @@ var walking = false
 var player_around = false
 var path
 var walking_on_path = false
-var dialog_index = -1
+export var dialog_index = -1
 var can_talk = true
 
 
@@ -29,6 +29,8 @@ func set_path(new_path):
 func set_dialogs():
 	if all_dialogs.size() == 0:
 		return
+	if dialog_index >= all_dialogs.size() -1:
+		return
 	dialog_index += 1
 	var speakers = []
 	for i in all_dialogs[dialog_index].size():
@@ -38,7 +40,11 @@ func set_dialogs():
 
 
 func _ready():
-	#set_dialogs()
+	if Data.save_found:
+		if Data.npc_dialog_index.has(npc_name):
+			dialog_index = Data.npc_dialog_index[npc_name]
+	else:
+		set_dialogs()
 #	var speakers = []
 #	for i in dialogs.size():
 #		speakers.append(npc_name)
@@ -147,12 +153,13 @@ func _input(event):
 	if event.is_action_pressed("talk") and player_around:
 		if npc_name == "LeMarr" and not Data.can_talk_with["LeMarr"]:
 			return
-		set_dialogs()
 		$HUD/DialogPlayer.play()
 
 
 func dialog_player_stopped():
 	$Popup.hide()
+	set_dialogs()
+	Data.npc_dialog_index[npc_name] = dialog_index
 	player_around = false
 	if npc_name == "LeMarr":
 		if dialog_index == 0:
@@ -161,3 +168,4 @@ func dialog_player_stopped():
 			Data.spawn_wrench_iron_coil = false
 	if npc_name == "Bortus" and dialog_index == 0:
 		Data.spawn_wrench_iron_coil = true
+

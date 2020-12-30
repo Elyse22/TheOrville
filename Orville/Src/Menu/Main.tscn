@@ -1,0 +1,246 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Src/Menu/Main.gd" type="Script" id=2]
+[ext_resource path="res://Orvile Fly.gd" type="Script" id=3]
+[ext_resource path="res://Buttons/Menu Button.gd" type="Script" id=4]
+[ext_resource path="res://ScollingBackground.gd" type="Script" id=5]
+[ext_resource path="res://Orvile Fly.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Buttons/Continue Button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://MovingStars.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Buttons/New Game Button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Buttons/Options Button.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Fade In/FadeIn.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Fade In/fade_in.gd" type="Script" id=12]
+[ext_resource path="res://Fonts/Space24.tres" type="DynamicFont" id=13]
+[ext_resource path="res://Audio/orville theme final wav.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/Title.png" type="Texture" id=15]
+[ext_resource path="res://Sets/stars.png" type="Texture" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 42
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 128
+font_data = ExtResource( 1 )
+
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item; 
+uniform float scroll_speed; 
+void fragment() {
+	vec2 shifteduv = UV;
+	shifteduv.x += TIME * scroll_speed;
+	vec4 col = texture(TEXTURE,shifteduv);
+	COLOR = col;
+}
+"
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
+shader_param/scroll_speed = null
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.2, 0.294118, 0.352941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 32.0
+margin_top = -41.0779
+margin_right = 432.0
+margin_bottom = 178.922
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="Menu"]
+margin_right = 400.0
+margin_bottom = 52.0
+disabled = true
+text = "CONTINUE"
+
+[node name="NewGame" type="Button" parent="Menu"]
+margin_top = 56.0
+margin_right = 400.0
+margin_bottom = 108.0
+text = "NEW GAME"
+
+[node name="Sound" type="Button" parent="Menu"]
+margin_top = 112.0
+margin_right = 400.0
+margin_bottom = 164.0
+text = "SOUND: ON"
+
+[node name="Quit" type="Button" parent="Menu"]
+margin_top = 168.0
+margin_right = 400.0
+margin_bottom = 220.0
+text = "QUIT"
+
+[node name="Heading" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -268.5
+margin_top = 32.0
+margin_right = 268.5
+margin_bottom = 169.0
+grow_horizontal = 2
+custom_fonts/font = SubResource( 3 )
+text = "THE ORVILLE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio Effect" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio Effect"]
+stream = ExtResource( 14 )
+volume_db = -18.175
+
+[node name="TextureRect" type="TextureRect" parent="." instance=ExtResource( 8 )]
+material = SubResource( 5 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 0.667089, 0.667353 )
+texture = ExtResource( 16 )
+stretch_mode = 2
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scroll_speed = 0.05
+
+[node name="Menu2" type="VBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 52.0
+margin_right = 1160.0
+margin_bottom = 640.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu2"]
+margin_right = 1080.0
+margin_bottom = 250.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 15 )
+stretch_mode = 5
+
+[node name="CenterRow" type="HBoxContainer" parent="Menu2"]
+margin_top = 254.0
+margin_right = 1080.0
+margin_bottom = 474.0
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="Menu2/CenterRow"]
+margin_right = 538.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+alignment = 1
+
+[node name="NewGameButton" type="Button" parent="Menu2/CenterRow/Buttons" instance=ExtResource( 9 )]
+margin_right = 538.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 360, 60 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+flat = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_to_load = "res://Game/New Game.tscn"
+
+[node name="ContinueButton" type="Button" parent="Menu2/CenterRow/Buttons" instance=ExtResource( 7 )]
+margin_top = 80.0
+margin_right = 538.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 360, 60 )
+custom_colors/font_color_pressed = Color( 0.180392, 0.27451, 0.87451, 1 )
+flat = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsButton" type="Button" parent="Menu2/CenterRow/Buttons" instance=ExtResource( 10 )]
+margin_top = 160.0
+margin_right = 538.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 360, 60 )
+custom_colors/font_color_pressed = Color( 0.180392, 0.27451, 0.87451, 1 )
+flat = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_to_load = "res://Game/Options.tscn"
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu2/CenterRow"]
+margin_left = 542.0
+margin_right = 1080.0
+margin_bottom = 220.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Orville Ship" type="TextureRect" parent="Menu2/CenterRow/CenterContainer"]
+margin_left = 269.0
+margin_top = 110.0
+margin_right = 269.0
+margin_bottom = 110.0
+
+[node name="Node2D" type="Node2D" parent="Menu2/CenterRow/CenterContainer" instance=ExtResource( 6 )]
+position = Vector2( -700.391, -266.227 )
+script = ExtResource( 3 )
+
+[node name="Version Label" type="Label" parent="Menu2"]
+margin_top = 478.0
+margin_right = 1080.0
+margin_bottom = 588.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 13 )
+text = "Version 1.2.2 ep. 1
+Phenox Games"
+valign = 1
+
+[node name="FadeIn" type="ColorRect" parent="." instance=ExtResource( 11 )]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 0 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Menu/Continue" to="." method="continue_game"]
+[connection signal="pressed" from="Menu/NewGame" to="." method="new_game"]
+[connection signal="pressed" from="Menu/Sound" to="." method="toggle_sound"]
+[connection signal="pressed" from="Menu/Quit" to="." method="quit_game"]
+[connection signal="pressed" from="Menu2/CenterRow/Buttons/NewGameButton" to="." method="new_game"]
+[connection signal="pressed" from="Menu2/CenterRow/Buttons/ContinueButton" to="." method="continue_game"]
+[connection signal="pressed" from="Menu2/CenterRow/Buttons/OptionsButton" to="." method="options"]

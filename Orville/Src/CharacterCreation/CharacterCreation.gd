@@ -75,11 +75,12 @@ func previous_hair():
 func update_hair():
 	if hair.index == 0:
 		get_node("Character/Hair").visible = false
-		Data.character.hair_style = null
+		Data.character.hair_style = ""
 	else:
+		
+		Data.character.hair_style = "res://Assets/AllCharacters/MainCharacter/Hair_" + str(hair.index) + ".png"
 		get_node("Character/Hair").visible = true
-		get_node("Character/Hair").texture = load("res://Assets/AllCharacters/MainCharacter/Hair_" + str(hair.index) + ".png")
-		Data.character.hair_style = get_node("Character/Hair").texture
+		get_node("Character/Hair").texture = load(Data.character.hair_style)
 	get_node("Screen/LeftMenu2/Hair/Label").text = "Hair " + str(hair.index)
 
 
@@ -102,11 +103,11 @@ func previous_beard():
 func update_beard():
 	if beard.index == 0:
 		get_node("Character/Beard").visible = false
-		Data.character.beard_style = null
+		Data.character.beard_style = ""
 	else:
+		Data.character.beard_style = "res://Assets/AllCharacters/MainCharacter/Beard_" + str(beard.index) + ".png"
 		get_node("Character/Beard").visible = true
-		get_node("Character/Beard").texture = load("res://Assets/AllCharacters/MainCharacter/Beard_" + str(beard.index) + ".png")
-		Data.character.beard_style = get_node("Character/Beard").texture
+		get_node("Character/Beard").texture = load(Data.character.beard_style)
 	get_node("Screen/LeftMenu2/Beard/Label").text = "Beard " + str(beard.index)
 
 
@@ -127,9 +128,9 @@ func previous_skin():
 
 
 func update_skin():
-	get_node("Character/Skin").texture = load("res://Assets/AllCharacters/MainCharacter/Skin_" + str(skin.index) + ".png")
+	Data.character.skin_style = "res://Assets/AllCharacters/MainCharacter/Skin_" + str(skin.index) + ".png"
+	get_node("Character/Skin").texture = load(Data.character.skin_style)
 	get_node("Screen/LeftMenu2/Skin/Label").text = "Skin " + str(skin.index)
-	Data.character.skin_style = get_node("Character/Skin").texture
 
 
 func confirm():
