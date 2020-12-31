@@ -42,7 +42,7 @@ polygon = PoolVector2Array( 429.437, -193.157, 589.504, -192.749, 574.836, -198.
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 480.996, -143.859 )
+position = Vector2( -71.9063, -12.7584 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 499.154, 9.98354 )
