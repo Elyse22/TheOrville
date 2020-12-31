@@ -20,4 +20,10 @@ format = 1
 tile_data = PoolIntArray( 131073, 41, 0, 327691, 40, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 326.32, 202.847 )
+position = Vector2( 458.543, 285.336 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 1.41422, -2.82843 )
+polygon = PoolVector2Array( 268.145, 69.0112, 1013.75, 117.936, 1010.92, 668.065, 233.105, 648.266, 253.461, 90.3687, 266.81, 66.3416, 222.76, -69.8121, -111.574, -70.0592, -139.557, 805.037, 1333.11, 901.569, 1355.56, -72.7279, 222.76, -73.8166 )
