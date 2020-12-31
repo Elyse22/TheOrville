@@ -218,7 +218,7 @@ start_node = "Idle"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
 [sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 6.10882, 5.96095 )
+extents = Vector2( 5.36239, 5.96095 )
 
 [sub_resource type="Animation" id=24]
 resource_name = "walk_down"
@@ -864,7 +864,7 @@ rotation = 3.14159
 texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.190742, -3.2647 )
+position = Vector2( 0.411109, -4.69708 )
 scale = Vector2( 1.32859, 0.805323 )
 shape = SubResource( 23 )
 
