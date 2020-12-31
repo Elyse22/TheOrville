@@ -23,7 +23,7 @@ func _physics_process(delta):
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
-	
+
 	if input_vector.x > 0:
 		anim_player.play("walk_right")
 	elif input_vector.x < 0:
@@ -34,7 +34,7 @@ func _physics_process(delta):
 		anim_player.play("walk_up")
 	else:
 		anim_player.stop()
-	
+
 	if input_vector != Vector2.ZERO:
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		animationTree.set("parameters/Run/blend_position", input_vector)
@@ -44,8 +44,8 @@ func _physics_process(delta):
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 
-	velocity = move_and_slide(velocity) 
-	
+	velocity = move_and_slide(velocity)
+
 	frame_count += 1
 	if frame_count == 3:
 		allow_portal_travel = true
@@ -53,7 +53,7 @@ func _physics_process(delta):
 
 func _ready():
 	load_custom_character()
-	self.global_position = Global.player_initial_map_position
+	#self.global_position = Global.player_initial_map_position
 	if Global.in_lift:
 		print("Lift")
 		Global.in_lift = false

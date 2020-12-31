@@ -11,4 +11,9 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 23.327, 129.465 )
+position = Vector2( 13.1984, 142.289 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0.683701, 128.278, 385.118, 125.942, 385.041, 158.088, 1.39533, 158.088, 0.349991, 128.278, 0.0162811, 94.2392, -10.9961, 93.9055, -9.33122, 175.081, 398.208, 171.335, 399.707, 94.9214, -0.341377, 93.4231 )
