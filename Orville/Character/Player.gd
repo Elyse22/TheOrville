@@ -40,11 +40,11 @@ func _physics_process(delta):
 	else:
 		anim_player.stop()
 		match direction:
-			"right": anim_player.play("idle_right")
-			"left" : anim_player.play("idle_left")
-			"up" : anim_player.play("idle_up")
-			"down" : anim_player.play("idle_down")
-			_ : anim_player.play("idle_down")
+			"right": anim_player.play("Idle Right")
+			"left" : anim_player.play("Idle Left")
+			"up" : anim_player.play("Idle Up")
+			"down" : anim_player.play("Idle Down")
+			_ : anim_player.play("Idle Down")
 
 	if input_vector != Vector2.ZERO:
 		animationTree.set("parameters/Idle/blend_position", input_vector)
