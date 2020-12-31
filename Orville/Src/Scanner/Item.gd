@@ -86,6 +86,7 @@ func add_to_inventory():
 
 
 func check():
+	print(Data.inventory)
 	if item_name == "Wrench":
 		for item in Data.inventory:
 			if item[0] == "Iron Coil":

@@ -23,7 +23,7 @@ var npc_dialog_index = {}
 
 var spawn_wrench_iron_coil = false
 
-var inventory = [""]
+var inventory = []
 
 var sound = true
 
