@@ -46,7 +46,7 @@ shape = SubResource( 1 )
 position = Vector2( 248, 262 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -459.643, 305.163 )
+position = Vector2( -134.655, -134.671 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -491.364, -148.526 )
@@ -113,7 +113,7 @@ npc_texture = ExtResource( 8 )
 dialogs = [ "Hey ____, does something seem off to you?" ]
 
 [node name="NPC2" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( -453.928, 278.226 )
+position = Vector2( -459.63, 253.791 )
 scale = Vector2( 1.15, 1.2 )
 npc_name = "Kit"
 npc_texture = ExtResource( 9 )
