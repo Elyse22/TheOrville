@@ -27,6 +27,8 @@ func next_dialog():
 	index += 1
 	$Speaker/Name.text = speakers[index]
 	$Message.text = dialogs[index]
+	if "%p" in $Message.text:
+		$Message.text = $Message.text.replace("%p", Data.character.name)
 	$Message.percent_visible = 0
 	$Tween.interpolate_property(
 		$Message, "percent_visible", 0,1,0.5,
