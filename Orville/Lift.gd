@@ -20,6 +20,7 @@ func player_exited(body):
 
 
 func lift(button_name):
+	Global.in_lift = true
 	if button_name == "DeckB":
 		get_tree().change_scene("res://Deck B.tscn")
 	elif button_name == "DeckC":

@@ -16,7 +16,10 @@ func _get_configuration_warning() -> String:
 
 
 func _on_Portal_body_entered(body):
-	Global.player_initial_map_position = player_spawn_location
-	if get_tree().change_scene(next_scene_path) != OK:
-		# error handling here
-		print("Error: Unavailable scene!")
+	if body is Player:
+		if not body.allow_portal_travel:
+			return
+		Global.player_initial_map_position = player_spawn_location
+		if get_tree().change_scene(next_scene_path) != OK:
+			# error handling here
+			print("Error: Unavailable scene!")
