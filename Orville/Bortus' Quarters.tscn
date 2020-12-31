@@ -76,11 +76,11 @@ npc_texture = ExtResource( 14 )
 dialogs = [ "Commander _________, what are you doing here?", "You didn't see anything... Do not tell Klyden. ", "YOU: LeMarr asked me to talk to you, we are having some trouble with the quantum engine. The quantum drive is offline and we think it has something to do with this new pixel reality. ", "Yes. I am not surprised, the quantum engine is not built for this… simple pixel state. Our normal 3D reality is much more complex. We are going to need to ‘downgrade’ the technology. ", "See if you can find a wrench and iron coil, and take them back to Lieutenant Commander LaMarr in engineering. He will know what to do with them. " ]
 
 [node name="IronCoil" parent="." instance=ExtResource( 15 )]
-position = Vector2( 253.676, 40.4086 )
+position = Vector2( 267.111, 37.1656 )
 item_name = "Iron Coil"
 item_sprite = ExtResource( 16 )
 
 [node name="Wrench" parent="." instance=ExtResource( 15 )]
-position = Vector2( 293.523, 156.022 )
+position = Vector2( 316.224, 155.559 )
 item_name = "Wrench"
 item_sprite = ExtResource( 17 )
