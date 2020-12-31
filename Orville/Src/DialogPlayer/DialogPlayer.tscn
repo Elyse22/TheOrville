@@ -46,38 +46,40 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 875.0
-margin_top = 10.0
-margin_right = 1070.0
-margin_bottom = 225.0
+margin_left = 869.0
+margin_top = 5.0
+margin_right = 1090.0
+margin_bottom = 226.0
 color = Color( 0.470588, 0.541176, 0.937255, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Speaker" type="Control" parent="."]
-margin_left = 875.03
-margin_top = 2.42139
-margin_right = 1075.03
-margin_bottom = 241.421
+margin_left = 876.0
+margin_top = 2.0
+margin_right = 1075.0
+margin_bottom = 236.0
 
 [node name="Icon" type="TextureRect" parent="Speaker"]
-margin_left = -2.45544
-margin_top = 6.13867
-margin_right = 197.545
-margin_bottom = 206.139
-rect_min_size = Vector2( 200, 200 )
+margin_left = 6.36511
+margin_top = -1.19507
+margin_right = 202.365
+margin_bottom = 189.805
+rect_min_size = Vector2( 175, 175 )
 texture = ExtResource( 3 )
 expand = true
-stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Name" type="Label" parent="Speaker"]
-margin_top = 187.064
-margin_right = 200.0
-margin_bottom = 222.064
+anchor_top = -0.00385695
+anchor_bottom = -0.00385695
+margin_left = 6.41516
+margin_top = 183.39
+margin_right = 207.415
+margin_bottom = 222.39
 rect_min_size = Vector2( 150, 0 )
 size_flags_vertical = 8
 text = "Speaker 1"
@@ -101,4 +103,12 @@ __meta__ = {
 }
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="Label" type="Label" parent="."]
+anchor_bottom = 0.076
+margin_left = 579.205
+margin_top = 192.377
+margin_right = 858.205
+margin_bottom = 217.897
+text = "Press Space to Continue"
 [connection signal="tween_completed" from="Tween" to="." method="tween_completed"]
