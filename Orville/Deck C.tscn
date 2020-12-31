@@ -14,7 +14,7 @@
 [ext_resource path="res://Deck C.gd" type="Script" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15.6259, 4.57886 )
+extents = Vector2( 15.6259, 1.4707 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 28.5782, 47.978 )
@@ -36,17 +36,17 @@ texture = ExtResource( 2 )
 [node name="Portal" parent="." instance=ExtResource( 3 )]
 position = Vector2( -1.34735, -19.1955 )
 next_scene_path = "res://Quarters.tscn"
-player_spawn_location = Vector2( 43, 47 )
+player_spawn_location = Vector2( 45, 53 )
 
 [node name="CollisionShape2D" parent="Portal" index="0"]
-position = Vector2( 295.132, 151.453 )
+position = Vector2( 295.106, 155.938 )
 shape = SubResource( 1 )
 
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( 248, 262 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -134.655, -134.671 )
+position = Vector2( -366.04, -123.884 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -491.364, -148.526 )
@@ -110,7 +110,7 @@ position = Vector2( -182.865, -160.046 )
 scale = Vector2( 1.2, 1.2 )
 npc_name = "Tom"
 npc_texture = ExtResource( 8 )
-dialogs = [ "Hey ____, does something seem off to you?" ]
+dialogs = [ "Hey %p , does something seem off to you?" ]
 
 [node name="NPC2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -459.63, 253.791 )
