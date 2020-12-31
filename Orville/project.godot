@@ -109,5 +109,4 @@ Inventory={
 
 [rendering]
 
-environment/default_clear_color=Color( 0.0392157, 0.0392157, 0.0392157, 1 )
 environment/default_environment="res://default_env.tres"
