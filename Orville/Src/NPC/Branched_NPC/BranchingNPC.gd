@@ -2,10 +2,10 @@ extends KinematicBody2D
 
 export var npc_name = ""
 export (Texture) var npc_texture
-export (Array, String) var dialogs
 export var trigger_talk = true
+export (String) var condition_item
 
-export (Array, Array, String) var all_dialogs
+export (Array, Array, String) var branch_dialogs
 
 onready var sprite = $Sprite
 onready var anim_player = $AnimationPlayer
@@ -27,24 +27,24 @@ func set_path(new_path):
 
 
 func set_dialogs():
-	if dialogs.size() == 0:
+	if branch_dialogs.size() == 0:
 		return
-	if dialog_index >= dialogs.size() -1:
-		return
-	dialog_index += 1
+	#if dialog_index >= branch_dialogs.size() -1:
+	#	return
 	var speakers = []
-	for i in dialogs.size():
+	for i in branch_dialogs[dialog_index].size():
 		speakers.append(npc_name)
 	dialog_player.speakers = speakers
-	dialog_player.dialogs = dialogs
+	dialog_player.dialogs = branch_dialogs[dialog_index]
+	print(branch_dialogs[dialog_index])
 
 
 func _ready():
-	if Data.save_found:
-		if Data.npc_dialog_index.has(npc_name):
-			dialog_index = Data.npc_dialog_index[npc_name]
-	else:
-		set_dialogs()
+#	if Data.save_found:
+#		if Data.npc_dialog_index.has(npc_name):
+#			dialog_index = Data.npc_dialog_index[npc_name]
+#	else:
+#		set_dialogs()
 #	var speakers = []
 #	for i in dialogs.size():
 #		speakers.append(npc_name)
@@ -153,6 +153,11 @@ func _input(event):
 	if event.is_action_pressed("talk") and player_around:
 		if npc_name == "LeMarr" and not Data.can_talk_with["LeMarr"]:
 			return
+		if  condition_item in Data.inventory:
+			dialog_index = 1
+		else:
+			dialog_index = 0
+		set_dialogs()
 		$HUD/DialogPlayer.play()
 
 

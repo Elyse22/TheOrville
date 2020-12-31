@@ -77,7 +77,7 @@ func update_hair():
 		get_node("Character/Hair").visible = false
 		Data.character.hair_style = ""
 	else:
-		
+
 		Data.character.hair_style = "res://Assets/AllCharacters/MainCharacter/Hair_" + str(hair.index) + ".png"
 		get_node("Character/Hair").visible = true
 		get_node("Character/Hair").texture = load(Data.character.hair_style)

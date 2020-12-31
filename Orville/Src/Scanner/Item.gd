@@ -94,4 +94,4 @@ func check():
 		for item in Data.inventory:
 			if item[0] == "Wrench":
 				Data.can_talk_with["LeMarr"] = true
-		
+
