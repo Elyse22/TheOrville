@@ -17,6 +17,7 @@ var allow_portal_travel = false
 var player_name = ""
 
 var frame_count = 0
+var direction = ""
 
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
@@ -26,14 +27,24 @@ func _physics_process(delta):
 
 	if input_vector.x > 0:
 		anim_player.play("walk_right")
+		direction = "right"
 	elif input_vector.x < 0:
 		anim_player.play("walk_left")
+		direction = "left"
 	elif input_vector.y > 0:
 		anim_player.play("walk_down")
+		direction = "down"
 	elif input_vector.y < 0:
 		anim_player.play("walk_up")
+		direction = "up"
 	else:
 		anim_player.stop()
+		match direction:
+			"right": anim_player.play("idle_right")
+			"left" : anim_player.play("idle_left")
+			"up" : anim_player.play("idle_up")
+			"down" : anim_player.play("idle_down")
+			_ : anim_player.play("idle_down")
 
 	if input_vector != Vector2.ZERO:
 		animationTree.set("parameters/Idle/blend_position", input_vector)

@@ -214,6 +214,7 @@ states/Run/node = SubResource( 18 )
 states/Run/position = Vector2( 716, 101 )
 transitions = [ "Idle", "Run", SubResource( 19 ), "Run", "Idle", SubResource( 20 ) ]
 start_node = "Idle"
+graph_offset = Vector2( 115, -18 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
@@ -808,58 +809,67 @@ position = Vector2( 0, -19.2821 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 6 )
 hframes = 13
+frame = 1
 
 [node name="Skin" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 9 )
 hframes = 13
+frame = 1
 
 [node name="Shirt" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 4 )
 hframes = 13
+frame = 1
 
 [node name="Eye" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 11 )
 hframes = 13
+frame = 1
 
 [node name="Pupil" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 3 )
 hframes = 13
+frame = 1
 
 [node name="EyeBrows" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 10 )
 hframes = 13
+frame = 1
 
 [node name="Mustache" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 5 )
 hframes = 13
+frame = 1
 
 [node name="Beard" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 7 )
 hframes = 13
+frame = 1
 
 [node name="Hair" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 8 )
 hframes = 13
+frame = 1
 
 [node name="OnHand" type="Sprite" parent="Character"]
 visible = false
-position = Vector2( 0, -19.282 )
+position = Vector2( 1.85813, 10.7029 )
 rotation = 3.14159
 texture = ExtResource( 13 )
 
