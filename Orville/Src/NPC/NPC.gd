@@ -27,9 +27,9 @@ func set_path(new_path):
 func set_dialogs():
 	if dialogs.size() == 0:
 		return
-	if dialog_index >= dialogs.size() -1:
-		return
-	dialog_index += 1
+#	if dialog_index >= dialogs.size() -1:
+#		return
+#	dialog_index += 1
 	var speakers = []
 	for i in dialogs.size():
 		speakers.append(npc_name)
