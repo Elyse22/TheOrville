@@ -15,10 +15,10 @@ position = Vector2( 297.132, 237.551 )
 texture = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -52.5003, 91.1514 )
+position = Vector2( 353.427, 232.235 )
 
 [node name="Portal3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 158.625, -65.7712 )
+position = Vector2( 143.746, -60.4187 )
 next_scene_path = "res://The Bridge.tscn"
 player_spawn_location = Vector2( 13, 118 )
 
@@ -30,6 +30,6 @@ polygon = PoolVector2Array( 47.4362, 55.9893, 443.08, 56.2813, 443.372, 112.343,
 [node name="NPC2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 396.421, 221.942 )
 scale = Vector2( 1.15, 1.15 )
-npc_name = "Brook"
+npc_name = "Brooke"
 npc_texture = ExtResource( 6 )
 dialogs = [ "Is this a dream? Things seem different around here." ]

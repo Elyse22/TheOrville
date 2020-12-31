@@ -1,7 +1,8 @@
 extends KinematicBody2D
+class_name Player
 
 const ACCELERATION = 500
-const MAX_SPEED = 80
+const MAX_SPEED = 75
 const FRICTION = 500
 
 var velocity = Vector2.ZERO
@@ -11,8 +12,11 @@ onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var anim_player = $CustomAnimations
 
+var allow_portal_travel = false
+
 var player_name = ""
 
+var frame_count = 0
 
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
@@ -41,11 +45,21 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 
 	velocity = move_and_slide(velocity) 
+	
+	frame_count += 1
+	if frame_count == 3:
+		allow_portal_travel = true
 
 
 func _ready():
 	load_custom_character()
-	#self.global_position = Global.player_initial_map_position
+	self.global_position = Global.player_initial_map_position
+	if Global.in_lift:
+		print("Lift")
+		Global.in_lift = false
+		for lift in get_tree().get_nodes_in_group("lift"):
+			print("Going to lift at " + str(lift.global_position))
+			self.global_position = lift.global_position
 
 
 func load_custom_character():
