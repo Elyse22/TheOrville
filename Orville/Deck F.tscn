@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Sets/Deck F.png" type="Texture" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Lift.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Deck F.gd" type="Script" id=10]
+[ext_resource path="res://Src/NPC/Branched_NPC/BranchingNPC.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/AllCharacters/Characters/GrayHairGuy.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28.5782, 47.978 )
@@ -99,5 +101,11 @@ margin_top = 90.0
 margin_right = 400.0
 margin_bottom = 131.0
 text = "DECK F"
+
+[node name="BranchingNPC" parent="." instance=ExtResource( 11 )]
+position = Vector2( 90.6279, 104.537 )
+npc_name = "GreyHairGuy"
+npc_texture = ExtResource( 12 )
+branch_dialogs = [ [ "branch 1" ], [ "branch 2" ] ]
 [connection signal="body_entered" from="Lift" to="Lift" method="player_entered"]
 [connection signal="body_exited" from="Lift" to="Lift" method="player_exited"]

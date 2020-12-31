@@ -14,7 +14,7 @@ func check_sound_text():
 		$CenterContainer/VBoxContainer/Sound.text = "SOUND: ON"
 	else:
 		$CenterContainer/VBoxContainer/Sound.text = "SOUND: OFF"
-	
+
 
 func toggle_sound():
 	Data.sound = !Data.sound
