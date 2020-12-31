@@ -96,18 +96,18 @@ func handle_animation():
 		anim_player.play("move_left")
 	else:
 		if anim_player.current_animation == "move_right":
-			anim_player.current_animation = ("idle_right")
+			anim_player.play("idle_right")
 		elif anim_player.current_animation == "move_left":
-			anim_player.current_animation = ("idle_left")
+			anim_player.play("idle_left")
 	if velocity.y > 0:
-		$AnimationPlayer.play("move_down")
+		anim_player.play("move_down")
 	elif velocity.y < 0:
-		$AnimationPlayer.play("move_up")
+		anim_player.play("move_up")
 	else:
 		if anim_player.current_animation == "move_down":
-			anim_player.current_animation = ("idle_down")
+			anim_player.play("idle_down")
 		elif anim_player.current_animation == "move_up":
-			anim_player.current_animation = ("idle_up")
+			anim_player.play("idle_up")
 
 
 func walk(direction):
@@ -163,4 +163,4 @@ func dialog_player_stopped():
 
 
 func _on_MoveRandom_timeout():
-	set_path([position + Vector2(30, 0).rotated(TAU * randf())])
+	set_path([position + Vector2(20, 0).rotated(TAU * randf())])

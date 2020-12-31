@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sets/Deck F.png" type="Texture" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Deck F.gd" type="Script" id=10]
 [ext_resource path="res://Src/NPC/Branched_NPC/BranchingNPC.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/AllCharacters/Characters/GrayHairGuy.png" type="Texture" id=12]
 [ext_resource path="res://Src/Scanner/Item.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Wrench.png" type="Texture" id=14]
 
