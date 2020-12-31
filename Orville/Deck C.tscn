@@ -117,7 +117,7 @@ position = Vector2( -453.928, 278.226 )
 scale = Vector2( 1.15, 1.2 )
 npc_name = "Kit"
 npc_texture = ExtResource( 9 )
-dialogs = [ "Everything is really... squarey, don't you think?", "" ]
+dialogs = [ "Everything is really... squarey, don't you think?" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
