@@ -13,7 +13,7 @@ font_data = ExtResource( 4 )
 [sub_resource type="Animation" id=2]
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("../NPC/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -28,7 +28,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("../NPC/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -43,7 +43,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=4]
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("../NPC/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -58,7 +58,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=5]
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("../NPC/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -74,7 +74,7 @@ tracks/0/keys = {
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../NPC/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -90,7 +90,7 @@ tracks/0/keys = {
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../NPC/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -106,7 +106,7 @@ tracks/0/keys = {
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../NPC/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -122,7 +122,7 @@ tracks/0/keys = {
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../NPC/Sprite:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -143,9 +143,6 @@ extents = Vector2( 17.1055, 18.4912 )
 [node name="NPC" type="KinematicBody2D"]
 position = Vector2( -0.527039, -0.790558 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Popup" type="Label" parent="."]
 margin_left = -46.0
@@ -184,6 +181,10 @@ shape = SubResource( 11 )
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 3 )]
+
+[node name="MoveRandom" type="Timer" parent="."]
+autostart = true
 [connection signal="body_entered" from="Area2D" to="." method="player_around"]
 [connection signal="body_exited" from="Area2D" to="." method="player_not_around"]
 [connection signal="stopped" from="HUD/DialogPlayer" to="." method="dialog_player_stopped"]
+[connection signal="timeout" from="MoveRandom" to="." method="_on_MoveRandom_timeout"]

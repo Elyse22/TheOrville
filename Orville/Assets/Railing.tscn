@@ -7,7 +7,7 @@ a = Vector2( -12.2657, 27.3188 )
 b = Vector2( -9.13731, -1.31969 )
 
 [sub_resource type="SegmentShape2D" id=2]
-a = Vector2( -12.4867, -1.54135 )
+a = Vector2( -13.418, -0.329981 )
 b = Vector2( -1.82013, 23.9823 )
 
 [sub_resource type="SegmentShape2D" id=3]
@@ -15,24 +15,24 @@ a = Vector2( -20.16, -4.69795 )
 b = Vector2( 0.634888, 9.10399 )
 
 [sub_resource type="SegmentShape2D" id=4]
-a = Vector2( -24.4283, 8.90055 )
-b = Vector2( -0.873024, 9.63666 )
+a = Vector2( -24.3149, 9.66275 )
+b = Vector2( -1.61722, 10.8748 )
 
 [sub_resource type="SegmentShape2D" id=5]
-a = Vector2( 1.60564, -0.26157 )
+a = Vector2( 1.54406, 0.567871 )
 b = Vector2( -17.9261, 10.4053 )
 
 [sub_resource type="SegmentShape2D" id=6]
-a = Vector2( 1.51995, 0.128029 )
+a = Vector2( 2.03853, -0.454052 )
 b = Vector2( -15.5945, 22.7632 )
 
 [sub_resource type="SegmentShape2D" id=7]
-a = Vector2( -0.448635, -0.835915 )
+a = Vector2( -0.188225, -0.139968 )
 b = Vector2( -1.55279, 23.2715 )
 
 [sub_resource type="SegmentShape2D" id=8]
-a = Vector2( -2.30954, 2.81707 )
-b = Vector2( 4.50436, 18.9754 )
+a = Vector2( -2.48746, 3.35514 )
+b = Vector2( 4.01334, 19.7724 )
 
 [sub_resource type="SegmentShape2D" id=9]
 a = Vector2( -0.766037, 0.528992 )
@@ -57,7 +57,7 @@ position = Vector2( 45.4844, -29.1168 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2( 32.7309, -39.026 )
+position = Vector2( 32.2902, -37.7038 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
@@ -65,7 +65,7 @@ position = Vector2( 14.7321, -52.9926 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
-position = Vector2( -9.8047, -44.0079 )
+position = Vector2( -10.0251, -44.0079 )
 shape = SubResource( 5 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
@@ -77,7 +77,7 @@ position = Vector2( -44.2125, -11.7877 )
 shape = SubResource( 7 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
-position = Vector2( -44.0079, 7.37856 )
+position = Vector2( -43.4558, 7.19453 )
 shape = SubResource( 8 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
