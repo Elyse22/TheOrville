@@ -217,7 +217,7 @@ start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=22]
 
-[sub_resource type="RectangleShape2D" id=28]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 6.10882, 5.96095 )
 
 [sub_resource type="Animation" id=24]
@@ -773,7 +773,7 @@ script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
-position = Vector2( 0, -12 )
+position = Vector2( 0, -19.282 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 2 )
 hframes = 13
@@ -796,10 +796,12 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Run/blend_position = Vector2( 0, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -0.661102, 0.330551 )
 current = true
 zoom = Vector2( 0.42, 0.42 )
 
 [node name="Character" type="Node2D" parent="."]
+position = Vector2( 0.550903, 0 )
 
 [node name="Base" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.2821 )
@@ -808,71 +810,63 @@ texture = ExtResource( 6 )
 hframes = 13
 
 [node name="Skin" type="Sprite" parent="Character"]
-position = Vector2( 0.110184, -19.833 )
+position = Vector2( 0, -19.282 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 9 )
-hframes = 12
-frame = 1
+hframes = 13
 
 [node name="Shirt" type="Sprite" parent="Character"]
-position = Vector2( 0, -19.833 )
+position = Vector2( 0, -19.282 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 4 )
 hframes = 13
-frame = 1
 
 [node name="Eye" type="Sprite" parent="Character"]
-visible = false
+position = Vector2( 0, -19.282 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 11 )
-hframes = 12
-frame = 1
+hframes = 13
 
 [node name="Pupil" type="Sprite" parent="Character"]
-visible = false
+position = Vector2( 0, -19.282 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 3 )
-hframes = 12
-frame = 1
+hframes = 13
 
 [node name="EyeBrows" type="Sprite" parent="Character"]
-visible = false
+position = Vector2( 0, -19.282 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 10 )
-hframes = 12
-frame = 1
+hframes = 13
 
 [node name="Mustache" type="Sprite" parent="Character"]
-visible = false
+position = Vector2( 0, -19.282 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 5 )
-hframes = 12
-frame = 1
+hframes = 13
 
 [node name="Beard" type="Sprite" parent="Character"]
-visible = false
+position = Vector2( 0, -19.282 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 7 )
-hframes = 12
-frame = 1
+hframes = 13
 
 [node name="Hair" type="Sprite" parent="Character"]
-visible = false
+position = Vector2( 0, -19.282 )
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 8 )
-hframes = 12
-frame = 1
+hframes = 13
 
 [node name="OnHand" type="Sprite" parent="Character"]
 visible = false
-position = Vector2( 1.85813, 10.7029 )
+position = Vector2( 0, -19.282 )
 rotation = 3.14159
 texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.0296253, -5.57855 )
+position = Vector2( 0.190742, -3.2647 )
 scale = Vector2( 1.32859, 0.805323 )
-shape = SubResource( 28 )
+shape = SubResource( 23 )
 
 [node name="CustomAnimations" type="AnimationPlayer" parent="."]
 anims/walk_down = SubResource( 24 )
