@@ -5,6 +5,8 @@ export (Texture) var npc_texture
 export (Array, String) var dialogs
 export var trigger_talk = true
 
+export (Array, Array, String) var all_dialogs
+
 onready var sprite = $Sprite
 onready var anim_player = $AnimationPlayer
 onready var dialog_player = $HUD/DialogPlayer
