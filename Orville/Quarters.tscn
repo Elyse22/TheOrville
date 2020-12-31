@@ -34,13 +34,12 @@ position = Vector2( 172.573, 101.699 )
 texture = ExtResource( 3 )
 
 [node name="Portal" parent="." instance=ExtResource( 16 )]
-position = Vector2( -249, -115 )
+position = Vector2( 45.1916, 41.2302 )
 collision_mask = 0
 next_scene_path = "res://Deck C.tscn"
-player_spawn_location = Vector2( 45, -127 )
+player_spawn_location = Vector2( 295, 135 )
 
 [node name="CollisionShape2D" parent="Portal" index="0"]
-position = Vector2( 295.642, 151.441 )
 shape = SubResource( 1 )
 
 [node name="YSort" type="YSort" parent="."]

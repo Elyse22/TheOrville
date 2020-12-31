@@ -11,9 +11,9 @@ func _on_Button_pressed():
 
 func check_sound_text():
 	if Data.sound:
-		$CenterContainer/VBoxContainer/Sound.text = "SOUND: ON"
+		$CenterContainer/VBoxContainer/Label.text = "SOUND: ON"
 	else:
-		$CenterContainer/VBoxContainer/Sound.text = "SOUND: OFF"
+		$CenterContainer/VBoxContainer/Label.text = "SOUND: OFF"
 
 
 func toggle_sound():

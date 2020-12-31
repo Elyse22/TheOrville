@@ -67,12 +67,17 @@ npc_name = "Kelly"
 npc_texture = ExtResource( 7 )
 dialogs = [ "Commander _________, how are you? ", "Silly question I guess, considering the current circumstances... " ]
 
-[node name="Lift" type="Area2D" parent="."]
+[node name="Lift" type="Area2D" parent="." groups=[
+"lift",
+]]
+position = Vector2( -128.693, 99.702 )
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lift"]
-position = Vector2( -129.431, 79.511 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="HUD" type="CanvasLayer" parent="Lift"]
 
