@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sets/Deck F.png" type="Texture" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Deck F.gd" type="Script" id=10]
 [ext_resource path="res://Src/NPC/Branched_NPC/BranchingNPC.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/AllCharacters/Characters/GrayHairGuy.png" type="Texture" id=12]
+[ext_resource path="res://Src/Scanner/Item.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Wrench.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28.5782, 47.978 )
@@ -106,5 +109,11 @@ position = Vector2( 548.39, -60.4798 )
 npc_name = "LeMarr"
 npc_texture = ExtResource( 6 )
 branch_dialogs = [ [ "branch 1" ], [ "branch 2" ] ]
+dialog_index = 0
+
+[node name="Item" parent="." instance=ExtResource( 13 )]
+position = Vector2( 184.281, 103.73 )
+item_name = "Wrench"
+item_sprite = ExtResource( 14 )
 [connection signal="body_entered" from="Lift" to="Lift" method="player_entered"]
 [connection signal="body_exited" from="Lift" to="Lift" method="player_exited"]

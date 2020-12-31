@@ -153,11 +153,15 @@ func _input(event):
 	if event.is_action_pressed("talk") and player_around:
 		if npc_name == "LeMarr" and not Data.can_talk_with["LeMarr"]:
 			return
-		if  condition_item in Data.inventory:
-			dialog_index = 1
-		else:
-			dialog_index = 0
+		var check = true
+		for item in Data.inventory:
+			if item[0] == condition_item:
+				dialog_index = 1
+				check = false
+			elif check:
+				dialog_index = 0
 		set_dialogs()
+		print(dialog_index)
 		$HUD/DialogPlayer.play()
 
 

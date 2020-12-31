@@ -7,6 +7,7 @@ func _ready():
 	Data.current_scene = filename
 
 
-func _process(_delta):
-	$IronCoil.visible = Data.spawn_wrench_iron_coil
-	$Wrench.visible = Data.spawn_wrench_iron_coil
+#func _process(_delta):
+#	if not get_node("IronCoil") == null and not get_node("Wrench") == null:
+#		$IronCoil.visible = Data.spawn_wrench_iron_coil
+#		$Wrench.visible = Data.spawn_wrench_iron_coil
