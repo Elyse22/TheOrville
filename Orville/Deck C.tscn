@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sets/hallway.png" type="Texture" id=2]
@@ -15,6 +15,10 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.6259, 1.4707 )
+
+[sub_resource type="StreamTexture" id=5]
+resource_local_to_scene = true
+load_path = "res://.import/EdMercer.png-8c34d795cc71c594f79acf0016fad5e2.stex"
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 28.5782, 47.978 )
@@ -111,6 +115,10 @@ npc_name = "Tom"
 npc_texture = ExtResource( 8 )
 dialogs = [ "Hey %p , does something seem off to you?" ]
 
+[node name="Sprite" parent="YSort/NPC" index="1"]
+texture = SubResource( 5 )
+frame = 7
+
 [node name="NPC2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -459.63, 253.791 )
 scale = Vector2( 1.15, 1.2 )
@@ -128,7 +136,7 @@ polygon = PoolVector2Array( -3.00046, 82.9997, 670.999, 83.9997, 671.999, 140, -
 [node name="Lift" type="Area2D" parent="." groups=[
 "lift",
 ]]
-position = Vector2( -123.657, 319.544 )
+position = Vector2( -123.376, 325.437 )
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
@@ -173,3 +181,5 @@ text = "DECK F"
 [connection signal="body_exited" from="Lift" to="Lift" method="player_exited"]
 
 [editable path="Portal"]
+
+[editable path="YSort/NPC"]

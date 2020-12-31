@@ -83,7 +83,7 @@ polygon = PoolVector2Array( 22.1693, 70.2903, 1.80573, 71.3523, 0.969391, 300.48
 [node name="Lift" type="Area2D" parent="." groups=[
 "lift",
 ]]
-position = Vector2( -100.185, 43.2359 )
+position = Vector2( -101.293, 49.5051 )
 script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true

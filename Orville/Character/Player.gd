@@ -18,6 +18,8 @@ var player_name = ""
 
 var frame_count = 0
 
+var direction = "down"
+
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -25,24 +27,24 @@ func _physics_process(delta):
 	input_vector = input_vector.normalized()
 
 	if input_vector.x > 0:
-		anim_player.play("walk_right")
+		direction = "right"
 	elif input_vector.x < 0:
-		anim_player.play("walk_left")
+		direction = "left"
 	elif input_vector.y > 0:
-		anim_player.play("walk_down")
+		direction = "down"
 	elif input_vector.y < 0:
-		anim_player.play("walk_up")
-	else:
-		anim_player.stop()
-
+		direction = "up"
+	
 	if input_vector != Vector2.ZERO:
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		animationTree.set("parameters/Run/blend_position", input_vector)
 		animationState.travel("Run")
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
+		anim_player.play("walk_" + direction)
 	else:
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+		anim_player.play("idle_" + direction)
 
 	velocity = move_and_slide(velocity)
 
