@@ -46,7 +46,7 @@ polygon = PoolVector2Array( 429.437, -193.157, 589.504, -192.749, 574.836, -198.
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( -71.9063, -12.7584 )
+position = Vector2( 487.463, -90.9723 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 499.154, 9.98354 )
@@ -110,10 +110,9 @@ margin_bottom = 131.0
 text = "DECK F"
 
 [node name="BranchingNPC" parent="." instance=ExtResource( 11 )]
-position = Vector2( 90.6279, 104.537 )
-npc_name = "GreyHairGuy"
-npc_texture = ExtResource( 12 )
-condition_item = "Wrench"
+position = Vector2( 548.39, -60.4798 )
+npc_name = "LeMarr"
+npc_texture = ExtResource( 6 )
 branch_dialogs = [ [ "branch 1" ], [ "branch 2" ] ]
 dialog_index = 0
 
