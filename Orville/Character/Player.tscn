@@ -331,7 +331,7 @@ tracks/8/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=31]
+[sub_resource type="Animation" id=25]
 resource_name = "Idle Left"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Character/Base:frame")
@@ -442,7 +442,7 @@ tracks/8/keys = {
 "values": [ 11 ]
 }
 
-[sub_resource type="Animation" id=30]
+[sub_resource type="Animation" id=26]
 resource_name = "Idle Right"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Character/Base:frame")
@@ -553,7 +553,7 @@ tracks/8/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=27]
 resource_name = "Idle Up"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Character/Base:frame")
@@ -664,7 +664,7 @@ tracks/8/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=32]
+[sub_resource type="Animation" id=28]
 resource_name = "Sit Face Down"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Character/Base:frame")
@@ -775,7 +775,7 @@ tracks/8/keys = {
 "values": [ 12 ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=29]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -911,7 +911,7 @@ tracks/10/keys = {
 "values": [ 180.0, 186.11 ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=30]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -1047,7 +1047,7 @@ tracks/10/keys = {
 "values": [ Vector2( -9.96899, 11.8849 ), Vector2( 0.459448, 11.9683 ) ]
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=31]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -1183,7 +1183,7 @@ tracks/10/keys = {
 "values": [ Vector2( 10.5357, 12.4987 ), Vector2( -0.777988, 12.4103 ) ]
 }
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=32]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -1360,63 +1360,90 @@ position = Vector2( 0, -19.2821 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 6 )
 hframes = 13
+<<<<<<< HEAD
 frame = 1
+=======
+>>>>>>> elyse
 
 [node name="Skin" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 9 )
 hframes = 13
+<<<<<<< HEAD
 frame = 1
+=======
+>>>>>>> elyse
 
 [node name="Shirt" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 4 )
 hframes = 13
+<<<<<<< HEAD
 frame = 1
+=======
+>>>>>>> elyse
 
 [node name="Eye" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 11 )
 hframes = 13
+<<<<<<< HEAD
 frame = 1
+=======
+>>>>>>> elyse
 
 [node name="Pupil" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 3 )
 hframes = 13
+<<<<<<< HEAD
 frame = 1
+=======
+>>>>>>> elyse
 
 [node name="EyeBrows" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 10 )
 hframes = 13
+<<<<<<< HEAD
 frame = 1
+=======
+>>>>>>> elyse
 
 [node name="Mustache" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 5 )
 hframes = 13
+<<<<<<< HEAD
 frame = 1
+=======
+>>>>>>> elyse
 
 [node name="Beard" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 7 )
 hframes = 13
+<<<<<<< HEAD
 frame = 1
+=======
+>>>>>>> elyse
 
 [node name="Hair" type="Sprite" parent="Character"]
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 8 )
 hframes = 13
+<<<<<<< HEAD
 frame = 1
+=======
+>>>>>>> elyse
 
 [node name="OnHand" type="Sprite" parent="Character"]
 visible = false
@@ -1431,14 +1458,14 @@ shape = SubResource( 23 )
 
 [node name="CustomAnimations" type="AnimationPlayer" parent="."]
 "anims/Idle Down" = SubResource( 24 )
-"anims/Idle Left" = SubResource( 31 )
-"anims/Idle Right" = SubResource( 30 )
-"anims/Idle Up" = SubResource( 29 )
-"anims/Sit Face Down" = SubResource( 32 )
-anims/walk_down = SubResource( 25 )
-anims/walk_left = SubResource( 26 )
-anims/walk_right = SubResource( 27 )
-anims/walk_up = SubResource( 28 )
+"anims/Idle Left" = SubResource( 25 )
+"anims/Idle Right" = SubResource( 26 )
+"anims/Idle Up" = SubResource( 27 )
+"anims/Sit Face Down" = SubResource( 28 )
+anims/walk_down = SubResource( 29 )
+anims/walk_left = SubResource( 30 )
+anims/walk_right = SubResource( 31 )
+anims/walk_up = SubResource( 32 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
