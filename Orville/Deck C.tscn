@@ -49,7 +49,7 @@ shape = SubResource( 1 )
 position = Vector2( 248, 262 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -289.198, -48.0946 )
+position = Vector2( -134.461, -148.094 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -491.364, -148.526 )
