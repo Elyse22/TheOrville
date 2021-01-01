@@ -45,7 +45,7 @@ shape = SubResource( 1 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 47.5184, 79.2265 )
+position = Vector2( 31.587, 68.9659 )
 
 [node name="Plant 1" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 227.983, 44.0389 )
