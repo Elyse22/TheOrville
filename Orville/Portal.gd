@@ -4,7 +4,7 @@ extends Area2D
 
 export(String, FILE) var next_scene_path = ""
 export(Vector2) var player_spawn_location = Vector2.ZERO
-export(int) var player_direction = 1
+export(String) var player_direction = "down"
 
 
 
@@ -20,7 +20,7 @@ func _on_Portal_body_entered(body):
 	if body is Player:
 		if not body.allow_portal_travel:
 			return
-		Global.player_facing_direction = player.direction
+		Global.player_facing_direction = player_direction
 		Global.player_initial_map_position = player_spawn_location
 		if get_tree().change_scene(next_scene_path) != OK:
 			# error handling here

@@ -65,13 +65,13 @@ func _physics_process(delta):
 func _ready():
 	load_custom_character()
 	if Global.player_initial_map_position:
-		self.global_position = Global.player_initial_map_position
+		global_position = Global.player_initial_map_position
+	if Global.player_initial_map_position:
+		direction = Global.player_facing_direction
 	if Global.in_lift:
-		print("Lift")
 		Global.in_lift = false
 		for lift in get_tree().get_nodes_in_group("lift"):
-			print("Going to lift at " + str(lift.global_position))
-			self.global_position = lift.global_position
+			global_position = lift.global_position
 
 
 func load_custom_character():

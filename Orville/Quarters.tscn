@@ -38,6 +38,7 @@ position = Vector2( 45.1916, 41.2302 )
 collision_mask = 0
 next_scene_path = "res://Deck C.tscn"
 player_spawn_location = Vector2( 295, 135 )
+player_direction = "up"
 
 [node name="CollisionShape2D" parent="Portal" index="0"]
 shape = SubResource( 1 )
