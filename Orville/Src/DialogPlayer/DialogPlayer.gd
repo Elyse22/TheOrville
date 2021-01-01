@@ -18,6 +18,7 @@ func play():
 
 func next_dialog():
 	if index >= dialogs.size() - 1:
+		stop()
 		return
 	if dialogs[index+1] == "":
 		return
