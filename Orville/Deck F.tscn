@@ -74,7 +74,6 @@ position = Vector2( -128.693, 103.73 )
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lift"]
-position = Vector2( -129.431, 79.511 )
 shape = SubResource( 1 )
 
 [node name="HUD" type="CanvasLayer" parent="Lift"]

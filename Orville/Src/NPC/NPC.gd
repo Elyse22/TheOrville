@@ -55,8 +55,10 @@ func _ready():
 
 
 func _process(delta):
-	if path and path.size():
+	if $MoveCooldown.time_left == 0.0 and path and path.size():
 		move_path(delta)
+	else:
+		velocity = Vector2.ZERO
 	handle_animation()
 
 
@@ -80,14 +82,18 @@ func _process(delta):
 func move_path(delta):
 	var point = path[0]
 	
-	if position.distance_squared_to(point) < 10.0:
+	if position.distance_squared_to(point) < 100.0:
 		path.remove(0)
+		velocity = Vector2.ZERO
 	else:
 		walk((point - position).normalized())
 
 func _physics_process(_delta):
 	if walking:
 		velocity = move_and_slide(velocity, Vector2.UP)
+		if get_slide_count():
+			velocity = Vector2.ZERO
+			path.remove(0)
 
 func handle_animation():
 	if velocity.x > 0:
@@ -126,6 +132,7 @@ func player_around(body):
 		return
 	if body.name == "Player":
 		player_around = true
+		$MoveCooldown.start()
 		$Popup.show()
 
 
@@ -137,6 +144,7 @@ func player_not_around(body):
 	if body.name == "Player":
 		player_around = false
 		$Popup.hide()
+		$MoveCooldown.stop()
 		$HUD/DialogPlayer.stop()
 
 
@@ -163,4 +171,5 @@ func dialog_player_stopped():
 
 
 func _on_MoveRandom_timeout():
-	set_path([position + Vector2(20, 0).rotated(TAU * randf())])
+	var direction = Vector2(40, 0).rotated(PI / 2.0 * floor(rand_range(0.0, 4.0)))
+	set_path([position + direction])
