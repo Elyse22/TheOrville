@@ -26,7 +26,7 @@ func next_dialog():
 		return
 	index += 1
 	
-	if speakers[index] and speakers[index].length():
+	if speakers.size() and speakers[index] and speakers[index].length():
 		$Speaker/Name.text = speakers[index]
 		
 		var file_name = str(speakers[index]).replace(" ", "").to_lower()
