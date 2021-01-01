@@ -40,18 +40,17 @@ func set_dialogs():
 
 
 func _ready():
+	set_dialogs()
 	if Data.save_found:
 		if Data.npc_dialog_index.has(npc_name):
 			dialog_index = Data.npc_dialog_index[npc_name]
-	else:
-		set_dialogs()
 #	var speakers = []
 #	for i in dialogs.size():
 #		speakers.append(npc_name)
 #	dialog_player.speakers = speakers
 #	dialog_player.dialogs = dialogs
 	$Popup.hide()
-	$HUD/DialogPlayer.stop()
+	$HUD/DialogPlayer.hide()
 	if npc_texture:
 		sprite.texture = npc_texture
 	
