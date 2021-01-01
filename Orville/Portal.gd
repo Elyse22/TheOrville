@@ -12,7 +12,7 @@ func _get_configuration_warning() -> String:
 		return "next_scene_path must be set for the portal to work"
 	else:
 		return ""
-		 
+
 
 
 func _on_Portal_body_entered(body):
