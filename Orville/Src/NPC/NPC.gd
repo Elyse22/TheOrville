@@ -83,7 +83,7 @@ func _process(delta):
 
 func move_path(delta):
 	var point = path[0]
-	
+
 	if position.distance_squared_to(point) < 100.0:
 		path.remove(0)
 		velocity = Vector2.ZERO
@@ -102,7 +102,7 @@ func handle_animation():
 	if velocity.length_squared() < 1.0:
 		anim_player.current_animation = anim_player.current_animation.replace("move_", "idle_")
 		return
-	
+
 	var angle = rad2deg(velocity.angle())
 	if angle >= -30 and angle <= 30:
 		anim_player.play("move_right")
