@@ -8,7 +8,6 @@ var index = -1
 
 func _ready():
 	play()
-	print("A")
 
 
 func play():
@@ -26,7 +25,6 @@ func next_dialog():
 		return
 	index += 1
 	
-	print(speakers.size())
 	if speakers.size() and speakers[index] and speakers[index].length():
 		$Overlay/Container/Speaker/Name.text = speakers[index]
 		
