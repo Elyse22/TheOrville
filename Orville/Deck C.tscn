@@ -116,12 +116,8 @@ npc_texture = ExtResource( 8 )
 dialogs = [ "Hey %p , does something seem off to you?" ]
 
 [node name="Sprite" parent="YSort/NPC" index="1"]
-<<<<<<< HEAD
 texture = SubResource( 2 )
-frame = 7
-=======
 frame = 10
->>>>>>> elyse
 
 [node name="NPC2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -459.63, 253.791 )
