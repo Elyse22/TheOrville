@@ -43,3 +43,6 @@ polygon = PoolVector2Array( 111.016, 19.7226, 159.885, 20.0299, 160.5, 57.8348, 
 position = Vector2( 137.816, 21.9907 )
 next_scene_path = "res://Deck B.tscn"
 player_spawn_location = Vector2( 518, 81 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 138.454, 35.0106 )

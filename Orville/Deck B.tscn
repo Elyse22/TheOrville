@@ -116,8 +116,10 @@ text = "DECK F"
 
 [node name="Portal" parent="." instance=ExtResource( 6 )]
 position = Vector2( 518.694, 82.8775 )
+rotation = 1.57079
+scale = Vector2( 1, 2.011 )
 next_scene_path = "res://Lab.tscn"
-player_spawn_location = Vector2( 9, -13 )
+player_spawn_location = Vector2( 138, 35 )
 [connection signal="body_entered" from="Lift" to="Lift" method="player_entered"]
 [connection signal="body_exited" from="Lift" to="Lift" method="player_exited"]
 
