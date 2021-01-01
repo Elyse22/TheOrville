@@ -25,6 +25,8 @@ func set_path(new_path):
 
 
 func set_dialogs():
+	if not dialog_player:
+		yield(self, "ready")
 	if dialogs.size() == 0:
 		return
 #	if dialog_index >= dialogs.size() -1:
