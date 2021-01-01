@@ -269,6 +269,6 @@ next_scene_path = "res://Deck A.tscn"
 player_spawn_location = Vector2( 433.4, 91.6 )
 [connection signal="body_entered" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_around"]
 [connection signal="body_exited" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_not_around"]
-[connection signal="stopped" from="YSort/NPCTest/HUD/DialogPlayer" to="YSort/NPCTest" method="dialog_player_stopped"]
 [connection signal="stopped" from="YSort/NPCTest/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
+[connection signal="stopped" from="YSort/NPCTest/HUD/DialogPlayer" to="YSort/NPCTest" method="dialog_player_stopped"]
 [connection signal="timeout" from="YSort/NPCTest/MoveRandom" to="YSort/NPCTest" method="_on_MoveRandom_timeout"]
