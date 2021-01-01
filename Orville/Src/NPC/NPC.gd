@@ -93,7 +93,8 @@ func _physics_process(_delta):
 		velocity = move_and_slide(velocity, Vector2.UP)
 		if get_slide_count():
 			velocity = Vector2.ZERO
-			path.remove(0)
+			if path and path.size():
+				path.remove(0)
 
 func handle_animation():
 	if velocity.x > 0:
@@ -132,7 +133,7 @@ func player_around(body):
 		return
 	if body.name == "Player":
 		player_around = true
-		$MoveCooldown.start()
+		$MoveCooldown.start(0.0)
 		$Popup.show()
 
 
@@ -152,6 +153,7 @@ func _input(event):
 	if event.is_action_pressed("talk") and player_around:
 		if npc_name == "LeMarr" and not Data.can_talk_with["LeMarr"]:
 			return
+		$MoveCooldown.start(0.0)
 		$HUD/DialogPlayer.play()
 
 
@@ -171,5 +173,5 @@ func dialog_player_stopped():
 
 
 func _on_MoveRandom_timeout():
-	var direction = Vector2(40, 0).rotated(PI / 2.0 * floor(rand_range(0.0, 4.0)))
+	var direction = Vector2(50, 0).rotated(PI / 2.0 * floor(rand_range(0.0, 4.0)))
 	set_path([position + direction])

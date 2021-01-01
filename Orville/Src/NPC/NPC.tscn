@@ -183,10 +183,11 @@ shape = SubResource( 11 )
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 3 )]
 
 [node name="MoveRandom" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="MoveCooldown" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 one_shot = true
 [connection signal="body_entered" from="Area2D" to="." method="player_around"]
 [connection signal="body_exited" from="Area2D" to="." method="player_not_around"]
