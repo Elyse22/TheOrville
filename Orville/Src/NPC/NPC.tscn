@@ -152,12 +152,16 @@ margin_bottom = -28.0
 custom_fonts/font = SubResource( 1 )
 text = "Press [E] to talk"
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 13
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle_down = SubResource( 2 )
@@ -172,11 +176,20 @@ anims/move_up = SubResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.175, 8.356 )
 shape = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Area2D" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -184,11 +197,12 @@ shape = SubResource( 11 )
 
 [node name="MoveRandom" type="Timer" parent="."]
 wait_time = 2.0
-autostart = true
 
 [node name="MoveCooldown" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
+
+[node name="CustomPath" type="Node" parent="."]
 [connection signal="body_entered" from="Area2D" to="." method="player_around"]
 [connection signal="body_exited" from="Area2D" to="." method="player_not_around"]
 [connection signal="stopped" from="HUD/DialogPlayer" to="." method="dialog_player_stopped"]

@@ -64,7 +64,8 @@ func _physics_process(delta):
 
 func _ready():
 	load_custom_character()
-	self.global_position = Global.player_initial_map_position
+	if Global.player_initial_map_position:
+		self.global_position = Global.player_initial_map_position
 	if Global.in_lift:
 		print("Lift")
 		Global.in_lift = false

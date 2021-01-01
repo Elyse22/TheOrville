@@ -11,18 +11,16 @@ onready var anim_player = $AnimationPlayer
 onready var dialog_player = $HUD/DialogPlayer
 
 var velocity = Vector2.ZERO
-var speed = 50
+export var speed = 50
 var walking = false
 var player_around = false
-var path
-var walking_on_path = false
+var path = []
 export var dialog_index = -1
 var can_talk = true
 export var move_random: bool = true
 
 func set_path(new_path):
 	path = new_path
-	walking_on_path = true
 
 
 func set_dialogs():
@@ -56,31 +54,22 @@ func _ready():
 	$HUD/DialogPlayer.stop()
 	if npc_texture:
 		sprite.texture = npc_texture
+	
+	if move_random:
+		$MoveRandom.start()
+	else:
+		var new_path = []
+		for node in $CustomPath.get_children():
+			new_path.push_back(node.position)
+		set_path(new_path)
 
 
 func _process(delta):
-	if $MoveCooldown.time_left == 0.0 and path and path.size():
+	if $MoveCooldown.time_left == 0.0 and path.size():
 		move_path(delta)
 	else:
 		velocity = Vector2.ZERO
 	handle_animation()
-
-
-#func move_along_path(distance):
-#	var start_point = position
-#	for i in range(path.size()):
-#		handle_path_anim(path[0])
-#		var distance_to_next = start_point.distance_to(path[0])
-#		if distance <= distance_to_next and distance >= 0.0:
-#			position = start_point.linear_interpolate(path[0], distance / distance_to_next)
-#			break
-#		elif distance < 0.0:
-#			position = path[0]
-#			walking_on_path = false
-#			break
-#		distance -= distance_to_next
-#		start_point = path[0]
-#		path.remove(0)
 
 
 func move_path(delta):
@@ -97,7 +86,7 @@ func _physics_process(_delta):
 		velocity = move_and_slide(velocity, Vector2.UP)
 		if get_slide_count():
 			velocity = Vector2.ZERO
-			if path and path.size():
+			if move_random and path.size():
 				path.remove(0)
 
 func handle_animation():
@@ -132,7 +121,8 @@ func player_around(body):
 		return
 	if body.name == "Player":
 		player_around = true
-		$MoveCooldown.start(0.0)
+		if move_random:
+			$MoveCooldown.start(0.0)
 		$Popup.show()
 
 
@@ -144,7 +134,8 @@ func player_not_around(body):
 	if body.name == "Player":
 		player_around = false
 		$Popup.hide()
-		$MoveCooldown.stop()
+		if move_random:
+			$MoveCooldown.stop()
 		$HUD/DialogPlayer.stop()
 
 
@@ -152,7 +143,8 @@ func _input(event):
 	if event.is_action_pressed("talk") and player_around:
 		if npc_name == "LeMarr" and not Data.can_talk_with["LeMarr"]:
 			return
-		$MoveCooldown.start(0.0)
+		if move_random:
+			$MoveCooldown.start(0.0)
 		$HUD/DialogPlayer.play()
 
 

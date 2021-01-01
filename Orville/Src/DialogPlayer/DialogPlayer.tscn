@@ -25,6 +25,7 @@ rect_min_size = Vector2( 1100, 230 )
 theme = SubResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 speakers = [ "", "", "", "", "", "", "", "", "", "" ]
@@ -40,6 +41,7 @@ margin_bottom = -42.0
 rect_min_size = Vector2( 1089, 213 )
 color = Color( 0.180392, 0.27451, 0.87451, 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
