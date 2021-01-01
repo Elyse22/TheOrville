@@ -97,24 +97,19 @@ func _physics_process(_delta):
 				path.remove(0)
 
 func handle_animation():
-	if velocity.x > 0:
+	if velocity.length_squared() < 1.0:
+		anim_player.current_animation = anim_player.current_animation.replace("move_", "idle_")
+		return
+	
+	var angle = rad2deg(velocity.angle())
+	if angle >= -30 and angle <= 30:
 		anim_player.play("move_right")
-	elif velocity.x < 0:
-		anim_player.play("move_left")
-	else:
-		if anim_player.current_animation == "move_right":
-			anim_player.play("idle_right")
-		elif anim_player.current_animation == "move_left":
-			anim_player.play("idle_left")
-	if velocity.y > 0:
-		anim_player.play("move_down")
-	elif velocity.y < 0:
+	elif angle >= -150 and angle <= -30:
 		anim_player.play("move_up")
+	elif angle >= 30 and angle <= 150:
+		anim_player.play("move_down")
 	else:
-		if anim_player.current_animation == "move_down":
-			anim_player.play("idle_down")
-		elif anim_player.current_animation == "move_up":
-			anim_player.play("idle_up")
+		anim_player.play("move_left")
 
 
 func walk(direction):
@@ -173,5 +168,5 @@ func dialog_player_stopped():
 
 
 func _on_MoveRandom_timeout():
-	var direction = Vector2(50, 0).rotated(PI / 2.0 * floor(rand_range(0.0, 4.0)))
+	var direction = Vector2(40, 0).rotated(PI / 2.0 * floor(rand_range(0.0, 4.0)))
 	set_path([position + direction])
