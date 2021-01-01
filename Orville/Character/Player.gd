@@ -12,16 +12,6 @@ onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var anim_player = $CustomAnimations
 
-var objective = null setget _set_objective
-func _set_objective(value):
-	objective = value
-	
-	if value:
-		$HUD/Objective.visible = true
-		$HUD/Objective/PanelContainer/Label.text = "Objective: " + value
-	else:
-		$HUD/Objective.visible = false
-
 var allow_portal_travel = false
 
 var player_name = ""
@@ -82,6 +72,14 @@ func _ready():
 		Global.in_lift = false
 		for lift in get_tree().get_nodes_in_group("lift"):
 			global_position = lift.global_position
+
+
+func _process(_delta):
+	if Global.objective:
+		$HUD/Objective.visible = true
+		$HUD/Objective/PanelContainer/Label.text = "Objective: " + str(Global.objective)
+	else:
+		$HUD/Objective.visible = false
 
 
 func load_custom_character():
