@@ -1,15 +1,16 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Sets/Deck F.png" type="Texture" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://EngineeringStation.tscn" type="PackedScene" id=3]
 [ext_resource path="res://EngineeringRailing.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Src/NPC/NPC.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Wrench.png" type="Texture" id=5]
 [ext_resource path="res://Assets/AllCharacters/Characters/JohnLammar.png" type="Texture" id=6]
-[ext_resource path="res://Assets/AllCharacters/Characters/Kelly.png" type="Texture" id=7]
+[ext_resource path="res://Src/Scanner/Item.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Lift.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Deck F.gd" type="Script" id=10]
+[ext_resource path="res://Src/NPC/Branched_NPC/BranchingNPC.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28.5782, 47.978 )
@@ -50,19 +51,6 @@ position = Vector2( 499.154, 9.98354 )
 [node name="StaticBody2D2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 499.202, -124.864 )
 
-[node name="NPC" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 535.012, -166.53 )
-scale = Vector2( 1.2, 1.2 )
-npc_name = "LeMarr"
-npc_texture = ExtResource( 6 )
-dialogs = [ "Oh hey %p, what's up? ", "YOU: Isaac asked me to find you, he is concerned about the quantum engines, given our current... pixel state. ", "Yeah, I was wondering how long it would take him to ask.", "The quantum drive is down, meaning, we stranded until we can get them back online. See if you can find Bortus in his quarters, I'm thinking his Moclan engineering skills may throw a fresh light on things.  " ]
-
-[node name="NPC" parent="." instance=ExtResource( 5 )]
-position = Vector2( -159.749, -172.582 )
-npc_name = "Kelly"
-npc_texture = ExtResource( 7 )
-dialogs = [ "Commander _________, how are you? ", "Silly question I guess, considering the current circumstances... " ]
-
 [node name="Lift" type="Area2D" parent="." groups=[
 "lift",
 ]]
@@ -101,5 +89,18 @@ margin_top = 90.0
 margin_right = 400.0
 margin_bottom = 131.0
 text = "DECK F"
+
+[node name="BranchingNPC" parent="." instance=ExtResource( 11 )]
+position = Vector2( 536.447, -160.244 )
+npc_name = "LeMarr"
+npc_texture = ExtResource( 6 )
+condition_item = "Wrench"
+branch_dialogs = [ [ "Did Bortus ask you to find some items?" ], [ "Ah, of course Bortus suggested these. It will help to adjust the quantum engine to deal with this, simple reality. Give me a sec to hook 'em up. ", "Okay boom, all done. I think you should check in with Gordon on the bridge and test the new adjustment." ] ]
+dialog_index = -2
+
+[node name="Item" parent="." instance=ExtResource( 7 )]
+position = Vector2( 516.843, -66.3159 )
+item_name = "Wrench"
+item_sprite = ExtResource( 5 )
 [connection signal="body_entered" from="Lift" to="Lift" method="player_entered"]
 [connection signal="body_exited" from="Lift" to="Lift" method="player_exited"]
