@@ -79,7 +79,7 @@ func _process(delta):
 
 func move_path(delta):
 	var point = path[0]
-	
+
 	if position.distance_squared_to(point) < 10.0:
 		path.remove(0)
 	else:
