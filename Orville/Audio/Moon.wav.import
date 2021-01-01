@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Moon.wav-f4311e86de31d4dfa07788b04c708f4b.sample"
+
+[deps]
+
+source_file="res://Audio/Moon.wav"
+dest_files=[ "res://.import/Moon.wav-f4311e86de31d4dfa07788b04c708f4b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
