@@ -195,7 +195,7 @@ position = Vector2( 115.556, 126.685 )
 [node name="StaticBody2D8" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 81.4963, 105.161 )
 
-[node name="NPC" type="KinematicBody2D" parent="YSort"]
+[node name="NPCTest" type="KinematicBody2D" parent="YSort"]
 position = Vector2( 184.094, 99.5855 )
 scale = Vector2( 1.15, 1.15 )
 script = ExtResource( 13 )
@@ -203,7 +203,7 @@ npc_name = "Gordon"
 npc_texture = ExtResource( 10 )
 dialogs = [ "Oh hey _________, how are you enjoying your stay so far?", "YOU: It's been amazing, except for the... you know...", "Pixel universe? I think it's pretty sweet actually! Except the quantum drive seems to be offline...", "YOU: Yes, LeMarr asked me to report to you. He just downgraded the engine and asked if you could test it? ", "No problem! Let's take this baby for a test drive. " ]
 
-[node name="Popup" type="Label" parent="YSort/NPC"]
+[node name="Popup" type="Label" parent="YSort/NPCTest"]
 margin_left = -46.0
 margin_top = -42.0
 margin_right = 52.0
@@ -215,14 +215,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="YSort/NPC"]
+[node name="Sprite" type="Sprite" parent="YSort/NPCTest"]
 texture = ExtResource( 14 )
 hframes = 13
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPCTest"]
 anims/idle_down = SubResource( 2 )
 anims/idle_left = SubResource( 3 )
 anims/idle_right = SubResource( 4 )
@@ -232,43 +232,43 @@ anims/move_left = SubResource( 7 )
 anims/move_right = SubResource( 8 )
 anims/move_up = SubResource( 9 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPCTest"]
 position = Vector2( -0.175, 8.356 )
 shape = SubResource( 10 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Area2D" type="Area2D" parent="YSort/NPC"]
+[node name="Area2D" type="Area2D" parent="YSort/NPCTest"]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPCTest/Area2D"]
 shape = SubResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="HUD" type="CanvasLayer" parent="YSort/NPC"]
+[node name="HUD" type="CanvasLayer" parent="YSort/NPCTest"]
 
-[node name="DialogPlayer" parent="YSort/NPC/HUD" instance=ExtResource( 9 )]
+[node name="DialogPlayer" parent="YSort/NPCTest/HUD" instance=ExtResource( 9 )]
 
-[node name="MoveRandom" type="Timer" parent="YSort/NPC"]
+[node name="MoveRandom" type="Timer" parent="YSort/NPCTest"]
 wait_time = 2.0
 
-[node name="MoveCooldown" type="Timer" parent="YSort/NPC"]
+[node name="MoveCooldown" type="Timer" parent="YSort/NPCTest"]
 wait_time = 10.0
 one_shot = true
 
-[node name="CustomPath" type="Node" parent="YSort/NPC"]
+[node name="CustomPath" type="Node" parent="YSort/NPCTest"]
 
 [node name="Portal" parent="." instance=ExtResource( 12 )]
 position = Vector2( -5.73577, 121.168 )
 next_scene_path = "res://Deck A.tscn"
 player_spawn_location = Vector2( 433.4, 91.6 )
-[connection signal="body_entered" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_around"]
-[connection signal="body_exited" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_not_around"]
-[connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="YSort/NPC" method="dialog_player_stopped"]
-[connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
-[connection signal="timeout" from="YSort/NPC/MoveRandom" to="YSort/NPC" method="_on_MoveRandom_timeout"]
+[connection signal="body_entered" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_around"]
+[connection signal="body_exited" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_not_around"]
+[connection signal="stopped" from="YSort/NPCTest/HUD/DialogPlayer" to="YSort/NPCTest" method="dialog_player_stopped"]
+[connection signal="stopped" from="YSort/NPCTest/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
+[connection signal="timeout" from="YSort/NPCTest/MoveRandom" to="YSort/NPCTest" method="_on_MoveRandom_timeout"]

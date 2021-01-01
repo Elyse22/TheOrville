@@ -8,7 +8,6 @@ func _ready():
 	
 
 
-func _on_DialogPlayer_stopped(): 
+func _on_DialogPlayer_stopped():
 	get_tree().change_scene("res://Cutscene1.tscn")
 
-	
