@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Src/DialogPlayer/DialogPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=2]
@@ -13,15 +13,12 @@ font_data = ExtResource( 2 )
 [sub_resource type="Theme" id=2]
 default_font = SubResource( 1 )
 
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.470588, 0.541176, 0.937255, 1 )
+
 [node name="DialogPlayer" type="Control"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -500.0
-margin_top = -228.509
-margin_right = 500.0
-margin_bottom = -28.5087
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 1100, 230 )
@@ -36,79 +33,106 @@ dialogs = [ "", "", "", "", "", "", "", "", "", "" ]
 [node name="Overlay" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.814453
-margin_top = 1.62903
-margin_right = 0.814453
-margin_bottom = 1.62903
+margin_left = 86.0
+margin_top = 465.0
+margin_right = -105.0
+margin_bottom = -42.0
+rect_min_size = Vector2( 1089, 213 )
 color = Color( 0.180392, 0.27451, 0.87451, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 869.0
-margin_top = 5.0
-margin_right = 1090.0
-margin_bottom = 226.0
-color = Color( 0.470588, 0.541176, 0.937255, 1 )
+[node name="Container" type="HBoxContainer" parent="Overlay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Speaker" type="Control" parent="."]
-margin_left = 876.0
-margin_top = 2.0
-margin_right = 1075.0
-margin_bottom = 236.0
+[node name="Margin" type="MarginContainer" parent="Overlay/Container"]
+margin_right = 910.0
+margin_bottom = 213.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Icon" type="TextureRect" parent="Speaker"]
-margin_left = 6.36511
-margin_top = -1.19507
-margin_right = 202.365
-margin_bottom = 189.805
+[node name="Message" type="Control" parent="Overlay/Container/Margin"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 894.0
+margin_bottom = 197.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="Overlay/Container/Margin/Message"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 1
+text = "Dummy message Dummy message Dummy message Dummy message "
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Hint" type="Label" parent="Overlay/Container/Margin/Message"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Press Space to Continue"
+align = 2
+valign = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Speaker" type="PanelContainer" parent="Overlay/Container"]
+margin_left = 914.0
+margin_right = 1089.0
+margin_bottom = 213.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="Overlay/Container/Speaker"]
+margin_right = 175.0
+margin_bottom = 213.0
 rect_min_size = Vector2( 175, 175 )
 texture = ExtResource( 3 )
 expand = true
+stretch_mode = 5
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Name" type="Label" parent="Speaker"]
-anchor_top = -0.00385695
-anchor_bottom = -0.00385695
-margin_left = 6.41516
-margin_top = 183.39
-margin_right = 207.415
-margin_bottom = 222.39
+[node name="Name" type="Label" parent="Overlay/Container/Speaker"]
+margin_top = 178.0
+margin_right = 175.0
+margin_bottom = 213.0
 rect_min_size = Vector2( 150, 0 )
 size_flags_vertical = 8
 text = "Speaker 1"
 align = 1
 valign = 2
 __meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Message" type="Label" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 16.0
-margin_top = 29.0
-margin_right = -272.0
-margin_bottom = -4.0
-text = "Dummy message Dummy message Dummy message Dummy message "
-autowrap = true
-__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Tween" type="Tween" parent="."]
-
-[node name="Label" type="Label" parent="."]
-anchor_bottom = 0.076
-margin_left = 579.205
-margin_top = 192.377
-margin_right = 858.205
-margin_bottom = 217.897
-text = "Press Space to Continue"
 [connection signal="tween_completed" from="Tween" to="." method="tween_completed"]

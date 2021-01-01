@@ -5,9 +5,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="DialogPlayer" parent="." instance=ExtResource( 1 )]
-margin_left = 103.552
-margin_top = 476.655
-margin_right = 1203.55
-margin_bottom = 706.655
+margin_right = 1100.0
+margin_bottom = 230.0
 speakers = [  ]
 dialogs = [ "Test" ]
