@@ -103,7 +103,7 @@ speakers = [ "Ed" ]
 dialogs = [ "test" ]
 
 [node name="Area2D" parent="." instance=ExtResource( 17 )]
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="YSort/Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 [editable path="Portal"]

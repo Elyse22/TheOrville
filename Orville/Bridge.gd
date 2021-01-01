@@ -9,5 +9,6 @@ func _ready():
 
 
 func _on_DialogPlayer_stopped():
+	Data.spoke_with_mercer = true
 	get_tree().change_scene("res://Cutscene1.tscn")
 

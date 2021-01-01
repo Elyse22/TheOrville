@@ -1479,3 +1479,4 @@ margin_bottom = 51.0
 custom_fonts/font = ExtResource( 15 )
 text = "Objective: "
 align = 1
+autowrap = true

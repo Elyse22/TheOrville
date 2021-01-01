@@ -18,8 +18,7 @@ func ed_dialog():
 
 func body_entered(body):
 	if body.name == "Player":
-		dialog_player.dialogs[0] = "Commander " + Data.character.name + ", it’s Captain Ed Mercer. Come see me in my office immediately."
-		dialog_player.play()
+		ed_dialog()
 
 
 func _on_Area2D_body_entered(body):

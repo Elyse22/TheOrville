@@ -28,24 +28,7 @@ func quit():
 
 
 func save_game():
-	var data = {
-		'character': Data.character,
-		'can_talk_with': Data.can_talk_with,
-		'current_scene': Data.current_scene,
-		'player_position': Data.player_position,
-		'npc_dialog_index': Data.npc_dialog_index,
-		'spawn_wrench_iron_coil': Data.spawn_wrench_iron_coil,
-		'inventory': Data.inventory,
-		'sound': Data.sound
-	}
-	var file = File.new()
-	var error = file.open("user://save.dat", File.WRITE)
-	if error == OK:
-		file.store_var(data)
-	file.close()
-	$Message.text = "GAME SAVED!"
-	yield(get_tree().create_timer(3), "timeout")
-	$Message.text = ""
+	Data.save_game()
 
 
 func _process(delta):

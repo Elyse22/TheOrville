@@ -27,8 +27,9 @@ var inventory = []
 
 var sound = true
 
-var save_found = false
+var spoke_with_mercer = false
 
+var save_found = false
 
 func _ready():
 	var file = File.new()
@@ -54,4 +55,26 @@ func load_game():
 	spawn_wrench_iron_coil = data.spawn_wrench_iron_coil
 	inventory = data.inventory
 	sound = data.sound
+	spoke_with_mercer = data.spoke_with_mercer
 	file.close()
+
+func save_game():
+	var data = {
+		'character': character,
+		'can_talk_with': can_talk_with,
+		'current_scene': current_scene,
+		'player_position': player_position,
+		'npc_dialog_index': npc_dialog_index,
+		'spawn_wrench_iron_coil': spawn_wrench_iron_coil,
+		'inventory': inventory,
+		'sound': sound,
+		'spoke_with_mercer': spoke_with_mercer
+	}
+	var file = File.new()
+	var error = file.open("user://save.dat", File.WRITE)
+	if error == OK:
+		file.store_var(data)
+	file.close()
+	$Message.text = "GAME SAVED!"
+	yield(get_tree().create_timer(3), "timeout")
+	$Message.text = ""
