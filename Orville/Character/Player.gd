@@ -85,3 +85,5 @@ func load_custom_character():
 	$Character/Pupil.modulate = Data.character.pupil_color
 	$Character/Shirt.modulate = Data.character.shirt_color
 	player_name = Data.character.name
+
+

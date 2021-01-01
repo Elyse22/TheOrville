@@ -38,7 +38,7 @@ position = Vector2( 248, 262 )
 texture = ExtResource( 2 )
 
 [node name="Portal" parent="." instance=ExtResource( 3 )]
-position = Vector2( 294.32, 135.646 )
+position = Vector2( 293.369, 136.835 )
 next_scene_path = "res://Quarters.tscn"
 player_spawn_location = Vector2( 45, 53 )
 
@@ -120,7 +120,7 @@ texture = SubResource( 2 )
 frame = 10
 
 [node name="NPC2" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( -459.63, 253.791 )
+position = Vector2( -460.106, 256.169 )
 scale = Vector2( 1.15, 1.2 )
 npc_name = "Kit"
 npc_texture = ExtResource( 9 )
