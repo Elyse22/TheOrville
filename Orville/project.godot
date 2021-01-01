@@ -21,13 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Orville"
-run/main_scene="res://Quarters.tscn"
+run/main_scene="res://Title Screen.tscn"
 config/use_custom_user_dir=true
 
 [autoload]
 
 Global="*res://Global.gd"
 Data="*res://Src/Singletons/Data.gd"
+MusicController="*res://autoloads/MusicController.tscn"
 
 [display]
 
