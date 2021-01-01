@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Sets/Bortus' Quarters.png" type="Texture" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
@@ -14,9 +14,7 @@
 [ext_resource path="res://Assets/First Plant.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Src/NPC/NPC.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/AllCharacters/Characters/Bortus.png" type="Texture" id=14]
-[ext_resource path="res://Src/Scanner/Item.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/IronCoil.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Wrench.png" type="Texture" id=17]
+[ext_resource path="res://Portal.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Bortus' Quarters.gd" type="Script" id=18]
 
 [node name="Node2D" type="Node2D"]
@@ -25,7 +23,7 @@ script = ExtResource( 18 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 157.117, 156.753, 94.427, 156.198, 94.427, 170.068, -49.261, 170.068, -45.9323, 67.4337, 67.5202, 69.098, 81.6671, 59.6668, 92.2875, 85.8433, 97.7557, 124.299, 106.932, 132.841, 160.4, 132.16, 160.059, 20.796, 288.877, 20, 290.819, 5.02095, 343.801, 5.29833, 341.92, 24.8827, 322.167, 41.5703, 322.848, 169.281, 158.016, 168.941, 157.395, 159.25, 133.816, 183.66, 136.39, 194.319, 383.788, 192.003, 373.596, -35.0101, 135.927, -41.4961, 124.345, 2.51658, -70.7013, 4.36977, -66.995, 189.223, 123.418, 189.687 )
+polygon = PoolVector2Array( 157.117, 156.753, 94.427, 156.198, 94.427, 170.068, -49.261, 170.068, -45.9323, 67.4337, 67.5202, 69.098, 81.6671, 59.6668, 92.2875, 85.8433, 97.7557, 124.299, 106.932, 132.841, 160.4, 132.16, 160.059, 20.796, 288.877, 20, 290.819, 5.02095, 343.801, 5.29833, 341.92, 24.8827, 322.167, 41.5703, 322.848, 169.281, 251.927, 169.135, 250.798, 178.115, 215.552, 178.567, 215.098, 169.059, 158.016, 168.941, 157.395, 159.25, 133.816, 183.66, 136.39, 194.319, 383.788, 192.003, 373.596, -35.0101, 135.927, -41.4961, 124.345, 2.51658, -70.7013, 4.36977, -66.995, 189.223, 123.418, 189.687 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 171.95, 76 )
@@ -34,7 +32,7 @@ texture = ExtResource( 1 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 237.705, 144.311 )
+position = Vector2( 233.524, 172.743 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( -11.9708, 126.052 )
@@ -69,18 +67,15 @@ position = Vector2( -34.6667, 164.811 )
 scale = Vector2( 1.25, 1.2 )
 
 [node name="NPC" parent="YSort" instance=ExtResource( 13 )]
-position = Vector2( 8.73878, 73.336 )
+position = Vector2( 9.1569, 74.1722 )
 scale = Vector2( 1.2, 1.2 )
 npc_name = "Bortus"
 npc_texture = ExtResource( 14 )
 dialogs = [ "Commander _________, what are you doing here?", "You didn't see anything... Do not tell Klyden. ", "YOU: LeMarr asked me to talk to you, we are having some trouble with the quantum engine. The quantum drive is offline and we think it has something to do with this new pixel reality. ", "Yes. I am not surprised, the quantum engine is not built for this… simple pixel state. Our normal 3D reality is much more complex. We are going to need to ‘downgrade’ the technology. ", "See if you can find a wrench and iron coil, and take them back to Lieutenant Commander LaMarr in engineering. He will know what to do with them. " ]
 
-[node name="IronCoil" parent="." instance=ExtResource( 15 )]
-position = Vector2( 267.111, 37.1656 )
-item_name = "Iron Coil"
-item_sprite = ExtResource( 16 )
+[node name="Portal" parent="." instance=ExtResource( 15 )]
+position = Vector2( 233.683, 182.609 )
+next_scene_path = "res://Deck B.tscn"
+player_spawn_location = Vector2( 518.2, 36.8 )
 
-[node name="Wrench" parent="." instance=ExtResource( 15 )]
-position = Vector2( 316.224, 155.559 )
-item_name = "Wrench"
-item_sprite = ExtResource( 17 )
+[editable path="Portal"]
