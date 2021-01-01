@@ -7,7 +7,6 @@ var index = -1
 
 
 func _ready():
-	return
 	play()
 
 
@@ -18,33 +17,34 @@ func play():
 
 
 func next_dialog():
-	if index >= speakers.size() - 1:
+	if index >= dialogs.size() - 1:
 		stop()
 		return
 	if dialogs[index+1] == "":
 		stop()
 		return
 	index += 1
-	$Speaker/Name.text = speakers[index]
-	$Message.text = dialogs[index]
-	if "%p" in $Message.text:
-		$Message.text = $Message.text.replace("%p", Data.character.name)
-	$Message.percent_visible = 0
-	$Tween.interpolate_property(
-		$Message, "percent_visible", 0,1,0.5,
-		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
-	)
-	$Tween.start()
-	if speakers[index] != "MESSAGE":
+	
+	if speakers.size() and speakers[index] and speakers[index].length():
+		$Overlay/Container/Speaker/Name.text = speakers[index]
+		
 		var file_name = str(speakers[index]).replace(" ", "").to_lower()
 		var file = File.new()
 		if file.file_exists("res://Assets/AllCharacters/Face/" + file_name + ".png"):
-			$Speaker/Icon.texture = load("res://Assets/AllCharacters/Face/" + file_name + ".png")
+			$Overlay/Container/Speaker/Icon.texture = load("res://Assets/AllCharacters/Face/" + file_name + ".png")
 		else:
-			$Speaker/Icon.texture = null
+			$Overlay/Container/Speaker/Icon.texture = null
+		
+		$Overlay/Container/Speaker.visible = true
 	else:
-		$Speaker/Icon.texture = null
-		$Speaker/Name.text = ""
+		$Overlay/Container/Speaker.visible = false
+	
+	$Overlay/Container/Margin/Message/Text.text = dialogs[index].replace("%p", Data.character.name)
+	$Tween.interpolate_property(
+		$Overlay/Container/Margin/Message/Text, "percent_visible", 0,1,0.5,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+	)
+	$Tween.start()
 
 
 func _input(event):

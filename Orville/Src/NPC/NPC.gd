@@ -25,6 +25,8 @@ func set_path(new_path):
 
 
 func set_dialogs():
+	if not dialog_player:
+		yield(self, "ready")
 	if dialogs.size() == 0:
 		return
 #	if dialog_index >= dialogs.size() -1:
@@ -55,8 +57,10 @@ func _ready():
 
 
 func _process(delta):
-	if path and path.size():
+	if $MoveCooldown.time_left == 0.0 and path and path.size():
 		move_path(delta)
+	else:
+		velocity = Vector2.ZERO
 	handle_animation()
 
 
@@ -79,35 +83,35 @@ func _process(delta):
 
 func move_path(delta):
 	var point = path[0]
-
-	if position.distance_squared_to(point) < 10.0:
+	
+	if position.distance_squared_to(point) < 100.0:
 		path.remove(0)
+		velocity = Vector2.ZERO
 	else:
 		walk((point - position).normalized())
 
 func _physics_process(_delta):
 	if walking:
 		velocity = move_and_slide(velocity, Vector2.UP)
+		if get_slide_count():
+			velocity = Vector2.ZERO
+			if path and path.size():
+				path.remove(0)
 
 func handle_animation():
-	if velocity.x > 0:
+	if velocity.length_squared() < 1.0:
+		anim_player.current_animation = anim_player.current_animation.replace("move_", "idle_")
+		return
+	
+	var angle = rad2deg(velocity.angle())
+	if angle >= -30 and angle <= 30:
 		anim_player.play("move_right")
-	elif velocity.x < 0:
-		anim_player.play("move_left")
-	else:
-		if anim_player.current_animation == "move_right":
-			anim_player.play("idle_right")
-		elif anim_player.current_animation == "move_left":
-			anim_player.play("idle_left")
-	if velocity.y > 0:
-		anim_player.play("move_down")
-	elif velocity.y < 0:
+	elif angle >= -150 and angle <= -30:
 		anim_player.play("move_up")
+	elif angle >= 30 and angle <= 150:
+		anim_player.play("move_down")
 	else:
-		if anim_player.current_animation == "move_down":
-			anim_player.play("idle_down")
-		elif anim_player.current_animation == "move_up":
-			anim_player.play("idle_up")
+		anim_player.play("move_left")
 
 
 func walk(direction):
@@ -126,6 +130,7 @@ func player_around(body):
 		return
 	if body.name == "Player":
 		player_around = true
+		$MoveCooldown.start(0.0)
 		$Popup.show()
 
 
@@ -137,6 +142,7 @@ func player_not_around(body):
 	if body.name == "Player":
 		player_around = false
 		$Popup.hide()
+		$MoveCooldown.stop()
 		$HUD/DialogPlayer.stop()
 
 
@@ -144,6 +150,7 @@ func _input(event):
 	if event.is_action_pressed("talk") and player_around:
 		if npc_name == "LeMarr" and not Data.can_talk_with["LeMarr"]:
 			return
+		$MoveCooldown.start(0.0)
 		$HUD/DialogPlayer.play()
 
 
@@ -163,4 +170,5 @@ func dialog_player_stopped():
 
 
 func _on_MoveRandom_timeout():
-	set_path([position + Vector2(20, 0).rotated(TAU * randf())])
+	var direction = Vector2(40, 0).rotated(PI / 2.0 * floor(rand_range(0.0, 4.0)))
+	set_path([position + direction])
