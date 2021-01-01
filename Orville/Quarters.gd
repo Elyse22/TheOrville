@@ -9,7 +9,6 @@ func _ready():
 		$YSort/Player.position = Data.player_position
 	Data.current_scene = filename
 	dialog_player.stop()
-	MusicController.play_music()
 
 
 func ed_dialog():
