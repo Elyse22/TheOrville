@@ -3,6 +3,7 @@ extends KinematicBody2D
 export var npc_name = ""
 export (Texture) var npc_texture
 export (Array, String) var dialogs
+export (Array, String) var speakers_dialogs
 export var trigger_talk = true
 
 onready var sprite = $Sprite
@@ -32,9 +33,10 @@ func set_dialogs():
 #	if dialog_index >= dialogs.size() -1:
 #		return
 #	dialog_index += 1
-	var speakers = []
-	for i in dialogs.size():
-		speakers.append(npc_name)
+	var speakers = speakers_dialogs
+	if speakers.size() < dialogs.size():
+		while speakers.size() < dialogs.size():
+			speakers.append(npc_name)
 	dialog_player.speakers = speakers
 	dialog_player.dialogs = dialogs
 
