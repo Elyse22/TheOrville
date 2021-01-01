@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Fonts/Space48.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Fonts/space age.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Game/ReturnToTitle.gd" type="Script" id=3]
+[ext_resource path="res://Game/Options.gd" type="Script" id=3]
 [ext_resource path="res://Fonts/Space24.tres" type="DynamicFont" id=4]
 
 [sub_resource type="DynamicFont" id=2]
