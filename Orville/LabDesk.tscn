@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/lab desk.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 13.2072, 23.5073 )
+extents = Vector2( 10.9989, 22.7712 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
 

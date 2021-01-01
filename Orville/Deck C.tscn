@@ -110,10 +110,9 @@ position = Vector2( -376, 303.856 )
 
 [node name="NPC" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -182.865, -160.046 )
-scale = Vector2( 1.2, 1.2 )
 npc_name = "Tom"
 npc_texture = ExtResource( 8 )
-dialogs = [ "Hey %p , does something seem off to you?" ]
+dialogs = [ "Hey %p, does something seem off to you?" ]
 
 [node name="Sprite" parent="YSort/NPC" index="1"]
 texture = SubResource( 2 )

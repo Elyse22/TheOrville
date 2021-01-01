@@ -25,10 +25,10 @@ collision_mask = 0
 
 [node name="NPC" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 35.8772, 73.1076 )
-scale = Vector2( 1.2, 1.2 )
 npc_name = "Isaac"
 npc_texture = ExtResource( 5 )
-dialogs = [ "Commander ________, how may I be of assistance?", "YOU: The Captain has asked me to find you as the comms are malfunctioning. But, more importantly, we have found ourselves in a 2D pixelated universe! ", "I have already commenced full range scans on our surroundings, the computer database seems to be struggling with the input... I need more time to calculate the findings.", "YOU: Is there anything I can do to help?", "I am apprehensive of the idea that you could be of assistance, my intelligence far exceeds yours. ", "YOU: No doubt. ", "I would suggest that you speak to Lieutenant Commander LaMarr in engineering. The ship's quantum engine may not be compatible with this pixel reality. ", "YOU: I'm on it. " ]
+dialogs = [ "Commander %p, how may I be of assistance?", "The Captain has asked me to find you as the comms are malfunctioning. But, more importantly, we have found ourselves in a 2D pixelated universe! ", "I have already commenced full range scans on our surroundings, the computer database seems to be struggling with the input... I need more time to calculate the findings.", "Is there anything I can do to help?", "I am apprehensive of the idea that you could be of assistance, my intelligence far exceeds yours. ", "No doubt. ", "I would suggest that you speak to Lieutenant Commander LaMarr in engineering. The ship's quantum engine may not be compatible with this pixel reality. ", "I'm on it. " ]
+speakers_dialogs = [ "Isaac", "You", "Isaac", "You", "Isaac", "You", "Isaac", "You" ]
 
 [node name="StaticBody2D2" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 13.46, 59.7919 )
@@ -37,7 +37,7 @@ scale = Vector2( 1.1, 1 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 111.016, 19.7226, 159.885, 20.0299, 160.5, 57.8348, 166.647, 62.4452, 166.647, 70.1291, 170.336, 73.51, 170.028, 83.3454, 197.998, 111.008, 206.911, 110.7, 211.521, 113.466, 217.976, 114.081, 220.127, 118.999, 221.049, 141.743, 202.301, 162.644, 163.266, 162.029, 163.266, 150.349, 131.609, 151.271, 130.379, 145.739, 101.488, 146.354, 102.102, 140.514, 110.094, 134.981, 109.786, 82.116, 102.41, 77.5057, 102.717, 43.0817, 113.782, 43.0817, 113.474, 22.7962, 80.8947, 21.8741, 78.7432, 183.236, 252.092, 185.388, 252.464, 135.905, 249.941, 89.1852, 185.089, 35.7051, 182.015, -42.9782, 90.4227, -42.3635, 79.6652, 16.9564 )
+polygon = PoolVector2Array( 111.016, 19.7226, 159.885, 20.0299, 161.164, 57.0553, 167.174, 61.1334, 168.891, 68.2165, 173.184, 72.9385, 172.969, 82.8119, 197.998, 111.008, 206.911, 110.7, 211.521, 113.466, 217.976, 114.081, 220.127, 118.999, 221.049, 141.743, 202.301, 162.644, 163.266, 162.029, 163.266, 150.349, 131.609, 151.271, 130.379, 145.739, 101.488, 146.354, 102.102, 140.514, 110.094, 134.981, 109.786, 82.116, 102.41, 77.5057, 102.717, 43.0817, 113.782, 43.0817, 113.474, 22.7962, 80.8947, 21.8741, 78.7432, 183.236, 252.092, 185.388, 252.464, 135.905, 249.941, 89.1852, 185.089, 35.7051, 182.015, -42.9782, 90.4227, -42.3635, 79.6652, 16.9564 )
 
 [node name="Portal" parent="." instance=ExtResource( 7 )]
 position = Vector2( 137.816, 21.9907 )

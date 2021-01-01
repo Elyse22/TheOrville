@@ -7,14 +7,13 @@ func _ready():
 		$YSort/Player.position = Data.player_position
 	Data.current_scene = filename
 	
+	
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == "Player":
+		dialog_player.play()
 
 
 func _on_DialogPlayer_stopped():
-	Data.spoke_with_mercer = true
-	get_tree().change_scene("res://Cutscene1.tscn")
-
-
-
-
-
-
+	get_tree().change_scene("res://Cutscene2.tscn")
