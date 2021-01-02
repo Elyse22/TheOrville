@@ -11,5 +11,5 @@ func _ready():
 
 func _on_DialogPlayer_stopped():
 	Data.spoke_with_mercer = true
-	Data.disable_portal("lab_portal")
+	Data.enable_portal("lab_portal")
 	Global.objective = "Speak with Isaac"
