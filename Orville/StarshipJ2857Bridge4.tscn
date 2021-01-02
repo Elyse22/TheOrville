@@ -17,7 +17,7 @@
 [ext_resource path="res://Assets/AllCharacters/MainCharacter/Mustache.png" type="Texture" id=15]
 [ext_resource path="res://Assets/AllCharacters/MainCharacter/Skin_1.png" type="Texture" id=16]
 [ext_resource path="res://Portal.tscn" type="PackedScene" id=17]
-[ext_resource path="res://StarshipJ2857Bridge2.gd" type="Script" id=18]
+[ext_resource path="res://StarshipJ2857Bridge4.gd" type="Script" id=18]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle_down"

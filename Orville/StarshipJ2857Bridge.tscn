@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Character/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Maps/Entrance.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Assets/AllCharacters/Characters/Kelly.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=22]
 [ext_resource path="res://Assets/AllCharacters/Characters/TallaKeyali.png" type="Texture" id=23]
+[ext_resource path="res://StarshipJ2857Bridge.gd" type="Script" id=24]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle_down"
@@ -1470,6 +1471,7 @@ extents = Vector2( 5.31882, 6.05225 )
 extents = Vector2( 22.0422, 22.7589 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 24 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 195.1, 170.377 )
@@ -1853,6 +1855,9 @@ one_shot = true
 
 [node name="Node2D" type="Node2D" parent="NPC3/CustomPath"]
 position = Vector2( 419.081, 155.082 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 7.92444, 149.432 )
 [connection signal="body_entered" from="NPC/Area2D" to="NPC" method="player_around"]
 [connection signal="body_exited" from="NPC/Area2D" to="NPC" method="player_not_around"]
 [connection signal="stopped" from="NPC/HUD/DialogPlayer" to="NPC" method="dialog_player_stopped"]

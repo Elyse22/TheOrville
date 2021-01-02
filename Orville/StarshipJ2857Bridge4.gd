@@ -5,7 +5,6 @@ func _ready():
 	if Data.current_scene == filename:
 		$YSort/Player.position = Data.player_position
 	Data.current_scene = filename
-	MusicController.play_moon_music()
 
 
 
@@ -13,4 +12,4 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		get_tree().change_scene("res://Cutscene5.tscn")
+		get_tree().change_scene("res://Cutscene6.tscn")
