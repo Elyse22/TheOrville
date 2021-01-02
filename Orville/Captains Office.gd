@@ -6,5 +6,4 @@ func _ready():
 		$YSort/Player.position = Data.player_position
 	Data.current_scene = filename
 	
-	if not Data.spoke_with_isaac:
-		 Global.objective = "Speak to Isaac"
+	
