@@ -105,14 +105,15 @@ func handle_animation():
 		
 		anim_player.play("move_" + direction)
 	elif sitting:
-		anim_player.play("sit_" + direction)
+		anim_player.play("sit_right")
 	else:
 		anim_player.play("idle_" + direction)
 
 
 func walk(direction):
-	velocity = direction * speed
-	walking = true
+	if not sitting:
+		velocity = direction * speed
+		walking = true
 
 
 func stop_walking():

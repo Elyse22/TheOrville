@@ -7,3 +7,8 @@ func _ready():
 	Data.current_scene = filename
 	
 	
+
+
+func _on_DialogPlayer_stopped():
+	Data.spoke_with_mercer = true
+	Global.objective = "Speak with Issac"

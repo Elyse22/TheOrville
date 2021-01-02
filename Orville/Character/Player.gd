@@ -64,7 +64,7 @@ func _ready():
 	load_custom_character()
 	if Global.player_initial_map_position:
 		global_position = Global.player_initial_map_position
-	if Global.player_initial_map_position:
+	if Global.player_facing_direction:
 		direction = Global.player_facing_direction
 	if Global.in_lift:
 		Global.in_lift = false
