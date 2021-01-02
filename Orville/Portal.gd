@@ -1,11 +1,16 @@
 tool
-
 extends Area2D
+
+export var id := ""
 
 export(String, FILE) var next_scene_path = ""
 export(Vector2) var player_spawn_location = Vector2.ZERO
 export(String) var player_direction = "down"
 
+func enable():
+	Data.enable_portal(id)
+func disable():
+	Data.disable_portal(id)
 
 
 func _get_configuration_warning() -> String:
@@ -17,6 +22,8 @@ func _get_configuration_warning() -> String:
 
 
 func _on_Portal_body_entered(body):
+	if id in Data.disabled_portals:
+		return
 	if body is Player:
 		if not body.allow_portal_travel:
 			return
