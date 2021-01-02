@@ -136,6 +136,7 @@ rotation = 1.57079
 scale = Vector2( 1, 2.011 )
 collision_layer = 2
 script = ExtResource( 13 )
+id = "lab_portal"
 next_scene_path = "res://Lab.tscn"
 player_spawn_location = Vector2( 138, 35 )
 
