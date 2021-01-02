@@ -29,6 +29,8 @@ var sound = true
 
 var spoke_with_mercer = false
 
+var spoke_with_isaac = false
+
 var save_found = false
 
 func _ready():
@@ -56,6 +58,7 @@ func load_game():
 	inventory = data.inventory
 	sound = data.sound
 	spoke_with_mercer = data.spoke_with_mercer
+	spoke_with_isaac = data.spoke_with_isaac
 	file.close()
 
 func save_game():
@@ -69,6 +72,7 @@ func save_game():
 		'inventory': inventory,
 		'sound': sound,
 		'spoke_with_mercer': spoke_with_mercer
+		'spoke_with_isaac': spoke_with_isaac
 	}
 	var file = File.new()
 	var error = file.open("user://save.dat", File.WRITE)
