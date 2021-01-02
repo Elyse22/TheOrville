@@ -71,7 +71,7 @@ func save_game():
 		'spawn_wrench_iron_coil': spawn_wrench_iron_coil,
 		'inventory': inventory,
 		'sound': sound,
-		'spoke_with_mercer': spoke_with_mercer
+		'spoke_with_mercer': spoke_with_mercer,
 		'spoke_with_isaac': spoke_with_isaac
 	}
 	var file = File.new()
