@@ -18,6 +18,7 @@ var path = []
 export var dialog_index = -1
 var can_talk = true
 export var move_random: bool = true
+export var sitting: bool = false
 
 func set_path(new_path):
 	path = new_path
@@ -88,20 +89,25 @@ func _physics_process(_delta):
 			if move_random and path.size():
 				path.remove(0)
 
-func handle_animation():
-	if velocity.length_squared() < 1.0:
-		anim_player.current_animation = anim_player.current_animation.replace("move_", "idle_")
-		return
+var direction := "down"
 
-	var angle = rad2deg(velocity.angle())
-	if angle >= -30 and angle <= 30:
-		anim_player.play("move_right")
-	elif angle >= -150 and angle <= -30:
-		anim_player.play("move_up")
-	elif angle >= 30 and angle <= 150:
-		anim_player.play("move_down")
+func handle_animation():
+	if velocity.length_squared() >= 1.0:
+		var angle = rad2deg(velocity.angle())
+		if angle >= -30 and angle <= 30:
+			direction = "right"
+		elif angle >= -150 and angle <= -30:
+			direction = "up"
+		elif angle >= 30 and angle <= 150:
+			direction = "down"
+		else:
+			direction = "left"
+		
+		anim_player.play("move_" + direction)
+	elif sitting:
+		anim_player.play("sit_" + direction)
 	else:
-		anim_player.play("move_left")
+		anim_player.play("idle_" + direction)
 
 
 func walk(direction):

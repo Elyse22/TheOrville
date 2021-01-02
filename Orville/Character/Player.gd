@@ -19,33 +19,31 @@ var player_name = ""
 var frame_count = 0
 var direction = ""
 
+export var sitting := false
+
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
-
-	if input_vector.x > 0:
-		anim_player.play("walk_right")
-		direction = "right"
-	elif input_vector.x < 0:
-		anim_player.play("walk_left")
-		direction = "left"
-	elif input_vector.y > 0:
-		anim_player.play("walk_down")
-		direction = "down"
-	elif input_vector.y < 0:
-		anim_player.play("walk_up")
-		direction = "up"
+	
+	if input_vector != Vector2():
+		var angle = rad2deg(velocity.angle())
+		if angle >= -30 and angle <= 30:
+			direction = "right"
+		elif angle >= -150 and angle <= -30:
+			direction = "up"
+		elif angle >= 30 and angle <= 150:
+			direction = "down"
+		else:
+			direction = "left"
+		
+		anim_player.play("walk_" + direction)
+	elif sitting:
+		anim_player.play("sit_" + direction)
 	else:
-		anim_player.stop()
-		match direction:
-			"right": anim_player.play("Idle Right")
-			"left" : anim_player.play("Idle Left")
-			"up" : anim_player.play("Idle Up")
-			"down" : anim_player.play("Idle Down")
-			_ : anim_player.play("Idle Down")
-
+		anim_player.play("idle_" + direction)
+	
 	if input_vector != Vector2.ZERO:
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		animationTree.set("parameters/Run/blend_position", input_vector)
