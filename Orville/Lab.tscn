@@ -46,3 +46,6 @@ player_spawn_location = Vector2( 518, 81 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 138.454, 35.0106 )
+[connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
+
+[editable path="YSort/NPC"]

@@ -10,7 +10,7 @@ var character = {
 	"hair_style": "res://Assets/AllCharacters/MainCharacter/Hair_1.png",
 	"skin_style": "res://Assets/AllCharacters/MainCharacter/Skin_1.png",
 	"beard_style": "res://Assets/AllCharacters/MainCharacter/Beard_1.png",
-	"mustache_style": false,
+	"mustache_style": "res://Assets/AllCharacters/MainCharacter/Mustache.png"
 }
 
 var can_talk_with = {
@@ -30,6 +30,16 @@ var sound = true
 var spoke_with_mercer = false
 
 var spoke_with_isaac = false
+
+var spoke_with_lemarr = false
+
+var spoke_with_bortus = false
+
+var take_items_to_lemarr = false
+
+var spoke_with_gordon = false
+
+var go_to_shuttlecraft = false
 
 var save_found = false
 
@@ -59,6 +69,11 @@ func load_game():
 	sound = data.sound
 	spoke_with_mercer = data.spoke_with_mercer
 	spoke_with_isaac = data.spoke_with_isaac
+	spoke_with_lemarr = data.spoke_with_lemarr
+	spoke_with_bortus = data.spoke_with_bortus
+	take_items_to_lemarr = data.take_items_to_lemarr
+	spoke_with_gordon = data.spoke_with_gordon
+	go_to_shuttlecraft = data.go_to_shuttlecraft
 	file.close()
 
 func save_game():
@@ -72,7 +87,12 @@ func save_game():
 		'inventory': inventory,
 		'sound': sound,
 		'spoke_with_mercer': spoke_with_mercer,
-		'spoke_with_isaac': spoke_with_isaac
+		'spoke_with_isaac': spoke_with_isaac,
+		'spoke_with_lemarr': spoke_with_lemarr,
+		'spoke_with_bortus': spoke_with_bortus,
+		'take_items_to_lemarr': take_items_to_lemarr,
+		'spoke_with_gordon': spoke_with_gordon,
+		'go_to_shuttlecraft': go_to_shuttlecraft
 	}
 	var file = File.new()
 	var error = file.open("user://save.dat", File.WRITE)

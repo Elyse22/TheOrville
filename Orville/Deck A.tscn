@@ -47,7 +47,7 @@ next_scene_path = "res://Captains Office.tscn"
 player_spawn_location = Vector2( 191.8, 159.8 )
 
 [node name="Portal3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 452.357, 85.7259 )
+position = Vector2( 451.105, 85.7259 )
 next_scene_path = "res://Bridge.tscn"
 player_spawn_location = Vector2( 9.6, 128 )
 

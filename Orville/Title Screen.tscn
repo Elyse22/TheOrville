@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Fade In/FadeIn.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MovingStars.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Buttons/Options Button.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Title.png" type="Texture" id=9]
 [ext_resource path="res://title_screen.gd" type="Script" id=10]
-[ext_resource path="res://Audio/orville theme final wav.wav" type="AudioStream" id=11]
 
 [node name="Title Screen" type="Control"]
 anchor_right = 1.0
@@ -94,11 +93,5 @@ valign = 1
 
 [node name="FadeIn" parent="." instance=ExtResource( 1 )]
 visible = false
-
-[node name="Audio Effect" type="Node2D" parent="."]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio Effect"]
-stream = ExtResource( 11 )
-volume_db = -18.175
-autoplay = true
+[connection signal="mouse_entered" from="." to="." method="_on_Title_Screen_mouse_entered"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_Fade_In_fade_finished"]

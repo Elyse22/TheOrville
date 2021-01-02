@@ -77,5 +77,8 @@ speakers_dialogs = [ "Bortus", "Bortus", "You", "Bortus", "Bortus" ]
 position = Vector2( 233.683, 182.609 )
 next_scene_path = "res://Deck B.tscn"
 player_spawn_location = Vector2( 518.2, 36.8 )
+[connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
+
+[editable path="YSort/NPC"]
 
 [editable path="Portal"]

@@ -4,15 +4,15 @@ extends Control
 var mustache = true
 var hair = {
 	"index": 1,
-	"max": 9
+	"max": 7
 }
 var beard = {
 	"index": 1,
-	"max": 3
+	"max": 1
 }
 var skin = {
 	"index": 1,
-	"max": 5
+	"max": 4
 }
 
 
@@ -51,7 +51,7 @@ func toggle_mustache():
 	Data.character.mustache_style = mustache
 	get_node("Character/Mustache").visible = mustache
 	if mustache:
-		get_node("Screen/LeftMenu2/Mustache/Label").text = "Must"
+		get_node("Screen/LeftMenu2/Mustache/Label").text = "Mouth"
 	else:
 		get_node("Screen/LeftMenu2/Mustache/Label").text = "OFF"
 

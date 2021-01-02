@@ -85,6 +85,7 @@ func load_custom_character():
 	$Character/Beard.texture = load(Data.character.beard_style)
 	$Character/Hair.texture = load(Data.character.hair_style)
 	$Character/Mustache.visible = Data.character.mustache_style
+	$Character/Mustache.modulate = Data.character.beard_color
 	$Character/Beard.modulate = Data.character.beard_color
 	$Character/EyeBrows.modulate = Data.character.hair_color
 	$Character/Hair.modulate = Data.character.hair_color

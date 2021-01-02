@@ -3,11 +3,11 @@
 [ext_resource path="res://Assets/Bridge Top Left Console.png" type="Texture" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 7.39143
+radius = 4.73409
 height = 24.7207
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 5.659
+radius = 4.16423
 height = 15.4229
 
 [node name="StaticBody2D8" type="StaticBody2D"]
@@ -20,6 +20,6 @@ position = Vector2( -7.47376, -2.15909 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 5.64685, -20.2622 )
+position = Vector2( 3.65385, -20.2622 )
 rotation = 1.5708
 shape = SubResource( 2 )

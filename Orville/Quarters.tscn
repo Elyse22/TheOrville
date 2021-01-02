@@ -44,7 +44,7 @@ shape = SubResource( 1 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 31.587, 68.9659 )
+position = Vector2( 327.787, 59.7257 )
 
 [node name="Plant 1" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 227.983, 44.0389 )
@@ -100,10 +100,16 @@ margin_right = -780.0
 margin_bottom = -76.0
 rect_min_size = Vector2( 500, 230 )
 speakers = [ "Ed" ]
-dialogs = [ "test" ]
+dialogs = [ "Commander %p, it's Captain Ed Mercer. Come see me in my office immediately." ]
 
 [node name="Area2D" parent="." instance=ExtResource( 17 )]
-[connection signal="body_entered" from="Area2D" to="YSort/Player" method="_on_Area2D_body_entered"]
+position = Vector2( 40.0409, 11.8069 )
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2( 4.85856, 38.7756 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="YSort/Player" method="_on_Area2D_body_entered"]
 
 [editable path="Portal"]
+
+[editable path="Area2D"]

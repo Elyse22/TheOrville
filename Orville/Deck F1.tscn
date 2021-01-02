@@ -9,7 +9,7 @@
 [ext_resource path="res://Src/Scanner/Item.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Lift.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://Deck F.gd" type="Script" id=10]
+[ext_resource path="res://Deck F1.gd" type="Script" id=10]
 [ext_resource path="res://Src/NPC/Branched_NPC/BranchingNPC.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -43,7 +43,7 @@ polygon = PoolVector2Array( 429.437, -193.157, 589.504, -192.749, 574.836, -198.
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 496.359, -113.132 )
+position = Vector2( -64.6948, 110.026 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 499.154, 9.98354 )
@@ -99,8 +99,11 @@ branch_dialogs = [ [ "Did Bortus ask you to find some items?" ], [ "Ah, of cours
 dialog_index = -2
 
 [node name="Item" parent="." instance=ExtResource( 7 )]
-position = Vector2( 516.843, -66.3159 )
+position = Vector2( 538.948, -56.8422 )
 item_name = "Wrench"
 item_sprite = ExtResource( 5 )
 [connection signal="body_entered" from="Lift" to="Lift" method="player_entered"]
 [connection signal="body_exited" from="Lift" to="Lift" method="player_exited"]
+[connection signal="stopped" from="BranchingNPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
+
+[editable path="BranchingNPC"]

@@ -149,6 +149,11 @@ __meta__ = {
 position = Vector2( 519.414, 17.743 )
 next_scene_path = "res://Bortus' Quarters.tscn"
 player_spawn_location = Vector2( 233.5, 172.7 )
+
+[node name="Portal3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -3.56686, 292.434 )
+next_scene_path = "res://Deck F1.tscn"
+player_spawn_location = Vector2( -64, 110 )
 [connection signal="body_entered" from="YSort/Portal2" to="YSort/Portal2" method="_on_Portal_body_entered"]
 [connection signal="body_entered" from="Lift" to="Lift" method="player_entered"]
 [connection signal="body_exited" from="Lift" to="Lift" method="player_exited"]

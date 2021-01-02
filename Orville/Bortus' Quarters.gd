@@ -11,3 +11,8 @@ func _ready():
 #	if not get_node("IronCoil") == null and not get_node("Wrench") == null:
 #		$IronCoil.visible = Data.spawn_wrench_iron_coil
 #		$Wrench.visible = Data.spawn_wrench_iron_coil
+
+
+func _on_DialogPlayer_stopped():
+	Data.spoke_with_bortus = true
+	Global.objective = "Take Wrench and Iron Coil to LeMarr"

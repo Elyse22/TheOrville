@@ -101,5 +101,8 @@ margin_top = 90.0
 margin_right = 400.0
 margin_bottom = 131.0
 text = "DECK F"
+[connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
 [connection signal="body_entered" from="Lift" to="Lift" method="player_entered"]
 [connection signal="body_exited" from="Lift" to="Lift" method="player_exited"]
+
+[editable path="YSort/NPC"]
