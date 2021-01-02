@@ -55,7 +55,8 @@ position = Vector2( 535.012, -166.53 )
 scale = Vector2( 1.2, 1.2 )
 npc_name = "LeMarr"
 npc_texture = ExtResource( 6 )
-dialogs = [ "Oh hey %p, what's up? ", "YOU: Isaac asked me to find you, he is concerned about the quantum engines, given our current... pixel state. ", "Yeah, I was wondering how long it would take him to ask.", "The quantum drive is down, meaning, we stranded until we can get them back online. See if you can find Bortus in his quarters, I'm thinking his Moclan engineering skills may throw a fresh light on things.  " ]
+dialogs = [ "Oh hey %p, what's up? ", "Isaac asked me to find you, he is concerned about the quantum engines, given our current... pixel state. ", "Yeah, I was wondering how long it would take him to ask.", "The quantum drive is down, meaning, we stranded until we can get them back online. See if you can find Bortus in his quarters, I'm thinking his Moclan engineering skills may throw a fresh light on things.  " ]
+speakers_dialogs = [ "LeMarr", "You", "LeMarr", "LeMarr" ]
 
 [node name="NPC" parent="." instance=ExtResource( 5 )]
 position = Vector2( -159.749, -172.582 )

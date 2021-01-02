@@ -1638,7 +1638,7 @@ polygon = PoolVector2Array( 2.20767, 134.523, 422.792, 127.629, 423.03, 159.736,
 
 [node name="Portal" parent="." instance=ExtResource( 17 )]
 position = Vector2( 385.467, 145.471 )
-next_scene_path = "res://Src/Levels/Meadow/Meadow.tscn"
+next_scene_path = "res://Src/Levels/Meadow/Meadow2.tscn"
 player_spawn_location = Vector2( -211, 84 )
 
 [node name="NPC" type="KinematicBody2D" parent="."]

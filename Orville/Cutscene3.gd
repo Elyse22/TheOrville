@@ -1,7 +1,6 @@
 extends Control
 
 
-
 func _ready():
 	Global.objective = null
 

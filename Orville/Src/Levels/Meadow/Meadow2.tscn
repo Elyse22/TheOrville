@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Src/Levels/Meadow/Meadow.tres" type="TileSet" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/AllCharacters/Characters/Hamelac.png" type="Texture" id=5]
 [ext_resource path="res://Src/NPC/NPC.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Portal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Src/NPC/Branched_NPC/BranchingNPC.tscn" type="PackedScene" id=8]
 
 [node name="Meadow" type="Node2D"]
 
@@ -30,14 +31,6 @@ position = Vector2( -220.419, 85.462 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 614.661, -292.37, 1133.83, -177.271, 1560.37, -42.5753, 1519.96, 163.958, 1506.49, 446.818, 1380.77, 806.006, 1062.85, 1040.45, 646.951, 989.652, -2.09949, 882.333, -379.247, 734.168, -578.522, 516.607, -645.193, 224.525, -657.617, -69.5144, -622.067, -354.543, -211.38, -408.845, 165.964, -411.518, 461.221, -343.23, 716.276, -267.068, 527.703, -500.54, 213.413, -487.07, -33.5284, -500.54, -349.38, -556.845, -837.38, -492.845, -845.995, -138.773, -850.681, 321.102, -855.171, 487.227, -751.904, 711.719, -527.412, 913.762, -91.8964, 1079.89, 393.007, 1160.7, 797.094, 1196.62, 1295.47, 1232.54, 1519.96, 994.58, 1695.06, 774.577, 1739.96, 348.042, 1762.41, 87.6302, 1695.06, -235.639, 1398.73, -406.253, 1115.87, -424.212, 909.34, -419.723, 528.987, -501.517 )
 
-[node name="NPC" parent="." instance=ExtResource( 6 )]
-position = Vector2( 527.273, 35.0478 )
-npc_name = "Tomolen"
-npc_texture = ExtResource( 3 )
-dialogs = [ "Tomolen, good to see you again. Is everything okay?", "Captain Mercer! Thank you for coming. Our engines have stopped, and we are headed straight for a nebula!", "We need blue crystals from a nearby moon but have no idea how to collect them. Does your ship have the capacity for such a mission?", "Yeah, I think we can handle it. Tomolen, can I ask, do you know what a nebula is?", "We are not stupid...", "Always a pleasure to see you Hamelac. ", "...", "Tomolen, inform your crew that they have nothing to fear. Nebula’s may look ominous and hard to travel through, but once you are in a nebula, you won’t be able to notice it! The particles are too far apart. ", "Oh, well that’s a relief. Will you still help us?", "Of course. " ]
-speakers_dialogs = [ "Ed", "Tomolen", "Tomolen", "Ed", "Hamelac", "Ed", "Hamelac", "Ed", "Tomolen", "Ed" ]
-move_random = false
-
 [node name="NPC2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 567.999, 8.98352 )
 npc_name = "GreyHairedGuy"
@@ -52,5 +45,13 @@ move_random = false
 
 [node name="Portal" parent="." instance=ExtResource( 7 )]
 position = Vector2( -236.137, 80.5137 )
-next_scene_path = "res://StarshipJ2857Bridge2.tscn"
+next_scene_path = "res://StarshipJ2857Bridge4.tscn"
 player_spawn_location = Vector2( 372, 151 )
+
+[node name="BranchingNPC" parent="." instance=ExtResource( 8 )]
+position = Vector2( 527.66, 32.7037 )
+scale = Vector2( 1.1, 1.2 )
+npc_name = "Tomolen"
+npc_texture = ExtResource( 3 )
+condition_item = "BlueCrystal"
+branch_dialogs = [ [ "You can get to the Moon by crossing the bridge back to your Shuttlecraft." ], [ "Wow, that was quick! Thank you so much, I hope we can repay you. " ] ]
