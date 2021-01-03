@@ -17,7 +17,7 @@ var allow_portal_travel = false
 var player_name = ""
 
 var frame_count = 0
-var direction = ""
+var direction = "down"
 
 export var sitting := false
 
