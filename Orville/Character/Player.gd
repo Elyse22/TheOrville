@@ -64,8 +64,10 @@ func _ready():
 	load_custom_character()
 	if Global.player_initial_map_position:
 		global_position = Global.player_initial_map_position
+		Global.player_initial_map_position = null
 	if Global.player_facing_direction:
 		direction = Global.player_facing_direction
+		Global.player_facing_direction = null
 	if Global.in_lift:
 		Global.in_lift = false
 		for lift in get_tree().get_nodes_in_group("lift"):
