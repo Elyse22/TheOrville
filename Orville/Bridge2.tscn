@@ -192,7 +192,7 @@ texture = ExtResource( 1 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 156.794, 88.6342 )
+position = Vector2( 157.869, 84.6909 )
 
 [node name="NPCTest" type="KinematicBody2D" parent="YSort"]
 position = Vector2( 193.576, 96.2265 )
