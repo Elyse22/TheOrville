@@ -12,7 +12,7 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		dialog_player.play()
+		pass#dialog_player.play()
 
 
 func _on_DialogPlayer_stopped():
