@@ -92,7 +92,7 @@ func _physics_process(_delta):
 		velocity = move_and_slide(velocity, Vector2.UP)
 		if get_slide_count():
 			velocity = Vector2.ZERO
-			if move_random and path.size():
+			if move_random and path.size() and not $CustomPath.get_child_count():
 				path.remove(0)
 
 var direction := "down"
@@ -177,7 +177,8 @@ func dialog_player_stopped():
 
 func _on_MoveRandom_timeout():
 	if $CustomPath.get_child_count():
-		set_path([$CustomPath.get_children()[int(rand_range(0.0, $CustomPath.get_child_count()))]])
+		var node = $CustomPath.get_children()[int(rand_range(0.0, $CustomPath.get_child_count()))]
+		set_path([node.position])
 	else:
 		var direction = Vector2(40, 0).rotated(PI / 2.0 * floor(rand_range(0.0, 4.0)))
 		set_path([position + direction])

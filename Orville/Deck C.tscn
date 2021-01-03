@@ -46,70 +46,69 @@ player_spawn_location = Vector2( 45, 53 )
 shape = SubResource( 1 )
 
 [node name="YSort" type="YSort" parent="."]
-position = Vector2( 248, 262 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -330.757, 277.892 )
+position = Vector2( -82.757, 539.892 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -491.364, -148.526 )
+position = Vector2( -243.364, 113.474 )
 
 [node name="StaticBody2D2" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -460.485, -148.583 )
+position = Vector2( -212.485, 113.417 )
 
 [node name="StaticBody2D3" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -429.497, -148.496 )
+position = Vector2( -181.497, 113.504 )
 
 [node name="StaticBody2D4" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -398.423, -148.46 )
+position = Vector2( -150.423, 113.54 )
 
 [node name="StaticBody2D5" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -491.473, -118.564 )
+position = Vector2( -243.473, 143.436 )
 
 [node name="StaticBody2D6" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -460.545, -118.513 )
+position = Vector2( -212.545, 143.487 )
 
 [node name="StaticBody2D7" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -429.54, -118.487 )
+position = Vector2( -181.54, 143.513 )
 
 [node name="StaticBody2D8" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -398.479, -118.465 )
+position = Vector2( -150.479, 143.54 )
 
 [node name="StaticBody2D9" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -492.476, -87.4674 )
+position = Vector2( -244.476, 174.533 )
 
 [node name="StaticBody2D10" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -461.492, -87.4612 )
+position = Vector2( -213.492, 174.539 )
 
 [node name="StaticBody2D11" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -430.499, -87.5176 )
+position = Vector2( -182.499, 174.482 )
 
 [node name="StaticBody2D12" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -399.508, -87.5045 )
+position = Vector2( -151.508, 174.496 )
 
 [node name="StaticBody2D13" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( -444.477, -62.0466 )
+position = Vector2( -196.477, 199.953 )
 
 [node name="StaticBody2D14" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -375.999, 268.786 )
+position = Vector2( -127.999, 530.786 )
 
 [node name="StaticBody2D15" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -427.038, 268.773 )
+position = Vector2( -179.038, 530.773 )
 
 [node name="StaticBody2D16" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -480.014, 268.947 )
+position = Vector2( -232.014, 530.947 )
 
 [node name="StaticBody2D17" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -480.033, 303.913 )
+position = Vector2( -232.033, 565.913 )
 
 [node name="StaticBody2D18" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -427.044, 303.78 )
+position = Vector2( -179.044, 565.78 )
 
 [node name="StaticBody2D19" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -376, 303.856 )
+position = Vector2( -128, 565.856 )
 
 [node name="NPC" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( -182.865, -160.046 )
+position = Vector2( 65.14, 101.954 )
 npc_name = "Tom"
 npc_texture = ExtResource( 8 )
 dialogs = [ "Hey %p, does something seem off to you?" ]
@@ -119,17 +118,20 @@ texture = SubResource( 2 )
 frame = 10
 
 [node name="NPC2" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( -460.106, 256.169 )
+position = Vector2( -212.106, 518.169 )
 scale = Vector2( 1.15, 1.2 )
 npc_name = "Kit"
 npc_texture = ExtResource( 9 )
 dialogs = [ "Everything is really... squarey, don't you think?" ]
 
+[node name="MoveRandom" parent="YSort/NPC2" index="6"]
+wait_time = 3.0
+
 [node name="Node2D" type="Node2D" parent="YSort/NPC2/CustomPath" index="0"]
-position = Vector2( -210.369, 551.033 )
+position = Vector2( -209.247, 537.283 )
 
 [node name="Node2D2" type="Node2D" parent="YSort/NPC2/CustomPath" index="1"]
-position = Vector2( -144.982, 549.791 )
+position = Vector2( -152.278, 537.163 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
