@@ -20,6 +20,8 @@ var can_talk = true
 export var move_random: bool = true
 export var sitting: bool = false
 
+export var movement_cooldown: float = 0.0
+
 func set_path(new_path):
 	path = new_path
 
@@ -65,10 +67,14 @@ func _ready():
 
 
 func _process(delta):
-	if $MoveCooldown.time_left == 0.0 and path.size():
-		move_path(delta)
+	if movement_cooldown <= 0.0:
+		if $MoveCooldown.time_left == 0.0 and path.size():
+			move_path(delta)
+		else:
+			velocity = Vector2.ZERO
 	else:
-		velocity = Vector2.ZERO
+		movement_cooldown -= delta
+	
 	handle_animation()
 
 
