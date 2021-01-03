@@ -15,6 +15,7 @@ radius = 5.72482
 height = 10.9134
 
 [node name="StaticBody2D6" type="StaticBody2D"]
+scale = Vector2( 1.05, 1.05 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

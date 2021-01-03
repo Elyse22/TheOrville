@@ -157,13 +157,15 @@ script = ExtResource( 11 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 15.9122, 102.145, 16.0947, 74.9237, 31.42, 60.9606, 52.1943, 48.0193, 73.6497, 40.8675, 81.8232, 39.1646, 82.8449, 56.1928, 99.5325, 55.5116, 100.895, 37.1213, 110.09, 35.0779, 109.409, 54.1494, 126.096, 53.4683, 127.799, 35.4185, 139.719, 36.0996, 138.357, 53.4683, 153.341, 55.8522, 158.109, 37.8024, 192.165, 50.0626, 213.621, 66.7502, 236.098, 91.9518, 241.547, 116.132, 238.468, 127.68, 234.213, 137.193, 220.193, 157.22, 202.92, 171.74, 176.633, 185.259, 157.107, 191.768, 156.355, 189.265, 156.066, 181.52, 139.038, 179.817, 138.581, 193.52, 126.815, 194.021, 125.415, 180.839, 110.431, 181.179, 110.042, 193.52, 101.029, 192.269, 100.214, 180.498, 84.5479, 179.136, 83.5053, 188.013, 58.2205, 177.749, 34.4378, 164.48, 19.1668, 150.211, 16.1626, 136.192, -3.99829, 136.906, -9.78784, 174.368, 32.4419, 198.888, 220.432, 229.198, 270.835, 144.739, 269.473, -16.6875, 53.5566, -21.1149, 6.89961, 24.1799, -21.0265, 40.1863, -20.6859, 99.7847 )
+position = Vector2( 15.9264, -8.532 )
+polygon = PoolVector2Array( 5.9618, 100.15, 6.23919, 81.0099, 31.42, 60.9606, 52.1943, 48.0193, 73.6497, 40.8675, 81.8232, 39.1646, 83.4571, 51.5412, 91.781, 52.0169, 94.4491, 38.2919, 110.09, 35.0779, 111.996, 48.6873, 120.796, 49.6386, 122.465, 34.6859, 139.719, 36.0996, 140.536, 51.0656, 149.811, 51.3034, 151.591, 36.905, 199.58, 54.1031, 218.997, 65.1987, 237.305, 84.0612, 247.013, 110.136, 247.855, 130.332, 237.037, 148.917, 222.612, 165.005, 207.633, 178.32, 178.785, 191.357, 152.433, 199.402, 152.155, 193.022, 150.214, 186.919, 139.118, 187.751, 137.454, 201.066, 123.584, 201.621, 122.752, 189.693, 109.715, 189.693, 109.992, 200.511, 96.1228, 200.234, 92.5167, 188.861, 82.2533, 188.029, 79.4794, 195.796, 59.2299, 187.474, 32.6006, 174.159, 7.35811, 153.91, 6.52594, 139.485, -17.8843, 139.208, -9.78784, 174.368, 32.4419, 198.888, 220.432, 229.198, 270.835, 144.739, 269.473, -16.6875, 53.5566, -21.1149, 6.89961, 24.1799, -21.0265, 40.1863, -20.6859, 99.7847 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( -1.86217, 100.392, -1.61182, 139.696, -30.6518, 139.196, -29.1497, 99.6412 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -143.923, 270.049 )
+scale = Vector2( 1.05, 1.05 )
 texture = ExtResource( 1 )
 
 [node name="YSort" type="YSort" parent="."]
@@ -172,28 +174,28 @@ texture = ExtResource( 1 )
 position = Vector2( 49.8335, 129.82 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 79.0942, 143.53 )
+position = Vector2( 90.4101, 137.093 )
 
 [node name="StaticBody2D2" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 201.539, 113.58 )
+position = Vector2( 218.855, 105.736 )
 
 [node name="StaticBody2D3" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 201.68, 132.606 )
+position = Vector2( 218.804, 125.717 )
 
 [node name="StaticBody2D4" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 111.256, 144.069 )
+position = Vector2( 123.908, 137.732 )
 
 [node name="StaticBody2D5" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 111.073, 101 )
+position = Vector2( 124, 92.5864 )
 
 [node name="StaticBody2D6" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 211.68, 124.108 )
+position = Vector2( 229.51, 116.9 )
 
 [node name="StaticBody2D7" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 115.556, 126.685 )
+position = Vector2( 128.466, 119.376 )
 
 [node name="StaticBody2D8" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 81.4963, 105.161 )
+position = Vector2( 92.8813, 96.7509 )
 
 [node name="NPCTest" type="KinematicBody2D" parent="YSort"]
 position = Vector2( 184.094, 99.5855 )
@@ -265,7 +267,7 @@ one_shot = true
 [node name="CustomPath" type="Node" parent="YSort/NPCTest"]
 
 [node name="Portal" parent="." instance=ExtResource( 12 )]
-position = Vector2( -5.73577, 121.168 )
+position = Vector2( 10.339, 108.256 )
 next_scene_path = "res://Deck A.tscn"
 player_spawn_location = Vector2( 433.4, 91.6 )
 [connection signal="body_entered" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_around"]

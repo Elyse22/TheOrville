@@ -155,13 +155,12 @@ extents = Vector2( 5.36453, 6.87897 )
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 17.1055, 18.4912 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=12]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 15 )
 
-[sub_resource type="Animation" id=12]
-resource_name = "idle_down"
+[sub_resource type="Animation" id=13]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -311,6 +310,7 @@ polygon = PoolVector2Array( -1.86217, 100.392, -1.61182, 139.696, -30.6518, 139.
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -143.582, 269.505 )
+scale = Vector2( 1.05, 1.05 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -325,28 +325,28 @@ __meta__ = {
 position = Vector2( 156.794, 88.6342 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 79.0942, 143.53 )
+position = Vector2( 90.5764, 136.687 )
 
 [node name="StaticBody2D2" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 201.539, 113.58 )
+position = Vector2( 219.287, 105.371 )
 
 [node name="StaticBody2D3" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 201.68, 132.606 )
+position = Vector2( 219.178, 125.001 )
 
 [node name="StaticBody2D4" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 111.256, 144.069 )
+position = Vector2( 124.197, 137.232 )
 
 [node name="StaticBody2D5" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 111.073, 101 )
+position = Vector2( 124.194, 92.0315 )
 
 [node name="StaticBody2D6" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 211.68, 124.108 )
+position = Vector2( 229.689, 116.378 )
 
 [node name="StaticBody2D7" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 115.556, 126.992 )
+position = Vector2( 129.084, 118.74 )
 
 [node name="StaticBody2D8" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 81.4963, 105.161 )
+position = Vector2( 93.3037, 96.2836 )
 
 [node name="NPCTest" type="KinematicBody2D" parent="YSort"]
 position = Vector2( 195.518, 105.103 )
@@ -421,7 +421,7 @@ one_shot = true
 [node name="CustomPath" type="Node" parent="YSort/NPCTest"]
 
 [node name="Portal" parent="." instance=ExtResource( 12 )]
-position = Vector2( -6.21142, 121.168 )
+position = Vector2( 9.63743, 108.338 )
 next_scene_path = "res://Deck F2.tscn"
 player_spawn_location = Vector2( 145, 295 )
 
@@ -437,7 +437,7 @@ margin_left = -46.0
 margin_top = -42.0
 margin_right = 52.0
 margin_bottom = -28.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 12 )
 text = "Press [E] to talk"
 __meta__ = {
 "_edit_lock_": true,
@@ -454,7 +454,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NPC"]
-anims/idle_down = SubResource( 12 )
+anims/idle_down = SubResource( 13 )
 anims/idle_left = SubResource( 14 )
 anims/idle_right = SubResource( 15 )
 anims/idle_up = SubResource( 16 )
@@ -517,7 +517,7 @@ margin_left = -46.0
 margin_top = -42.0
 margin_right = 52.0
 margin_bottom = -28.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 12 )
 text = "Press [E] to talk"
 __meta__ = {
 "_edit_lock_": true,
@@ -534,7 +534,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NPC2"]
-anims/idle_down = SubResource( 12 )
+anims/idle_down = SubResource( 13 )
 anims/idle_left = SubResource( 14 )
 anims/idle_right = SubResource( 15 )
 anims/idle_up = SubResource( 16 )
@@ -607,7 +607,7 @@ margin_left = -46.0
 margin_top = -42.0
 margin_right = 52.0
 margin_bottom = -28.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 12 )
 text = "Press [E] to talk"
 __meta__ = {
 "_edit_lock_": true,
@@ -624,7 +624,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NPC4"]
-anims/idle_down = SubResource( 12 )
+anims/idle_down = SubResource( 13 )
 anims/idle_left = SubResource( 14 )
 anims/idle_right = SubResource( 15 )
 anims/idle_up = SubResource( 16 )
