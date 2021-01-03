@@ -68,7 +68,7 @@ func _ready():
 
 func _process(delta):
 	if movement_cooldown <= 0.0:
-		if $MoveCooldown.time_left == 0.0 and path.size():
+		if $MoveCooldown.time_left == 0.0 and path.size() and not player_around:
 			move_path(delta)
 		else:
 			velocity = Vector2.ZERO
