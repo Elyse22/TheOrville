@@ -5,4 +5,5 @@ func _on_DialogPlayer_stopped() -> void:
 
 func _ready():
 	MusicController.play_basic_music()
+	$DialogPlayer.play()
 

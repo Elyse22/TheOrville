@@ -7,7 +7,7 @@ var index = -1
 
 
 func _ready():
-	play()
+	hide()
 
 
 func play():
