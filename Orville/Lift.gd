@@ -26,4 +26,4 @@ func lift(button_name):
 	elif button_name == "DeckC":
 		get_tree().change_scene("res://Deck C.tscn")
 	else:
-		get_tree().change_scene("res://Deck F.tscn")
+		get_tree().change_scene(Data.current_deck_f)
