@@ -176,6 +176,9 @@ func dialog_player_stopped():
 
 
 func _on_MoveRandom_timeout():
-	var direction = Vector2(40, 0).rotated(PI / 2.0 * floor(rand_range(0.0, 4.0)))
-	set_path([position + direction])
+	if $CustomPath.get_child_count():
+		set_path([$CustomPath.get_children()[int(rand_range(0.0, $CustomPath.get_child_count()))]])
+	else:
+		var direction = Vector2(40, 0).rotated(PI / 2.0 * floor(rand_range(0.0, 4.0)))
+		set_path([position + direction])
 
