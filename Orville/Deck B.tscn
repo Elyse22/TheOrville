@@ -37,7 +37,7 @@ texture = ExtResource( 1 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 518.247, 36.8329 )
+position = Vector2( -61.2496, 182.182 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 319.958, 145.592 )
@@ -56,10 +56,20 @@ position = Vector2( -170.846, 248.785 )
 position = Vector2( -101.118, 172.536 )
 npc_name = "Lex"
 dialogs = [ "Is it just me or is everything a bit..." ]
+move_random = false
 
 [node name="Sprite" parent="YSort/NPC" index="1"]
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 8 )
+
+[node name="Node2D" type="Node2D" parent="YSort/NPC/CustomPath" index="0"]
+position = Vector2( -97.0578, 215.544 )
+
+[node name="Node2D2" type="Node2D" parent="YSort/NPC/CustomPath" index="1"]
+position = Vector2( -204.83, 218.695 )
+
+[node name="Node2D3" type="Node2D" parent="YSort/NPC/CustomPath" index="2"]
+position = Vector2( -177.969, 177.969 )
 
 [node name="NPC2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 607.711, 52.2296 )
@@ -81,6 +91,7 @@ __meta__ = {
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 22.1693, 70.2903, 1.80573, 71.3523, 0.969391, 300.482, -47.9507, 299.646, -47.9986, 197.707, -77.44, 197.06, -79.3098, 269.123, -234.851, 268.705, -233.189, 152.735, -77.9646, 152.735, -77.7183, 171.68, -46.6962, 171.283, -47.1143, 61.7355, -71.4597, 61.0275, -71.71, 74.0454, -127.394, 72.6066, -126.975, 22.4322, -71.7835, 22.8503, -71.4597, 39.2476, -48.9287, 39.2476, -48.7869, 21.5959, 0.969421, 22.0141, 2.39185, 33.9904, 22.6697, 34.4911, 23.5482, 18.6691, 628.568, 19.9235, 630.241, 3.61677, 681.251, 5.28925, 681.251, 77.624, 535.09, 78.3282, 535.265, 83.9225, 519.006, 84.447, 501.873, 83.9225, 501.525, 78.2617, 342.832, 78.8248, 344.335, 90.4153, 386.895, 91.4221, 387.313, 208.496, 342.359, 210.483, 342.359, 213.487, 290.288, 213.737, 290.037, 209.482, 246.406, 209.332, 245.988, 90.5858, 290.788, 91.0688, 290.288, 77.5503, 23.1704, 78.5516, 22.4193, 72.7937, 15.66, 95.3247, 220.692, 108.092, 218.635, 238.812, 419.421, 233.124, 416.577, 98.3184, 711.215, 105.144, 708.371, -52.9824, 606.556, -54.12, 605.987, 10.7232, 321.587, 7.31042, -153.93, 4.46648, -151.654, 90.3553, -150.517, 115.951, -258.02, 119.933, -260.864, 294.554, -74.8662, 295.692, -73.7286, 327.545, 36.6186, 323.563, 21.8298, 115.382, 12.4012, 96.2075 )
