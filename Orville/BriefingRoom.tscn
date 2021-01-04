@@ -18,12 +18,12 @@
 [ext_resource path="res://Portal.gd" type="Script" id=16]
 [ext_resource path="res://SitTrigger.tscn" type="PackedScene" id=31]
 
-[sub_resource type="DynamicFont" id=34]
+[sub_resource type="DynamicFont" id=1]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 12 )
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=2]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -37,7 +37,7 @@ tracks/0/keys = {
 "values": [ 12 ]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=3]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -52,7 +52,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=4]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -67,7 +67,7 @@ tracks/0/keys = {
 "values": [ 11 ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=5]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -82,7 +82,7 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=6]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -97,7 +97,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=7]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -113,7 +113,7 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="Animation" id=41]
+[sub_resource type="Animation" id=8]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -129,7 +129,7 @@ tracks/0/keys = {
 "values": [ 10, 9 ]
 }
 
-[sub_resource type="Animation" id=42]
+[sub_resource type="Animation" id=9]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -145,7 +145,7 @@ tracks/0/keys = {
 "values": [ 7, 8 ]
 }
 
-[sub_resource type="Animation" id=43]
+[sub_resource type="Animation" id=10]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -161,13 +161,13 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
-[sub_resource type="RectangleShape2D" id=44]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 22.0422, 22.7589 )
 
-[sub_resource type="RectangleShape2D" id=45]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 22.0422, 22.7589 )
 
-[sub_resource type="RectangleShape2D" id=46]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 5.2988, 16.3504 )
 
 [node name="Node2D" type="Node2D"]
@@ -217,7 +217,7 @@ margin_left = -46.0
 margin_top = -42.0
 margin_right = 52.0
 margin_bottom = -28.0
-custom_fonts/font = SubResource( 34 )
+custom_fonts/font = SubResource( 1 )
 text = "Press [E] to talk"
 __meta__ = {
 "_edit_lock_": true,
@@ -235,19 +235,19 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC7"]
 method_call_mode = 1
-anims/Sitting = SubResource( 35 )
-anims/idle_down = SubResource( 36 )
-anims/idle_left = SubResource( 37 )
-anims/idle_right = SubResource( 38 )
-anims/idle_up = SubResource( 39 )
-anims/move_down = SubResource( 40 )
-anims/move_left = SubResource( 41 )
-anims/move_right = SubResource( 42 )
-anims/move_up = SubResource( 43 )
+anims/Sitting = SubResource( 2 )
+anims/idle_down = SubResource( 3 )
+anims/idle_left = SubResource( 4 )
+anims/idle_right = SubResource( 5 )
+anims/idle_up = SubResource( 6 )
+anims/move_down = SubResource( 7 )
+anims/move_left = SubResource( 8 )
+anims/move_right = SubResource( 9 )
+anims/move_up = SubResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC7"]
 position = Vector2( -0.473321, 11.9358 )
-shape = SubResource( 44 )
+shape = SubResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -258,7 +258,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC7/Area2D"]
-shape = SubResource( 45 )
+shape = SubResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -319,7 +319,7 @@ player_spawn_location = Vector2( 277, 170.7 )
 player_direction = "right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-shape = SubResource( 46 )
+shape = SubResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
