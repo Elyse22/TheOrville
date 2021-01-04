@@ -138,7 +138,7 @@ tracks/0/keys = {
 extents = Vector2( 5.36453, 6.87897 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 24.8898, 21.8502 )
+extents = Vector2( 43.2397, 41.1675 )
 
 [node name="BranchingNPC" type="KinematicBody2D"]
 position = Vector2( -0.527039, -0.790558 )

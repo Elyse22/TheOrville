@@ -1,11 +1,174 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Src/Levels/Moon/Moon.tres" type="TileSet" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Src/Levels/Moon/Moon.gd" type="Script" id=3]
+[ext_resource path="res://Src/NPC/NPC.gd" type="Script" id=4]
+[ext_resource path="res://Src/DialogPlayer/DialogPlayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/AllCharacters/Characters/EdMercer.png" type="Texture" id=7]
+[ext_resource path="res://Assets/AllCharacters/Characters/Kelly.png" type="Texture" id=8]
+[ext_resource path="res://Assets/AllCharacters/Characters/TallaKeyali.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19.9993, 38.0002 )
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=3]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 11 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "idle_right"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "idle_up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "move_down"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "move_left"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 10, 9 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "move_right"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 7, 8 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "move_up"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "sit_right"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
+}
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 7.09411, 7.92 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 22.0422, 22.7589 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -24,9 +187,6 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -917495, 61, 0, -786446, 1610612758, 0, -786445, 21, 0, -786444, 21, 0, -786443, 21, 0, -786442, 21, 0, -786441, 21, 0, -786440, 21, 0, -786439, 21, 0, -786438, 21, 0, -786437, 21, 0, -786436, 21, 0, -786435, 21, 0, -786434, 21, 0, -786433, 21, 0, -851968, 21, 0, -851967, 21, 0, -851966, 21, 0, -851965, 21, 0, -851964, 21, 0, -851963, 21, 0, -851962, 21, 0, -851961, 21, 0, -851960, 21, 0, -851959, 21, 0, -851958, 21, 0, -851957, 21, 0, -851956, 21, 0, -851955, 21, 0, -851954, 21, 0, -851953, 21, 0, -851952, 21, 0, -851951, 21, 0, -851950, 21, 0, -851949, 21, 0, -851948, 21, 0, -851947, 21, 0, -851946, 21, 0, -851945, 21, 0, -851944, 21, 0, -851943, 21, 0, -851942, 21, 0, -851941, 21, 0, -851940, 21, 0, -851939, 21, 0, -851938, 21, 0, -851937, 21, 0, -851936, 21, 0, -851935, 21, 0, -851934, 21, 0, -851933, 1610612756, 0, -720910, -1073741803, 0, -720899, 61, 0, -786431, 61, 0, -786426, 61, 0, -786425, 61, 0, -786397, -1610612715, 0, -655374, -1073741803, 0, -655369, 61, 0, -655367, 61, 0, -720879, 61, 0, -720869, 61, 0, -720861, -1610612715, 0, -589838, -1073741803, 0, -655336, 61, 0, -655325, -1610612715, 0, -524302, -1073741803, 0, -524301, 61, 0, -589821, 55, 0, -589794, 61, 0, -589789, -1610612715, 0, -458766, -1073741803, 0, -458759, 15, 0, -524277, 61, 0, -524265, 61, 0, -524258, 61, 0, -524257, 61, 0, -524253, -1610612715, 0, -393230, -1073741803, 0, -458744, 61, 0, -458740, 15, 0, -458724, 15, 0, -458717, -1610612715, 0, -327694, -1073741803, 0, -393207, 61, 0, -393192, 61, 0, -393191, 61, 0, -393185, 61, 0, -393184, 61, 0, -393181, -1610612715, 0, -262158, -1073741803, 0, -327676, 36, 0, -327675, 37, 0, -327674, 37, 0, -327673, 37, 0, -327672, 37, 0, -327671, 37, 0, -327670, 37, 0, -327669, 37, 0, -327668, 37, 0, -327667, 37, 0, -327666, 37, 0, -327665, 37, 0, -327664, 37, 0, -327663, 37, 0, -327662, 38, 0, -327645, -1610612715, 0, -196622, -1073741803, 0, -196612, 61, 0, -262140, 61, 0, -262109, -1610612715, 0, -131086, -1073741803, 0, -196588, 61, 0, -196582, 61, 0, -196580, 47, 0, -196573, -1610612715, 0, -65550, -1073741803, 0, -131041, 61, 0, -131037, -1610612715, 0, -14, -1073741803, 0, -65531, 61, 0, -65516, 29, 0, -65515, 29, 0, -65501, -1610612715, 0, 65522, -1073741803, 0, 1, 61, 0, 5, 61, 0, 35, -1610612715, 0, 51, 21, 0, 52, 21, 0, 131058, -1073741803, 0, 131061, 61, 0, 131067, 61, 0, 65544, 61, 0, 65571, -1610612715, 0, 65587, 21, 0, 65588, 21, 0, 65589, 21, 0, 65590, 21, 0, 65591, 21, 0, 196594, -1073741803, 0, 196603, 61, 0, 131078, 61, 0, 131080, 61, 0, 131103, 61, 0, 131107, -1610612715, 0, 262130, -1073741803, 0, 196638, 55, 0, 196639, 61, 0, 196643, -1610612715, 0, 327666, -1073741803, 0, 327672, 55, 0, 262179, -1610612715, 0, 393202, -1073741803, 0, 327715, -1610612715, 0, 458738, -1073741803, 0, 458739, 40, 0, 458740, 40, 0, 458741, 40, 0, 393248, 61, 0, 393251, -1610612715, 0, 524274, -1073741803, 0, 524275, 37, 0, 524276, 37, 0, 524277, 37, 0, 458787, -1610612715, 0, 589810, -1073741803, 0, 589819, 61, 0, 524323, -1610612715, 0, 655346, -1073741803, 0, 655347, 61, 0, 655348, 61, 0, 589827, 61, 0, 589850, 55, 0, 589859, -1610612715, 0, 720882, -1073741803, 0, 720883, 61, 0, 655375, 61, 0, 655395, -1610612715, 0, 786418, -1073741803, 0, 786419, 37, 0, 786420, 37, 0, 786421, 37, 0, 786427, 61, 0, 720897, 61, 0, 720908, 15, 0, 720931, -1610612715, 0, 851954, -1073741803, 0, 851955, 40, 0, 851956, 40, 0, 851957, 40, 0, 786435, 61, 0, 786467, -1610612715, 0, 917490, -1073741803, 0, 917496, 15, 0, 852003, -1610612715, 0, 983026, -1073741803, 0, 917516, 61, 0, 917539, -1610612715, 0, 1048562, -1073741803, 0, 983075, -1610612715, 0, 1114098, -1073741803, 0, 1114104, 61, 0, 1048605, 61, 0, 1048607, 61, 0, 1048611, -1610612715, 0, 1179634, -1073741803, 0, 1179647, 36, 0, 1114112, 37, 0, 1114113, 37, 0, 1114114, 37, 0, 1114115, 37, 0, 1114116, 37, 0, 1114117, 37, 0, 1114118, 37, 0, 1114119, 37, 0, 1114120, 37, 0, 1114121, 38, 0, 1114140, 61, 0, 1114147, -1610612715, 0, 1245170, -1073741803, 0, 1179651, 61, 0, 1179678, 61, 0, 1179679, 61, 0, 1179683, -1610612715, 0, 1310706, -1073741803, 0, 1310711, 61, 0, 1245185, 61, 0, 1245193, 55, 0, 1245219, -1610612715, 0, 1376242, -1073741803, 0, 1310749, 61, 0, 1310755, -1610612715, 0, 1441778, -1073741803, 0, 1376275, 61, 0, 1376278, 61, 0, 1376283, 15, 0, 1376291, -1610612715, 0, 1507314, -1610612714, 0, 1507315, 21, 0, 1507316, 21, 0, 1507317, 21, 0, 1507318, 21, 0, 1507319, 21, 0, 1507320, 21, 0, 1507321, 21, 0, 1507322, 21, 0, 1507323, 21, 0, 1507324, 21, 0, 1507325, 21, 0, 1507326, 21, 0, 1507327, 21, 0, 1441792, 21, 0, 1441793, 21, 0, 1441794, 21, 0, 1441795, 21, 0, 1441796, 21, 0, 1441797, 21, 0, 1441798, 21, 0, 1441799, 21, 0, 1441800, 21, 0, 1441801, 21, 0, 1441802, 21, 0, 1441803, 21, 0, 1441804, 21, 0, 1441805, 21, 0, 1441806, 21, 0, 1441807, 21, 0, 1441808, 21, 0, 1441809, 21, 0, 1441810, 21, 0, 1441811, 21, 0, 1441812, 21, 0, 1441813, 21, 0, 1441814, 21, 0, 1441815, 21, 0, 1441816, 21, 0, 1441817, 21, 0, 1441818, 21, 0, 1441819, 21, 0, 1441820, 21, 0, 1441821, 21, 0, 1441822, 21, 0, 1441823, 21, 0, 1441824, 21, 0, 1441825, 21, 0, 1441826, 21, 0, 1441827, 22, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 296.381, 460.121 )
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
@@ -38,4 +198,238 @@ polygon = PoolVector2Array( 268.145, 69.0112, 1013.75, 117.936, 1010.92, 668.065
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 256, 452.999 )
 shape = SubResource( 1 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 287.619, 460.371 )
+
+[node name="NPC" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 405.641, 427.16 )
+scale = Vector2( 1.3, 1.4 )
+script = ExtResource( 4 )
+npc_name = "Ed "
+npc_texture = ExtResource( 7 )
+trigger_talk = false
+move_random = false
+
+[node name="Popup" type="Label" parent="YSort/NPC"]
+margin_left = -46.0
+margin_top = -42.0
+margin_right = 52.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 2 )
+text = "Press [E] to talk"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="YSort/NPC"]
+texture = ExtResource( 8 )
+hframes = 14
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC"]
+anims/idle_down = SubResource( 3 )
+anims/idle_left = SubResource( 4 )
+anims/idle_right = SubResource( 5 )
+anims/idle_up = SubResource( 6 )
+anims/move_down = SubResource( 7 )
+anims/move_left = SubResource( 8 )
+anims/move_right = SubResource( 9 )
+anims/move_up = SubResource( 10 )
+anims/sit_right = SubResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC"]
+position = Vector2( 0.10941, 7.99341 )
+shape = SubResource( 12 )
+
+[node name="Area2D" type="Area2D" parent="YSort/NPC"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC/Area2D"]
+position = Vector2( -0.541107, 0 )
+shape = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="YSort/NPC"]
+
+[node name="DialogPlayer" parent="YSort/NPC/HUD" instance=ExtResource( 5 )]
+
+[node name="MoveRandom" type="Timer" parent="YSort/NPC"]
+wait_time = 2.0
+
+[node name="MoveCooldown" type="Timer" parent="YSort/NPC"]
+wait_time = 0.001
+one_shot = true
+autostart = true
+
+[node name="CustomPath" type="Node" parent="YSort/NPC"]
+
+[node name="Node2D" type="Node2D" parent="YSort/NPC/CustomPath"]
+position = Vector2( 698.583, 374.46 )
+
+[node name="NPC2" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 366.004, 438.096 )
+scale = Vector2( 1.3, 1.4 )
+script = ExtResource( 4 )
+npc_name = "Kelly"
+npc_texture = ExtResource( 8 )
+move_random = false
+
+[node name="Popup" type="Label" parent="YSort/NPC2"]
+margin_left = -46.0
+margin_top = -42.0
+margin_right = 52.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 2 )
+text = "Press [E] to talk"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="YSort/NPC2"]
+texture = ExtResource( 8 )
+hframes = 14
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC2"]
+anims/idle_down = SubResource( 3 )
+anims/idle_left = SubResource( 4 )
+anims/idle_right = SubResource( 5 )
+anims/idle_up = SubResource( 6 )
+anims/move_down = SubResource( 7 )
+anims/move_left = SubResource( 8 )
+anims/move_right = SubResource( 9 )
+anims/move_up = SubResource( 10 )
+anims/sit_right = SubResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC2"]
+position = Vector2( 0.10941, 7.99341 )
+shape = SubResource( 12 )
+
+[node name="Area2D" type="Area2D" parent="YSort/NPC2"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC2/Area2D"]
+position = Vector2( -0.541107, 0 )
+shape = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="YSort/NPC2"]
+
+[node name="DialogPlayer" parent="YSort/NPC2/HUD" instance=ExtResource( 5 )]
+speakers = [ "Kelly" ]
+dialogs = [ "Get out your scanner and start looking around. Who knows where these blue crystals are. " ]
+
+[node name="MoveRandom" type="Timer" parent="YSort/NPC2"]
+wait_time = 2.0
+
+[node name="MoveCooldown" type="Timer" parent="YSort/NPC2"]
+wait_time = 0.3
+one_shot = true
+autostart = true
+
+[node name="CustomPath" type="Node" parent="YSort/NPC2"]
+
+[node name="Node2D" type="Node2D" parent="YSort/NPC2/CustomPath"]
+position = Vector2( 673.752, 378.203 )
+
+[node name="NPC3" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 339.804, 441.091 )
+scale = Vector2( 1.3, 1.4 )
+script = ExtResource( 4 )
+npc_name = "Talla"
+npc_texture = ExtResource( 9 )
+trigger_talk = false
+move_random = false
+
+[node name="Popup" type="Label" parent="YSort/NPC3"]
+margin_left = -46.0
+margin_top = -42.0
+margin_right = 52.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 2 )
+text = "Press [E] to talk"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="YSort/NPC3"]
+texture = ExtResource( 8 )
+hframes = 14
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC3"]
+anims/idle_down = SubResource( 3 )
+anims/idle_left = SubResource( 4 )
+anims/idle_right = SubResource( 5 )
+anims/idle_up = SubResource( 6 )
+anims/move_down = SubResource( 7 )
+anims/move_left = SubResource( 8 )
+anims/move_right = SubResource( 9 )
+anims/move_up = SubResource( 10 )
+anims/sit_right = SubResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC3"]
+position = Vector2( 0.10941, 7.99341 )
+shape = SubResource( 12 )
+
+[node name="Area2D" type="Area2D" parent="YSort/NPC3"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC3/Area2D"]
+position = Vector2( -0.541107, 0 )
+shape = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="YSort/NPC3"]
+
+[node name="DialogPlayer" parent="YSort/NPC3/HUD" instance=ExtResource( 5 )]
+
+[node name="MoveRandom" type="Timer" parent="YSort/NPC3"]
+wait_time = 2.0
+
+[node name="MoveCooldown" type="Timer" parent="YSort/NPC3"]
+wait_time = 0.4
+one_shot = true
+autostart = true
+
+[node name="CustomPath" type="Node" parent="YSort/NPC3"]
+
+[node name="Node2D" type="Node2D" parent="YSort/NPC3/CustomPath"]
+position = Vector2( 648.8, 386.436 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_around"]
+[connection signal="body_exited" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_not_around"]
+[connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="YSort/NPC" method="dialog_player_stopped"]
+[connection signal="timeout" from="YSort/NPC/MoveRandom" to="YSort/NPC" method="_on_MoveRandom_timeout"]
+[connection signal="body_entered" from="YSort/NPC2/Area2D" to="YSort/NPC2" method="player_around"]
+[connection signal="body_exited" from="YSort/NPC2/Area2D" to="YSort/NPC2" method="player_not_around"]
+[connection signal="stopped" from="YSort/NPC2/HUD/DialogPlayer" to="YSort/NPC2" method="dialog_player_stopped"]
+[connection signal="timeout" from="YSort/NPC2/MoveRandom" to="YSort/NPC2" method="_on_MoveRandom_timeout"]
+[connection signal="body_entered" from="YSort/NPC3/Area2D" to="YSort/NPC3" method="player_around"]
+[connection signal="body_exited" from="YSort/NPC3/Area2D" to="YSort/NPC3" method="player_not_around"]
+[connection signal="stopped" from="YSort/NPC3/HUD/DialogPlayer" to="YSort/NPC3" method="dialog_player_stopped"]
+[connection signal="timeout" from="YSort/NPC3/MoveRandom" to="YSort/NPC3" method="_on_MoveRandom_timeout"]

@@ -59,3 +59,5 @@ func stop():
 	emit_signal("stopped")
 	index = -1
 	hide()
+	
+	
