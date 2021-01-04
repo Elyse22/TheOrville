@@ -118,20 +118,16 @@ texture = SubResource( 2 )
 frame = 10
 
 [node name="NPC2" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( -212.106, 518.169 )
-scale = Vector2( 1.3, 1.4 )
+position = Vector2( -204.249, 527.71 )
 npc_name = "Kit"
 npc_texture = ExtResource( 9 )
 dialogs = [ "Everything is really... squarey, don't you think?" ]
 
-[node name="MoveRandom" parent="YSort/NPC2" index="6"]
-wait_time = 3.0
-
 [node name="Node2D" type="Node2D" parent="YSort/NPC2/CustomPath" index="0"]
-position = Vector2( -209.247, 537.283 )
+position = Vector2( -209.247, 533.074 )
 
 [node name="Node2D2" type="Node2D" parent="YSort/NPC2/CustomPath" index="1"]
-position = Vector2( -152.278, 537.163 )
+position = Vector2( -147.788, 535.479 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false

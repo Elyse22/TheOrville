@@ -36,7 +36,6 @@ position = Vector2( -2.15906, -4.98245 )
 [node name="Portal3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 263.221, 165.808 )
 next_scene_path = "res://BriefingRoom.tscn"
-player_spawn_location = Vector2( 546.4, 147 )
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 4 )]
 

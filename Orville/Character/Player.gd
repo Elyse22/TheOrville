@@ -7,7 +7,6 @@ const FRICTION = 500
 
 var velocity = Vector2.ZERO
 
-onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var anim_player = $CustomAnimations
@@ -22,38 +21,39 @@ var direction = "down"
 export var sitting := false
 
 func _physics_process(delta):
-	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	input_vector = input_vector.normalized()
-	
-	if input_vector != Vector2():
-		var angle = rad2deg(velocity.angle())
-		if angle >= -30 and angle <= 30:
-			direction = "right"
-		elif angle >= -150 and angle <= -30:
-			direction = "up"
-		elif angle >= 30 and angle <= 150:
-			direction = "down"
-		else:
-			direction = "left"
-		
-		anim_player.play("walk_" + direction)
-	elif sitting:
+	if sitting:
 		anim_player.play("sit_" + direction)
 	else:
-		anim_player.play("idle_" + direction)
-	
-	if input_vector != Vector2.ZERO:
-		animationTree.set("parameters/Idle/blend_position", input_vector)
-		animationTree.set("parameters/Run/blend_position", input_vector)
-		animationState.travel("Run")
-		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
-	else:
-		animationState.travel("Idle")
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-
-	velocity = move_and_slide(velocity)
+		var input_vector = Vector2.ZERO
+		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		input_vector = input_vector.normalized()
+		
+		if input_vector != Vector2():
+			var angle = rad2deg(velocity.angle())
+			if angle >= -30 and angle <= 30:
+				direction = "right"
+			elif angle >= -150 and angle <= -30:
+				direction = "up"
+			elif angle >= 30 and angle <= 150:
+				direction = "down"
+			else:
+				direction = "left"
+			
+			anim_player.play("walk_" + direction)
+		else:
+			anim_player.play("idle_" + direction)
+		
+		if input_vector != Vector2.ZERO:
+			animationTree.set("parameters/Idle/blend_position", input_vector)
+			animationTree.set("parameters/Run/blend_position", input_vector)
+			animationState.travel("Run")
+			velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
+		else:
+			animationState.travel("Idle")
+			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+		
+		velocity = move_and_slide(velocity)
 
 	frame_count += 1
 	if frame_count == 3:
@@ -80,6 +80,11 @@ func _process(_delta):
 		$HUD/Objective/PanelContainer/Label.text = str(Global.objective)
 	else:
 		$HUD/Objective.visible = false
+
+
+#func _input(event):
+#	if event.is_action_pressed("sit") and sitting:
+#		sitting = false
 
 
 func load_custom_character():
