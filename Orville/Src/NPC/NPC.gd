@@ -134,7 +134,11 @@ func handle_animation():
 			direction = "down"
 		else:
 			direction = "left"
-		
+	
+	if custom_anim_playing:
+		return
+	
+	if velocity.length_squared() >= 1.0:
 		anim_player.play("move_" + direction)
 	elif sitting:
 		anim_player.play("sit_right")
@@ -215,3 +219,13 @@ func sit(pos, dir):
 	self.sitting = true
 	global_position = pos
 	direction = dir
+
+
+var custom_anim_playing := false
+func custom_animation(animation):
+	anim_player.play(animation)
+	custom_anim_playing = true
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	custom_anim_playing = false
