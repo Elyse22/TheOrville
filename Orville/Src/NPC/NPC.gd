@@ -121,7 +121,7 @@ func _physics_process(_delta):
 			if move_random and path.size() and not $CustomPath.get_child_count():
 				next_path_pt()
 
-var direction := "down"
+export var direction := "down"
 
 func handle_animation():
 	if velocity.length_squared() >= 1.0:

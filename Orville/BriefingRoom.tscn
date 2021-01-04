@@ -211,6 +211,7 @@ npc_name = "LeMarr"
 npc_texture = ExtResource( 11 )
 trigger_talk = false
 move_random = false
+direction = "left"
 
 [node name="Popup" type="Label" parent="YSort/NPC7"]
 margin_left = -46.0
@@ -282,6 +283,7 @@ npc_name = "Isaac"
 npc_texture = ExtResource( 15 )
 trigger_talk = false
 move_random = false
+direction = "left"
 
 [node name="NPC" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 526.176, 165.634 )
