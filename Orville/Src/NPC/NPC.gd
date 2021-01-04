@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal path_finished
+
 export var npc_name = ""
 export (Texture) var npc_texture
 export (Array, String) var dialogs
@@ -18,7 +20,14 @@ var path = []
 export var dialog_index = -1
 var can_talk = true
 export var move_random: bool = true
-export var sitting: bool = false
+export var sitting: bool = false setget _set_sitting
+func _set_sitting(value):
+	sitting = value
+	
+	if not is_inside_tree():
+		yield(self, "ready")
+	
+	$CollisionShape2D.disabled = sitting
 
 export var movement_cooldown: float = 0.0
 
@@ -89,12 +98,18 @@ func _process(delta):
 	handle_animation()
 
 
+func next_path_pt():
+	path.remove(0)
+	velocity = Vector2.ZERO
+	if path.size() == 0:
+		emit_signal("path_finished")
+
+
 func move_path(delta):
 	var point = path[0]
 
 	if position.distance_squared_to(point) < 100.0:
-		path.remove(0)
-		velocity = Vector2.ZERO
+		next_path_pt()
 	else:
 		walk((point - position).normalized())
 
@@ -104,7 +119,7 @@ func _physics_process(_delta):
 		if get_slide_count():
 			velocity = Vector2.ZERO
 			if move_random and path.size() and not $CustomPath.get_child_count():
-				path.remove(0)
+				next_path_pt()
 
 var direction := "down"
 
@@ -194,3 +209,9 @@ func _on_MoveRandom_timeout():
 		var direction = Vector2(40, 0).rotated(PI / 2.0 * floor(rand_range(0.0, 4.0)))
 		set_path([position + direction])
 
+
+
+func sit(pos, dir):
+	self.sitting = true
+	global_position = pos
+	direction = dir
