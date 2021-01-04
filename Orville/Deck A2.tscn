@@ -1,12 +1,9 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Portal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sets/Deck A.png" type="Texture" id=3]
-[ext_resource path="res://Src/NPC/NPC.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Deck A.gd" type="Script" id=5]
-[ext_resource path="res://Assets/AllCharacters/Characters/Brook.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Deck B Railings.png" type="Texture" id=7]
+[ext_resource path="res://Deck A2.gd" type="Script" id=5]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -15.1597, 28.9697 )
@@ -77,12 +74,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="NPC2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 398.035, 215.439 )
-npc_name = "Brooke"
-npc_texture = ExtResource( 6 )
-dialogs = [ "Is this a dream? Things seem different around here." ]
-
 [node name="Portal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 373.806, 189.865 )
 next_scene_path = "res://Deck B.tscn"
@@ -91,22 +82,8 @@ player_spawn_location = Vector2( 344, 182 )
 [node name="CollisionShape2D" parent="Portal" index="0"]
 position = Vector2( -2.15906, -4.98245 )
 
-[node name="Portal2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 119.346, 53.0745 )
-next_scene_path = "res://Captains Office.tscn"
-player_spawn_location = Vector2( 191.8, 159.8 )
-
-[node name="Portal3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 451.105, 85.7259 )
-next_scene_path = "res://Bridge.tscn"
-player_spawn_location = Vector2( 9.6, 128 )
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( 349.577, 180.982 )
-
-[node name="Sprite" type="Sprite" parent="StaticBody2D2"]
-visible = false
-texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2( 11.9564, 1.16465 )
@@ -167,8 +144,7 @@ shape = SubResource( 13 )
 visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
-polygon = PoolVector2Array( 45.5632, 56.0212, 447.508, 58.0746, 449.562, 113.515, 393.094, 114.029, 394.121, 125.835, 416.708, 126.349, 418.248, 246.47, 269.379, 245.444, 270.406, 125.322, 291.453, 125.322, 289.913, 113.002, 47.6165, 114.542, 46.5899, 104.275, 28.623, 105.302, 29.1364, 281.891, -22.1976, 282.917, -21.6843, 98.6284, -49.918, 98.1151, -49.918, 129.942, -171.58, 132.509, -171.58, 59.6146, -51.9714, 61.1546, -51.458, 71.9348, -23.7377, 72.4481, -23.7377, 59.1013, 31.1897, 58.5879, 31.1897, 66.8013, 45.5632, 68.8547, 39.9165, -7.63292, -193.653, -3.01286, -186.466, 166.903, -45.8113, 152.016, -49.4045, 314.744, 57.8835, 305.504, 52.2368, 131.482, 254.493, 138.669, 247.819, 269.057, 452.642, 268.544, 441.348, 138.156, 466.502, 129.429, 456.235, 14.4407, 94.3306, 19.5741, 60.9635, 14.4407 )
+visible = false
+polygon = PoolVector2Array( 49.1468, 57.2637, 444.163, 58.7267, 442.7, 67.5048, 449.04, 67.5048, 448.552, 108.957, 441.724, 110.908, 442.7, 116.272, 395.395, 116.272, 395.883, 124.075, 416.853, 126.026, 417.828, 246.969, 268.6, 247.944, 269.576, 126.513, 294.447, 126.026, 291.521, 114.809, 49.1468, 114.809, 49.1468, 106.519, 30.1275, 106.519, 28.6645, 287.934, -22.0536, 286.471, -24.0043, 99.2037, -48.388, 98.716, -49.3633, 131.39, -171.282, 132.853, -170.794, 59.2144, -50.8263, 60.1897, -52.2893, 72.3816, -24.4919, 71.8939, -24.0042, 58.7267, 28.6646, 58.7267, 29.1523, 68.9679, 47.6839, 69.9432, 35.9797, -5.15861, -193.113, -6.40637, -189.995, 164.084, -51.7312, 163.564, -49.6521, 315.342, 63.1418, 311.184, 58.9835, 149.53, 242.469, 149.01, 242.988, 284.155, 456.101, 280.516, 443.106, 143.292, 483.13, 117.303, 468.056, -7.96574, 43.9096, -6.40637 )
 
 [editable path="Portal"]
-
-[editable path="Portal2"]

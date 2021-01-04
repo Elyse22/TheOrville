@@ -22,7 +22,7 @@ func player_exited(body):
 func lift(button_name):
 	Global.in_lift = true
 	if button_name == "DeckB":
-		get_tree().change_scene("res://Deck B.tscn")
+		get_tree().change_scene(Data.current_deck_b)
 	elif button_name == "DeckC":
 		get_tree().change_scene("res://Deck C.tscn")
 	else:

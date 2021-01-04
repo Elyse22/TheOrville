@@ -43,6 +43,8 @@ var go_to_shuttlecraft = false
 
 var current_deck_f = "res://Deck F.tscn"
 
+var current_deck_b = "res://Deck B.tscn"
+
 var disabled_portals = ["lab_portal"]
 func enable_portal(id: String):
 	disabled_portals.erase(id)
@@ -84,6 +86,7 @@ func load_game():
 	spoke_with_gordon = data.spoke_with_gordon
 	go_to_shuttlecraft = data.go_to_shuttlecraft
 	current_deck_f = data.current_deck_f
+	current_deck_b = data.current_deck_b
 	disabled_portals = data.disabled_portals
 	file.close()
 
@@ -105,6 +108,7 @@ func save_game():
 		'spoke_with_gordon': spoke_with_gordon,
 		'go_to_shuttlecraft': go_to_shuttlecraft,
 		'current_deck_f': current_deck_f,
+		'current_deck_b': current_deck_b,
 		'disabled_portals': disabled_portals
 	}
 	var file = File.new()

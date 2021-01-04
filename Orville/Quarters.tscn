@@ -32,7 +32,7 @@ position = Vector2( 172.573, 101.699 )
 texture = ExtResource( 3 )
 
 [node name="Portal" parent="." instance=ExtResource( 16 )]
-position = Vector2( 45.1916, 41.2302 )
+position = Vector2( 45.326, 39.1115 )
 collision_mask = 0
 next_scene_path = "res://Deck C.tscn"
 player_spawn_location = Vector2( 295, 135 )
@@ -48,49 +48,62 @@ position = Vector2( 327.787, 59.7257 )
 
 [node name="Plant 1" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 227.983, 44.0389 )
+scale = Vector2( 1.1, 1.1 )
 
 [node name="Bed" parent="YSort" instance=ExtResource( 7 )]
-position = Vector2( 59, -8 )
+position = Vector2( -29.2952, -24.427 )
+scale = Vector2( 1.3, 1.3 )
 
 [node name="Beach Painting 1" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( -12, -18 )
+position = Vector2( -43.7773, -25.9443 )
+scale = Vector2( 1.3, 1.3 )
 
 [node name="Planet Painting" parent="YSort" instance=ExtResource( 13 )]
-position = Vector2( 36, -15 )
+position = Vector2( -33.1156, -25.3276 )
+scale = Vector2( 1.3, 1.3 )
 
 [node name="Plant 2" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 350.526, 35.5726 )
+position = Vector2( 350.129, 32.3949 )
+scale = Vector2( 1.3, 1.3 )
 
 [node name="Synth Kitchen" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( -51, 2 )
+position = Vector2( -52.6882, -16.3117 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="Long Sofa" parent="YSort" instance=ExtResource( 14 )]
-position = Vector2( 22, 10 )
+position = Vector2( -37.258, -19.629 )
+scale = Vector2( 1.3, 1.3 )
 
 [node name="Large Sofa" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 62, 105 )
+position = Vector2( 61.3189, 106.362 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="Planet Deco" parent="YSort" instance=ExtResource( 10 )]
-position = Vector2( 103, 164 )
+position = Vector2( 103.341, 173.876 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="Small Sofa" parent="YSort" instance=ExtResource( 12 )]
-position = Vector2( 102, 83 )
+position = Vector2( 103.703, 77.2104 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="Coffee Table" parent="YSort" instance=ExtResource( 9 )]
-position = Vector2( 103, 126 )
+position = Vector2( 102.659, 129.065 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="Plant 3" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( -22.2127, 169.423 )
+position = Vector2( -19.8288, 183.386 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="Side Table" parent="YSort" instance=ExtResource( 15 )]
-position = Vector2( 74, 82 )
+position = Vector2( 73.6594, 80.6377 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( -1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2( -1, 0 )
-polygon = PoolVector2Array( -39, 42, -31, 42, -34, 188, 25, 188, 153, 190, 160, 185, 160.503, 74.678, 215.827, 75.0016, 214, 140, 220, 143, 351, 143, 360, 137, 356, 33, 214, 32, 214, 44, 160, 46, 160, 31, 13, 33, -32, 33, -38, 34, -67, 41, -66, 33, -70, -45, 396, -44, 392, 218, -50, 205 )
+polygon = PoolVector2Array( -39, 42, -31, 42, -34, 188, 25, 188, 153, 190, 160, 185, 160.473, 81.324, 162.745, 77.0323, 167.488, 74.7189, 215.827, 75.0016, 214, 140, 220, 143, 351, 143, 360, 137, 356, 33, 214, 32, 214, 44, 160, 46, 160, 31, 13, 33, -32, 33, -38, 34, -67, 41, -66, 33, -70, -45, 396, -44, 392, 218, -50, 205 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 layer = 10
@@ -103,12 +116,12 @@ speakers = [ "Ed" ]
 dialogs = [ "Commander %p, it's Captain Ed Mercer. Come see me in my office immediately." ]
 
 [node name="Area2D" parent="." instance=ExtResource( 17 )]
-position = Vector2( 40.0409, 11.8069 )
+position = Vector2( 46.1095, 11.5101 )
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2( 4.85856, 38.7756 )
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+position = Vector2( -2.4805, 30.2375 )
 [connection signal="body_entered" from="Area2D" to="YSort/Player" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 [editable path="Portal"]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Deck F3.gd" type="Script" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Src/NPC/NPC.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sets/Deck F.png" type="Texture" id=4]
 [ext_resource path="res://Shuttlecraft.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Lift.tscn" type="PackedScene" id=6]
 
 [node name="DeckF2" type="Node2D"]
 script = ExtResource( 1 )
@@ -21,20 +22,23 @@ texture = ExtResource( 4 )
 position = Vector2( -48.1047, -55.3918 )
 
 [node name="NPC1" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 85.9863, 278.592 )
+position = Vector2( 26.1523, -84.844 )
 trigger_talk = false
 move_random = false
 
 [node name="NPC2" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 100.836, 295.916 )
+position = Vector2( 66.4869, -83.0326 )
 trigger_talk = false
 move_random = false
 
 [node name="NPC3" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 111.512, 289.2 )
+position = Vector2( 50.57, -53.1833 )
 trigger_talk = false
 speed = 40
 move_random = false
+
+[node name="Lift" parent="." instance=ExtResource( 6 )]
+position = Vector2( 96.2262, 286.355 )
 
 [editable path="YSort/NPC1"]
 

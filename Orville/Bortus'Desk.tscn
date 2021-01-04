@@ -6,6 +6,7 @@
 height = 30.596
 
 [node name="StaticBody2D5" type="StaticBody2D"]
+scale = Vector2( 1.1, 1.1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

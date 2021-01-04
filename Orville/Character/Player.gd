@@ -77,7 +77,7 @@ func _ready():
 func _process(_delta):
 	if Global.objective:
 		$HUD/Objective.visible = true
-		$HUD/Objective/PanelContainer/Label.text = "Objective: " + str(Global.objective)
+		$HUD/Objective/PanelContainer/Label.text = str(Global.objective)
 	else:
 		$HUD/Objective.visible = false
 

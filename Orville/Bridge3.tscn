@@ -1,11 +1,11 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Sets/Bridge.png" type="Texture" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BridgeBottomLeftConsole.tscn" type="PackedScene" id=3]
 [ext_resource path="res://BridgeChair2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://BridgeChair.tscn" type="PackedScene" id=5]
-[ext_resource path="res://BridgeConsoleRight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/AllCharacters/Characters/Bortus.png" type="Texture" id=6]
 [ext_resource path="res://BridgeMiddleConsole.tscn" type="PackedScene" id=7]
 [ext_resource path="res://BridgeTopLeftConsole.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Src/DialogPlayer/DialogPlayer.tscn" type="PackedScene" id=9]
@@ -19,6 +19,9 @@
 [ext_resource path="res://Assets/AllCharacters/Characters/Kelly.png" type="Texture" id=17]
 [ext_resource path="res://Assets/AllCharacters/Characters/Isaac.png" type="Texture" id=18]
 [ext_resource path="res://Assets/AllCharacters/Characters/TallaKeyali.png" type="Texture" id=19]
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 17.9328, 13.8703 )
 
 [sub_resource type="DynamicFont" id=1]
 outline_size = 1
@@ -149,11 +152,183 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
+[sub_resource type="Animation" id=25]
+resource_name = "sit_right"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 13 ]
+}
+
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 5.36453, 6.87897 )
 
 [sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 17.1055, 18.4912 )
+
+[sub_resource type="DynamicFont" id=26]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="Animation" id=27]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "idle_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 11 ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "idle_right"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "idle_up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "move_down"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "move_left"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 10, 9 ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "move_right"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 7, 8 ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "move_up"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "sit_right"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
+}
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 7.09411, 7.92 )
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 22.0422, 22.7589 )
 
 [sub_resource type="DynamicFont" id=12]
 outline_size = 1
@@ -176,6 +351,22 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=14]
+resource_name = "idle_left"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 11 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "idle_right"
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -190,7 +381,8 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=16]
+resource_name = "idle_up"
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -205,7 +397,8 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=17]
+resource_name = "move_down"
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -221,7 +414,8 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=18]
+resource_name = "move_left"
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -237,7 +431,8 @@ tracks/0/keys = {
 "values": [ 10, 9 ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=19]
+resource_name = "move_right"
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -253,7 +448,8 @@ tracks/0/keys = {
 "values": [ 7, 8 ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=20]
+resource_name = "move_up"
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -269,7 +465,7 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=21]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -284,28 +480,59 @@ tracks/0/keys = {
 "values": [ 12 ]
 }
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 5.31882, 6.05225 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 22.0422, 22.7589 )
+
+[sub_resource type="Animation" id=24]
+resource_name = "idle_left"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 11 ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "idle_left"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 11 ]
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 11 )
 __meta__ = {
-"_edit_horizontal_guides_": [  ],
-"_edit_lock_": true
+"_edit_horizontal_guides_": [  ]
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 118.744, 141.441 )
+shape = SubResource( 39 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 15.9122, 102.145, 16.0947, 74.9237, 31.42, 60.9606, 52.1943, 48.0193, 73.6497, 40.8675, 81.8232, 39.1646, 82.8449, 56.1928, 99.5325, 55.5116, 100.895, 37.1213, 110.09, 35.0779, 109.409, 54.1494, 126.096, 53.4683, 127.799, 35.4185, 139.719, 36.0996, 138.357, 53.4683, 153.341, 55.8522, 158.109, 37.8024, 192.165, 50.0626, 213.621, 66.7502, 236.098, 91.9518, 241.547, 116.132, 238.468, 127.68, 234.213, 137.193, 220.193, 157.22, 202.92, 171.74, 176.633, 185.259, 157.107, 191.768, 156.355, 189.265, 155.714, 185.54, 139.751, 186.487, 138.581, 193.52, 126.815, 194.021, 126.359, 185.946, 110.938, 185.54, 110.042, 193.52, 101.029, 192.269, 98.4923, 184.999, 85.7763, 184.323, 84.4262, 190.47, 57.5218, 180.934, 34.4378, 164.48, 19.1668, 150.211, 16.1626, 136.192, -3.99829, 136.906, -9.78784, 174.368, 32.4419, 198.888, 220.432, 229.198, 270.835, 144.739, 269.473, -16.6875, 53.5566, -21.1149, 6.89961, 24.1799, -21.0265, 40.1863, -20.6859, 99.7847 )
+polygon = PoolVector2Array( 20.4879, 87.9016, 21.1828, 71.4911, 31.42, 60.9606, 52.1943, 48.0193, 72.8455, 37.4894, 97.3734, 27.3009, 100.015, 42.7723, 109.826, 38.6214, 112.845, 27.3009, 124.92, 27.3009, 127.939, 38.6214, 136.229, 38.2659, 138.128, 26.1688, 153.599, 25.7914, 153.222, 31.8291, 155.5, 37.9739, 164.552, 37.098, 168.931, 27.4623, 207.56, 38.2441, 239.635, 60.1306, 262.654, 87.6773, 265.295, 121.262, 252.843, 143.903, 235.107, 161.638, 218.881, 174.468, 203.032, 184.28, 190.957, 188.053, 169.224, 191.747, 166.574, 181.144, 157.194, 181.348, 155.155, 194.602, 139.454, 193.786, 137.007, 183.591, 126.404, 182.571, 125.792, 192.766, 112.493, 192.641, 108.201, 179.762, 99.8298, 180.192, 97.4492, 188.892, 87.8656, 186.038, 77.722, 182.553, 60.551, 174.182, 36.9408, 159.801, 25.1598, 148.051, 16.4001, 136.956, -12.7987, 134.912, -9.78784, 174.368, 32.4419, 198.888, 220.432, 229.198, 270.835, 144.739, 269.473, -16.6875, 53.5566, -21.1149, 6.89961, 24.1799, -21.0265, 40.1863, -16.5946, 87.3176 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( -29.7777, -12.9125 )
 polygon = PoolVector2Array( -1.86217, 100.392, -1.61182, 139.696, -30.6518, 139.196, -29.1497, 99.6412 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -322,25 +549,16 @@ __meta__ = {
 }
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 156.794, 88.6342 )
+position = Vector2( 173.482, 100.894 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 90.5764, 136.687 )
 
-[node name="StaticBody2D2" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 219.287, 105.371 )
-
 [node name="StaticBody2D3" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 219.178, 125.001 )
 
-[node name="StaticBody2D4" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 124.197, 137.232 )
-
 [node name="StaticBody2D5" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 124.194, 92.0315 )
-
-[node name="StaticBody2D6" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 229.689, 116.378 )
 
 [node name="StaticBody2D7" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 129.084, 118.74 )
@@ -349,13 +567,15 @@ position = Vector2( 129.084, 118.74 )
 position = Vector2( 93.3037, 96.2836 )
 
 [node name="NPCTest" type="KinematicBody2D" parent="YSort"]
-position = Vector2( 195.518, 105.103 )
-scale = Vector2( 1.15, 1.15 )
+position = Vector2( 222.687, 91.8956 )
+scale = Vector2( 1.3, 1.4 )
 script = ExtResource( 13 )
 npc_name = "Gordon"
 npc_texture = ExtResource( 10 )
 dialogs = [ "Oh hey _________, how are you enjoying your stay so far?", "YOU: It's been amazing, except for the... you know...", "Pixel universe? I think it's pretty sweet actually! Except the quantum drive seems to be offline...", "YOU: Yes, LeMarr asked me to report to you. He just downgraded the engine and asked if you could test it? ", "No problem! Let's take this baby for a test drive. " ]
+trigger_talk = false
 move_random = false
+sitting = true
 
 [node name="Popup" type="Label" parent="YSort/NPCTest"]
 margin_left = -46.0
@@ -370,9 +590,9 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="YSort/NPCTest"]
-scale = Vector2( 1, 1.1 )
 texture = ExtResource( 14 )
-hframes = 13
+hframes = 14
+frame = 13
 __meta__ = {
 "_edit_lock_": true
 }
@@ -386,6 +606,7 @@ anims/move_down = SubResource( 6 )
 anims/move_left = SubResource( 7 )
 anims/move_right = SubResource( 8 )
 anims/move_up = SubResource( 9 )
+anims/sit_right = SubResource( 25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPCTest"]
 position = Vector2( -0.175, 8.356 )
@@ -420,19 +641,91 @@ one_shot = true
 
 [node name="CustomPath" type="Node" parent="YSort/NPCTest"]
 
-[node name="Portal" parent="." instance=ExtResource( 12 )]
-position = Vector2( 9.63743, 108.338 )
-next_scene_path = "res://Deck F2.tscn"
-player_spawn_location = Vector2( 145, 295 )
+[node name="NPC5" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 177.647, 27.0171 )
+scale = Vector2( 1.3, 1.4 )
+script = ExtResource( 13 )
+npc_name = "Bortus"
+npc_texture = ExtResource( 6 )
+trigger_talk = false
+move_random = false
 
-[node name="NPC" type="KinematicBody2D" parent="."]
+[node name="Popup" type="Label" parent="YSort/NPC5"]
+margin_left = -46.0
+margin_top = -42.0
+margin_right = 52.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 26 )
+text = "Press [E] to talk"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="YSort/NPC5"]
+texture = ExtResource( 17 )
+hframes = 14
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC5"]
+anims/idle_down = SubResource( 27 )
+anims/idle_left = SubResource( 28 )
+anims/idle_right = SubResource( 29 )
+anims/idle_up = SubResource( 30 )
+anims/move_down = SubResource( 31 )
+anims/move_left = SubResource( 32 )
+anims/move_right = SubResource( 33 )
+anims/move_up = SubResource( 34 )
+anims/sit_right = SubResource( 35 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC5"]
+position = Vector2( 0.10941, 7.99341 )
+shape = SubResource( 36 )
+
+[node name="Area2D" type="Area2D" parent="YSort/NPC5"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC5/Area2D"]
+position = Vector2( -0.541107, 0 )
+shape = SubResource( 37 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="YSort/NPC5"]
+
+[node name="DialogPlayer" parent="YSort/NPC5/HUD" instance=ExtResource( 9 )]
+
+[node name="MoveRandom" type="Timer" parent="YSort/NPC5"]
+wait_time = 2.0
+
+[node name="MoveCooldown" type="Timer" parent="YSort/NPC5"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="CustomPath" type="Node" parent="YSort/NPC5"]
+
+[node name="Node2D" type="Node2D" parent="YSort/NPC5/CustomPath"]
+position = Vector2( 185.316, 85.7087 )
+
+[node name="Node2D2" type="Node2D" parent="YSort/NPC5/CustomPath"]
+position = Vector2( 148.321, 82.3719 )
+
+[node name="NPC" type="KinematicBody2D" parent="YSort"]
 position = Vector2( 120.222, 131.18 )
+scale = Vector2( 1.4, 1.5 )
 script = ExtResource( 13 )
 npc_name = "Ed"
 npc_texture = ExtResource( 14 )
+trigger_talk = false
 move_random = false
 
-[node name="Popup" type="Label" parent="NPC"]
+[node name="Popup" type="Label" parent="YSort/NPC"]
 margin_left = -46.0
 margin_top = -42.0
 margin_right = 52.0
@@ -444,16 +737,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="NPC"]
-scale = Vector2( 1.2, 1.3 )
+[node name="Sprite" type="Sprite" parent="YSort/NPC"]
 texture = ExtResource( 14 )
-hframes = 13
+hframes = 14
 frame = 11
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC"]
 anims/idle_down = SubResource( 13 )
 anims/idle_left = SubResource( 14 )
 anims/idle_right = SubResource( 15 )
@@ -461,58 +753,64 @@ anims/idle_up = SubResource( 16 )
 anims/move_down = SubResource( 17 )
 anims/move_left = SubResource( 18 )
 anims/move_right = SubResource( 19 )
-anims/sit_right = SubResource( 20 )
+anims/move_up = SubResource( 20 )
+anims/sit_right = SubResource( 21 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC"]
 position = Vector2( -0.473321, 11.9358 )
-shape = SubResource( 21 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Area2D" type="Area2D" parent="NPC"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Area2D"]
 shape = SubResource( 22 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="HUD" type="CanvasLayer" parent="NPC"]
+[node name="Area2D" type="Area2D" parent="YSort/NPC"]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="DialogPlayer" parent="NPC/HUD" instance=ExtResource( 9 )]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC/Area2D"]
+shape = SubResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="YSort/NPC"]
+
+[node name="DialogPlayer" parent="YSort/NPC/HUD" instance=ExtResource( 9 )]
 speakers = [ "", "" ]
 dialogs = [ "", "" ]
 
-[node name="MoveRandom" type="Timer" parent="NPC"]
+[node name="MoveRandom" type="Timer" parent="YSort/NPC"]
 wait_time = 2.0
 
-[node name="MoveCooldown" type="Timer" parent="NPC"]
-wait_time = 10.0
+[node name="MoveCooldown" type="Timer" parent="YSort/NPC"]
 one_shot = true
+autostart = true
 
-[node name="CustomPath" type="Node" parent="NPC"]
+[node name="CustomPath" type="Node" parent="YSort/NPC"]
 
-[node name="Node2D" type="Node2D" parent="NPC/CustomPath"]
-position = Vector2( 113.449, 170.43 )
+[node name="Node2D" type="Node2D" parent="YSort/NPC/CustomPath"]
+position = Vector2( 114.743, 164.283 )
 
-[node name="Node2D2" type="Node2D" parent="NPC/CustomPath"]
-position = Vector2( 79.8731, 171.255 )
+[node name="Node2D2" type="Node2D" parent="YSort/NPC/CustomPath"]
+position = Vector2( 64.02, 150.225 )
 
-[node name="Node2D4" type="Node2D" parent="NPC/CustomPath"]
-position = Vector2( 23.5112, 115.052 )
+[node name="Node2D4" type="Node2D" parent="YSort/NPC/CustomPath"]
+position = Vector2( 46.0134, 109.997 )
 
-[node name="NPC2" type="KinematicBody2D" parent="."]
-position = Vector2( 117.085, 62.0297 )
+[node name="Node2D3" type="Node2D" parent="YSort/NPC/CustomPath"]
+position = Vector2( -45.626, 119.019 )
+
+[node name="NPC2" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 140.141, 52.9245 )
+scale = Vector2( 1.3, 1.4 )
 script = ExtResource( 13 )
 npc_name = "Kelly"
 npc_texture = ExtResource( 17 )
+trigger_talk = false
 move_random = false
 
-[node name="Popup" type="Label" parent="NPC2"]
+[node name="Popup" type="Label" parent="YSort/NPC2"]
 margin_left = -46.0
 margin_top = -42.0
 margin_right = 52.0
@@ -524,85 +822,81 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="NPC2"]
-scale = Vector2( 1.2, 1.3 )
+[node name="Sprite" type="Sprite" parent="YSort/NPC2"]
 texture = ExtResource( 14 )
-hframes = 13
+hframes = 14
 frame = 11
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC2"]
 anims/idle_down = SubResource( 13 )
-anims/idle_left = SubResource( 14 )
+anims/idle_left = SubResource( 24 )
 anims/idle_right = SubResource( 15 )
 anims/idle_up = SubResource( 16 )
 anims/move_down = SubResource( 17 )
 anims/move_left = SubResource( 18 )
 anims/move_right = SubResource( 19 )
-anims/sit_right = SubResource( 20 )
+anims/move_up = SubResource( 20 )
+anims/sit_right = SubResource( 21 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC2"]
 position = Vector2( -0.473321, 11.9358 )
-shape = SubResource( 21 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Area2D" type="Area2D" parent="NPC2"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2/Area2D"]
 shape = SubResource( 22 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="HUD" type="CanvasLayer" parent="NPC2"]
+[node name="Area2D" type="Area2D" parent="YSort/NPC2"]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="DialogPlayer" parent="NPC2/HUD" instance=ExtResource( 9 )]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC2/Area2D"]
+shape = SubResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="YSort/NPC2"]
+
+[node name="DialogPlayer" parent="YSort/NPC2/HUD" instance=ExtResource( 9 )]
 speakers = [ "", "", "" ]
 dialogs = [ "", "" ]
 
-[node name="MoveRandom" type="Timer" parent="NPC2"]
+[node name="MoveRandom" type="Timer" parent="YSort/NPC2"]
 wait_time = 2.0
 
-[node name="MoveCooldown" type="Timer" parent="NPC2"]
-wait_time = 10.0
+[node name="MoveCooldown" type="Timer" parent="YSort/NPC2"]
+wait_time = 3.0
 one_shot = true
+autostart = true
 
-[node name="CustomPath" type="Node" parent="NPC2"]
+[node name="CustomPath" type="Node" parent="YSort/NPC2"]
 
-[node name="Node2D" type="Node2D" parent="NPC2/CustomPath"]
-position = Vector2( 80.981, 68.6275 )
+[node name="Node2D" type="Node2D" parent="YSort/NPC2/CustomPath"]
+position = Vector2( 116.121, 36.8541 )
 
-[node name="Node2D2" type="Node2D" parent="NPC2/CustomPath"]
-position = Vector2( 48.1089, 79.4509 )
+[node name="Node2D2" type="Node2D" parent="YSort/NPC2/CustomPath"]
+position = Vector2( 76.0274, 52.9933 )
 
-[node name="Node2D4" type="Node2D" parent="NPC2/CustomPath"]
-position = Vector2( 20.4741, 86.4254 )
+[node name="Node2D4" type="Node2D" parent="YSort/NPC2/CustomPath"]
+position = Vector2( 38.5274, 104.089 )
 
-[node name="NPC3" parent="." instance=ExtResource( 16 )]
-position = Vector2( 160.868, 164.594 )
-npc_name = "Isaac"
-npc_texture = ExtResource( 18 )
-move_random = false
+[node name="Node2D3" type="Node2D" parent="YSort/NPC2/CustomPath"]
+position = Vector2( -29.9694, 118.856 )
 
-[node name="DialogPlayer" parent="NPC3/HUD" index="0"]
-speakers = [ "", "" ]
-dialogs = [ "", "" ]
-
-[node name="NPC4" type="KinematicBody2D" parent="."]
-position = Vector2( 62.4403, 113.416 )
+[node name="NPC4" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 69.9326, 108.989 )
+scale = Vector2( 1.3, 1.4 )
 script = ExtResource( 13 )
 npc_name = "Talla"
 npc_texture = ExtResource( 19 )
+trigger_talk = false
 move_random = false
 
-[node name="Popup" type="Label" parent="NPC4"]
+[node name="Popup" type="Label" parent="YSort/NPC4"]
 margin_left = -46.0
 margin_top = -42.0
 margin_right = 52.0
@@ -614,79 +908,124 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="NPC4"]
-scale = Vector2( 1.2, 1.3 )
+[node name="Sprite" type="Sprite" parent="YSort/NPC4"]
 texture = ExtResource( 14 )
-hframes = 13
+hframes = 14
 frame = 11
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC4"]
 anims/idle_down = SubResource( 13 )
-anims/idle_left = SubResource( 14 )
+anims/idle_left = SubResource( 38 )
 anims/idle_right = SubResource( 15 )
 anims/idle_up = SubResource( 16 )
 anims/move_down = SubResource( 17 )
 anims/move_left = SubResource( 18 )
 anims/move_right = SubResource( 19 )
-anims/sit_right = SubResource( 20 )
+anims/move_up = SubResource( 20 )
+anims/sit_right = SubResource( 21 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC4"]
 position = Vector2( -0.473321, 11.9358 )
-shape = SubResource( 21 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Area2D" type="Area2D" parent="NPC4"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC4/Area2D"]
 shape = SubResource( 22 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="HUD" type="CanvasLayer" parent="NPC4"]
+[node name="Area2D" type="Area2D" parent="YSort/NPC4"]
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="DialogPlayer" parent="NPC4/HUD" instance=ExtResource( 9 )]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC4/Area2D"]
+shape = SubResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="MoveRandom" type="Timer" parent="NPC4"]
+[node name="HUD" type="CanvasLayer" parent="YSort/NPC4"]
+
+[node name="DialogPlayer" parent="YSort/NPC4/HUD" instance=ExtResource( 9 )]
+
+[node name="MoveRandom" type="Timer" parent="YSort/NPC4"]
 wait_time = 2.0
 
-[node name="MoveCooldown" type="Timer" parent="NPC4"]
-wait_time = 10.0
+[node name="MoveCooldown" type="Timer" parent="YSort/NPC4"]
+wait_time = 6.0
 one_shot = true
+autostart = true
 
-[node name="CustomPath" type="Node" parent="NPC4"]
+[node name="CustomPath" type="Node" parent="YSort/NPC4"]
 
-[node name="Node2D" type="Node2D" parent="NPC4/CustomPath"]
-position = Vector2( 24.0515, 136.051 )
+[node name="Node2D" type="Node2D" parent="YSort/NPC4/CustomPath"]
+position = Vector2( -29.8448, 89.6873 )
+
+[node name="NPC3" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 160.868, 164.594 )
+npc_name = "Isaac"
+npc_texture = ExtResource( 18 )
+trigger_talk = false
+move_random = false
+
+[node name="DialogPlayer" parent="YSort/NPC3/HUD" index="0"]
+speakers = [ "", "" ]
+dialogs = [ "", "" ]
+
+[node name="Portal" parent="." instance=ExtResource( 12 )]
+position = Vector2( 9.63743, 108.338 )
+next_scene_path = "res://Deck A2.tscn"
+player_spawn_location = Vector2( 433.4, 91.6 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -74.2321
+margin_top = 34.963
+margin_right = 4.76785
+margin_bottom = 177.963
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 9 )]
+anchor_top = 0.001
+margin_left = 0.0
+margin_top = 0.28
+margin_right = 9.0
+margin_bottom = -6.0
 speakers = [ "Ed", "Bortus" ]
 dialogs = [ "Kelly, Talla and %p, you're with me. Bortus, you have the Bridge. ", "Yes Captain." ]
 [connection signal="body_entered" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_around"]
 [connection signal="body_exited" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_not_around"]
 [connection signal="timeout" from="YSort/NPCTest/MoveRandom" to="YSort/NPCTest" method="_on_MoveRandom_timeout"]
-[connection signal="body_entered" from="NPC/Area2D" to="NPC" method="player_around"]
-[connection signal="body_exited" from="NPC/Area2D" to="NPC" method="player_not_around"]
-[connection signal="stopped" from="NPC/HUD/DialogPlayer" to="NPC" method="dialog_player_stopped"]
-[connection signal="timeout" from="NPC/MoveRandom" to="NPC" method="_on_MoveRandom_timeout"]
-[connection signal="body_entered" from="NPC2/Area2D" to="NPC2" method="player_around"]
-[connection signal="body_exited" from="NPC2/Area2D" to="NPC2" method="player_not_around"]
-[connection signal="stopped" from="NPC2/HUD/DialogPlayer" to="NPC2" method="dialog_player_stopped"]
-[connection signal="timeout" from="NPC2/MoveRandom" to="NPC2" method="_on_MoveRandom_timeout"]
-[connection signal="body_entered" from="NPC4/Area2D" to="NPC4" method="player_around"]
-[connection signal="body_exited" from="NPC4/Area2D" to="NPC4" method="player_not_around"]
-[connection signal="stopped" from="NPC4/HUD/DialogPlayer" to="NPC4" method="dialog_player_stopped"]
-[connection signal="timeout" from="NPC4/MoveRandom" to="NPC4" method="_on_MoveRandom_timeout"]
+[connection signal="body_entered" from="YSort/NPC5/Area2D" to="YSort/NPC5" method="player_around"]
+[connection signal="body_exited" from="YSort/NPC5/Area2D" to="YSort/NPC5" method="player_not_around"]
+[connection signal="stopped" from="YSort/NPC5/HUD/DialogPlayer" to="YSort/NPC5" method="dialog_player_stopped"]
+[connection signal="timeout" from="YSort/NPC5/MoveRandom" to="YSort/NPC5" method="_on_MoveRandom_timeout"]
+[connection signal="body_entered" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_around"]
+[connection signal="body_exited" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_not_around"]
+[connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="YSort/NPC" method="dialog_player_stopped"]
+[connection signal="timeout" from="YSort/NPC/MoveRandom" to="YSort/NPC" method="_on_MoveRandom_timeout"]
+[connection signal="body_entered" from="YSort/NPC2/Area2D" to="YSort/NPC2" method="player_around"]
+[connection signal="body_exited" from="YSort/NPC2/Area2D" to="YSort/NPC2" method="player_not_around"]
+[connection signal="stopped" from="YSort/NPC2/HUD/DialogPlayer" to="YSort/NPC2" method="dialog_player_stopped"]
+[connection signal="timeout" from="YSort/NPC2/MoveRandom" to="YSort/NPC2" method="_on_MoveRandom_timeout"]
+[connection signal="body_entered" from="YSort/NPC4/Area2D" to="YSort/NPC4" method="player_around"]
+[connection signal="body_exited" from="YSort/NPC4/Area2D" to="YSort/NPC4" method="player_not_around"]
+[connection signal="stopped" from="YSort/NPC4/HUD/DialogPlayer" to="YSort/NPC4" method="dialog_player_stopped"]
+[connection signal="timeout" from="YSort/NPC4/MoveRandom" to="YSort/NPC4" method="_on_MoveRandom_timeout"]
+[connection signal="body_entered" from="Portal" to="." method="_on_Portal_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="stopped" from="HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
 
-[editable path="NPC3"]
+[editable path="YSort/NPC3"]
+
+[editable path="Portal"]

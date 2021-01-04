@@ -48,7 +48,7 @@ shape = SubResource( 1 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 111.225, 112.64 )
+position = Vector2( 106.381, 123.089 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -243.364, 113.474 )
@@ -119,7 +119,7 @@ frame = 10
 
 [node name="NPC2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -212.106, 518.169 )
-scale = Vector2( 1.15, 1.2 )
+scale = Vector2( 1.3, 1.4 )
 npc_name = "Kit"
 npc_texture = ExtResource( 9 )
 dialogs = [ "Everything is really... squarey, don't you think?" ]

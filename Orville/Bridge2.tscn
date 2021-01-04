@@ -1,24 +1,22 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Sets/Bridge.png" type="Texture" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BridgeBottomLeftConsole.tscn" type="PackedScene" id=3]
 [ext_resource path="res://BridgeChair2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://BridgeChair.tscn" type="PackedScene" id=5]
-[ext_resource path="res://BridgeConsoleRight.tscn" type="PackedScene" id=6]
 [ext_resource path="res://BridgeMiddleConsole.tscn" type="PackedScene" id=7]
 [ext_resource path="res://BridgeTopLeftConsole.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Src/DialogPlayer/DialogPlayer.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/AllCharacters/Characters/GordonMalloy.png" type="Texture" id=10]
 [ext_resource path="res://Bridge2.gd" type="Script" id=11]
-[ext_resource path="res://Portal.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Src/NPC/NPC.gd" type="Script" id=13]
 [ext_resource path="res://Assets/AllCharacters/Characters/EdMercer.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=15]
-[ext_resource path="res://Src/NPC/NPC.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/AllCharacters/Characters/Kelly.png" type="Texture" id=17]
 [ext_resource path="res://Assets/AllCharacters/Characters/Isaac.png" type="Texture" id=18]
 [ext_resource path="res://Assets/AllCharacters/Characters/TallaKeyali.png" type="Texture" id=19]
+[ext_resource path="res://Assets/AllCharacters/Characters/Bortus.png" type="Texture" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 outline_size = 1
@@ -170,6 +168,163 @@ extents = Vector2( 5.36453, 6.87897 )
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 17.1055, 18.4912 )
 
+[sub_resource type="DynamicFont" id=13]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="Animation" id=14]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "idle_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 11 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "idle_right"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "idle_up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "move_down"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "move_left"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 10, 9 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "move_right"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 7, 8 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "move_up"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "sit_right"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
+}
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 7.09411, 7.92 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 22.0422, 22.7589 )
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 11 )
 __meta__ = {
@@ -179,10 +334,11 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 15.9122, 102.145, 16.0947, 74.9237, 31.42, 60.9606, 52.1943, 48.0193, 73.6497, 40.8675, 81.8232, 39.1646, 82.8449, 56.1928, 99.5325, 55.5116, 100.895, 37.1213, 110.09, 35.0779, 109.409, 54.1494, 126.096, 53.4683, 127.799, 35.4185, 139.719, 36.0996, 138.357, 53.4683, 153.341, 55.8522, 158.109, 37.8024, 192.165, 50.0626, 213.621, 66.7502, 236.098, 91.9518, 241.547, 116.132, 238.468, 127.68, 234.213, 137.193, 220.193, 157.22, 202.92, 171.74, 176.633, 185.259, 157.107, 191.768, 156.355, 189.265, 155.604, 183.999, 138.916, 183.318, 138.581, 193.52, 126.815, 194.021, 125.975, 185.021, 110.99, 184.68, 110.042, 193.52, 101.029, 192.269, 98.3892, 183.658, 85.7884, 183.318, 84.4262, 190.47, 57.5218, 180.934, 34.4378, 164.48, 19.1668, 150.211, 16.1626, 136.192, -3.99829, 136.906, -9.78784, 174.368, 32.4419, 198.888, 220.432, 229.198, 270.835, 144.739, 269.473, -16.6875, 53.5566, -21.1149, 6.89961, 24.1799, -21.0265, 40.1863, -20.6859, 99.7847 )
+position = Vector2( 12.6422, -2.24295 )
+polygon = PoolVector2Array( 8.17898, 89.341, 10.0907, 75.5228, 27.9057, 58.5663, 50.0135, 43.1123, 69.5456, 36.6732, 80.0629, 33.239, 84.6458, 39.3049, 90.9703, 40.359, 99.1394, 27.183, 110.998, 27.183, 116.795, 33.771, 124.437, 34.298, 126.546, 25.8654, 141.303, 26.1289, 148.418, 39.3049, 153.688, 38.7778, 159.749, 29.0276, 198.973, 44.4002, 227.305, 62.6445, 248.125, 91.6207, 251.13, 122.958, 244.905, 136.909, 235.247, 149.359, 220.437, 164.169, 202.836, 176.618, 178.153, 187.779, 157.107, 191.768, 156.355, 189.265, 155.604, 183.999, 142.308, 185.633, 141.879, 194.647, 125.996, 196.15, 125.975, 185.021, 117.449, 186.894, 111.829, 195.935, 97.8779, 192.93, 98.5219, 185.418, 90.151, 185.418, 84.4262, 190.47, 57.5218, 180.934, 31.5545, 167.174, 15.0273, 151.505, 7.595, 137.519, -5.5445, 140.439, -9.78784, 174.368, 32.4419, 198.888, 220.432, 229.198, 270.835, 144.739, 269.473, -16.6875, 53.5566, -21.1149, 6.89961, 24.1799, -21.0265, 40.1863, -8.46439, 87.8811 )
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( -1.86217, 100.392, -1.61182, 139.696, -30.6518, 139.196, -29.1497, 99.6412 )
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 221.97, 138.333, 231.124, 133.34, 231.679, 92.5641, 221.138, 84.5198, 224.189, 79.5268, 231.124, 82.0233, 238.891, 88.9581, 239.168, 137.501, 231.124, 145.268, 218.919, 146.378, 218.919, 139.72 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -143.582, 269.505 )
@@ -190,13 +346,14 @@ scale = Vector2( 1.05, 1.05 )
 texture = ExtResource( 1 )
 
 [node name="YSort" type="YSort" parent="."]
+position = Vector2( 0, -0.0302944 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 157.869, 84.6909 )
 
 [node name="NPCTest" type="KinematicBody2D" parent="YSort"]
-position = Vector2( 193.576, 96.2265 )
-scale = Vector2( 1.15, 1.15 )
+position = Vector2( 218.961, 91.0046 )
+scale = Vector2( 1.3, 1.4 )
 script = ExtResource( 13 )
 npc_name = "Gordon"
 npc_texture = ExtResource( 10 )
@@ -273,9 +430,6 @@ one_shot = true
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 90.6357, 136.635 )
 
-[node name="StaticBody2D2" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 219.309, 105.218 )
-
 [node name="StaticBody2D3" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 219.427, 125.142 )
 
@@ -285,41 +439,253 @@ position = Vector2( 124.75, 137.258 )
 [node name="StaticBody2D5" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 124.381, 91.9852 )
 
-[node name="StaticBody2D6" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 229.899, 116.195 )
-
 [node name="StaticBody2D7" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 128.649, 119.173 )
 
 [node name="StaticBody2D8" parent="YSort" instance=ExtResource( 8 )]
 position = Vector2( 93.3376, 96.1676 )
 
-[node name="Portal" parent="." instance=ExtResource( 12 )]
-position = Vector2( -5.73577, 121.168 )
-next_scene_path = "res://Deck A.tscn"
-player_spawn_location = Vector2( 433.4, 91.6 )
-
-[node name="NPC" parent="." instance=ExtResource( 16 )]
-position = Vector2( 25.3608, 127.335 )
-npc_name = "Ed"
-npc_texture = ExtResource( 14 )
+[node name="NPC2" type="KinematicBody2D" parent="YSort"]
+position = Vector2( -6.82941, 88.1196 )
+scale = Vector2( 1.3, 1.4 )
+script = ExtResource( 13 )
+npc_name = "Kelly"
+npc_texture = ExtResource( 17 )
+trigger_talk = false
 move_random = false
 
-[node name="DialogPlayer" parent="NPC/HUD" index="0"]
+[node name="Popup" type="Label" parent="YSort/NPC2"]
+margin_left = -46.0
+margin_top = -42.0
+margin_right = 52.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 13 )
+text = "Press [E] to talk"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="YSort/NPC2"]
+texture = ExtResource( 17 )
+hframes = 14
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC2"]
+anims/idle_down = SubResource( 14 )
+anims/idle_left = SubResource( 15 )
+anims/idle_right = SubResource( 16 )
+anims/idle_up = SubResource( 17 )
+anims/move_down = SubResource( 18 )
+anims/move_left = SubResource( 19 )
+anims/move_right = SubResource( 20 )
+anims/move_up = SubResource( 21 )
+anims/sit_right = SubResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC2"]
+position = Vector2( 0.10941, 7.99341 )
+shape = SubResource( 23 )
+
+[node name="Area2D" type="Area2D" parent="YSort/NPC2"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC2/Area2D"]
+position = Vector2( -0.541107, 0 )
+shape = SubResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="YSort/NPC2"]
+
+[node name="DialogPlayer" parent="YSort/NPC2/HUD" instance=ExtResource( 9 )]
+speakers = [ "", "", "" ]
+dialogs = [ "", "" ]
+
+[node name="MoveRandom" type="Timer" parent="YSort/NPC2"]
+wait_time = 2.0
+
+[node name="MoveCooldown" type="Timer" parent="YSort/NPC2"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="CustomPath" type="Node" parent="YSort/NPC2"]
+
+[node name="Node2D" type="Node2D" parent="YSort/NPC2/CustomPath"]
+position = Vector2( 64.3257, 80.8315 )
+
+[node name="Node2D2" type="Node2D" parent="YSort/NPC2/CustomPath"]
+position = Vector2( 85.9285, 49.7041 )
+
+[node name="Node2D3" type="Node2D" parent="YSort/NPC2/CustomPath"]
+position = Vector2( 151.921, 70.7936 )
+
+[node name="NPC5" type="KinematicBody2D" parent="YSort"]
+position = Vector2( -25.6662, 104.81 )
+scale = Vector2( 1.3, 1.4 )
+script = ExtResource( 13 )
+npc_name = "Bortus"
+npc_texture = ExtResource( 20 )
+trigger_talk = false
+move_random = false
+
+[node name="Popup" type="Label" parent="YSort/NPC5"]
+margin_left = -46.0
+margin_top = -42.0
+margin_right = 52.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 13 )
+text = "Press [E] to talk"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="YSort/NPC5"]
+texture = ExtResource( 17 )
+hframes = 14
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC5"]
+anims/idle_down = SubResource( 14 )
+anims/idle_left = SubResource( 15 )
+anims/idle_right = SubResource( 16 )
+anims/idle_up = SubResource( 17 )
+anims/move_down = SubResource( 18 )
+anims/move_left = SubResource( 19 )
+anims/move_right = SubResource( 20 )
+anims/move_up = SubResource( 21 )
+anims/sit_right = SubResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC5"]
+position = Vector2( 0.10941, 7.99341 )
+shape = SubResource( 23 )
+
+[node name="Area2D" type="Area2D" parent="YSort/NPC5"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC5/Area2D"]
+position = Vector2( -0.541107, 0 )
+shape = SubResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="YSort/NPC5"]
+
+[node name="DialogPlayer" parent="YSort/NPC5/HUD" instance=ExtResource( 9 )]
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 2.0
+margin_bottom = -5.0
+
+[node name="MoveRandom" type="Timer" parent="YSort/NPC5"]
+wait_time = 2.0
+
+[node name="MoveCooldown" type="Timer" parent="YSort/NPC5"]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="CustomPath" type="Node" parent="YSort/NPC5"]
+
+[node name="Node2D" type="Node2D" parent="YSort/NPC5/CustomPath"]
+position = Vector2( 152.545, 28.7539 )
+
+[node name="NPC" type="KinematicBody2D" parent="."]
+position = Vector2( -5.35997, 107.282 )
+scale = Vector2( 1.3, 1.4 )
+script = ExtResource( 13 )
+npc_name = "Ed"
+npc_texture = ExtResource( 14 )
+trigger_talk = false
+move_random = false
+
+[node name="Popup" type="Label" parent="NPC"]
+margin_left = -46.0
+margin_top = -42.0
+margin_right = 52.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 13 )
+text = "Press [E] to talk"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="NPC"]
+texture = ExtResource( 17 )
+hframes = 14
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC"]
+anims/idle_down = SubResource( 14 )
+anims/idle_left = SubResource( 15 )
+anims/idle_right = SubResource( 16 )
+anims/idle_up = SubResource( 17 )
+anims/move_down = SubResource( 18 )
+anims/move_left = SubResource( 19 )
+anims/move_right = SubResource( 20 )
+anims/move_up = SubResource( 21 )
+anims/sit_right = SubResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
+position = Vector2( 0.10941, 7.99341 )
+shape = SubResource( 23 )
+
+[node name="Area2D" type="Area2D" parent="NPC"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/Area2D"]
+position = Vector2( -0.541107, 0 )
+shape = SubResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="NPC"]
+
+[node name="DialogPlayer" parent="NPC/HUD" instance=ExtResource( 9 )]
 speakers = [ "", "" ]
 dialogs = [ "", "" ]
 
-[node name="Node2D" type="Node2D" parent="NPC/CustomPath" index="0"]
-position = Vector2( 18.0452, 118.394 )
+[node name="MoveRandom" type="Timer" parent="NPC"]
+wait_time = 2.0
 
-[node name="Node2D2" type="Node2D" parent="NPC/CustomPath" index="1"]
-position = Vector2( 64.3583, 158.9 )
+[node name="MoveCooldown" type="Timer" parent="NPC"]
+wait_time = 2.0
+one_shot = true
+autostart = true
 
-[node name="Node2D3" type="Node2D" parent="NPC/CustomPath" index="2"]
-position = Vector2( 119.033, 165.889 )
+[node name="CustomPath" type="Node" parent="NPC"]
 
-[node name="Node2D4" type="Node2D" parent="NPC/CustomPath" index="3"]
-position = Vector2( 143.767, 134.726 )
+[node name="Node2D" type="Node2D" parent="NPC/CustomPath"]
+position = Vector2( 53.3905, 110.846 )
+
+[node name="Node2D2" type="Node2D" parent="NPC/CustomPath"]
+position = Vector2( 78.5052, 161.951 )
+
+[node name="Node2D3" type="Node2D" parent="NPC/CustomPath"]
+position = Vector2( 124.216, 161.36 )
+
+[node name="Node2D4" type="Node2D" parent="NPC/CustomPath"]
+position = Vector2( 155.384, 143.435 )
+
+[node name="Node2D5" type="Node2D" parent="NPC/CustomPath"]
+position = Vector2( 151.806, 124.803 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -327,65 +693,197 @@ position = Vector2( 143.767, 134.726 )
 speakers = [ "Computer", "Ed", "Tomolen", "Tomolen", "Ed", "Computer", "Ed", "Tomolen", "Ed", "Tomolen", "Computer", "Ed", "Kelly", "Ed", "Gordon", "Isaac", "Gordon", "Isaac", "Ed", "Gordon" ]
 dialogs = [ "Alert. Alert. Urgent distress signal detected. ", "Computer, replay distress signal. ", "Captain Mercer? Are you out there? It’s me, Tomolen, from Star Ship J-2837. You helped us regain control over our ship, remember? We were drifting into a star and you opened up they sky for us!", "Please answer my call, our engines have stopped working and we’re drifting again!  ", "Computer, see if you can hail Tomolen on StarShip J2837. ", "*Connection Beep*", "This is Captain Ed Mercer from Starship Vessel U.S.S Orville. Tomolen, are you there?", "Captain Mercer? Thank Dorahl!", "We got your distress signal. Send your coordinates and we’ll be right there. ", "Sending now! Hurry Captain, I think we’re on another collision course, headed directly into a nebula!", "Communication Terminated.", "A nearby nebula? ", "I heard it too. I guess they are still trying to figure out this whole space thing. ", "Gordon, did you receive their position?", "Sure did, 257 mark 752. Hey, that’s a palindrome! ", "Correction, a palindrome is a word, phrase, number or sequence of words that reads the same backward as forward. 257 mark 752 is not a palindrome, due to the word ‘mark’ located in between the position.  ", "Way to kill the fun.  ", "I was not aware of having caused any harm to 'fun'. ", "Gordon, set a course for Star Ship J-2837. ", "Yes sir. " ]
 
-[node name="NPC2" parent="." instance=ExtResource( 16 )]
-position = Vector2( 18.8656, 92.1772 )
-npc_name = "Kelly"
-npc_texture = ExtResource( 17 )
-move_random = false
-
-[node name="DialogPlayer" parent="NPC2/HUD" index="0"]
-speakers = [ "", "", "" ]
-dialogs = [ "", "" ]
-
-[node name="Node2D" type="Node2D" parent="NPC2/CustomPath" index="0"]
-position = Vector2( 64.169, 73.8798 )
-
-[node name="Node2D2" type="Node2D" parent="NPC2/CustomPath" index="1"]
-position = Vector2( 90.5473, 64.8232 )
-
-[node name="Node2D3" type="Node2D" parent="NPC2/CustomPath" index="2"]
-position = Vector2( 120.008, 77.4199 )
-
-[node name="NPC3" parent="." instance=ExtResource( 16 )]
-position = Vector2( 9.79527, 115.177 )
+[node name="NPC3" type="KinematicBody2D" parent="."]
+position = Vector2( -64.5259, 104.571 )
+scale = Vector2( 1.3, 1.4 )
+script = ExtResource( 13 )
 npc_name = "Isaac"
 npc_texture = ExtResource( 18 )
+trigger_talk = false
 move_random = false
 
-[node name="DialogPlayer" parent="NPC3/HUD" index="0"]
+[node name="Popup" type="Label" parent="NPC3"]
+margin_left = -46.0
+margin_top = -42.0
+margin_right = 52.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 13 )
+text = "Press [E] to talk"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="NPC3"]
+texture = ExtResource( 17 )
+hframes = 14
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC3"]
+anims/idle_down = SubResource( 14 )
+anims/idle_left = SubResource( 15 )
+anims/idle_right = SubResource( 16 )
+anims/idle_up = SubResource( 17 )
+anims/move_down = SubResource( 18 )
+anims/move_left = SubResource( 19 )
+anims/move_right = SubResource( 20 )
+anims/move_up = SubResource( 21 )
+anims/sit_right = SubResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3"]
+position = Vector2( 0.10941, 7.99341 )
+shape = SubResource( 23 )
+
+[node name="Area2D" type="Area2D" parent="NPC3"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3/Area2D"]
+position = Vector2( -0.541107, 0 )
+shape = SubResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="NPC3"]
+
+[node name="DialogPlayer" parent="NPC3/HUD" instance=ExtResource( 9 )]
 speakers = [ "", "" ]
 dialogs = [ "", "" ]
 
-[node name="Node2D" type="Node2D" parent="NPC3/CustomPath" index="0"]
-position = Vector2( 80.0239, 169.82 )
+[node name="MoveRandom" type="Timer" parent="NPC3"]
+wait_time = 2.0
 
-[node name="Node2D2" type="Node2D" parent="NPC3/CustomPath" index="1"]
-position = Vector2( 140.213, 176.325 )
-
-[node name="NPC4" parent="." instance=ExtResource( 16 )]
-position = Vector2( 23.3646, 107.444 )
-npc_name = "Talla"
-npc_texture = ExtResource( 19 )
-move_random = false
-
-[node name="Node2D" type="Node2D" parent="NPC4/CustomPath" index="0"]
-position = Vector2( 60.3766, 131.081 )
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+[node name="MoveCooldown" type="Timer" parent="NPC3"]
+wait_time = 4.5
 one_shot = true
 autostart = true
+
+[node name="CustomPath" type="Node" parent="NPC3"]
+
+[node name="Node2D" type="Node2D" parent="NPC3/CustomPath"]
+position = Vector2( 50.3201, 113.775 )
+
+[node name="Node2D2" type="Node2D" parent="NPC3/CustomPath"]
+position = Vector2( 67.0491, 155.72 )
+
+[node name="Node2D4" type="Node2D" parent="NPC3/CustomPath"]
+position = Vector2( 177.468, 167.156 )
+
+[node name="NPC4" type="KinematicBody2D" parent="."]
+position = Vector2( -45.5448, 103.648 )
+scale = Vector2( 1.3, 1.4 )
+script = ExtResource( 13 )
+npc_name = "Talla"
+npc_texture = ExtResource( 19 )
+trigger_talk = false
+move_random = false
+
+[node name="Popup" type="Label" parent="NPC4"]
+margin_left = -46.0
+margin_top = -42.0
+margin_right = 52.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 13 )
+text = "Press [E] to talk"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="NPC4"]
+texture = ExtResource( 17 )
+hframes = 14
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC4"]
+anims/idle_down = SubResource( 14 )
+anims/idle_left = SubResource( 15 )
+anims/idle_right = SubResource( 16 )
+anims/idle_up = SubResource( 17 )
+anims/move_down = SubResource( 18 )
+anims/move_left = SubResource( 19 )
+anims/move_right = SubResource( 20 )
+anims/move_up = SubResource( 21 )
+anims/sit_right = SubResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC4"]
+position = Vector2( 0.10941, 7.99341 )
+shape = SubResource( 23 )
+
+[node name="Area2D" type="Area2D" parent="NPC4"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC4/Area2D"]
+position = Vector2( -0.541107, 0 )
+shape = SubResource( 24 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="NPC4"]
+
+[node name="DialogPlayer" parent="NPC4/HUD" instance=ExtResource( 9 )]
+margin_left = 0.0648607
+margin_top = -2.50703
+margin_right = 0.0648193
+margin_bottom = -2.50702
+
+[node name="MoveRandom" type="Timer" parent="NPC4"]
+wait_time = 2.0
+
+[node name="MoveCooldown" type="Timer" parent="NPC4"]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="CustomPath" type="Node" parent="NPC4"]
+
+[node name="Node2D" type="Node2D" parent="NPC4/CustomPath"]
+position = Vector2( 74.4291, 112.396 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -92.0
+margin_top = 21.0
+margin_right = 5.0
+margin_bottom = 174.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_around"]
 [connection signal="body_exited" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_not_around"]
-[connection signal="stopped" from="YSort/NPCTest/HUD/DialogPlayer" to="YSort/NPCTest" method="dialog_player_stopped"]
 [connection signal="timeout" from="YSort/NPCTest/MoveRandom" to="YSort/NPCTest" method="_on_MoveRandom_timeout"]
+[connection signal="body_entered" from="YSort/NPC2/Area2D" to="YSort/NPC2" method="player_around"]
+[connection signal="body_exited" from="YSort/NPC2/Area2D" to="YSort/NPC2" method="player_not_around"]
+[connection signal="stopped" from="YSort/NPC2/HUD/DialogPlayer" to="YSort/NPC2" method="dialog_player_stopped"]
+[connection signal="timeout" from="YSort/NPC2/MoveRandom" to="YSort/NPC2" method="_on_MoveRandom_timeout"]
+[connection signal="body_entered" from="YSort/NPC5/Area2D" to="YSort/NPC5" method="player_around"]
+[connection signal="body_exited" from="YSort/NPC5/Area2D" to="YSort/NPC5" method="player_not_around"]
+[connection signal="stopped" from="YSort/NPC5/HUD/DialogPlayer" to="YSort/NPC5" method="dialog_player_stopped"]
+[connection signal="timeout" from="YSort/NPC5/MoveRandom" to="YSort/NPC5" method="_on_MoveRandom_timeout"]
+[connection signal="body_entered" from="NPC/Area2D" to="NPC" method="player_around"]
+[connection signal="body_exited" from="NPC/Area2D" to="NPC" method="player_not_around"]
+[connection signal="stopped" from="NPC/HUD/DialogPlayer" to="NPC" method="dialog_player_stopped"]
+[connection signal="timeout" from="NPC/MoveRandom" to="NPC" method="_on_MoveRandom_timeout"]
 [connection signal="stopped" from="HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
+[connection signal="body_entered" from="NPC3/Area2D" to="NPC3" method="player_around"]
+[connection signal="body_exited" from="NPC3/Area2D" to="NPC3" method="player_not_around"]
+[connection signal="stopped" from="NPC3/HUD/DialogPlayer" to="NPC3" method="dialog_player_stopped"]
+[connection signal="timeout" from="NPC3/MoveRandom" to="NPC3" method="_on_MoveRandom_timeout"]
+[connection signal="body_entered" from="NPC4/Area2D" to="NPC4" method="player_around"]
+[connection signal="body_exited" from="NPC4/Area2D" to="NPC4" method="player_not_around"]
+[connection signal="stopped" from="NPC4/HUD/DialogPlayer" to="NPC4" method="dialog_player_stopped"]
+[connection signal="timeout" from="NPC4/MoveRandom" to="NPC4" method="_on_MoveRandom_timeout"]
 [connection signal="timeout" from="Timer" to="HUD/DialogPlayer" method="play"]
-
-[editable path="NPC"]
-
-[editable path="NPC2"]
-
-[editable path="NPC3"]
-
-[editable path="NPC4"]

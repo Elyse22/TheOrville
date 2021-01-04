@@ -1,14 +1,338 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Sets/BriefingRoom.png" type="Texture" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BriefingRoom.gd" type="Script" id=3]
+[ext_resource path="res://Assets/AllCharacters/Characters/EdMercer.png" type="Texture" id=4]
+[ext_resource path="res://Src/NPC/NPC.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/AllCharacters/Characters/Kelly.png" type="Texture" id=6]
+[ext_resource path="res://Assets/AllCharacters/Characters/ClaireFinn.png" type="Texture" id=7]
+[ext_resource path="res://Assets/AllCharacters/Characters/Bortus.png" type="Texture" id=8]
+[ext_resource path="res://Assets/AllCharacters/Characters/TallaKeyali.png" type="Texture" id=9]
+[ext_resource path="res://Assets/AllCharacters/Characters/GordonMalloy.png" type="Texture" id=10]
+[ext_resource path="res://Assets/AllCharacters/Characters/JohnLammar.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Src/DialogPlayer/DialogPlayer.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Src/NPC/NPC.gd" type="Script" id=14]
+[ext_resource path="res://Assets/AllCharacters/Characters/Isaac.png" type="Texture" id=15]
+[ext_resource path="res://Portal.gd" type="Script" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="Animation" id=13]
+resource_name = "Sitting"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "idle_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 11 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "idle_right"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "idle_up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "move_down"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "move_left"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 10, 9 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "move_right"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 7, 8 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "move_up"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 22.0422, 22.7589 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 22.0422, 22.7589 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 5.2988, 16.3504 )
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( -203.092, -134.237 )
 script = ExtResource( 3 )
 
 [node name="BriefingRoom" type="Sprite" parent="."]
-position = Vector2( 717.041, 444.142 )
+position = Vector2( 462.3, 156.239 )
 texture = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 546.417, 149.437 )
+
+[node name="NPC" parent="." instance=ExtResource( 5 )]
+position = Vector2( 526.176, 165.634 )
+npc_name = "Ed"
+npc_texture = ExtResource( 4 )
+trigger_talk = false
+move_random = false
+sitting = true
+
+[node name="NPC2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 510.046, 192.9 )
+npc_name = "Kelly"
+npc_texture = ExtResource( 6 )
+trigger_talk = false
+move_random = false
+sitting = true
+
+[node name="NPC3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 478.854, 192.771 )
+npc_name = "ClaireFinn"
+npc_texture = ExtResource( 7 )
+trigger_talk = false
+move_random = false
+sitting = true
+
+[node name="NPC4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 448.561, 195.089 )
+npc_name = "Bortus"
+npc_texture = ExtResource( 8 )
+trigger_talk = false
+move_random = false
+sitting = true
+
+[node name="NPC5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 478.094, 140.699 )
+npc_name = "Talla"
+npc_texture = ExtResource( 9 )
+trigger_talk = false
+move_random = false
+sitting = true
+
+[node name="NPC6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 449.783, 140.211 )
+npc_name = "Gordon"
+npc_texture = ExtResource( 10 )
+trigger_talk = false
+move_random = false
+sitting = true
+
+[node name="NPC7" type="KinematicBody2D" parent="."]
+position = Vector2( 546.859, 179.497 )
+script = ExtResource( 14 )
+npc_name = "LeMarr"
+npc_texture = ExtResource( 11 )
+trigger_talk = false
+move_random = false
+
+[node name="Popup" type="Label" parent="NPC7"]
+margin_left = -46.0
+margin_top = -42.0
+margin_right = 52.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 1 )
+text = "Press [E] to talk"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="NPC7"]
+scale = Vector2( 1.2, 1.3 )
+texture = ExtResource( 6 )
+hframes = 14
+frame = 11
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NPC7"]
+method_call_mode = 1
+anims/Sitting = SubResource( 13 )
+anims/idle_down = SubResource( 14 )
+anims/idle_left = SubResource( 21 )
+anims/idle_right = SubResource( 15 )
+anims/idle_up = SubResource( 16 )
+anims/move_down = SubResource( 17 )
+anims/move_left = SubResource( 18 )
+anims/move_right = SubResource( 19 )
+anims/move_up = SubResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC7"]
+position = Vector2( -0.473321, 11.9358 )
+shape = SubResource( 22 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Area2D" type="Area2D" parent="NPC7"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC7/Area2D"]
+shape = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="NPC7"]
+
+[node name="DialogPlayer" parent="NPC7/HUD" instance=ExtResource( 13 )]
+
+[node name="MoveRandom" type="Timer" parent="NPC7"]
+wait_time = 2.0
+
+[node name="MoveCooldown" type="Timer" parent="NPC7"]
+wait_time = 10.0
+one_shot = true
+
+[node name="CustomPath" type="Node" parent="NPC7"]
+
+[node name="NPC8" parent="." instance=ExtResource( 5 )]
+position = Vector2( 549.255, 203.294 )
+npc_name = "Isaac"
+npc_texture = ExtResource( 15 )
+trigger_talk = false
+move_random = false
+
+[node name="Portal" type="Area2D" parent="."]
+position = Vector2( 561.046, 142.869 )
+collision_layer = 2
+script = ExtResource( 16 )
+next_scene_path = "res://Deck A1.tscn"
+player_spawn_location = Vector2( 277, 170.7 )
+player_direction = "right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+shape = SubResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 546.61, 147.751 )
+[connection signal="body_entered" from="NPC7/Area2D" to="NPC7" method="player_around"]
+[connection signal="body_exited" from="NPC7/Area2D" to="NPC7" method="player_not_around"]
+[connection signal="stopped" from="NPC7/HUD/DialogPlayer" to="NPC7" method="dialog_player_stopped"]
+[connection signal="timeout" from="NPC7/MoveRandom" to="NPC7" method="_on_MoveRandom_timeout"]
+[connection signal="body_entered" from="Portal" to="Portal" method="_on_Portal_body_entered"]

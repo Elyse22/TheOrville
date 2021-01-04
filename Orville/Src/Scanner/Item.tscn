@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Bortus' Desk.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64, 64 )
+extents = Vector2( 41.4095, 33.6742 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 26
