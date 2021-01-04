@@ -25,7 +25,7 @@ texture = ExtResource( 3 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 333.284, 78.8217 )
+position = Vector2( 946.279, -188.176 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 319.958, 145.592 )
@@ -47,7 +47,6 @@ dialogs = [ "Is it just me or is everything a bit..." ]
 move_random = false
 
 [node name="Sprite" parent="YSort/NPC" index="1"]
-scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 2 )
 
 [node name="NPC2" parent="YSort" instance=ExtResource( 4 )]
