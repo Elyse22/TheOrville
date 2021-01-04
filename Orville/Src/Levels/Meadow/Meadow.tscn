@@ -195,29 +195,6 @@ tile_data = PoolIntArray( -1441833, 1610612758, 0, -1441832, 21, 0, -1441831, 21
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PoolVector2Array( 614.661, -292.37, 1133.83, -177.271, 1560.37, -42.5753, 1519.96, 163.958, 1506.49, 446.818, 1380.77, 806.006, 1062.85, 1040.45, 646.951, 989.652, -2.09949, 882.333, -379.247, 734.168, -578.522, 516.607, -645.193, 224.525, -657.617, -69.5144, -622.067, -354.543, -211.38, -408.845, 165.964, -411.518, 461.221, -343.23, 716.276, -267.068, 527.703, -500.54, 213.413, -487.07, -33.5284, -500.54, -349.38, -556.845, -837.38, -492.845, -845.995, -138.773, -850.681, 321.102, -855.171, 487.227, -751.904, 711.719, -527.412, 913.762, -91.8964, 1079.89, 393.007, 1160.7, 797.094, 1196.62, 1295.47, 1232.54, 1519.96, 994.58, 1695.06, 774.577, 1739.96, 348.042, 1762.41, 87.6302, 1695.06, -235.639, 1398.73, -406.253, 1115.87, -424.212, 909.34, -419.723, 528.987, -501.517 )
 
-[node name="NPC" parent="." instance=ExtResource( 6 )]
-position = Vector2( 532.406, 32.9944 )
-scale = Vector2( 1.2, 1.3 )
-npc_name = "Tomolen"
-npc_texture = ExtResource( 3 )
-trigger_talk = false
-move_random = false
-
-[node name="NPC2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 566.972, 21.3037 )
-scale = Vector2( 1.2, 1.3 )
-npc_name = "GreyHairedGuy"
-npc_texture = ExtResource( 4 )
-move_random = false
-
-[node name="NPC3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 568.3, 53.8362 )
-scale = Vector2( 1.2, 1.3 )
-npc_name = "Hamelac"
-npc_texture = ExtResource( 5 )
-trigger_talk = false
-move_random = false
-
 [node name="Portal" parent="." instance=ExtResource( 7 )]
 position = Vector2( -236.137, 80.5137 )
 next_scene_path = "res://StarshipJ2857Bridge2.tscn"
@@ -226,7 +203,7 @@ player_spawn_location = Vector2( 372, 151 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="NPC" type="KinematicBody2D" parent="YSort"]
-position = Vector2( -132.119, 63.5962 )
+position = Vector2( -154.719, 44.188 )
 scale = Vector2( 1.3, 1.4 )
 script = ExtResource( 11 )
 npc_name = "Ed"
@@ -294,23 +271,26 @@ autostart = true
 
 [node name="CustomPath" type="Node" parent="YSort/NPC"]
 
+[node name="Node2D6" type="Node2D" parent="YSort/NPC/CustomPath"]
+position = Vector2( -154.583, 44.1844 )
+
 [node name="Node2D" type="Node2D" parent="YSort/NPC/CustomPath"]
-position = Vector2( 182.615, 72.4471 )
+position = Vector2( 164.747, 50.1467 )
 
 [node name="Node2D2" type="Node2D" parent="YSort/NPC/CustomPath"]
-position = Vector2( 183.213, 29.9368 )
+position = Vector2( 204.235, 25.2213 )
 
 [node name="Node2D3" type="Node2D" parent="YSort/NPC/CustomPath"]
-position = Vector2( 308.349, 43.109 )
+position = Vector2( 291.426, 29.5796 )
 
 [node name="Node2D4" type="Node2D" parent="YSort/NPC/CustomPath"]
-position = Vector2( 308.948, 10.1785 )
+position = Vector2( 324.505, 15.1326 )
 
 [node name="Node2D5" type="Node2D" parent="YSort/NPC/CustomPath"]
-position = Vector2( 501.828, 30.3648 )
+position = Vector2( 479.544, 24.388 )
 
 [node name="NPC2" type="KinematicBody2D" parent="YSort"]
-position = Vector2( -151.155, 63.8401 )
+position = Vector2( -168.546, 66.3365 )
 scale = Vector2( 1.3, 1.4 )
 script = ExtResource( 11 )
 npc_name = "Kelly"
@@ -378,23 +358,26 @@ autostart = true
 
 [node name="CustomPath" type="Node" parent="YSort/NPC2"]
 
+[node name="Node2D6" type="Node2D" parent="YSort/NPC2/CustomPath"]
+position = Vector2( -168.781, 70.4723 )
+
 [node name="Node2D" type="Node2D" parent="YSort/NPC2/CustomPath"]
-position = Vector2( 182.615, 71.8483 )
+position = Vector2( 145.564, 65.4432 )
 
 [node name="Node2D2" type="Node2D" parent="YSort/NPC2/CustomPath"]
-position = Vector2( 183.213, 28.7393 )
+position = Vector2( 182.372, 45.2272 )
 
 [node name="Node2D3" type="Node2D" parent="YSort/NPC2/CustomPath"]
-position = Vector2( 309.186, 42.4277 )
+position = Vector2( 270.087, 46.2204 )
 
 [node name="Node2D4" type="Node2D" parent="YSort/NPC2/CustomPath"]
-position = Vector2( 310.161, 9.26581 )
+position = Vector2( 310.581, 31.2201 )
 
 [node name="Node2D5" type="Node2D" parent="YSort/NPC2/CustomPath"]
-position = Vector2( 483.696, 50.2305 )
+position = Vector2( 457.064, 38.592 )
 
 [node name="NPC3" type="KinematicBody2D" parent="YSort"]
-position = Vector2( -173.229, 63.485 )
+position = Vector2( -148.228, 78.6239 )
 scale = Vector2( 1.3, 1.4 )
 script = ExtResource( 11 )
 npc_name = "Talla"
@@ -462,29 +445,61 @@ autostart = true
 
 [node name="CustomPath" type="Node" parent="YSort/NPC3"]
 
+[node name="Node2D6" type="Node2D" parent="YSort/NPC3/CustomPath"]
+position = Vector2( -148.099, 77.8969 )
+
 [node name="Node2D" type="Node2D" parent="YSort/NPC3/CustomPath"]
-position = Vector2( 183.366, 73.1512 )
+position = Vector2( 164.815, 80.4789 )
 
 [node name="Node2D2" type="Node2D" parent="YSort/NPC3/CustomPath"]
-position = Vector2( 183.853, 30.2358 )
+position = Vector2( 205.296, 60.5081 )
 
 [node name="Node2D3" type="Node2D" parent="YSort/NPC3/CustomPath"]
-position = Vector2( 306.747, 42.9153 )
+position = Vector2( 291.401, 60.3803 )
 
 [node name="Node2D4" type="Node2D" parent="YSort/NPC3/CustomPath"]
-position = Vector2( 310.649, 9.26581 )
+position = Vector2( 322.001, 47.947 )
 
 [node name="Node2D5" type="Node2D" parent="YSort/NPC3/CustomPath"]
-position = Vector2( 483.26, 16.5809 )
+position = Vector2( 479.476, 50.6372 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( -220.419, 85.462 )
 
+[node name="NPC4" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 532.406, 32.9944 )
+scale = Vector2( 1.2, 1.3 )
+npc_name = "Tomolen"
+npc_texture = ExtResource( 3 )
+trigger_talk = false
+move_random = false
+
+[node name="NPC5" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 566.972, 21.3037 )
+scale = Vector2( 1.2, 1.3 )
+npc_name = "GreyHairedGuy"
+npc_texture = ExtResource( 4 )
+move_random = false
+
+[node name="NPC6" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 568.3, 53.8362 )
+scale = Vector2( 1.2, 1.3 )
+npc_name = "Hamelac"
+npc_texture = ExtResource( 5 )
+trigger_talk = false
+move_random = false
+
 [node name="Area2D" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 536.716, 48.8703 )
 shape = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -503,3 +518,4 @@ dialogs = [ "Tomolen, good to see you again. Is everything okay?", "Captain Merc
 [connection signal="stopped" from="YSort/NPC3/HUD/DialogPlayer" to="YSort/NPC3" method="dialog_player_stopped"]
 [connection signal="timeout" from="YSort/NPC3/MoveRandom" to="YSort/NPC3" method="_on_MoveRandom_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="stopped" from="HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped2"]

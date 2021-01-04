@@ -60,10 +60,21 @@ func _ready():
 	if move_random:
 		$MoveRandom.start()
 	else:
-		var new_path = []
-		for node in $CustomPath.get_children():
-			new_path.push_back(node.position)
-		set_path(new_path)
+		walk_custom_path()
+
+
+func walk_custom_path():
+	var new_path = []
+	for node in $CustomPath.get_children():
+		new_path.push_back(node.position)
+	set_path(new_path)
+
+
+func reverse_path():
+	var new_path = []
+	for v in path:
+		new_path.push_front(v)
+	set_path(new_path)
 
 
 func _process(delta):
