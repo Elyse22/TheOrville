@@ -2348,7 +2348,7 @@ __meta__ = {
 [connection signal="stopped" from="YSort/NPC5/HUD/DialogPlayer" to="YSort/NPC5" method="dialog_player_stopped"]
 [connection signal="timeout" from="YSort/NPC5/MoveRandom" to="YSort/NPC5" method="_on_MoveRandom_timeout"]
 [connection signal="path_finished" from="YSort/NPC" to="YSort/NPC" method="sit" binds= [ Vector2( 136, 127 ), "right" ]]
-[connection signal="path_finished" from="YSort/NPC" to="YSort/NPC" method="custom_animation" binds= [ "move_up" ]]
+[connection signal="path_finished" from="YSort/NPC" to="YSort/NPC" method="custom_animation" binds= [ "sit_right" ]]
 [connection signal="body_entered" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_around"]
 [connection signal="body_exited" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_not_around"]
 [connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="YSort/NPC" method="dialog_player_stopped"]
