@@ -93,5 +93,4 @@ valign = 1
 
 [node name="FadeIn" parent="." instance=ExtResource( 1 )]
 visible = false
-[connection signal="mouse_entered" from="." to="." method="_on_Title_Screen_mouse_entered"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_Fade_In_fade_finished"]
