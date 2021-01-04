@@ -116,6 +116,3 @@ func save_game():
 	if error == OK:
 		file.store_var(data)
 	file.close()
-	$Message.text = "GAME SAVED!"
-	yield(get_tree().create_timer(3), "timeout")
-	$Message.text = ""

@@ -29,6 +29,9 @@ func quit():
 
 func save_game():
 	Data.save_game()
+	$Message.text = "GAME SAVED!"
+	yield(get_tree().create_timer(3), "timeout")
+	$Message.text = ""
 
 
 func _process(delta):
