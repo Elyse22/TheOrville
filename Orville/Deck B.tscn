@@ -57,20 +57,22 @@ position = Vector2( -101.118, 172.536 )
 scale = Vector2( 1.1, 1.2 )
 npc_name = "Lex"
 dialogs = [ "Is it just me or is everything a bit..." ]
-move_random = false
 
 [node name="Sprite" parent="YSort/NPC" index="1"]
 scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 8 )
 
+[node name="MoveRandom" parent="YSort/NPC" index="6"]
+wait_time = 4.0
+
 [node name="Node2D" type="Node2D" parent="YSort/NPC/CustomPath" index="0"]
-position = Vector2( -97.0578, 215.544 )
+position = Vector2( -115.443, 217.665 )
 
 [node name="Node2D2" type="Node2D" parent="YSort/NPC/CustomPath" index="1"]
 position = Vector2( -204.83, 218.695 )
 
 [node name="Node2D3" type="Node2D" parent="YSort/NPC/CustomPath" index="2"]
-position = Vector2( -177.969, 177.969 )
+position = Vector2( -180.797, 186.101 )
 
 [node name="NPC2" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 619.786, 52.2296 )
