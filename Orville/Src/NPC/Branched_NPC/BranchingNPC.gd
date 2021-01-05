@@ -38,7 +38,6 @@ func set_dialogs():
 		speakers.append(npc_name)
 	dialog_player.speakers = speakers
 	dialog_player.dialogs = branch_dialogs[dialog_index]
-	print(branch_dialogs[dialog_index])
 
 
 func _ready():
@@ -53,7 +52,7 @@ func _ready():
 #	dialog_player.speakers = speakers
 #	dialog_player.dialogs = dialogs
 	$Popup.hide()
-	$HUD/DialogPlayer.stop()
+	$HUD/DialogPlayer.hide()
 	if npc_texture:
 		sprite.texture = npc_texture
 
@@ -148,7 +147,8 @@ func player_not_around(body):
 	if body.name == "Player":
 		player_around = false
 		$Popup.hide()
-		$HUD/DialogPlayer.stop()
+		if $HUD/DialogPlayer.visible:
+			$HUD/DialogPlayer.stop()
 
 
 func _input(event):
@@ -163,7 +163,6 @@ func _input(event):
 			elif check:
 				dialog_index = 0
 		set_dialogs()
-		print(dialog_index)
 		$HUD/DialogPlayer.play()
 
 

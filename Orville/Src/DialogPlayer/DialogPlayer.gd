@@ -47,7 +47,7 @@ func next_dialog():
 
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_accept") and visible:
 		next_dialog()
 
 
