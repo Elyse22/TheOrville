@@ -1346,7 +1346,7 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 15 )
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=35]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -1361,7 +1361,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=36]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -1376,7 +1376,7 @@ tracks/0/keys = {
 "values": [ 11 ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=37]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -1391,7 +1391,7 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=38]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -1406,7 +1406,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=39]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -1422,7 +1422,7 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="Animation" id=41]
+[sub_resource type="Animation" id=40]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -1438,7 +1438,7 @@ tracks/0/keys = {
 "values": [ 10, 9 ]
 }
 
-[sub_resource type="Animation" id=42]
+[sub_resource type="Animation" id=41]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -1454,7 +1454,7 @@ tracks/0/keys = {
 "values": [ 7, 8 ]
 }
 
-[sub_resource type="Animation" id=43]
+[sub_resource type="Animation" id=42]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -1470,8 +1470,7 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
-[sub_resource type="Animation" id=35]
-resource_name = "sit_right"
+[sub_resource type="Animation" id=43]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -1861,15 +1860,15 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPCTest"]
-anims/idle_down = SubResource( 36 )
-anims/idle_left = SubResource( 37 )
-anims/idle_right = SubResource( 38 )
-anims/idle_up = SubResource( 39 )
-anims/move_down = SubResource( 40 )
-anims/move_left = SubResource( 41 )
-anims/move_right = SubResource( 42 )
-anims/move_up = SubResource( 43 )
-anims/sit_right = SubResource( 35 )
+anims/idle_down = SubResource( 35 )
+anims/idle_left = SubResource( 36 )
+anims/idle_right = SubResource( 37 )
+anims/idle_up = SubResource( 38 )
+anims/move_down = SubResource( 39 )
+anims/move_left = SubResource( 40 )
+anims/move_right = SubResource( 41 )
+anims/move_up = SubResource( 42 )
+anims/sit_right = SubResource( 43 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPCTest"]
 position = Vector2( -0.175, 8.356 )
@@ -2339,6 +2338,7 @@ __meta__ = {
 [connection signal="body_exited" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_not_around"]
 [connection signal="timeout" from="YSort/NPCTest/MoveRandom" to="YSort/NPCTest" method="_on_MoveRandom_timeout"]
 [connection signal="path_finished" from="YSort/NPC2" to="YSort/NPC2" method="sit" binds= [ Vector2( 132, 92 ), "right" ]]
+[connection signal="path_finished" from="YSort/NPC2" to="YSort/NPC2" method="_on_NPC2_path_finished"]
 [connection signal="body_entered" from="YSort/NPC2/Area2D" to="YSort/NPC2" method="player_around"]
 [connection signal="body_exited" from="YSort/NPC2/Area2D" to="YSort/NPC2" method="player_not_around"]
 [connection signal="stopped" from="YSort/NPC2/HUD/DialogPlayer" to="YSort/NPC2" method="dialog_player_stopped"]

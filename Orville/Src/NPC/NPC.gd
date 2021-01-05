@@ -141,7 +141,7 @@ func handle_animation():
 	if velocity.length_squared() >= 1.0:
 		anim_player.play("move_" + direction)
 	elif sitting:
-		anim_player.play("sit_right")
+		anim_player.play("sit_left")
 	else:
 		anim_player.play("idle_" + direction)
 
@@ -229,3 +229,5 @@ func custom_animation(animation):
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	custom_anim_playing = false
+
+
