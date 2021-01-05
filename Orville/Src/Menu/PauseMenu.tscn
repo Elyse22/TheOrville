@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Src/Menu/PauseMenu.gd" type="Script" id=2]
+[ext_resource path="res://Game/Options/Volume.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 42
@@ -55,24 +56,22 @@ margin_right = 500.0
 margin_bottom = 197.0
 text = "SAVE GAME"
 
-[node name="Sound" type="Button" parent="."]
+[node name="Volume" parent="." instance=ExtResource( 3 )]
 margin_top = 212.0
 margin_right = 500.0
-margin_bottom = 264.0
-text = "SOUND: ON"
+margin_bottom = 236.0
 
 [node name="Back" type="Button" parent="."]
-margin_top = 279.0
+margin_top = 251.0
 margin_right = 500.0
-margin_bottom = 331.0
+margin_bottom = 303.0
 text = "BACK"
 
 [node name="Quit" type="Button" parent="."]
-margin_top = 346.0
+margin_top = 318.0
 margin_right = 500.0
-margin_bottom = 398.0
+margin_bottom = 370.0
 text = "QUIT"
 [connection signal="pressed" from="SaveGame" to="." method="save_game"]
-[connection signal="pressed" from="Sound" to="." method="toggle_sound"]
 [connection signal="pressed" from="Back" to="." method="back"]
 [connection signal="pressed" from="Quit" to="." method="quit"]

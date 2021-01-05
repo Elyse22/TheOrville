@@ -58,6 +58,8 @@ func _physics_process(delta):
 	frame_count += 1
 	if frame_count == 3:
 		allow_portal_travel = true
+	
+	Data.player_position = position
 
 
 func _ready():

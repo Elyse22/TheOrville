@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/Space24.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Game/Options/Volume.gd" type="Script" id=2]
+
+[node name="Volume" type="HBoxContainer"]
+margin_top = 62.0
+margin_right = 264.0
+margin_bottom = 86.0
+rect_min_size = Vector2( 400, 0 )
+custom_constants/separation = 16
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 224.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 224, 0 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0.180392, 0.27451, 0.87451, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+text = "Volume: 100%"
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_left = 240.0
+margin_right = 400.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.0
+[connection signal="value_changed" from="HSlider" to="." method="_on_HSlider_value_changed"]
