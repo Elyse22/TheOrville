@@ -178,8 +178,7 @@ func player_not_around(body):
 		$Popup.hide()
 		if move_random:
 			$MoveCooldown.stop()
-		if $HUD/DialogPlayer.visible:
-			$HUD/DialogPlayer.stop()
+		$HUD/DialogPlayer.hide()
 
 
 func _input(event):

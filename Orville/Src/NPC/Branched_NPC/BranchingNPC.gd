@@ -147,8 +147,7 @@ func player_not_around(body):
 	if body.name == "Player":
 		player_around = false
 		$Popup.hide()
-		if $HUD/DialogPlayer.visible:
-			$HUD/DialogPlayer.stop()
+		$HUD/DialogPlayer.hide()
 
 
 func _input(event):
