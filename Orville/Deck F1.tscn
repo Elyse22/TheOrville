@@ -88,7 +88,7 @@ text = "DECK F"
 position = Vector2( 536.447, -160.244 )
 npc_name = "LeMarr"
 npc_texture = ExtResource( 6 )
-condition_item = "Wrench"
+condition_items = [ "Wrench", "Iron Coil" ]
 branch_dialogs = [ [ "Did Bortus ask you to find some items?" ], [ "Ah, of course Bortus suggested these. It will help to adjust the quantum engine to deal with this, simple reality. Give me a sec to hook 'em up. ", "Okay boom, all done. I think you should check in with Gordon on the bridge and test the new adjustment." ] ]
 dialog_index = -2
 
