@@ -6,5 +6,7 @@ func _ready():
 		$YSort/Player.position = Data.player_position
 	Data.current_scene = filename
 	
-	if not Data.spoke_with_mercer:
+	if Data.spoke_with_mercer:
+		$YSort/NPC.queue_free()
+	else:
 		Global.objective = "Speak to Captain Mercer"
