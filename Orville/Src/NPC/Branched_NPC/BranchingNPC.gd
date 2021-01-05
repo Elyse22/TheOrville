@@ -3,7 +3,7 @@ extends KinematicBody2D
 export var npc_name = ""
 export (Texture) var npc_texture
 export var trigger_talk = true
-export (String) var condition_item
+export (Array, String) var condition_items
 
 export (Array, Array, String) var branch_dialogs
 
@@ -154,13 +154,15 @@ func _input(event):
 	if event.is_action_pressed("talk") and player_around:
 		if npc_name == "LeMarr" and not Data.can_talk_with["LeMarr"]:
 			return
-		var check = true
-		for item in Data.inventory:
-			if item[0] == condition_item:
-				dialog_index = 1
-				check = false
-			elif check:
-				dialog_index = 0
+		var has_all_items = true
+		for condition_item in condition_items:
+			var has_item = false
+			for item in Data.inventory:
+				if item[0] == condition_item:
+					has_item = true
+			if not has_item:
+				has_all_items = false
+		dialog_index = 1 if has_all_items else 0
 		set_dialogs()
 		$HUD/DialogPlayer.play()
 
