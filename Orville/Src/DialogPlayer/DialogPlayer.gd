@@ -25,7 +25,7 @@ func next_dialog():
 	index += 1
 
 	if speakers.size() and speakers[index] and speakers[index].length():
-		$Overlay/Container/Speaker/Name.text = speakers[index]
+		$Overlay/Container/Speaker/Name.text = speakers[index].replace("%p", Data.character.name)
 
 		var file_name = str(speakers[index]).replace(" ", "").to_lower()
 		var file = File.new()
