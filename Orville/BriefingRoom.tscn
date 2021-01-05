@@ -167,12 +167,12 @@ extents = Vector2( 22.0422, 22.7589 )
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 22.0422, 22.7589 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=13]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 12 )
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=14]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -187,7 +187,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=15]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -202,7 +202,7 @@ tracks/0/keys = {
 "values": [ 11 ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=16]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -217,7 +217,7 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=17]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -232,7 +232,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=18]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -248,7 +248,7 @@ tracks/0/keys = {
 "values": [ 1, 2 ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=19]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -264,7 +264,7 @@ tracks/0/keys = {
 "values": [ 10, 9 ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=20]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -280,7 +280,7 @@ tracks/0/keys = {
 "values": [ 7, 8 ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=21]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -296,8 +296,7 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
-[sub_resource type="Animation" id=14]
-resource_name = "sit_left"
+[sub_resource type="Animation" id=22]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -311,7 +310,7 @@ tracks/0/keys = {
 "values": [ 13 ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=23]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -325,13 +324,13 @@ tracks/0/keys = {
 "values": [ 12 ]
 }
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 7.09411, 4.31924 )
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 22.0422, 22.7589 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 5.2988, 16.3504 )
 
 [node name="Node2D" type="Node2D"]
@@ -465,7 +464,7 @@ margin_left = -46.0
 margin_top = -42.0
 margin_right = 52.0
 margin_bottom = -28.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 13 )
 text = "Press [E] to talk"
 __meta__ = {
 "_edit_lock_": true,
@@ -481,20 +480,20 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC"]
-anims/idle_down = SubResource( 16 )
-anims/idle_left = SubResource( 17 )
-anims/idle_right = SubResource( 18 )
-anims/idle_up = SubResource( 19 )
-anims/move_down = SubResource( 20 )
-anims/move_left = SubResource( 21 )
-anims/move_right = SubResource( 22 )
-anims/move_up = SubResource( 23 )
-anims/sit_left = SubResource( 14 )
-anims/sit_right = SubResource( 24 )
+anims/idle_down = SubResource( 14 )
+anims/idle_left = SubResource( 15 )
+anims/idle_right = SubResource( 16 )
+anims/idle_up = SubResource( 17 )
+anims/move_down = SubResource( 18 )
+anims/move_left = SubResource( 19 )
+anims/move_right = SubResource( 20 )
+anims/move_up = SubResource( 21 )
+anims/sit_left = SubResource( 22 )
+anims/sit_right = SubResource( 23 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC"]
 position = Vector2( 0.10941, 7.99341 )
-shape = SubResource( 25 )
+shape = SubResource( 24 )
 
 [node name="Area2D" type="Area2D" parent="YSort/NPC"]
 __meta__ = {
@@ -503,7 +502,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC/Area2D"]
 position = Vector2( -0.541107, 0 )
-shape = SubResource( 26 )
+shape = SubResource( 25 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -549,7 +548,7 @@ player_spawn_location = Vector2( 277, 170.7 )
 player_direction = "right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-shape = SubResource( 13 )
+shape = SubResource( 26 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -568,7 +567,7 @@ polygon = PoolVector2Array( 461.642, 146.484, 521.337, 148.149, 521.575, 190.958
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 13 )]
-speakers = [ "Ed", "LeMarr", "Ed", "LeMarr", "Gordon", "Kelly", "Tahla", "LeMarr", "Ed", "Isaac", "Gordon", "Isaac", "Isaac", "You", "Ed", "Ed" ]
+speakers = [ "Ed", "LeMarr", "Ed", "LeMarr", "Gordon", "Kelly", "Tahla", "LeMarr", "Ed", "Isaac", "Gordon", "Isaac", "Isaac", "%p", "Ed", "Ed" ]
 dialogs = [ "Okay now that we’re all here, Isaac, LeMarr, what new findings do you have? ", "At first, I tried to relay our current data to the spatial anomaly we encountered a  while back, remember that doorway that lead to a pocket of 2D space?", "Yes?", "Well, it’s nothing like that. ", "That’s reassuring. ", "Something odd we discovered during our away mission is that no one else seemed to notice anything different? ", "Meaning this must have only happened to us. ", "Interesting. And we know that we are still in the same universe because the events that had happened previously, have still happened to everyone else. Like Tomolen reminding us that we had saved them from a collision course with that star. ", "So, if this is not the same as the 2D universe, where are we?", "It is my conjecture that we are still located in the same universe, however we are operating on a different layer of reality. ", "Yeah, you’re going to have to elaborate on that. ", "Our reality consists of a multitude of different layers, all equally real aspects of the one reality. A piano may be perceived on one layer as being ‘white’, yet the molecules and atoms have different colour-properties then the ‘white’ we perceive on a higher layer of experience. ", "The colour-properties of atomistic particles may indeed absorb blue and therefore have a colour-property of blue. Yet ordinary life forms experience the piano, on a different layer, as being white. ", "So, we are in a layer of reality that just happens to be, pixelated?", "Okay, I think I can see what you’re driving at. ", "Alright, I don’t know about you guys but I could sure use a drink. Isn’t it karaoke night in the Mess Hall?" ]
 
 [node name="Timer" type="Timer" parent="."]

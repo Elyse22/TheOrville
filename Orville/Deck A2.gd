@@ -6,4 +6,3 @@ func _ready():
 		$Player.position = Data.player_position
 	Data.current_scene = filename
 	
-	

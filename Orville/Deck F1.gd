@@ -15,3 +15,4 @@ func _ready():
 func _on_DialogPlayer_stopped():
 	Data.take_items_to_lemarr = true
 	Global.objective = "Ask Gordon to Take a Test Drive"
+	Data.enable_portal("bridge_portal")

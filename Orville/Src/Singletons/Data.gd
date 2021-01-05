@@ -45,7 +45,7 @@ var current_deck_f = "res://Deck F.tscn"
 
 var current_deck_b = "res://Deck B.tscn"
 
-var disabled_portals = ["lab_portal"]
+var disabled_portals = ["lab_portal","bortus_portal","bridge_portal"]
 func enable_portal(id: String):
 	disabled_portals.erase(id)
 func disable_portal(id: String):

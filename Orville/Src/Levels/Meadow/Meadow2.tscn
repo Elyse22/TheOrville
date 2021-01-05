@@ -197,7 +197,6 @@ polygon = PoolVector2Array( 614.661, -292.37, 1133.83, -177.271, 1560.37, -42.57
 position = Vector2( 536.409, 35.8039 )
 npc_name = "Tomolen"
 npc_texture = ExtResource( 3 )
-condition_item = "Blue Crystal"
 branch_dialogs = [ [ "You will find the Blue Crystal on the Moon. You're Shuttecraft is just across the bridge right?" ], [ "Wow, that was quick! Thank you so much, I hope we can repay you. " ] ]
 
 [node name="DialogPlayer" parent="BranchingNPC/HUD" index="0"]

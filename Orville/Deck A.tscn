@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Portal.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Deck A.gd" type="Script" id=5]
 [ext_resource path="res://Assets/AllCharacters/Characters/Brook.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Deck B Railings.png" type="Texture" id=7]
+[ext_resource path="res://RoomTrigger.gd" type="Script" id=8]
+[ext_resource path="res://RoomTrigger.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -66,15 +68,15 @@ b = Vector2( 5.21124, 12.4002 )
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 33.9207, 18.9533 )
 
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 14.7867, 12.6199 )
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 297.132, 237.551 )
 texture = ExtResource( 3 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 143.398, 86.488 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -84,12 +86,6 @@ polygon = PoolVector2Array( 47.4362, 55.9893, 443.08, 56.2813, 443.218, 65.6112,
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="NPC2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 398.035, 215.439 )
-npc_name = "Brooke"
-npc_texture = ExtResource( 6 )
-dialogs = [ "Is this a dream? Things seem different around here." ]
 
 [node name="Portal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 373.806, 189.865 )
@@ -110,6 +106,7 @@ shape = SubResource( 2 )
 
 [node name="Portal3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 451.105, 85.7259 )
+id = "bridge_portal"
 next_scene_path = "res://Bridge.tscn"
 player_spawn_location = Vector2( 9.6, 128 )
 
@@ -176,11 +173,86 @@ position = Vector2( -456.865, -91.7378 )
 shape = SubResource( 15 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
-polygon = PoolVector2Array( 45.5632, 56.0212, 447.508, 58.0746, 449.562, 113.515, 393.094, 114.029, 394.121, 125.835, 416.708, 126.349, 418.248, 246.47, 269.379, 245.444, 270.406, 125.322, 291.453, 125.322, 289.913, 113.002, 47.6165, 114.542, 46.5899, 104.275, 28.623, 105.302, 29.1364, 281.891, -22.1976, 282.917, -21.6843, 98.6284, -49.918, 98.1151, -49.918, 129.942, -171.58, 132.509, -171.58, 59.6146, -51.9714, 61.1546, -51.458, 71.9348, -23.7377, 72.4481, -23.7377, 59.1013, 31.1897, 58.5879, 31.1897, 66.8013, 45.5632, 68.8547, 39.9165, -7.63292, -193.653, -3.01286, -186.466, 166.903, -45.8113, 152.016, -49.4045, 314.744, 57.8835, 305.504, 52.2368, 131.482, 254.493, 138.669, 247.819, 269.057, 452.642, 268.544, 441.348, 138.156, 466.502, 129.429, 456.235, 14.4407, 94.3306, 19.5741, 60.9635, 14.4407 )
+polygon = PoolVector2Array( 45.5632, 56.0212, 447.508, 58.0746, 449.562, 113.515, 393.094, 114.029, 394.121, 125.835, 416.708, 126.349, 418.248, 246.47, 269.379, 245.444, 270.406, 125.322, 291.453, 125.322, 289.913, 113.002, 47.6165, 114.542, 46.8164, 106.008, 28.8495, 106.008, 27.7466, 276.777, -20.7823, 276.147, -21.6843, 98.6284, -49.918, 98.1151, -49.918, 129.942, -171.58, 132.509, -171.58, 59.6146, -51.9714, 61.1546, -51.458, 71.9348, -23.7377, 72.4481, -23.7377, 59.1013, 31.1897, 58.5879, 31.1897, 66.8013, 45.5632, 68.8547, 39.9165, -7.63292, -193.653, -3.01286, -186.466, 166.903, -45.8113, 152.016, -49.4045, 314.744, 57.8835, 305.504, 52.2368, 131.482, 254.493, 138.669, 247.819, 269.057, 452.642, 268.544, 441.348, 138.156, 466.502, 129.429, 456.235, 14.4407, 94.3306, 19.5741, 60.9635, 14.4407 )
+
+[node name="RoomTrigger" parent="." instance=ExtResource( 9 )]
+position = Vector2( -153.488, -24.1269 )
+
+[node name="Popup" parent="RoomTrigger" index="1"]
+margin_left = 474.446
+margin_top = 32.4089
+margin_right = 569.446
+margin_bottom = 46.4089
+text = "Locked"
+
+[node name="RoomTrigger2" type="Area2D" parent="."]
+position = Vector2( -40.7694, 8.3392 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomTrigger2"]
+position = Vector2( 491.691, 77.9835 )
+shape = SubResource( 16 )
+
+[node name="Popup" type="Label" parent="RoomTrigger2"]
+margin_left = 453.813
+margin_top = 47.935
+margin_right = 548.813
+margin_bottom = 61.935
+text = "The Bridge"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RoomTrigger3" parent="." instance=ExtResource( 9 )]
+position = Vector2( -377.58, -23.1644 )
+
+[node name="CollisionShape2D" parent="RoomTrigger3" index="0"]
+position = Vector2( 496.324, 83.9908 )
+
+[node name="Popup" parent="RoomTrigger3" index="1"]
+margin_left = 446.614
+margin_top = 31.0805
+margin_right = 545.614
+margin_bottom = 45.0805
+text = "Captain's Office"
+
+[node name="RoomTrigger4" parent="." instance=ExtResource( 9 )]
+position = Vector2( -235.482, 85.8883 )
+
+[node name="Popup" parent="RoomTrigger4" index="1"]
+margin_left = 452.54
+margin_top = 44.496
+margin_right = 547.54
+margin_bottom = 58.496
+text = "Briefing Room"
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="NPC2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -153.804, 82.9975 )
+npc_name = "Brooke"
+npc_texture = ExtResource( 6 )
+dialogs = [ "Is this a dream? Things seem different around here." ]
+
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 143.398, 86.488 )
+[connection signal="body_entered" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_entered"]
+[connection signal="body_exited" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_exited"]
+[connection signal="body_entered" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_entered"]
+[connection signal="body_exited" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_exited"]
+[connection signal="body_entered" from="RoomTrigger3" to="RoomTrigger3" method="_on_RoomTrigger3_body_entered"]
+[connection signal="body_exited" from="RoomTrigger3" to="RoomTrigger3" method="_on_RoomTrigger3_body_exited"]
+[connection signal="body_entered" from="RoomTrigger4" to="RoomTrigger4" method="_on_RoomTrigger4_body_entered"]
+[connection signal="body_exited" from="RoomTrigger4" to="RoomTrigger4" method="_on_RoomTrigger4_body_exited"]
 
 [editable path="Portal"]
 
 [editable path="Portal2"]
+
+[editable path="RoomTrigger"]
+
+[editable path="RoomTrigger3"]
+
+[editable path="RoomTrigger4"]

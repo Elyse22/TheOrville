@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Portal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sets/Deck A.png" type="Texture" id=3]
 [ext_resource path="res://RailingDeckA.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Deck A2.gd" type="Script" id=5]
+[ext_resource path="res://RoomTrigger.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -23,8 +24,7 @@ position = Vector2( 143.398, 86.488 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
-polygon = PoolVector2Array( 47.4362, 55.9893, 443.08, 56.2813, 443.218, 65.6112, 447.951, 65.9267, 447.478, 108.685, 443.376, 109.473, 443.372, 112.343, 392.566, 112.927, 392.274, 125.482, 415.049, 126.65, 414.465, 243.738, 367.747, 244.322, 367.747, 247.533, 318.109, 247.241, 317.817, 241.694, 271.683, 242.57, 272.851, 127.818, 292.706, 127.818, 292.706, 112.051, 50.9401, 111.175, 50.6481, 103.875, 28.165, 104.459, 26.997, 243.446, -20.0131, 243.738, -20.889, 96.8676, -54.7596, 96.8676, -54.7596, 128.986, -168.927, 128.402, -168.343, 54.5293, -54.7596, 55.4053, -53.2996, 70.5886, -23.5168, 70.0047, -22.6409, 57.1572, 27.8731, 57.1572, 28.1651, 69.7127, 48.3122, 69.1287, 47.4362, 60.0771, 43.1502, 57.8537, 38.3836, -4.50869, -203.519, -2.12542, -199.547, 170.662, -46.62, 165.101, -47.1461, 278.928, 67.9502, 273.524, 56.6027, 135.193, 242.486, 133.031, 246.268, 272.984, 455.927, 272.444, 463.492, -27.9956, 50.6588, -14.4866, 45.7955, 12.5313 )
+polygon = PoolVector2Array( 47.4362, 55.9893, 443.08, 56.2813, 443.218, 65.6112, 447.951, 65.9267, 447.478, 108.685, 443.376, 109.473, 443.372, 112.343, 392.566, 112.927, 392.274, 125.482, 415.049, 126.65, 414.465, 243.738, 367.747, 244.322, 367.747, 247.533, 318.109, 247.241, 317.817, 241.694, 271.683, 242.57, 272.851, 127.818, 292.706, 127.818, 292.706, 112.051, 50.9401, 111.175, 50.5906, 105.222, 28.152, 106.068, 26.3401, 264.014, -20.3111, 265.742, -20.889, 96.8676, -54.7596, 96.8676, -54.7596, 128.986, -168.927, 128.402, -168.343, 54.5293, -54.7596, 55.4053, -53.2996, 70.5886, -23.5168, 70.0047, -22.6409, 57.1572, 27.8731, 57.1572, 28.1651, 69.7127, 48.3122, 69.1287, 47.4362, 60.0771, 43.1502, 57.8537, 38.3836, -4.50869, -203.519, -2.12542, -199.547, 170.662, -46.62, 165.101, -48.5322, 314.697, 71.2635, 315.273, 56.6027, 135.193, 242.486, 133.031, 246.268, 272.984, 455.927, 272.444, 463.492, -27.9956, 50.6588, -14.4866, 45.7955, 12.5313 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -47,4 +47,60 @@ visible = false
 visible = false
 polygon = PoolVector2Array( 49.1468, 57.2637, 444.163, 58.7267, 442.7, 67.5048, 449.04, 67.5048, 448.552, 108.957, 441.724, 110.908, 442.7, 116.272, 395.395, 116.272, 395.883, 124.075, 416.853, 126.026, 417.828, 246.969, 268.6, 247.944, 269.576, 126.513, 294.447, 126.026, 291.521, 114.809, 49.1468, 114.809, 49.1468, 106.519, 30.1275, 106.519, 28.6645, 287.934, -22.0536, 286.471, -24.0043, 99.2037, -48.388, 98.716, -49.3633, 131.39, -171.282, 132.853, -170.794, 59.2144, -50.8263, 60.1897, -52.2893, 72.3816, -24.4919, 71.8939, -24.0042, 58.7267, 28.6646, 58.7267, 29.1523, 68.9679, 47.6839, 69.9432, 35.9797, -5.15861, -193.113, -6.40637, -189.995, 164.084, -51.7312, 163.564, -49.6521, 315.342, 63.1418, 311.184, 58.9835, 149.53, 242.469, 149.01, 242.988, 284.155, 456.101, 280.516, 443.106, 143.292, 483.13, 117.303, 468.056, -7.96574, 43.9096, -6.40637 )
 
+[node name="RoomTrigger" parent="." instance=ExtResource( 6 )]
+position = Vector2( -378.069, -22.8619 )
+
+[node name="Popup" parent="RoomTrigger" index="1"]
+margin_left = 449.463
+margin_top = 30.7292
+margin_right = 548.463
+margin_bottom = 44.7292
+text = "Captain's Office"
+
+[node name="RoomTrigger2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -152.46, -22.5172 )
+
+[node name="Popup" parent="RoomTrigger2" index="1"]
+margin_left = 472.325
+margin_top = 30.6162
+margin_right = 567.325
+margin_bottom = 44.6162
+text = "Locked"
+
+[node name="RoomTrigger3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -43.1762, 9.17018 )
+
+[node name="Popup" parent="RoomTrigger3" index="1"]
+margin_left = 456.934
+margin_top = 47.5719
+margin_right = 551.934
+margin_bottom = 61.5719
+text = "The Bridge"
+
+[node name="RoomTrigger4" parent="." instance=ExtResource( 6 )]
+position = Vector2( -236.514, 86.3525 )
+
+[node name="Popup" parent="RoomTrigger4" index="1"]
+margin_left = 453.113
+margin_top = 46.4256
+margin_right = 548.113
+margin_bottom = 60.4256
+text = "Briefing Room"
+[connection signal="body_entered" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_entered"]
+[connection signal="body_exited" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_exited"]
+[connection signal="body_entered" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_entered"]
+[connection signal="body_exited" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_exited"]
+[connection signal="body_entered" from="RoomTrigger3" to="RoomTrigger3" method="_on_RoomTrigger3_body_entered"]
+[connection signal="body_exited" from="RoomTrigger3" to="RoomTrigger3" method="_on_RoomTrigger3_body_exited"]
+[connection signal="body_entered" from="RoomTrigger4" to="RoomTrigger4" method="_on_RoomTrigger4_body_entered"]
+[connection signal="body_exited" from="RoomTrigger4" to="RoomTrigger4" method="_on_RoomTrigger4_body_exited"]
+
 [editable path="Portal"]
+
+[editable path="RoomTrigger"]
+
+[editable path="RoomTrigger2"]
+
+[editable path="RoomTrigger3"]
+
+[editable path="RoomTrigger4"]

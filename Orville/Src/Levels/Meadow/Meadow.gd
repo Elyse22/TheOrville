@@ -10,9 +10,9 @@ func _ready():
 	
 	
 	
-#func _on_Area2D_body_entered(body):
-#	if body.name == "Player":
-#		$HUD/DialogPlayer.play()
+func _on_Area2D_body_entered(body):
+	if body.name == "Player":
+		$HUD/DialogPlayer.play()
 		
 	
 
@@ -28,3 +28,6 @@ func _on_DialogPlayer_stopped2():
 	$YSort/NPC2.reverse_path()
 	$YSort/NPC3.walk_custom_path()
 	$YSort/NPC3.reverse_path()
+
+
+

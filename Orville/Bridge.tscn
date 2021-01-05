@@ -1519,7 +1519,7 @@ script = ExtResource( 13 )
 npc_name = "Gordon"
 npc_texture = ExtResource( 10 )
 dialogs = [ "Oh hey %p, how are you enjoying your stay so far?", "It's been amazing, except for the... you know...", "Pixel universe? I think it's pretty sweet actually! Except the quantum drive seems to be offline...", "Yes, LeMarr asked me to report to you. He just downgraded the engine and asked if you could test it? ", "No problem! Let's take this baby for a test drive. " ]
-speakers_dialogs = [ "Gordon", "You", "Gordon", "You", "Gordon" ]
+speakers_dialogs = [ "Gordon", "%p", "Gordon", "%p", "Gordon" ]
 move_random = false
 sitting = true
 
@@ -1617,7 +1617,7 @@ parameters/Run/blend_position = Vector2( 0, 0 )
 [node name="Camera2D" type="Camera2D" parent="YSort/Player"]
 position = Vector2( -0.661102, 0.330551 )
 current = true
-zoom = Vector2( 0.35, 0.35 )
+zoom = Vector2( 0.3, 0.3 )
 
 [node name="Character" type="Node2D" parent="YSort/Player"]
 position = Vector2( 0.550903, 0 )
@@ -1767,6 +1767,6 @@ next_scene_path = "res://Deck A.tscn"
 player_spawn_location = Vector2( 433.4, 91.6 )
 [connection signal="body_entered" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_around"]
 [connection signal="body_exited" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_not_around"]
-[connection signal="stopped" from="YSort/NPCTest/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
 [connection signal="stopped" from="YSort/NPCTest/HUD/DialogPlayer" to="YSort/NPCTest" method="dialog_player_stopped"]
+[connection signal="stopped" from="YSort/NPCTest/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
 [connection signal="timeout" from="YSort/NPCTest/MoveRandom" to="YSort/NPCTest" method="_on_MoveRandom_timeout"]

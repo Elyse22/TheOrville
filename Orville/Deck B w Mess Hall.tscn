@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/AllCharacters/Characters/ClaireFinn.png" type="Texture" id=1]
 [ext_resource path="res://Assets/AllCharacters/Characters/Lex.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Railing.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Portal.gd" type="Script" id=10]
 [ext_resource path="res://Deck B w Mess Hall.gd" type="Script" id=11]
+[ext_resource path="res://RoomTrigger.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.94562, 10.0921 )
@@ -50,7 +51,7 @@ move_random = false
 texture = ExtResource( 2 )
 
 [node name="NPC2" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 856.71, -209.769 )
+position = Vector2( 855.874, -209.351 )
 npc_name = "Dr. Finn"
 npc_texture = ExtResource( 1 )
 dialogs = [ "Sick bay has been full of concerned crew members requesting psychological scans, they keep insisting that ‘everything is different’. ", "I needed to take a walk. But something does seem strange..." ]
@@ -75,6 +76,44 @@ __meta__ = {
 polygon = PoolVector2Array( 22.1693, 70.2903, 1.80573, 71.3523, 0.969391, 300.482, -47.9507, 299.646, -47.9986, 197.707, -77.44, 197.06, -79.3098, 269.123, -234.851, 268.705, -233.189, 152.735, -77.9646, 152.735, -77.7183, 171.68, -46.6962, 171.283, -47.1143, 61.7355, -71.4597, 61.0275, -71.71, 74.0454, -127.394, 72.6066, -126.975, 22.4322, -71.7835, 22.8503, -71.4597, 39.2476, -48.9287, 39.2476, -48.7869, 21.5959, 0.969421, 22.0141, 2.39185, 33.9904, 22.6697, 34.4911, 23.5482, 18.6691, 628.568, 19.9235, 625.573, -144.26, 832.472, -138.275, 836.155, -321.207, 924.552, -289.286, 976.116, -231.582, 1015.4, -151.78, 1016.63, -67.0666, 968.75, 23.7854, 917.185, 64.3006, 834.927, 86.3997, 834.927, 60.6173, 787.046, 64.3006, 787.046, -56.017, 836.155, -52.3338, 837.383, -76.8885, 686.372, -81.7994, 681.251, 77.624, 535.09, 78.3282, 535.265, 83.9225, 519.006, 84.447, 501.873, 83.9225, 501.525, 78.2617, 342.832, 78.8248, 344.335, 90.4153, 386.895, 91.4221, 387.313, 208.496, 342.359, 210.483, 342.359, 213.487, 290.288, 213.737, 290.037, 209.482, 246.406, 209.332, 245.988, 90.5858, 290.788, 91.0688, 290.288, 77.5503, 23.1704, 78.5516, 22.4193, 72.7937, 15.66, 95.3247, 220.692, 108.092, 218.635, 238.812, 419.421, 233.124, 416.577, 98.3184, 834.927, 124.459, 1098.89, 77.8056, 1074.33, -187.384, 998.215, -373.999, 815.283, -407.148, 717.743, -204.244, 606.554, -206.682, 605.987, 10.7232, 321.587, 7.31042, -153.93, 4.46648, -151.654, 90.3553, -150.517, 115.951, -258.02, 119.933, -260.864, 294.554, -74.8662, 295.692, -73.7286, 327.545, 36.6186, 323.563, 21.8298, 115.382, 12.4012, 96.2075 )
 
 [node name="Lift" parent="." instance=ExtResource( 8 )]
+
+[node name="RoomTrigger" parent="." instance=ExtResource( 12 )]
+position = Vector2( -403.105, -55.1162 )
+
+[node name="Popup" parent="RoomTrigger" index="1"]
+margin_left = 472.644
+margin_top = 30.0798
+margin_right = 567.644
+margin_bottom = 44.0798
+text = "Locked"
+
+[node name="RoomTrigger2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 22.1602, -53.5189 )
+
+[node name="Popup" parent="RoomTrigger2" index="1"]
+text = "Bortus' Quaters"
+
+[node name="RoomTrigger3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 21.7421, 9.61667 )
+
+[node name="Popup" parent="RoomTrigger3" index="1"]
+margin_left = 457.092
+margin_top = 34.5448
+margin_right = 552.092
+margin_bottom = 48.5448
+text = "Science Lab"
 [connection signal="body_entered" from="YSort/Portal2" to="YSort/Portal2" method="_on_Portal_body_entered"]
+[connection signal="body_entered" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_entered"]
+[connection signal="body_exited" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_exited"]
+[connection signal="body_entered" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_entered"]
+[connection signal="body_exited" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_exited"]
+[connection signal="body_entered" from="RoomTrigger3" to="RoomTrigger3" method="_on_RoomTrigger3_body_entered"]
+[connection signal="body_exited" from="RoomTrigger3" to="RoomTrigger3" method="_on_RoomTrigger3_body_exited"]
 
 [editable path="YSort/NPC"]
+
+[editable path="RoomTrigger"]
+
+[editable path="RoomTrigger2"]
+
+[editable path="RoomTrigger3"]
