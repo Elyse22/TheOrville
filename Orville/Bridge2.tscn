@@ -1630,7 +1630,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 12 ]
+"values": [ 13 ]
 }
 
 [sub_resource type="RectangleShape2D" id=56]
@@ -1828,7 +1828,7 @@ align = 1
 autowrap = true
 
 [node name="NPCTest" type="KinematicBody2D" parent="YSort"]
-position = Vector2( 218.961, 91.0046 )
+position = Vector2( 222.173, 90.7126 )
 scale = Vector2( 1.3, 1.4 )
 script = ExtResource( 13 )
 npc_name = "Gordon"
@@ -1853,8 +1853,8 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="YSort/NPCTest"]
 scale = Vector2( 1, 1.1 )
 texture = ExtResource( 14 )
-hframes = 13
-frame = 12
+hframes = 15
+frame = 13
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1937,9 +1937,9 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="YSort/NPC2"]
-texture = ExtResource( 17 )
-hframes = 14
-frame = 12
+texture = ExtResource( 20 )
+hframes = 15
+frame = 13
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1996,82 +1996,6 @@ position = Vector2( 85.9285, 49.7041 )
 [node name="Node2D3" type="Node2D" parent="YSort/NPC2/CustomPath"]
 position = Vector2( 151.921, 70.7936 )
 
-[node name="NPC5" type="KinematicBody2D" parent="YSort"]
-position = Vector2( -25.6662, 104.81 )
-scale = Vector2( 1.3, 1.4 )
-script = ExtResource( 13 )
-npc_name = "Bortus"
-npc_texture = ExtResource( 20 )
-trigger_talk = false
-move_random = false
-
-[node name="Popup" type="Label" parent="YSort/NPC5"]
-margin_left = -46.0
-margin_top = -42.0
-margin_right = 52.0
-margin_bottom = -28.0
-custom_fonts/font = SubResource( 46 )
-text = "Press [E] to talk"
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="YSort/NPC5"]
-texture = ExtResource( 17 )
-hframes = 14
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC5"]
-anims/idle_down = SubResource( 47 )
-anims/idle_left = SubResource( 48 )
-anims/idle_right = SubResource( 49 )
-anims/idle_up = SubResource( 50 )
-anims/move_down = SubResource( 51 )
-anims/move_left = SubResource( 52 )
-anims/move_right = SubResource( 53 )
-anims/move_up = SubResource( 54 )
-anims/sit_right = SubResource( 55 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC5"]
-position = Vector2( 0.10941, 7.99341 )
-shape = SubResource( 56 )
-
-[node name="Area2D" type="Area2D" parent="YSort/NPC5"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC5/Area2D"]
-position = Vector2( -0.541107, 0 )
-shape = SubResource( 57 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="HUD" type="CanvasLayer" parent="YSort/NPC5"]
-
-[node name="DialogPlayer" parent="YSort/NPC5/HUD" instance=ExtResource( 9 )]
-margin_left = 1.0
-margin_top = -1.0
-margin_right = 2.0
-margin_bottom = -5.0
-
-[node name="MoveRandom" type="Timer" parent="YSort/NPC5"]
-wait_time = 2.0
-
-[node name="MoveCooldown" type="Timer" parent="YSort/NPC5"]
-wait_time = 4.0
-one_shot = true
-autostart = true
-
-[node name="CustomPath" type="Node" parent="YSort/NPC5"]
-
-[node name="Node2D" type="Node2D" parent="YSort/NPC5/CustomPath"]
-position = Vector2( 152.545, 28.7539 )
-
 [node name="NPC" type="KinematicBody2D" parent="YSort"]
 position = Vector2( -7.27907, 109.978 )
 scale = Vector2( 1.3, 1.4 )
@@ -2095,7 +2019,8 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="YSort/NPC"]
 texture = ExtResource( 17 )
-hframes = 14
+hframes = 15
+frame = 12
 __meta__ = {
 "_edit_lock_": true
 }
@@ -2158,6 +2083,83 @@ position = Vector2( 155.384, 143.435 )
 [node name="Node2D5" type="Node2D" parent="YSort/NPC/CustomPath"]
 position = Vector2( 151.806, 124.803 )
 
+[node name="NPC5" type="KinematicBody2D" parent="YSort"]
+position = Vector2( -25.6662, 104.81 )
+scale = Vector2( 1.3, 1.4 )
+script = ExtResource( 13 )
+npc_name = "Bortus"
+npc_texture = ExtResource( 20 )
+trigger_talk = false
+move_random = false
+
+[node name="Popup" type="Label" parent="YSort/NPC5"]
+margin_left = -46.0
+margin_top = -42.0
+margin_right = 52.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 46 )
+text = "Press [E] to talk"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="YSort/NPC5"]
+texture = ExtResource( 17 )
+hframes = 15
+frame = 13
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC5"]
+anims/idle_down = SubResource( 47 )
+anims/idle_left = SubResource( 48 )
+anims/idle_right = SubResource( 49 )
+anims/idle_up = SubResource( 50 )
+anims/move_down = SubResource( 51 )
+anims/move_left = SubResource( 52 )
+anims/move_right = SubResource( 53 )
+anims/move_up = SubResource( 54 )
+anims/sit_right = SubResource( 55 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC5"]
+position = Vector2( 0.10941, 7.99341 )
+shape = SubResource( 56 )
+
+[node name="Area2D" type="Area2D" parent="YSort/NPC5"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC5/Area2D"]
+position = Vector2( -0.541107, 0 )
+shape = SubResource( 57 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="YSort/NPC5"]
+
+[node name="DialogPlayer" parent="YSort/NPC5/HUD" instance=ExtResource( 9 )]
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 2.0
+margin_bottom = -5.0
+
+[node name="MoveRandom" type="Timer" parent="YSort/NPC5"]
+wait_time = 2.0
+
+[node name="MoveCooldown" type="Timer" parent="YSort/NPC5"]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="CustomPath" type="Node" parent="YSort/NPC5"]
+
+[node name="Node2D" type="Node2D" parent="YSort/NPC5/CustomPath"]
+position = Vector2( 139.64, 36.9328 )
+
 [node name="NPC3" type="KinematicBody2D" parent="YSort"]
 position = Vector2( -64.5259, 104.601 )
 scale = Vector2( 1.3, 1.4 )
@@ -2180,8 +2182,9 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="YSort/NPC3"]
-texture = ExtResource( 17 )
-hframes = 14
+texture = ExtResource( 18 )
+hframes = 15
+frame = 13
 __meta__ = {
 "_edit_lock_": true
 }
@@ -2236,7 +2239,7 @@ position = Vector2( 50.3201, 113.775 )
 position = Vector2( 67.0491, 155.72 )
 
 [node name="Node2D4" type="Node2D" parent="YSort/NPC3/CustomPath"]
-position = Vector2( 177.468, 167.156 )
+position = Vector2( 170.298, 166.439 )
 
 [node name="NPC4" type="KinematicBody2D" parent="YSort"]
 position = Vector2( -45.5448, 103.678 )
@@ -2261,7 +2264,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="YSort/NPC4"]
 texture = ExtResource( 17 )
-hframes = 14
+hframes = 15
 __meta__ = {
 "_edit_lock_": true
 }
@@ -2325,6 +2328,7 @@ one_shot = true
 autostart = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_left = -92.0
 margin_top = 21.0
 margin_right = 5.0
@@ -2334,25 +2338,32 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 161.859, 182.827 )
 [connection signal="body_entered" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_around"]
 [connection signal="body_exited" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_not_around"]
 [connection signal="timeout" from="YSort/NPCTest/MoveRandom" to="YSort/NPCTest" method="_on_MoveRandom_timeout"]
-[connection signal="path_finished" from="YSort/NPC2" to="YSort/NPC2" method="sit" binds= [ Vector2( 132, 92 ), "right" ]]
-[connection signal="path_finished" from="YSort/NPC2" to="YSort/NPC2" method="_on_NPC2_path_finished"]
+[connection signal="path_finished" from="YSort/NPC2" to="YSort/NPC2" method="sit" binds= [ Vector2( 135, 76 ), "right" ]]
+[connection signal="path_finished" from="YSort/NPC2" to="YSort/NPC2" method="custom_animation" binds= [ "sit_right" ]]
 [connection signal="body_entered" from="YSort/NPC2/Area2D" to="YSort/NPC2" method="player_around"]
 [connection signal="body_exited" from="YSort/NPC2/Area2D" to="YSort/NPC2" method="player_not_around"]
 [connection signal="stopped" from="YSort/NPC2/HUD/DialogPlayer" to="YSort/NPC2" method="dialog_player_stopped"]
 [connection signal="timeout" from="YSort/NPC2/MoveRandom" to="YSort/NPC2" method="_on_MoveRandom_timeout"]
-[connection signal="body_entered" from="YSort/NPC5/Area2D" to="YSort/NPC5" method="player_around"]
-[connection signal="body_exited" from="YSort/NPC5/Area2D" to="YSort/NPC5" method="player_not_around"]
-[connection signal="stopped" from="YSort/NPC5/HUD/DialogPlayer" to="YSort/NPC5" method="dialog_player_stopped"]
-[connection signal="timeout" from="YSort/NPC5/MoveRandom" to="YSort/NPC5" method="_on_MoveRandom_timeout"]
+[connection signal="path_finished" from="YSort/NPC" to="YSort/NPC" method="sit" binds= [ Vector2( 136, 122 ), "right" ]]
 [connection signal="path_finished" from="YSort/NPC" to="YSort/NPC" method="custom_animation" binds= [ "sit_right" ]]
-[connection signal="path_finished" from="YSort/NPC" to="YSort/NPC" method="sit" binds= [ Vector2( 136, 127 ), "right" ]]
 [connection signal="body_entered" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_around"]
 [connection signal="body_exited" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_not_around"]
 [connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="YSort/NPC" method="dialog_player_stopped"]
 [connection signal="timeout" from="YSort/NPC/MoveRandom" to="YSort/NPC" method="_on_MoveRandom_timeout"]
+[connection signal="path_finished" from="YSort/NPC5" to="YSort/NPC5" method="sit" binds= [ Vector2( 129, 23 ), "right" ]]
+[connection signal="path_finished" from="YSort/NPC5" to="YSort/NPC5" method="custom_animation" binds= [ "sit_right" ]]
+[connection signal="body_entered" from="YSort/NPC5/Area2D" to="YSort/NPC5" method="player_around"]
+[connection signal="body_exited" from="YSort/NPC5/Area2D" to="YSort/NPC5" method="player_not_around"]
+[connection signal="stopped" from="YSort/NPC5/HUD/DialogPlayer" to="YSort/NPC5" method="dialog_player_stopped"]
+[connection signal="timeout" from="YSort/NPC5/MoveRandom" to="YSort/NPC5" method="_on_MoveRandom_timeout"]
+[connection signal="path_finished" from="YSort/NPC3" to="YSort/NPC3" method="sit" binds= [ Vector2( 162, 182 ), "right" ]]
+[connection signal="path_finished" from="YSort/NPC3" to="YSort/NPC3" method="custom_animation" binds= [ "sit_right" ]]
 [connection signal="body_entered" from="YSort/NPC3/Area2D" to="YSort/NPC3" method="player_around"]
 [connection signal="body_exited" from="YSort/NPC3/Area2D" to="YSort/NPC3" method="player_not_around"]
 [connection signal="stopped" from="YSort/NPC3/HUD/DialogPlayer" to="YSort/NPC3" method="dialog_player_stopped"]

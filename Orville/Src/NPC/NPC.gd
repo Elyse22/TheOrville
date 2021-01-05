@@ -231,3 +231,5 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	custom_anim_playing = false
 
 
+
+

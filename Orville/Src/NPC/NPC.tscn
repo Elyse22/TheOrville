@@ -173,8 +173,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-hframes = 14
-frame = 12
+hframes = 15
 __meta__ = {
 "_edit_lock_": true
 }

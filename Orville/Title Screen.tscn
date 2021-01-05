@@ -88,7 +88,7 @@ margin_bottom = 588.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 3 )
 text = "Version 1.2.2 ep. 1
-Phenox Games"
+Phoenix Games"
 valign = 1
 
 [node name="FadeIn" parent="." instance=ExtResource( 1 )]
