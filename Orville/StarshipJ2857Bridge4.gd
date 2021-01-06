@@ -1,11 +1,13 @@
 extends Node2D
 
 
+onready var dialog_player = $HUD/DialogPlayer
+
 func _ready():
 	if Data.current_scene == filename:
 		$YSort/Player.position = Data.player_position
 	Data.current_scene = filename
-
+	$HUD/DialogPlayer.play()
 
 
 

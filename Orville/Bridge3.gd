@@ -12,7 +12,7 @@ func _ready():
 
 func _on_DialogPlayer_stopped():
 	Data.spoke_with_gordon = true
-	Global.objective = "Join the Away Team on the Shuttlecraft"
+	Global.objective = "Go to the Shuttlecraft on Deck F"
 
 
 func _on_Portal_body_entered(body):

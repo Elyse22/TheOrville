@@ -10,5 +10,5 @@ func _ready():
 
 func _on_DialogPlayer_stopped():
 	Data.spoke_with_lemarr = true
-	Global.objective = "Speak with Bortus"
+	Global.objective = "Speak with Bortus in his Quarters on Deck B"
 	Data.enable_portal("bortus_portal")

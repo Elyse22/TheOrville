@@ -12,7 +12,7 @@ func _ready():
 func _on_DialogPlayer_stopped():
 	Data.spoke_with_mercer = true
 	Data.enable_portal("lab_portal")
-	Global.objective = "Speak with Isaac"
+	Global.objective = "Speak with Isaac in Science Lab on Deck B"
 
 	if Data.spoke_with_isaac:
 		$YSort/NPC.queue_free()

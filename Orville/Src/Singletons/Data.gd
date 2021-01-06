@@ -41,6 +41,18 @@ var spoke_with_gordon = false
 
 var go_to_shuttlecraft = false
 
+var find_tomolen = false
+
+var find_blue_crystals = false
+
+var return_to_tomolen = false
+
+var return_to_the_orville = false
+
+var go_to_briefing_room = false
+
+var go_to_mess_hall = false
+
 var current_deck_f = "res://Deck F.tscn"
 
 var current_deck_b = "res://Deck B.tscn"
@@ -85,6 +97,12 @@ func load_game():
 	take_items_to_lemarr = data.take_items_to_lemarr
 	spoke_with_gordon = data.spoke_with_gordon
 	go_to_shuttlecraft = data.go_to_shuttlecraft
+	find_tomolen = data.find_tomolen
+	find_blue_crystals = data.find_blue_crystals
+	return_to_tomolen = data.return_to_tomolen
+	return_to_the_orville = data.return_to_the_orville
+	go_to_briefing_room = data.go_to_briefing_room
+	go_to_mess_hall = data.go_to_mess_hall
 	current_deck_f = data.current_deck_f
 	current_deck_b = data.current_deck_b
 	disabled_portals = data.disabled_portals
@@ -107,6 +125,12 @@ func save_game():
 		'take_items_to_lemarr': take_items_to_lemarr,
 		'spoke_with_gordon': spoke_with_gordon,
 		'go_to_shuttlecraft': go_to_shuttlecraft,
+		'find_tomolen' : find_tomolen,
+		'find_blue_crystals' : find_blue_crystals,
+		'return_to_tomolen': return_to_tomolen,
+		'return_to_the_orville' : return_to_the_orville,
+		'go_to_briefing_room': go_to_briefing_room,
+		'go_to_mess_hall': go_to_mess_hall,
 		'current_deck_f': current_deck_f,
 		'current_deck_b': current_deck_b,
 		'disabled_portals': disabled_portals

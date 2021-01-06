@@ -1700,6 +1700,7 @@ script = ExtResource( 18 )
 npc_name = "Talla"
 npc_texture = ExtResource( 23 )
 trigger_talk = false
+speed = 53
 move_random = false
 
 [node name="Popup" type="Label" parent="NPC"]
@@ -1717,7 +1718,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="NPC"]
 scale = Vector2( 1.2, 1.3 )
 texture = ExtResource( 19 )
-hframes = 14
+hframes = 15
 frame = 12
 __meta__ = {
 "_edit_lock_": true
@@ -1778,6 +1779,7 @@ script = ExtResource( 18 )
 npc_name = "Kelly"
 npc_texture = ExtResource( 21 )
 trigger_talk = false
+speed = 53
 move_random = false
 
 [node name="Popup" type="Label" parent="NPC2"]
@@ -1795,7 +1797,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="NPC2"]
 scale = Vector2( 1.2, 1.3 )
 texture = ExtResource( 19 )
-hframes = 14
+hframes = 15
 frame = 12
 __meta__ = {
 "_edit_lock_": true
@@ -1856,6 +1858,7 @@ script = ExtResource( 18 )
 npc_name = "Ed"
 npc_texture = ExtResource( 19 )
 trigger_talk = false
+speed = 53
 move_random = false
 
 [node name="Popup" type="Label" parent="NPC3"]
@@ -1873,7 +1876,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="NPC3"]
 scale = Vector2( 1.2, 1.3 )
 texture = ExtResource( 19 )
-hframes = 14
+hframes = 15
 frame = 11
 __meta__ = {
 "_edit_lock_": true
@@ -1923,7 +1926,7 @@ autostart = true
 [node name="CustomPath" type="Node" parent="NPC3"]
 
 [node name="Node2D" type="Node2D" parent="NPC3/CustomPath"]
-position = Vector2( 419.081, 155.082 )
+position = Vector2( 418.722, 142.176 )
 
 [node name="Node2D2" type="Node2D" parent="NPC3/CustomPath"]
 position = Vector2( 441.211, 151.04 )

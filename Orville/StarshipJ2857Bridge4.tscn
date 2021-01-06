@@ -1678,11 +1678,12 @@ shape = SubResource( 34 )
 
 [node name="NPC" type="KinematicBody2D" parent="YSort"]
 position = Vector2( 308.673, 132.875 )
-scale = Vector2( 1.3, 1.4 )
+scale = Vector2( 1.2, 1.3 )
 script = ExtResource( 19 )
 npc_name = "Ed"
 npc_texture = ExtResource( 22 )
 trigger_talk = false
+speed = 25
 move_random = false
 
 [node name="Popup" type="Label" parent="YSort/NPC"]
@@ -1699,7 +1700,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="YSort/NPC"]
 texture = ExtResource( 23 )
-hframes = 14
+hframes = 15
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1750,11 +1751,12 @@ position = Vector2( -80.6295, 149.01 )
 
 [node name="NPC2" type="KinematicBody2D" parent="YSort"]
 position = Vector2( 329.271, 132.062 )
-scale = Vector2( 1.3, 1.4 )
+scale = Vector2( 1.2, 1.3 )
 script = ExtResource( 19 )
 npc_name = "Kelly"
 npc_texture = ExtResource( 23 )
 trigger_talk = false
+speed = 25
 move_random = false
 
 [node name="Popup" type="Label" parent="YSort/NPC2"]
@@ -1771,7 +1773,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="YSort/NPC2"]
 texture = ExtResource( 23 )
-hframes = 14
+hframes = 15
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1822,11 +1824,12 @@ position = Vector2( -78.5565, 137.431 )
 
 [node name="NPC3" type="KinematicBody2D" parent="YSort"]
 position = Vector2( 349.239, 132.339 )
-scale = Vector2( 1.3, 1.4 )
+scale = Vector2( 1.2, 1.3 )
 script = ExtResource( 19 )
 npc_name = "Talla"
 npc_texture = ExtResource( 24 )
 trigger_talk = false
+speed = 25
 move_random = false
 
 [node name="Popup" type="Label" parent="YSort/NPC3"]
@@ -1843,7 +1846,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="YSort/NPC3"]
 texture = ExtResource( 23 )
-hframes = 14
+hframes = 15
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1895,14 +1898,20 @@ autostart = true
 position = Vector2( -80.3102, 123.527 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -105.0
-margin_top = 47.0
-margin_right = -1.0
-margin_bottom = 230.0
+margin_left = -101.698
+margin_top = 46.3698
+margin_right = 2.30222
+margin_bottom = 229.37
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="DialogPlayer" parent="HUD" instance=ExtResource( 20 )]
+speakers = [ "Talla", "Kelly", "Ed" ]
+dialogs = [ "It's weird they haven't noticed anything different.", "I know, kinda makes you feel crazy. ", "Well at least we're all crazy together. Let's meet with the others, maybe they've found some new data while we were gone. " ]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_around"]
 [connection signal="body_exited" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_not_around"]

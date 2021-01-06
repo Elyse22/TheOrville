@@ -304,10 +304,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 1,
-"values": [ 13 ]
+"values": [  ]
 }
 
 [sub_resource type="Animation" id=23]
@@ -344,7 +344,7 @@ texture = ExtResource( 1 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="NPC2" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 510.046, 192.9 )
+position = Vector2( 507.895, 192.593 )
 npc_name = "Kelly"
 npc_texture = ExtResource( 6 )
 trigger_talk = false
@@ -391,8 +391,8 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="YSort/NPC7"]
 scale = Vector2( 1.2, 1.3 )
 texture = ExtResource( 6 )
-hframes = 14
-frame = 11
+hframes = 15
+frame = 12
 __meta__ = {
 "_edit_lock_": true
 }
@@ -473,8 +473,8 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="YSort/NPC"]
 texture = ExtResource( 4 )
-hframes = 14
-frame = 13
+hframes = 15
+frame = 12
 __meta__ = {
 "_edit_lock_": true
 }
@@ -567,8 +567,8 @@ polygon = PoolVector2Array( 461.642, 146.484, 521.337, 148.149, 521.575, 190.958
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 13 )]
-speakers = [ "Ed", "LeMarr", "Ed", "LeMarr", "Gordon", "Kelly", "Tahla", "LeMarr", "Ed", "Isaac", "Gordon", "Isaac", "Isaac", "%p", "Ed", "Ed" ]
-dialogs = [ "Okay now that we’re all here, Isaac, LeMarr, what new findings do you have? ", "At first, I tried to relay our current data to the spatial anomaly we encountered a  while back, remember that doorway that lead to a pocket of 2D space?", "Yes?", "Well, it’s nothing like that. ", "That’s reassuring. ", "Something odd we discovered during our away mission is that no one else seemed to notice anything different? ", "Meaning this must have only happened to us. ", "Interesting. And we know that we are still in the same universe because the events that had happened previously, have still happened to everyone else. Like Tomolen reminding us that we had saved them from a collision course with that star. ", "So, if this is not the same as the 2D universe, where are we?", "It is my conjecture that we are still located in the same universe, however we are operating on a different layer of reality. ", "Yeah, you’re going to have to elaborate on that. ", "Our reality consists of a multitude of different layers, all equally real aspects of the one reality. A piano may be perceived on one layer as being ‘white’, yet the molecules and atoms have different colour-properties then the ‘white’ we perceive on a higher layer of experience. ", "The colour-properties of atomistic particles may indeed absorb blue and therefore have a colour-property of blue. Yet ordinary life forms experience the piano, on a different layer, as being white. ", "So, we are in a layer of reality that just happens to be, pixelated?", "Okay, I think I can see what you’re driving at. ", "Alright, I don’t know about you guys but I could sure use a drink. Isn’t it karaoke night in the Mess Hall?" ]
+speakers = [ "Ed", "LeMarr", "Ed", "LeMarr", "Gordon", "Kelly", "Talla", "LeMarr", "Ed", "Isaac", "Gordon", "Isaac", "Isaac", "%p", "Ed", "Ed" ]
+dialogs = [ "Okay now that we’re all here, LeMarr, Isaac, what new findings do you have? ", "At first, I tried to relay our current data to the spatial anomaly we encountered a  while back, remember that doorway that lead to a pocket of 2D space?", "Yes?", "Well, it’s nothing like that. ", "That’s reassuring. ", "Something odd we discovered during our away mission is that no one else seemed to notice anything different? ", "Meaning this must have only happened to us. ", "Interesting. And we know that we are still in the same universe because the events that had happened previously, have still happened to everyone else. Like Tomolen reminding us that we had saved them from a collision course with that star. ", "So, if this is not the same as the 2D universe, where are we?", "It is my conjecture that we are still located in the same universe, however we are operating on a different layer of reality. ", "Yeah, you’re going to have to elaborate on that. ", "Our reality consists of a multitude of different layers, all equally real aspects of the one reality. A piano may be perceived on one layer as being ‘white’, yet the molecules and atoms have different colour-properties then the ‘white’ we perceive on a higher layer of experience. ", "The colour-properties of atomistic particles may indeed absorb blue and therefore have a colour-property of blue. Yet ordinary life forms experience the piano, on a different layer, as being white. ", "So, we are in a layer of reality that just happens to be, pixelated?", "Okay, I think I can see what you’re driving at. ", "Alright, I don’t know about you guys but I could sure use a drink. Isn’t it karaoke night in the Mess Hall?" ]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
@@ -590,6 +590,7 @@ position = Vector2( 0, -15.908 )
 [connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="YSort/NPC" method="dialog_player_stopped"]
 [connection signal="timeout" from="YSort/NPC/MoveRandom" to="YSort/NPC" method="_on_MoveRandom_timeout"]
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_Portal_body_entered"]
+[connection signal="stopped" from="HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="SitTrigger"]
