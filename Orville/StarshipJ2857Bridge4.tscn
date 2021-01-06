@@ -1495,10 +1495,11 @@ extents = Vector2( 7.09411, 7.92 )
 extents = Vector2( 22.0422, 22.7589 )
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 0.323532, 0 )
 script = ExtResource( 18 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 195.1, 170.377 )
+position = Vector2( 219.524, 215.262 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 

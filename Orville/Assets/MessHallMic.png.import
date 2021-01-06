@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Deck A with Bridge.png-63eef67055d100a4b36df917e865bec0.stex"
+path="res://.import/MessHallMic.png-1b9f969e642f32e0e4b9b7ea2d58ece9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sets/Deck A with Bridge.png"
-dest_files=[ "res://.import/Deck A with Bridge.png-63eef67055d100a4b36df917e865bec0.stex" ]
+source_file="res://Assets/MessHallMic.png"
+dest_files=[ "res://.import/MessHallMic.png-1b9f969e642f32e0e4b9b7ea2d58ece9.stex" ]
 
 [params]
 

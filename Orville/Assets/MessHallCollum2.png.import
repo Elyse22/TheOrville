@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/classroom alone.png-0b1ae61ad0679b5b768f9c69701d3980.stex"
+path="res://.import/MessHallCollum2.png-6b9e429392074ff0474f9dcd6c3df22a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sets/classroom alone.png"
-dest_files=[ "res://.import/classroom alone.png-0b1ae61ad0679b5b768f9c69701d3980.stex" ]
+source_file="res://Assets/MessHallCollum2.png"
+dest_files=[ "res://.import/MessHallCollum2.png-6b9e429392074ff0474f9dcd6c3df22a.stex" ]
 
 [params]
 
