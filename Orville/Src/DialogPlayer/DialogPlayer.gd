@@ -1,5 +1,6 @@
 extends Control
 
+export (bool) var one_shot
 export (Array, String) var speakers
 export (Array, String) var dialogs
 signal stopped
@@ -59,6 +60,8 @@ func stop():
 	emit_signal("stopped")
 	index = -1
 	hide()
+	if one_shot:
+		queue_free()
 	
 	
 

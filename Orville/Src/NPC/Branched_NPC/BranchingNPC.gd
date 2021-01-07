@@ -136,7 +136,8 @@ func player_around(body):
 		return
 	if body.name == "Player":
 		player_around = true
-		$Popup.show()
+		if $HUD/DialogPlayer:
+			$Popup.show()
 
 
 func player_not_around(body):
@@ -147,7 +148,8 @@ func player_not_around(body):
 	if body.name == "Player":
 		player_around = false
 		$Popup.hide()
-		$HUD/DialogPlayer.hide()
+		if $HUD/DialogPlayer:
+			$HUD/DialogPlayer.hide()
 
 
 func _input(event):

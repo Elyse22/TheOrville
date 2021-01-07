@@ -94,6 +94,9 @@ condition_items = [ "Wrench", "Iron Coil" ]
 branch_dialogs = [ [ "Did Bortus ask you to find some items?" ], [ "Ah, of course Bortus suggested these. It will help to adjust the quantum engine to deal with this, simple reality. Give me a sec to hook 'em up. ", "Okay boom, all done. I think you should check in with Gordon on the bridge and test the new adjustment." ] ]
 dialog_index = -2
 
+[node name="DialogPlayer" parent="BranchingNPC/HUD" index="0"]
+one_shot = true
+
 [node name="Item" parent="." instance=ExtResource( 7 )]
 position = Vector2( 538.948, -56.8422 )
 item_name = "Wrench"
@@ -134,7 +137,6 @@ text = "Locked"
 [connection signal="body_entered" from="Lift" to="Lift" method="player_entered"]
 [connection signal="body_exited" from="Lift" to="Lift" method="player_exited"]
 [connection signal="stopped" from="BranchingNPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
-[connection signal="stopped" from="BranchingNPC/HUD/DialogPlayer" to="BranchingNPC" method="set" binds= [ "trigger_talk", false ]]
 [connection signal="body_entered" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_entered"]
 [connection signal="body_exited" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_exited"]
 [connection signal="body_entered" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_entered"]
