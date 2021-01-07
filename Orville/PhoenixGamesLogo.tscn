@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Cutscenes/0000-0314 (2).ogv" type="VideoStream" id=1]
+[ext_resource path="res://Fonts/Space48.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Logo.gd" type="Script" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.5162
+margin_right = 3.51624
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -410.985
+margin_top = -312.968
+margin_right = 382.015
+margin_bottom = 249.032
+stream = ExtResource( 1 )
+autoplay = true
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+anchor_bottom = 0.01
+margin_left = 377.87
+margin_top = 568.274
+margin_right = 910.87
+margin_bottom = 650.074
+custom_fonts/font = ExtResource( 2 )
+text = "Phoenix Games"
+[connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]

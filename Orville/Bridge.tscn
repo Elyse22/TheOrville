@@ -1537,7 +1537,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="YSort/NPCTest"]
 texture = ExtResource( 14 )
-hframes = 14
+hframes = 15
 frame = 13
 __meta__ = {
 "_edit_lock_": true

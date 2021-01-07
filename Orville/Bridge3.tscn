@@ -1500,7 +1500,7 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 15 )
 
-[sub_resource type="Animation" id=74]
+[sub_resource type="Animation" id=48]
 resource_name = "disappear"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -1515,7 +1515,7 @@ tracks/0/keys = {
 "values": [ 14 ]
 }
 
-[sub_resource type="Animation" id=48]
+[sub_resource type="Animation" id=49]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -1530,7 +1530,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=49]
+[sub_resource type="Animation" id=50]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -1545,7 +1545,7 @@ tracks/0/keys = {
 "values": [ 11 ]
 }
 
-[sub_resource type="Animation" id=50]
+[sub_resource type="Animation" id=51]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -1560,7 +1560,7 @@ tracks/0/keys = {
 "values": [ 6 ]
 }
 
-[sub_resource type="Animation" id=51]
+[sub_resource type="Animation" id=52]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -1573,22 +1573,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 3 ]
-}
-
-[sub_resource type="Animation" id=52]
-length = 0.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 1, 2 ]
 }
 
 [sub_resource type="Animation" id=53]
@@ -1604,7 +1588,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 10, 9 ]
+"values": [ 1, 2 ]
 }
 
 [sub_resource type="Animation" id=54]
@@ -1620,7 +1604,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 7, 8 ]
+"values": [ 10, 9 ]
 }
 
 [sub_resource type="Animation" id=55]
@@ -1636,10 +1620,26 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 4, 5 ]
+"values": [ 7, 8 ]
 }
 
 [sub_resource type="Animation" id=56]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=57]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -1653,18 +1653,18 @@ tracks/0/keys = {
 "values": [ 12 ]
 }
 
-[sub_resource type="RectangleShape2D" id=57]
+[sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 7.09411, 7.92 )
 
-[sub_resource type="RectangleShape2D" id=58]
+[sub_resource type="RectangleShape2D" id=59]
 extents = Vector2( 22.0422, 22.7589 )
 
-[sub_resource type="DynamicFont" id=59]
+[sub_resource type="DynamicFont" id=60]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 15 )
 
-[sub_resource type="Animation" id=60]
+[sub_resource type="Animation" id=61]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -1679,7 +1679,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=61]
+[sub_resource type="Animation" id=62]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -1691,21 +1691,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 11 ]
-}
-
-[sub_resource type="Animation" id=62]
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 6 ]
 }
 
 [sub_resource type="Animation" id=63]
@@ -1720,12 +1705,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 6 ]
 }
 
 [sub_resource type="Animation" id=64]
-length = 0.6
-loop = true
+length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -1733,10 +1717,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 1, 2 ]
+"values": [ 3 ]
 }
 
 [sub_resource type="Animation" id=65]
@@ -1752,7 +1736,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 10, 9 ]
+"values": [ 1, 2 ]
 }
 
 [sub_resource type="Animation" id=66]
@@ -1768,7 +1752,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 7, 8 ]
+"values": [ 10, 9 ]
 }
 
 [sub_resource type="Animation" id=67]
@@ -1784,10 +1768,26 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 4, 5 ]
+"values": [ 7, 8 ]
 }
 
 [sub_resource type="Animation" id=68]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=69]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -1802,25 +1802,11 @@ tracks/0/keys = {
 "values": [ 12 ]
 }
 
-[sub_resource type="RectangleShape2D" id=69]
+[sub_resource type="RectangleShape2D" id=70]
 extents = Vector2( 5.31882, 6.05225 )
 
-[sub_resource type="RectangleShape2D" id=70]
+[sub_resource type="RectangleShape2D" id=71]
 extents = Vector2( 22.0422, 22.7589 )
-
-[sub_resource type="Animation" id=71]
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 11 ]
-}
 
 [sub_resource type="Animation" id=72]
 tracks/0/type = "value"
@@ -1836,9 +1822,23 @@ tracks/0/keys = {
 "values": [ 11 ]
 }
 
-[sub_resource type="RectangleShape2D" id=73]
+[sub_resource type="Animation" id=73]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 11 ]
+}
+
+[sub_resource type="RectangleShape2D" id=74]
 resource_local_to_scene = true
-extents = Vector2( 5.2988, 9 )
+extents = Vector2( 5.2988, 17.8294 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 11 )
@@ -2150,20 +2150,20 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC5"]
-anims/disappear = SubResource( 74 )
-anims/idle_down = SubResource( 48 )
-anims/idle_left = SubResource( 49 )
-anims/idle_right = SubResource( 50 )
-anims/idle_up = SubResource( 51 )
-anims/move_down = SubResource( 52 )
-anims/move_left = SubResource( 53 )
-anims/move_right = SubResource( 54 )
-anims/move_up = SubResource( 55 )
-anims/sit_right = SubResource( 56 )
+anims/disappear = SubResource( 48 )
+anims/idle_down = SubResource( 49 )
+anims/idle_left = SubResource( 50 )
+anims/idle_right = SubResource( 51 )
+anims/idle_up = SubResource( 52 )
+anims/move_down = SubResource( 53 )
+anims/move_left = SubResource( 54 )
+anims/move_right = SubResource( 55 )
+anims/move_up = SubResource( 56 )
+anims/sit_right = SubResource( 57 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC5"]
 position = Vector2( 0.10941, 7.99341 )
-shape = SubResource( 57 )
+shape = SubResource( 58 )
 
 [node name="Area2D" type="Area2D" parent="YSort/NPC5"]
 __meta__ = {
@@ -2172,7 +2172,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC5/Area2D"]
 position = Vector2( -0.541107, 0 )
-shape = SubResource( 58 )
+shape = SubResource( 59 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -2211,7 +2211,7 @@ margin_left = -46.0
 margin_top = -42.0
 margin_right = 52.0
 margin_bottom = -28.0
-custom_fonts/font = SubResource( 59 )
+custom_fonts/font = SubResource( 60 )
 text = "Press [E] to talk"
 __meta__ = {
 "_edit_lock_": true,
@@ -2227,19 +2227,19 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC"]
-anims/idle_down = SubResource( 60 )
-anims/idle_left = SubResource( 61 )
-anims/idle_right = SubResource( 62 )
-anims/idle_up = SubResource( 63 )
-anims/move_down = SubResource( 64 )
-anims/move_left = SubResource( 65 )
-anims/move_right = SubResource( 66 )
-anims/move_up = SubResource( 67 )
-anims/sit_right = SubResource( 68 )
+anims/idle_down = SubResource( 61 )
+anims/idle_left = SubResource( 62 )
+anims/idle_right = SubResource( 63 )
+anims/idle_up = SubResource( 64 )
+anims/move_down = SubResource( 65 )
+anims/move_left = SubResource( 66 )
+anims/move_right = SubResource( 67 )
+anims/move_up = SubResource( 68 )
+anims/sit_right = SubResource( 69 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC"]
 position = Vector2( -0.473321, 11.9358 )
-shape = SubResource( 69 )
+shape = SubResource( 70 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -2250,7 +2250,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC/Area2D"]
-shape = SubResource( 70 )
+shape = SubResource( 71 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -2296,7 +2296,7 @@ margin_left = -46.0
 margin_top = -42.0
 margin_right = 52.0
 margin_bottom = -28.0
-custom_fonts/font = SubResource( 59 )
+custom_fonts/font = SubResource( 60 )
 text = "Press [E] to talk"
 __meta__ = {
 "_edit_lock_": true,
@@ -2312,19 +2312,19 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC2"]
-anims/idle_down = SubResource( 60 )
-anims/idle_left = SubResource( 71 )
-anims/idle_right = SubResource( 62 )
-anims/idle_up = SubResource( 63 )
-anims/move_down = SubResource( 64 )
-anims/move_left = SubResource( 65 )
-anims/move_right = SubResource( 66 )
-anims/move_up = SubResource( 67 )
-anims/sit_right = SubResource( 68 )
+anims/idle_down = SubResource( 61 )
+anims/idle_left = SubResource( 72 )
+anims/idle_right = SubResource( 63 )
+anims/idle_up = SubResource( 64 )
+anims/move_down = SubResource( 65 )
+anims/move_left = SubResource( 66 )
+anims/move_right = SubResource( 67 )
+anims/move_up = SubResource( 68 )
+anims/sit_right = SubResource( 69 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC2"]
 position = Vector2( -0.473321, 11.9358 )
-shape = SubResource( 69 )
+shape = SubResource( 70 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -2335,7 +2335,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC2/Area2D"]
-shape = SubResource( 70 )
+shape = SubResource( 71 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -2382,7 +2382,7 @@ margin_left = -46.0
 margin_top = -42.0
 margin_right = 52.0
 margin_bottom = -28.0
-custom_fonts/font = SubResource( 59 )
+custom_fonts/font = SubResource( 60 )
 text = "Press [E] to talk"
 __meta__ = {
 "_edit_lock_": true,
@@ -2398,19 +2398,19 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC4"]
-anims/idle_down = SubResource( 60 )
-anims/idle_left = SubResource( 72 )
-anims/idle_right = SubResource( 62 )
-anims/idle_up = SubResource( 63 )
-anims/move_down = SubResource( 64 )
-anims/move_left = SubResource( 65 )
-anims/move_right = SubResource( 66 )
-anims/move_up = SubResource( 67 )
-anims/sit_right = SubResource( 68 )
+anims/idle_down = SubResource( 61 )
+anims/idle_left = SubResource( 73 )
+anims/idle_right = SubResource( 63 )
+anims/idle_up = SubResource( 64 )
+anims/move_down = SubResource( 65 )
+anims/move_left = SubResource( 66 )
+anims/move_right = SubResource( 67 )
+anims/move_up = SubResource( 68 )
+anims/sit_right = SubResource( 69 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC4"]
 position = Vector2( -0.473321, 11.9358 )
-shape = SubResource( 69 )
+shape = SubResource( 70 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -2421,7 +2421,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC4/Area2D"]
-shape = SubResource( 70 )
+shape = SubResource( 71 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -2464,7 +2464,8 @@ next_scene_path = "res://Deck A2.tscn"
 player_spawn_location = Vector2( 433.4, 91.6 )
 
 [node name="CollisionShape2D" parent="Portal" index="0"]
-shape = SubResource( 73 )
+position = Vector2( -3.50385, 3.21187 )
+shape = SubResource( 74 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
@@ -2485,10 +2486,10 @@ __meta__ = {
 
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 9 )]
 anchor_top = 0.001
-margin_left = 1.58887
-margin_top = -61.5571
-margin_right = 10.5889
-margin_bottom = -67.837
+margin_left = 0.420924
+margin_top = -59.5132
+margin_right = 9.4209
+margin_bottom = -65.7931
 speakers = [ "Ed", "Bortus" ]
 dialogs = [ "Kelly, Talla and %p, you're with me. Bortus, you have the Bridge. ", "Yes Captain." ]
 
@@ -2497,8 +2498,8 @@ position = Vector2( 131.366, 125.917 )
 [connection signal="body_entered" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_around"]
 [connection signal="body_exited" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_not_around"]
 [connection signal="timeout" from="YSort/NPCTest/MoveRandom" to="YSort/NPCTest" method="_on_MoveRandom_timeout"]
-[connection signal="path_finished" from="YSort/NPC5" to="YSort/NPC5" method="custom_animation" binds= [ "disappear" ]]
 [connection signal="path_finished" from="YSort/NPC5" to="YSort/NPC5" method="sit" binds= [ Vector2( 130, 125 ), "right" ]]
+[connection signal="path_finished" from="YSort/NPC5" to="YSort/NPC5" method="custom_animation" binds= [ "disappear" ]]
 [connection signal="body_entered" from="YSort/NPC5/Area2D" to="YSort/NPC5" method="player_around"]
 [connection signal="body_exited" from="YSort/NPC5/Area2D" to="YSort/NPC5" method="player_not_around"]
 [connection signal="stopped" from="YSort/NPC5/HUD/DialogPlayer" to="YSort/NPC5" method="dialog_player_stopped"]

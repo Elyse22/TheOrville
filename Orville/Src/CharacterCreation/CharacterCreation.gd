@@ -134,7 +134,7 @@ func update_skin():
 
 
 func confirm():
-	get_tree().change_scene("res://BackStory.tscn")
+	get_tree().change_scene("res://PhoenixGamesLogo.tscn")
 
 
 func name_changed(new_text):

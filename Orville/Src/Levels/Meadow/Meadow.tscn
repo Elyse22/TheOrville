@@ -557,8 +557,6 @@ __meta__ = {
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 12 )]
 speakers = [ "Ed", "Tomolen", "Tomolen", "Ed", "Hamelac", "Ed", "Hamelac", "Ed", "Tomolen", "Ed" ]
 dialogs = [ "Tomolen, good to see you again. Is everything okay?", "Captain Mercer! Thank you for coming. Our engines have stopped, and we are headed straight for a nebula!", "We need blue crystals from a nearby moon but have no idea how to collect them. Does your ship have the capacity for such a mission?", "Yeah, I think we can handle it. Tomolen, can I ask, do you know what a nebula is?", "We are not stupid...", "Always a pleasure to see you Hamelac. ", "...", "Tomolen, inform your crew that they have nothing to fear. Nebula’s may look ominous and hard to travel through, but once you are in a nebula, you won’t be able to notice it! The particles are too far apart. ", "Oh, well that’s a relief. Will you still help us?", "Of course. " ]
-[connection signal="path_finished" from="YSort/NPC" to="YSort/NPC" method="custom_animation" binds= [ "disappear" ]]
-[connection signal="path_finished" from="YSort/NPC" to="YSort/NPC" method="sit" binds= [ Vector2( -154.5, 44 ), "right" ]]
 [connection signal="body_entered" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_around"]
 [connection signal="body_exited" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_not_around"]
 [connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="YSort/NPC" method="dialog_player_stopped"]
