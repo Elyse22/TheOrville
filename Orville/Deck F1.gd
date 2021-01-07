@@ -10,6 +10,7 @@ func _ready():
 
 
 func _process(_delta):
+	if not Data.take_items_to_lemarr:
 	if Data.inventory_has("Wrench") and Data.inventory_has("Iron Coil"):
 		Global.objective = "Take Wrench and Iron Coil to LeMarr"
 	else:
