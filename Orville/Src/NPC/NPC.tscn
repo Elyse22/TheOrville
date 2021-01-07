@@ -134,7 +134,7 @@ tracks/0/keys = {
 "values": [ 4, 5 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=10]
 resource_name = "sit_brief"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -149,7 +149,7 @@ tracks/0/keys = {
 "values": [ 12 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -163,7 +163,7 @@ tracks/0/keys = {
 "values": [ 13 ]
 }
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 7.09411, 7.02049 )
 
 [sub_resource type="RectangleShape2D" id=13]
@@ -189,7 +189,6 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 15
-frame = 12
 __meta__ = {
 "_edit_lock_": true
 }
@@ -203,12 +202,12 @@ anims/move_down = SubResource( 6 )
 anims/move_left = SubResource( 7 )
 anims/move_right = SubResource( 8 )
 anims/move_up = SubResource( 9 )
-anims/sit_brief = SubResource( 14 )
-anims/sit_right = SubResource( 15 )
+anims/sit_brief = SubResource( 10 )
+anims/sit_right = SubResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.505678, 6.98314 )
-shape = SubResource( 16 )
+shape = SubResource( 12 )
 
 [node name="Area2D" type="Area2D" parent="."]
 __meta__ = {

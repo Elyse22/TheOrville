@@ -222,14 +222,14 @@ text = "Briefing Room"
 
 [node name="YSort" type="YSort" parent="."]
 
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 143.398, 86.488 )
+
 [node name="NPC2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -153.804, 82.9975 )
 npc_name = "Brooke"
 npc_texture = ExtResource( 6 )
 dialogs = [ "Is this a dream? Things seem different around here." ]
-
-[node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 143.398, 86.488 )
 [connection signal="body_entered" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_entered"]
 [connection signal="body_exited" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_exited"]
 [connection signal="body_entered" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_entered"]
