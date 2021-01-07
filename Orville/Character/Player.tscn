@@ -1208,7 +1208,6 @@ current = true
 zoom = Vector2( 0.42, 0.42 )
 
 [node name="Character" type="Node2D" parent="."]
-position = Vector2( 0.550903, 0 )
 scale = Vector2( 1, 1.1 )
 
 [node name="Base" type="Sprite" parent="Character"]
@@ -1247,7 +1246,6 @@ hframes = 13
 frame = 12
 
 [node name="EyeBrows" type="Sprite" parent="Character"]
-visible = false
 position = Vector2( 0, -19.282 )
 scale = Vector2( 1.25, 1.25 )
 texture = ExtResource( 10 )
