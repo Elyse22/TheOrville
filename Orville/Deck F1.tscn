@@ -134,6 +134,7 @@ text = "Locked"
 [connection signal="body_entered" from="Lift" to="Lift" method="player_entered"]
 [connection signal="body_exited" from="Lift" to="Lift" method="player_exited"]
 [connection signal="stopped" from="BranchingNPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
+[connection signal="stopped" from="BranchingNPC/HUD/DialogPlayer" to="BranchingNPC" method="set" binds= [ "trigger_talk", false ]]
 [connection signal="body_entered" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_entered"]
 [connection signal="body_exited" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_exited"]
 [connection signal="body_entered" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_entered"]
