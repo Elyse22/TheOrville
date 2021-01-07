@@ -10,10 +10,10 @@ func _ready():
 
 
 func _process(_delta):
-	if Data.inventory_has("Wrench"):
-		Global.objective = "Take wrench to joe"
+	if Data.inventory_has("Wrench") and Data.inventory_has("Iron Coil"):
+		Global.objective = "Take Wrench and Iron Coil to LeMarr"
 	else:
-		Global.objective = "Find wrench"
+		Global.objective = "Find Wrench and Iron Coil"
 
 func _on_DialogPlayer_stopped():
 	Data.take_items_to_lemarr = true

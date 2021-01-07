@@ -19,4 +19,4 @@ func _ready():
 func _on_DialogPlayer_stopped():
 	Data.current_deck_f = "res://Deck F1.tscn"
 	Data.spoke_with_bortus = true
-	Global.objective = "Find Wrench and Iron Coil, take to LeMarr"
+	Global.objective = "Find Wrench and Iron Coil"
