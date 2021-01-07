@@ -185,6 +185,8 @@ shape = SubResource( 11 )
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 3 )]
+
+[node name="CustomPath" type="Node" parent="."]
 [connection signal="body_entered" from="Area2D" to="." method="player_around"]
 [connection signal="body_exited" from="Area2D" to="." method="player_not_around"]
 [connection signal="stopped" from="HUD/DialogPlayer" to="." method="dialog_player_stopped"]

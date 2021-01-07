@@ -16,14 +16,14 @@ var speed = 50
 var walking = false
 var player_around = false
 var path
-var walking_on_path = false
 export var dialog_index = -1
 var can_talk = true
+
+export var movement_cooldown: float = 0.0
 
 
 func set_path(new_path):
 	path = new_path
-	walking_on_path = true
 
 
 func set_dialogs():
@@ -55,69 +55,68 @@ func _ready():
 	$HUD/DialogPlayer.hide()
 	if npc_texture:
 		sprite.texture = npc_texture
+	
+	walk_custom_path()
 
 
-func _process(_delta):
+func walk_custom_path():
+	var new_path = []
+	for node in $CustomPath.get_children():
+		new_path.push_back(node.position)
+	set_path(new_path)
+
+
+func _process(delta):
+	if movement_cooldown <= 0.0:
+		if path.size() and not player_around:
+			move_path(delta)
+		else:
+			velocity = Vector2.ZERO
+	else:
+		movement_cooldown -= delta
+	
 	handle_animation()
-	if walking_on_path:
-		var move_distance = speed * _delta
-		move_along_path(move_distance)
 
 
-func move_along_path(distance):
-	var start_point = position
-	for i in range(path.size()):
-		handle_path_anim(path[0])
-		var distance_to_next = start_point.distance_to(path[0])
-		if distance <= distance_to_next and distance >= 0.0:
-			position = start_point.linear_interpolate(path[0], distance / distance_to_next)
-			break
-		elif distance < 0.0:
-			position = path[0]
-			walking_on_path = false
-			break
-		distance -= distance_to_next
-		start_point = path[0]
-		path.remove(0)
+func next_path_pt():
+	path.remove(0)
+	velocity = Vector2.ZERO
+	if path.size() == 0:
+		emit_signal("path_finished")
 
 
-func handle_path_anim(point):
-	if point.y > position.y:
-		if anim_player.current_animation != "move_down":
-			anim_player.play("move_down")
-	elif point.y < position.y:
-		if anim_player.current_animation != "move_up":
-			anim_player.play("move_up")
-	elif point.x > position.x:
-		if anim_player.current_animation != "move_right":
-			anim_player.play("move_right")
-	elif point.x < position.x:
-		if anim_player.current_animation != "move_left":
-			anim_player.play("move_left")
+func move_path(delta):
+	var point = path[0]
+
+	if position.distance_squared_to(point) < 100.0:
+		next_path_pt()
+	else:
+		walk((point - position).normalized())
 
 func _physics_process(_delta):
 	if walking:
 		velocity = move_and_slide(velocity, Vector2.UP)
+		if get_slide_count():
+			velocity = Vector2.ZERO
+
+export var direction := "down"
 
 func handle_animation():
-	if velocity.x > 0:
-		anim_player.play("move_right")
-	elif velocity.x < 0:
-		anim_player.play("move_left")
+	if velocity.length_squared() >= 1.0:
+		var angle = rad2deg(velocity.angle())
+		if angle >= -30 and angle <= 30:
+			direction = "right"
+		elif angle >= -150 and angle <= -30:
+			direction = "up"
+		elif angle >= 30 and angle <= 150:
+			direction = "down"
+		else:
+			direction = "left"
+	
+	if velocity.length_squared() >= 1.0:
+		anim_player.play("move_" + direction)
 	else:
-		if anim_player.current_animation == "move_right":
-			anim_player.play("idle_right")
-		elif anim_player.current_animation == "move_left":
-			anim_player.play("idle_left")
-	if velocity.y > 0:
-		anim_player.play("move_down")
-	elif velocity.y < 0:
-		anim_player.play("move_up")
-	else:
-		if anim_player.current_animation == "move_down":
-			anim_player.play("idle_down")
-		elif anim_player.current_animation == "move_up":
-			anim_player.play("idle_up")
+		anim_player.play("idle_" + direction)
 
 
 func walk(direction):
