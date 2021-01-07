@@ -209,7 +209,7 @@ position = Vector2( 287.619, 460.371 )
 can_use_scanner = true
 
 [node name="BranchingNPC" parent="YSort" instance=ExtResource( 12 )]
-position = Vector2( 340.756, 386.075 )
+position = Vector2( 336.387, 344.367 )
 scale = Vector2( 1.1, 1.1 )
 npc_name = "Ed"
 npc_texture = ExtResource( 7 )
@@ -221,11 +221,13 @@ direction = "right"
 hframes = 15
 
 [node name="NPC2" type="KinematicBody2D" parent="YSort"]
-position = Vector2( 320.028, 367.259 )
+position = Vector2( 353.791, 387.914 )
 scale = Vector2( 1.3, 1.4 )
 script = ExtResource( 4 )
 npc_name = "Kelly"
 npc_texture = ExtResource( 8 )
+dialogs = [ "Use your Comms Scanner (C) to assist you." ]
+speakers_dialogs = [ "Kelly" ]
 move_random = false
 direction = "right"
 

@@ -14,15 +14,15 @@ font_data = ExtResource( 2 )
 default_font = SubResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.396078, 0.643137, 0.831373, 1 )
+bg_color = Color( 0.411026, 0.65762, 0.855469, 1 )
 
 [node name="DialogPlayer" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.90002
-margin_top = -4.75
-margin_right = 1.90002
-margin_bottom = -4.75
+margin_left = 3.19238
+margin_top = -2.16533
+margin_right = 3.19238
+margin_bottom = -2.16534
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 1100, 230 )
@@ -37,11 +37,11 @@ dialogs = [ "", "", "", "", "", "", "", "", "", "" ]
 [node name="Overlay" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 86.0
-margin_top = 465.0
-margin_right = -105.0
-margin_bottom = -42.0
-rect_min_size = Vector2( 1089, 213 )
+margin_left = 108.733
+margin_top = 462.993
+margin_right = -121.267
+margin_bottom = -44.007
+rect_min_size = Vector2( 1050, 213 )
 color = Color( 0.12549, 0.403922, 0.623529, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -50,13 +50,16 @@ __meta__ = {
 [node name="Container" type="HBoxContainer" parent="Overlay"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 1.13846
+margin_top = -0.217102
+margin_right = 1.13843
+margin_bottom = -0.217102
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Margin" type="MarginContainer" parent="Overlay/Container"]
-margin_right = 910.0
+margin_right = 871.0
 margin_bottom = 213.0
 size_flags_horizontal = 3
 custom_constants/margin_right = 16
@@ -70,7 +73,7 @@ __meta__ = {
 [node name="Message" type="Control" parent="Overlay/Container/Margin"]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 894.0
+margin_right = 855.0
 margin_bottom = 197.0
 size_flags_horizontal = 3
 __meta__ = {
@@ -103,8 +106,8 @@ __meta__ = {
 }
 
 [node name="Speaker" type="PanelContainer" parent="Overlay/Container"]
-margin_left = 914.0
-margin_right = 1089.0
+margin_left = 875.0
+margin_right = 1050.0
 margin_bottom = 213.0
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
