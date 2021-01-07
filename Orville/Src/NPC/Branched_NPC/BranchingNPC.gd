@@ -158,11 +158,7 @@ func _input(event):
 			return
 		var has_all_items = true
 		for condition_item in condition_items:
-			var has_item = false
-			for item in Data.inventory:
-				if item[0] == condition_item:
-					has_item = true
-			if not has_item:
+			if not Data.inventory_has(condition_item):
 				has_all_items = false
 		dialog_index = 1 if has_all_items else 0
 		set_dialogs()
