@@ -1275,7 +1275,6 @@ frame = 11
 
 [node name="OnHand" type="Sprite" parent="Character"]
 visible = false
-position = Vector2( 10.4412, 1.71761 )
 rotation = 3.14159
 texture = ExtResource( 13 )
 

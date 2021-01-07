@@ -17,8 +17,8 @@ func _on_Area2D_body_entered(body):
 		get_tree().change_scene("res://Cutscene5.tscn")
 
 
-
-func _on_DialogPlayer_stopped():
-	$HUD/DialogPlayer.play()
-	Data.find_blue_crystals = true
-	Global.objective = "Return to Tomolen"
+func _on_BranchingNPC_dialogue_finished(index):
+	if index == 1:
+		$HUD/DialogPlayer.play()
+		Data.find_blue_crystals = true
+		Global.objective = "Return to Tomolen"

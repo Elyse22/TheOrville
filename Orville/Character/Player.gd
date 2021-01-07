@@ -20,6 +20,8 @@ var direction = "down"
 
 export var sitting := false
 
+export var can_use_scanner := false
+
 var equipped = null
 func unequip():
 	equipped = null
@@ -100,7 +102,7 @@ func _process(_delta):
 	
 	
 	if Input.is_action_just_pressed("equip_comms_scanner"):
-		if Data.inventory_has("Comms Scanner"):
+		if can_use_scanner:
 			try_equip("Comms Scanner", load("res://Assets/Scanner.png"))
 
 

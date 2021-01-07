@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal dialogue_finished(index)
+
 export var npc_name = ""
 export (Texture) var npc_texture
 export var trigger_talk = true
@@ -165,6 +167,7 @@ func _input(event):
 
 
 func dialog_player_stopped():
+	emit_signal("dialogue_finished", dialog_index)
 	$Popup.hide()
 	set_dialogs()
 	Data.npc_dialog_index[npc_name] = dialog_index

@@ -206,6 +206,7 @@ shape = SubResource( 1 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 287.619, 460.371 )
+can_use_scanner = true
 
 [node name="BranchingNPC" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( 340.756, 386.075 )
@@ -371,7 +372,7 @@ item_sprite = ExtResource( 10 )
 speakers = [ "Kelly" ]
 dialogs = [ "Heebie-jeebies?" ]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="stopped" from="YSort/BranchingNPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
+[connection signal="dialogue_finished" from="YSort/BranchingNPC" to="." method="_on_BranchingNPC_dialogue_finished"]
 [connection signal="body_entered" from="YSort/NPC2/Area2D" to="YSort/NPC2" method="player_around"]
 [connection signal="body_exited" from="YSort/NPC2/Area2D" to="YSort/NPC2" method="player_not_around"]
 [connection signal="timeout" from="YSort/NPC2/MoveRandom" to="YSort/NPC2" method="_on_MoveRandom_timeout"]
