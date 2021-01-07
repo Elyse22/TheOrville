@@ -121,7 +121,7 @@ valign = 1
 margin_top = 39.0
 margin_right = 250.0
 margin_bottom = 80.0
-text = "ADD TO INVENTORY"
+text = "ADD TO INVENTORY (TAB)"
 
 [node name="Close" type="Button" parent="HUD/Control/Result"]
 margin_top = 84.0
