@@ -1,10 +1,9 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sets/Deck F.png" type="Texture" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://EngineeringStation.tscn" type="PackedScene" id=3]
 [ext_resource path="res://EngineeringRailing.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Wrench.png" type="Texture" id=5]
 [ext_resource path="res://Assets/AllCharacters/Characters/JohnLammar.png" type="Texture" id=6]
 [ext_resource path="res://Src/Scanner/Item.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Lift.gd" type="Script" id=8]
@@ -97,11 +96,6 @@ dialog_index = -2
 [node name="DialogPlayer" parent="BranchingNPC/HUD" index="0"]
 one_shot = true
 
-[node name="Item" parent="." instance=ExtResource( 7 )]
-position = Vector2( 538.948, -56.8422 )
-item_name = "Wrench"
-item_sprite = ExtResource( 5 )
-
 [node name="StaticBody2D" parent="." instance=ExtResource( 12 )]
 
 [node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
@@ -111,7 +105,7 @@ polygon = PoolVector2Array( -79.5553, 0.684662, -76.4752, 16.5983, -76.2532, 95.
 position = Vector2( -329.691, -258.585 )
 
 [node name="Item2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 449.323, -65.4364 )
+position = Vector2( -155.828, -437.837 )
 item_name = "Iron Coil"
 item_sprite = ExtResource( 14 )
 
