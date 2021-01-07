@@ -536,6 +536,7 @@ one_shot = true
 autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
+wait_time = 102.646
 one_shot = true
 autostart = true
 
