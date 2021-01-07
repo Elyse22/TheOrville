@@ -7,10 +7,13 @@ func _ready():
 	if Data.current_scene == filename:
 		$YSort/Player.position = Data.player_position
 	Data.current_scene = filename
-	
-	
-	
 
+
+func _process(_delta):
+	if Data.inventory_has("Wrench"):
+		Global.objective = "Take wrench to joe"
+	else:
+		Global.objective = "Find wrench"
 
 func _on_DialogPlayer_stopped():
 	Data.take_items_to_lemarr = true

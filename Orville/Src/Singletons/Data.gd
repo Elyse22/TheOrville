@@ -24,6 +24,11 @@ var npc_dialog_index = {}
 var spawn_wrench_iron_coil = false
 
 var inventory = []
+func inventory_has(item_name):
+	for item in inventory:
+		if item[0] == item_name:
+			return true
+	return false
 
 var sound = true
 

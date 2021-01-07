@@ -6,6 +6,3 @@
 [node name="Kelly" instance=ExtResource( 1 )]
 npc_name = "Kelly"
 npc_texture = ExtResource( 2 )
-
-[node name="Sprite" parent="." index="1"]
-frame = 0
