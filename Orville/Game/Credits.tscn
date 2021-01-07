@@ -4,7 +4,10 @@
 [ext_resource path="res://Fonts/space age.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 43
+size = 48
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
 font_data = ExtResource( 2 )
 
 [node name="Credits" type="Control"]
@@ -17,30 +20,33 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
+margin_bottom = 2142.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
 custom_constants/line_spacing = 63
-text = "Credits
+text = "The Orville - 2D Rescue
+
 Produced By:
 Phoenix Games
+
 Writter: Elyse Hargreaves
 Pixel Art: Elyse Hargreaves
 Portraits: Lutfic - Victoria Miller
+
 Programming: 
 Elyse Hargreaves
 Wamiq Ur Rehman
-Nathan
-Orville Theme Song:
+Nathan Franke
+
+Music:
 Mike Rukus
 
-Big Thank You To:
+Big Thanks To:
 Kevin
 The Orville Fans
 
-Episode 2 on the way...
-
-"
+Episode 2 on the way..."
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

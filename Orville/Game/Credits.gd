@@ -8,5 +8,5 @@ func _ready():
 
 func _process(delta):
 	text.rect_position.y -= 50.0 * delta
-	if text.rect_position.y < -rect_size.y:
+	if text.rect_position.y < -text.rect_size.y:
 		get_tree().quit()
