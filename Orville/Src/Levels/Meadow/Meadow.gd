@@ -24,12 +24,10 @@ func _on_DialogPlayer_stopped():
 
 
 func _on_DialogPlayer_stopped2():
-	$YSort/NPC.walk_custom_path()
-	$YSort/NPC.reverse_path()
-	$YSort/NPC2.walk_custom_path()
-	$YSort/NPC2.reverse_path()
-	$YSort/NPC3.walk_custom_path()
-	$YSort/NPC3.reverse_path()
+	for npc in [$YSort/NPC, $YSort/NPC2, $YSort/NPC3]:
+		npc.walk_custom_path()
+		npc.reverse_path()
+		npc.connect("path_finished", npc, "custom_animation", ["disappear"])
 
 
 
