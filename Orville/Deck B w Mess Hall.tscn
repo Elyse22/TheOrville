@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Assets/AllCharacters/Characters/ClaireFinn.png" type="Texture" id=1]
 [ext_resource path="res://Assets/AllCharacters/Characters/Lex.png" type="Texture" id=2]
@@ -13,9 +13,196 @@
 [ext_resource path="res://Deck B w Mess Hall.gd" type="Script" id=11]
 [ext_resource path="res://RoomTrigger.tscn" type="PackedScene" id=12]
 [ext_resource path="res://MessHallCollum1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://MessHallCollum2.tscn" type="PackedScene" id=14]
+[ext_resource path="res://MessHallCollum3.tscn" type="PackedScene" id=15]
+[ext_resource path="res://MessHallMic.tscn" type="PackedScene" id=16]
+[ext_resource path="res://MessHallTable.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/AllCharacters/Characters/Ty.png" type="Texture" id=18]
+[ext_resource path="res://Src/DialogPlayer/DialogPlayer.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Src/NPC/NPC.gd" type="Script" id=20]
+[ext_resource path="res://Assets/Fonts/Squada_One/SquadaOne-Regular.ttf" type="DynamicFontData" id=21]
+[ext_resource path="res://Assets/AllCharacters/Characters/Kelly.png" type="Texture" id=22]
+[ext_resource path="res://Assets/AllCharacters/Characters/Marcus.png" type="Texture" id=23]
+[ext_resource path="res://Assets/AllCharacters/Characters/Kit.png" type="Texture" id=24]
+[ext_resource path="res://Assets/AllCharacters/Characters/Isaac.png" type="Texture" id=25]
+[ext_resource path="res://Assets/AllCharacters/Characters/GordonMalloy.png" type="Texture" id=26]
+[ext_resource path="res://Assets/AllCharacters/Characters/JohnLammar.png" type="Texture" id=27]
+[ext_resource path="res://Assets/AllCharacters/Characters/Bortus.png" type="Texture" id=28]
+[ext_resource path="res://Assets/AllCharacters/Characters/Klyden.png" type="Texture" id=29]
+[ext_resource path="res://Assets/AllCharacters/Characters/Brook.png" type="Texture" id=30]
+[ext_resource path="res://Assets/AllCharacters/Characters/Tom.png" type="Texture" id=31]
+[ext_resource path="res://Assets/AllCharacters/Characters/EdMercer.png" type="Texture" id=32]
+[ext_resource path="res://Assets/AllCharacters/Characters/TallaKeyali.png" type="Texture" id=33]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.94562, 10.0921 )
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 21 )
+
+[sub_resource type="Animation" id=3]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 11 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 2 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 10, 9 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 7, 8 ]
+}
+
+[sub_resource type="Animation" id=10]
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 4, 5 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "sit_brief"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
+}
+
+[sub_resource type="Animation" id=12]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 13 ]
+}
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 7.17975, 7.37958 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 22.0422, 22.7589 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 10, 30.252 )
 
 [node name="DeckB" type="Node2D"]
 script = ExtResource( 11 )
@@ -27,7 +214,7 @@ texture = ExtResource( 3 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 951.714, -188.176 )
+position = Vector2( 697.117, -100.013 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 314.311, 156.885 )
@@ -41,22 +228,6 @@ position = Vector2( -212.041, 165.413 )
 
 [node name="StaticBody2D4" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( -170.846, 248.785 )
-
-[node name="NPC" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 867.294, -295.204 )
-npc_name = "Lex"
-dialogs = [ "Is it just me or is everything a bit..." ]
-move_random = false
-
-[node name="Sprite" parent="YSort/NPC" index="1"]
-texture = ExtResource( 2 )
-
-[node name="NPC2" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 855.874, -209.351 )
-npc_name = "Dr. Finn"
-npc_texture = ExtResource( 1 )
-dialogs = [ "Sick bay has been full of concerned crew members requesting psychological scans, they keep insisting that ‘everything is different’. ", "I needed to take a walk. But something does seem strange..." ]
-move_random = false
 
 [node name="Portal2" type="Area2D" parent="YSort"]
 position = Vector2( 318.246, 188.163 )
@@ -75,15 +246,249 @@ position = Vector2( 962.6, -258.45 )
 [node name="StaticBody2D6" type="StaticBody2D" parent="YSort"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/StaticBody2D6"]
-polygon = PoolVector2Array( 22.1693, 70.2903, 1.80573, 71.3523, 0.969391, 300.482, -47.9507, 299.646, -47.9986, 197.707, -77.44, 197.06, -79.3098, 269.123, -234.851, 268.705, -233.189, 152.735, -77.9646, 152.735, -77.7183, 171.68, -46.6962, 171.283, -47.1143, 61.7355, -71.4597, 61.0275, -71.71, 74.0454, -127.394, 72.6066, -126.975, 22.4322, -71.7835, 22.8503, -71.4597, 39.2476, -48.9287, 39.2476, -48.7869, 21.5959, 0.969421, 22.0141, 2.39185, 33.9904, 22.6697, 34.4911, 23.5482, 18.6691, 628.568, 19.9235, 625.573, -144.26, 832.472, -138.275, 836.155, -321.207, 923.536, -282.199, 927.717, -290.979, 928.894, -311.53, 947.103, -300.294, 956.595, -296.614, 981.002, -279.374, 1004.25, -252.835, 1022.66, -221.251, 1045.24, -159.37, 1053.99, -137.112, 1054.82, -105.753, 1052.73, -84.4295, 1045.63, -62.2693, 1028.48, -24.6386, 1000.05, 10.9013, 980.399, 29.7166, 962.42, 27.2079, 917.264, 61.4935, 834.927, 86.3997, 834.927, 60.6173, 787.046, 64.3006, 787.046, -56.017, 836.155, -52.3338, 837.383, -76.8885, 686.372, -81.7994, 681.251, 77.624, 535.09, 78.3282, 535.265, 83.9225, 519.006, 84.447, 501.873, 83.9225, 501.525, 78.2617, 342.832, 78.8248, 344.335, 90.4153, 386.895, 91.4221, 389.956, 226.75, 344.07, 227.825, 344.428, 233.202, 289.222, 232.127, 288.864, 226.033, 243.336, 226.391, 245.988, 90.5858, 290.788, 91.0688, 290.288, 77.5503, 23.1704, 78.5516, 22.4193, 72.7937, 15.66, 95.3247, 220.692, 108.092, 218.635, 238.812, 419.421, 233.124, 416.577, 98.3184, 834.927, 124.459, 1098.89, 77.8056, 1074.33, -187.384, 998.215, -373.999, 815.283, -407.148, 717.743, -204.244, 606.554, -206.682, 605.987, 10.7232, 321.587, 7.31042, -153.93, 4.46648, -151.654, 90.3553, -150.517, 115.951, -258.02, 119.933, -260.864, 294.554, -74.8662, 295.692, -73.7286, 327.545, 36.6186, 323.563, 21.8298, 115.382, 12.4012, 96.2075 )
+polygon = PoolVector2Array( 22.1693, 70.2903, 1.80573, 71.3523, 0.969391, 300.482, -47.9507, 299.646, -47.9986, 197.707, -77.44, 197.06, -79.3098, 269.123, -234.851, 268.705, -233.189, 152.735, -77.9646, 152.735, -77.7183, 171.68, -46.6962, 171.283, -47.1143, 61.7355, -71.4597, 61.0275, -71.71, 74.0454, -127.394, 72.6066, -126.975, 22.4322, -71.7835, 22.8503, -71.4597, 39.2476, -48.9287, 39.2476, -48.7869, 21.5959, 0.969421, 22.0141, 2.39185, 33.9904, 22.6697, 34.4911, 23.5482, 18.6691, 628.568, 19.9235, 625.573, -144.26, 832.472, -138.275, 836.155, -321.207, 923.536, -282.199, 927.717, -290.979, 928.894, -311.53, 947.103, -300.294, 956.595, -296.614, 981.002, -279.374, 1004.25, -252.835, 1022.66, -221.251, 1045.24, -159.37, 1053.99, -137.112, 1054.82, -105.753, 1052.73, -84.4295, 1045.63, -62.2693, 1028.48, -24.6386, 1005, -19.1272, 993.664, 4.3259, 977.062, 25.9344, 962.305, 24.8803, 917.264, 61.4935, 834.927, 86.3997, 834.927, 60.6173, 787.046, 64.3006, 787.098, -21.9713, 832.279, -20.1272, 835.246, -80.0061, 686.372, -81.7994, 681.251, 77.624, 535.09, 78.3282, 535.265, 83.9225, 519.006, 84.447, 501.873, 83.9225, 501.525, 78.2617, 342.832, 78.8248, 344.335, 90.4153, 386.895, 91.4221, 389.956, 226.75, 344.07, 227.825, 344.428, 233.202, 289.222, 232.127, 288.864, 226.033, 243.336, 226.391, 245.988, 90.5858, 290.788, 91.0688, 290.288, 77.5503, 23.1704, 78.5516, 22.4193, 72.7937, 15.66, 95.3247, 220.692, 108.092, 218.635, 238.812, 419.421, 233.124, 416.577, 98.3184, 834.927, 124.459, 1098.89, 77.8056, 1074.33, -187.384, 998.215, -373.999, 815.283, -407.148, 717.743, -204.244, 606.554, -206.682, 605.987, 10.7232, 321.587, 7.31042, -153.93, 4.46648, -151.654, 90.3553, -150.517, 115.951, -258.02, 119.933, -260.864, 294.554, -74.8662, 295.692, -73.7286, 327.545, 36.6186, 323.563, 21.8298, 115.382, 12.4012, 96.2075 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="YSort/StaticBody2D6"]
 position = Vector2( -0.387451, 0.581146 )
 polygon = PoolVector2Array( 960.883, -253.059, 966.06, -260.176, 966.668, -262.715, 1000.03, -217.147, 1010.06, -199.999, 1016.21, -178.646, 1024.3, -149.852, 1023, -145.97, 1022.68, -135.94, 1012, -135.293, 1008.44, -164.411, 996.472, -200.323, 983.53, -221.352, 961.854, -250.147, 954.089, -259.529, 960.236, -268.588, 967.443, -262.327 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="YSort/StaticBody2D6"]
-visible = false
 polygon = PoolVector2Array( 1012.54, -82.7003, 1007.64, -57.0405, 996.315, -24.5883, 980.844, 0.316864, 962.354, 25.222, 971.033, 27.8635, 974.806, 27.4861, 991.787, 5.59978, 998.957, -6.47545, 1008.77, -23.8336, 1019.71, -50.2482, 1021.98, -69.493, 1022.35, -83.8324 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="YSort/StaticBody2D6"]
+polygon = PoolVector2Array( 819.962, -54.4448, 820.489, 38.3137, 833.138, 39.3677, 833.401, 35.415, 852.111, 34.8879, 852.111, 17.4957, 851.847, -48.6474, 834.982, -49.1745, 834.192, -54.4448 )
+
+[node name="StaticBody2D7" parent="YSort" instance=ExtResource( 14 )]
+position = Vector2( 998.32, -172.723 )
+
+[node name="StaticBody2D8" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 1029.23, -84.7119 )
+
+[node name="CollisionShape2D" parent="YSort/StaticBody2D8" index="1"]
+position = Vector2( -13.0205, -56.6153 )
+
+[node name="StaticBody2D9" parent="YSort" instance=ExtResource( 15 )]
+position = Vector2( 1026.89, -24.3588 )
+
+[node name="Sprite" parent="YSort/StaticBody2D9" index="0"]
+position = Vector2( 2.71446, -48.8067 )
+
+[node name="CollisionShape2D" parent="YSort/StaticBody2D9" index="1"]
+position = Vector2( -10.4223, -53.7745 )
+
+[node name="StaticBody2D10" parent="YSort" instance=ExtResource( 16 )]
+position = Vector2( 983.309, -105.374 )
+
+[node name="StaticBody2D11" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 906.814, -202.382 )
+
+[node name="StaticBody2D12" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 906.437, -137.474 )
+
+[node name="StaticBody2D13" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 907.185, -26.5276 )
+
+[node name="StaticBody2D14" parent="YSort" instance=ExtResource( 17 )]
+position = Vector2( 906.847, 38.4596 )
+
+[node name="NPC" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 845.057, -304.38 )
+npc_name = "Lex"
+dialogs = [ "Is it just me or is everything a bit..." ]
+trigger_talk = false
+move_random = false
+direction = "right"
+
+[node name="Sprite" parent="YSort/NPC" index="1"]
+texture = ExtResource( 2 )
+
+[node name="NPC2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 960.566, -223.836 )
+npc_name = "Dr. Finn"
+npc_texture = ExtResource( 1 )
+dialogs = [ "Sick bay has been full of concerned crew members requesting psychological scans, they keep insisting that ‘everything is different’. ", "I needed to take a walk. But something does seem strange..." ]
+trigger_talk = false
+move_random = false
+
+[node name="NPC3" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 974.758, -204.929 )
+scale = Vector2( 1.1, 1.2 )
+npc_name = "Ty "
+npc_texture = ExtResource( 18 )
+dialogs = [ "I think this pixel thing is pretty cool!" ]
+speakers_dialogs = [ "Ty" ]
+move_random = false
+direction = "left"
+
+[node name="NPC4" type="KinematicBody2D" parent="YSort"]
+position = Vector2( 946.213, -204.272 )
+scale = Vector2( 1.3, 1.4 )
+script = ExtResource( 20 )
+npc_name = "Marcus"
+npc_texture = ExtResource( 23 )
+dialogs = [ "I wonder what it’s like to drink pixel liquid, maybe you can get me a drink from the bar?" ]
+speakers_dialogs = [ "Marcus" ]
+move_random = false
+direction = "right"
+
+[node name="Popup" type="Label" parent="YSort/NPC4"]
+margin_left = -46.0
+margin_top = -42.0
+margin_right = 52.0
+margin_bottom = -28.0
+custom_fonts/font = SubResource( 2 )
+text = "Press [E] to talk"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="YSort/NPC4"]
+texture = ExtResource( 22 )
+hframes = 15
+frame = 12
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC4"]
+anims/idle_down = SubResource( 3 )
+anims/idle_left = SubResource( 4 )
+anims/idle_right = SubResource( 5 )
+anims/idle_up = SubResource( 6 )
+anims/move_down = SubResource( 7 )
+anims/move_left = SubResource( 8 )
+anims/move_right = SubResource( 9 )
+anims/move_up = SubResource( 10 )
+anims/sit_brief = SubResource( 11 )
+anims/sit_right = SubResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC4"]
+position = Vector2( -0.505678, 6.98314 )
+shape = SubResource( 13 )
+
+[node name="Area2D" type="Area2D" parent="YSort/NPC4"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC4/Area2D"]
+position = Vector2( -0.541107, 0 )
+shape = SubResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HUD" type="CanvasLayer" parent="YSort/NPC4"]
+
+[node name="DialogPlayer" parent="YSort/NPC4/HUD" instance=ExtResource( 19 )]
+
+[node name="MoveRandom" type="Timer" parent="YSort/NPC4"]
+wait_time = 2.0
+
+[node name="MoveCooldown" type="Timer" parent="YSort/NPC4"]
+wait_time = 10.0
+one_shot = true
+
+[node name="CustomPath" type="Node" parent="YSort/NPC4"]
+
+[node name="NPC5" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 871.603, -303.623 )
+npc_name = "Kit"
+npc_texture = ExtResource( 24 )
+trigger_talk = false
+move_random = false
+direction = "left"
+
+[node name="NPC6" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 964.892, -188.217 )
+npc_name = "Isaac"
+npc_texture = ExtResource( 25 )
+trigger_talk = false
+move_random = false
+direction = "up"
+
+[node name="NPC7" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 862.728, 52.8435 )
+npc_name = "Gordon"
+npc_texture = ExtResource( 26 )
+trigger_talk = false
+move_random = false
+direction = "right"
+
+[node name="NPC8" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 890.263, 49.4448 )
+npc_name = "LeMarr"
+npc_texture = ExtResource( 27 )
+trigger_talk = false
+move_random = false
+direction = "left"
+
+[node name="NPC9" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 967.06, -64.6468 )
+npc_name = "Klyden"
+npc_texture = ExtResource( 29 )
+dialogs = [ "Does Bortus smell like cigarette to you? " ]
+speakers_dialogs = [ "Klyden" ]
+move_random = false
+
+[node name="NPC10" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 985.942, -41.9291 )
+npc_name = "Bortus"
+npc_texture = ExtResource( 28 )
+trigger_talk = false
+move_random = false
+direction = "left"
+
+[node name="MoveCooldown" parent="YSort/NPC10" index="7"]
+wait_time = 104.0
+autostart = true
+
+[node name="Node2D" type="Node2D" parent="YSort/NPC10/CustomPath" index="0"]
+position = Vector2( 1000.77, -61.75 )
+
+[node name="Node2D2" type="Node2D" parent="YSort/NPC10/CustomPath" index="1"]
+position = Vector2( 1002.31, -127.033 )
+
+[node name="NPC11" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 952, -42.1754 )
+npc_name = "Brooke"
+npc_texture = ExtResource( 30 )
+trigger_talk = false
+move_random = false
+direction = "right"
+
+[node name="NPC12" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 913.369, -132.42 )
+npc_name = "Ed"
+npc_texture = ExtResource( 32 )
+trigger_talk = false
+move_random = false
+
+[node name="NPC13" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 892.431, -123.5 )
+npc_name = "Kelly"
+npc_texture = ExtResource( 22 )
+dialogs = [ "Hey %p, how's everything going? ", "Remember, you can always speak to me if you need anything. " ]
+speakers_dialogs = [ "Kelly", "Kelly" ]
+move_random = false
+direction = "right"
+
+[node name="NPC14" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 932.224, -118.476 )
+npc_name = "Tom"
+npc_texture = ExtResource( 31 )
+trigger_talk = false
+move_random = false
+direction = "left"
+
+[node name="NPC15" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 911.75, -104.415 )
+npc_name = "Talla"
+npc_texture = ExtResource( 33 )
+trigger_talk = false
+move_random = false
+direction = "up"
 
 [node name="Lift" parent="." instance=ExtResource( 8 )]
 
@@ -112,15 +517,60 @@ margin_top = 34.5448
 margin_right = 552.092
 margin_bottom = 48.5448
 text = "Science Lab"
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="DialogPlayer" parent="HUD" instance=ExtResource( 19 )]
+speakers = [ "Bortus" ]
+dialogs = [ "*Inhales* " ]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 106.0
+one_shot = true
+autostart = true
+
+[node name="DialogPlayer" parent="." instance=ExtResource( 19 )]
+speakers = [  ]
+dialogs = [ "It's Karaoke Night in the Mess Hall and Bortus is up first! " ]
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 102.646
+one_shot = true
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 827.163, -109.415 )
+shape = SubResource( 15 )
 [connection signal="body_entered" from="YSort/Portal2" to="YSort/Portal2" method="_on_Portal_body_entered"]
+[connection signal="animation_finished" from="YSort/NPC4/AnimationPlayer" to="YSort/NPC4" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="YSort/NPC4/Area2D" to="YSort/NPC4" method="player_around"]
+[connection signal="body_exited" from="YSort/NPC4/Area2D" to="YSort/NPC4" method="player_not_around"]
+[connection signal="stopped" from="YSort/NPC4/HUD/DialogPlayer" to="YSort/NPC4" method="dialog_player_stopped"]
+[connection signal="timeout" from="YSort/NPC4/MoveRandom" to="YSort/NPC4" method="_on_MoveRandom_timeout"]
+[connection signal="path_finished" from="YSort/NPC10" to="YSort/NPC10" method="sit" binds= [ Vector2( 1002, -127 ), "right" ]]
+[connection signal="path_finished" from="YSort/NPC10" to="YSort/NPC10" method="custom_animation" binds= [ "idle_left" ]]
 [connection signal="body_entered" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_entered"]
 [connection signal="body_exited" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_exited"]
 [connection signal="body_entered" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_entered"]
 [connection signal="body_exited" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_exited"]
 [connection signal="body_entered" from="RoomTrigger3" to="RoomTrigger3" method="_on_RoomTrigger3_body_entered"]
 [connection signal="body_exited" from="RoomTrigger3" to="RoomTrigger3" method="_on_RoomTrigger3_body_exited"]
+[connection signal="stopped" from="HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+[editable path="YSort/StaticBody2D8"]
+
+[editable path="YSort/StaticBody2D9"]
+
+[editable path="YSort/StaticBody2D10"]
 
 [editable path="YSort/NPC"]
+
+[editable path="YSort/NPC10"]
 
 [editable path="RoomTrigger"]
 

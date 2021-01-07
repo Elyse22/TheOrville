@@ -1335,13 +1335,13 @@ content_margin_top = 4.0
 content_margin_bottom = 4.0
 bg_color = Color( 0, 0.0392157, 0.215686, 1 )
 
-[sub_resource type="RectangleShape2D" id=36]
+[sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 8.08871, 9.28223 )
 
-[sub_resource type="RectangleShape2D" id=34]
+[sub_resource type="RectangleShape2D" id=35]
 extents = Vector2( 4.72687, 8.88832 )
 
-[sub_resource type="RectangleShape2D" id=35]
+[sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 22.5172, 6.44179 )
 
 [node name="Node2D" type="Node2D"]
@@ -1513,13 +1513,16 @@ align = 1
 autowrap = true
 
 [node name="NPC" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 102.37, 100.936 )
+position = Vector2( 103.121, 99.4339 )
 npc_name = "Ed "
 npc_texture = ExtResource( 10 )
 dialogs = [ "Commander %p , I'm glad you're here.", "I'm not sure if you've noticed this but...", "We appear to be in a 2D pixel universe!", "Yes, I have noticed and I think everyone else has too. Do you have any idea what's going on?", "No idea, but I'm not waiting around to find out. See if you can find Isaac in the Science Lab on Deck B, and get a status report. I've been trying to hail him on comms, but they are not working properly. " ]
 speakers_dialogs = [ "Ed", "Ed", "Ed", "%p", "Ed" ]
 move_random = false
-sitting = true
+direction = "sit_brief"
+
+[node name="Sprite" parent="YSort/NPC" index="1"]
+frame = 13
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 127.215, 118.441 )
@@ -1530,7 +1533,7 @@ position = Vector2( -1.26737, -3.0937 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort/StaticBody2D"]
 position = Vector2( -20.7978, -5.19946 )
-shape = SubResource( 36 )
+shape = SubResource( 34 )
 
 [node name="StaticBody2D3" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 153.143, 87.1528 )
@@ -1556,7 +1559,7 @@ position = Vector2( 3.30079, -6.74207 )
 
 [node name="CollisionShape2D" parent="YSort/StaticBody2D6" index="1"]
 position = Vector2( 3.55138, 4.05889 )
-shape = SubResource( 34 )
+shape = SubResource( 35 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -1572,8 +1575,11 @@ player_spawn_location = Vector2( 118, 70 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 position = Vector2( 6.76367, 2.95395 )
-shape = SubResource( 35 )
+shape = SubResource( 36 )
+[connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_Portal_body_entered"]
+
+[editable path="YSort/NPC"]
 
 [editable path="YSort/StaticBody2D"]
 

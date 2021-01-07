@@ -88,7 +88,7 @@ position = Vector2( -2.15906, -4.98245 )
 shape = SubResource( 1 )
 
 [node name="Portal2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 119.346, 53.0745 )
+position = Vector2( 119.427, 62.9522 )
 next_scene_path = "res://Captains Office.tscn"
 player_spawn_location = Vector2( 191.8, 159.8 )
 

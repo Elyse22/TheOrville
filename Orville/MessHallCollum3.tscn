@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/MessHallCollum3.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.51752, 5.86629 )
+
+[node name="StaticBody2D8" type="StaticBody2D"]
+position = Vector2( -2.31963, -1.24866 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.713486, -51.4061 )
+texture = ExtResource( 1 )
+region_rect = Rect2( 100, 100, 100, 100 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -9.47541, -56.7506 )
+shape = SubResource( 1 )
