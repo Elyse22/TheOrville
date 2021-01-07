@@ -14,7 +14,7 @@ func _ready():
 
 
 func _on_Timer_timeout():
-	$HUD/DialogPlayer.play()
+	$HUD/DialogPlayer1.play()
 
 
 func _on_DialogPlayer_stopped():
@@ -22,7 +22,7 @@ func _on_DialogPlayer_stopped():
 
 
 func _on_Timer2_timeout():
-	$DialogPlayer.play()
+	$HUD/DialogPlayer2.play()
 
 
 func _on_Area2D_body_entered(body):

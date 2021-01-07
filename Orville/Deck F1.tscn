@@ -47,17 +47,6 @@ position = Vector2( 499.154, 9.98354 )
 [node name="StaticBody2D2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 499.202, -124.864 )
 
-[node name="BranchingNPC" parent="YSort" instance=ExtResource( 11 )]
-position = Vector2( 536.673, -160.244 )
-npc_name = "LeMarr"
-npc_texture = ExtResource( 6 )
-condition_items = [ "Wrench", "Iron Coil" ]
-branch_dialogs = [ [ "Did Bortus ask you to find some items?" ], [ "Ah, of course Bortus suggested these. It will help to adjust the quantum engine to deal with this, simple reality. Give me a sec to hook 'em up. ", "Okay boom, all done. I think you should check in with Gordon on the bridge and test the new adjustment." ] ]
-dialog_index = -2
-
-[node name="DialogPlayer" parent="YSort/BranchingNPC/HUD" index="0"]
-one_shot = true
-
 [node name="Lift" type="Area2D" parent="." groups=[
 "lift",
 ]]
@@ -97,6 +86,17 @@ margin_right = 400.0
 margin_bottom = 131.0
 text = "DECK F"
 
+[node name="BranchingNPC" parent="." instance=ExtResource( 11 )]
+position = Vector2( 536.673, -160.244 )
+npc_name = "LeMarr"
+npc_texture = ExtResource( 6 )
+condition_items = [ "Wrench", "Iron Coil" ]
+branch_dialogs = [ [ "Did Bortus ask you to find some items?" ], [ "Ah, of course Bortus suggested these. It will help to adjust the quantum engine to deal with this, simple reality. Give me a sec to hook 'em up. ", "Okay boom, all done. I think you should check in with Gordon on the bridge and test the new adjustment." ] ]
+dialog_index = -2
+
+[node name="DialogPlayer" parent="BranchingNPC/HUD" index="0"]
+one_shot = true
+
 [node name="StaticBody2D" parent="." instance=ExtResource( 12 )]
 
 [node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
@@ -134,15 +134,15 @@ text = "Locked"
 position = Vector2( 451.646, -68.0189 )
 item_name = "Wrench"
 item_sprite = ExtResource( 5 )
-[connection signal="stopped" from="YSort/BranchingNPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
 [connection signal="body_entered" from="Lift" to="Lift" method="player_entered"]
 [connection signal="body_exited" from="Lift" to="Lift" method="player_exited"]
+[connection signal="stopped" from="BranchingNPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
 [connection signal="body_entered" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_entered"]
 [connection signal="body_exited" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_exited"]
 [connection signal="body_entered" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_entered"]
 [connection signal="body_exited" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_exited"]
 
-[editable path="YSort/BranchingNPC"]
+[editable path="BranchingNPC"]
 
 [editable path="StaticBody2D"]
 

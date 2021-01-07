@@ -9,24 +9,24 @@ var briefing_music = load ('res://Audio/Briefing.wav')
 func _ready():
 	pass
 
+func play_music(stream):
+	if $Music.stream != stream:
+		$Music.stream = stream
+		$Music.play()
+
 func play_basic_music():
-	$Music.stream = basic_music
-	$Music.play()
+	play_music(basic_music)
 
 func play_space_music():
-	$Music.stream = space_music
-	$Music.play()
+	play_music(space_music)
 	
 
 func play_orville_music():
-	$Music.stream = orville_music
-	$Music.play()
+	play_music(orville_music)
 
 func play_moon_music():
-	$Music.stream = moon_music
-	$Music.play()
+	play_music(moon_music)
 
 
 func play_briefing_music():
-	$Music.stream = briefing_music
-	$Music.play()
+	play_music(briefing_music)

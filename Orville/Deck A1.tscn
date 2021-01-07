@@ -32,8 +32,10 @@ polygon = PoolVector2Array( -140.997, 71.2956, -75.6432, 71.9427, -75.3197, 107.
 
 [node name="Portal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 373.612, 189.478 )
+id = ""
 next_scene_path = "res://Deck B w Mess Hall.tscn"
 player_spawn_location = Vector2( 344, 182 )
+player_direction = "down"
 
 [node name="CollisionShape2D" parent="Portal" index="0"]
 position = Vector2( -0.898562, 1.95032 )
@@ -41,7 +43,10 @@ shape = SubResource( 1 )
 
 [node name="Portal3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 263.876, 167.686 )
+id = ""
 next_scene_path = "res://BriefingRoom.tscn"
+player_spawn_location = Vector2( 0, 0 )
+player_direction = "down"
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 348.316, 189.806 )

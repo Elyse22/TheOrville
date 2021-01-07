@@ -33,8 +33,10 @@ polygon = PoolVector2Array( 47.4362, 55.9893, 443.08, 56.2813, 443.218, 65.6112,
 
 [node name="Portal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 379.717, 205.124 )
+id = ""
 next_scene_path = "res://Deck B.tscn"
 player_spawn_location = Vector2( 344, 182 )
+player_direction = "down"
 
 [node name="CollisionShape2D" parent="Portal" index="0"]
 position = Vector2( -2.15906, -4.98245 )
