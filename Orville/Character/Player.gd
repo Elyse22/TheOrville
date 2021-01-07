@@ -20,6 +20,21 @@ var direction = "down"
 
 export var sitting := false
 
+var equipped = null
+func unequip():
+	equipped = null
+	$Character/OnHand.visible = false
+func equip(name, sprite):
+	equipped = name
+	$Character/OnHand.texture = sprite
+	$Character/OnHand.visible = true
+
+func try_equip(name, sprite):
+	if equipped:
+		unequip()
+	else:
+		equip(name, sprite)
+
 func _physics_process(delta):
 	if sitting:
 		anim_player.play("sit_" + direction)
@@ -82,6 +97,11 @@ func _process(_delta):
 		$HUD/Objective/PanelContainer/Label.text = str(Global.objective)
 	else:
 		$HUD/Objective.visible = false
+	
+	
+	if Input.is_action_just_pressed("equip_comms_scanner"):
+		if Data.inventory_has("Comms Scanner"):
+			try_equip("Comms Scanner", load("res://Assets/Scanner.png"))
 
 
 #func _input(event):
