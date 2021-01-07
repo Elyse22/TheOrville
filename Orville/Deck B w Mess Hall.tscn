@@ -233,10 +233,8 @@ position = Vector2( -170.846, 248.785 )
 position = Vector2( 318.246, 188.163 )
 collision_layer = 2
 script = ExtResource( 10 )
-id = ""
 next_scene_path = "res://Deck A1.tscn"
 player_spawn_location = Vector2( 347, 225 )
-player_direction = "down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Portal2"]
 position = Vector2( -9.67905, 9.32057 )
@@ -443,7 +441,7 @@ move_random = false
 direction = "left"
 
 [node name="MoveCooldown" parent="YSort/NPC10" index="7"]
-wait_time = 104.0
+wait_time = 5.024
 autostart = true
 
 [node name="Node2D" type="Node2D" parent="YSort/NPC10/CustomPath" index="0"]
@@ -531,12 +529,12 @@ speakers = [  ]
 dialogs = [ "It's Karaoke Night in the Mess Hall and Bortus is up first! " ]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 106.0
+wait_time = 15.514
 one_shot = true
 autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
-wait_time = 102.646
+wait_time = 3.966
 one_shot = true
 autostart = true
 
