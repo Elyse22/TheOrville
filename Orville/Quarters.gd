@@ -12,5 +12,5 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and not Data.spoke_with_mercer:
 		$HUD/DialogPlayer.play()

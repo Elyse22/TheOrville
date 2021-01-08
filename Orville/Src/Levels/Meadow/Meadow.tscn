@@ -234,10 +234,8 @@ polygon = PoolVector2Array( 651.058, -363.492, 1009.65, -360.319, 1015.99, -147.
 
 [node name="Portal" parent="." instance=ExtResource( 7 )]
 position = Vector2( -236.137, 80.5137 )
-id = ""
 next_scene_path = "res://StarshipJ2857Bridge2.tscn"
 player_spawn_location = Vector2( 372, 151 )
-player_direction = "down"
 
 [node name="YSort" type="YSort" parent="."]
 

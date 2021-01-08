@@ -1791,10 +1791,8 @@ polygon = PoolVector2Array( 93.5606, 59.354, 235.592, 59.354, 234.621, 155.12, 2
 position = Vector2( 186.233, 164.009 )
 collision_layer = 2
 script = ExtResource( 12 )
-id = ""
 next_scene_path = "res://Deck A.tscn"
 player_spawn_location = Vector2( 118, 70 )
-player_direction = "down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 position = Vector2( 6.76367, 2.95395 )

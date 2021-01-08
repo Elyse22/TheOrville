@@ -10,7 +10,6 @@ func _ready():
 
 
 func _on_DialogPlayer_stopped():
-	Data.spoke_with_gordon = true
 	get_tree().change_scene("res://Cutscene1.tscn")
 
 

@@ -36,7 +36,6 @@ texture = ExtResource( 3 )
 [node name="Portal" parent="." instance=ExtResource( 16 )]
 position = Vector2( 45.326, 39.1115 )
 collision_mask = 0
-id = ""
 next_scene_path = "res://Deck C.tscn"
 player_spawn_location = Vector2( 295, 135 )
 player_direction = "up"
@@ -129,7 +128,7 @@ dialogs = [ "Commander %p, it's Captain Ed Mercer. Come see me in my office imme
 position = Vector2( 46.1095, 11.5101 )
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2( -2.4805, 30.2375 )
+position = Vector2( 141.78, 51.0262 )
 [connection signal="body_entered" from="Area2D" to="YSort/Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 

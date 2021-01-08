@@ -6,7 +6,7 @@ func _ready():
 		$YSort/Player.position = Data.player_position
 	Data.current_scene = filename
 	
-	if not Data.spoke_with_bortus:
+	if not Data.spoke_with_bortus or Data.take_items_to_lemarr or Data.inventory_has("Iron Coil"):
 		$YSort/Item.queue_free()
 	
 	if Data.take_items_to_lemarr:
