@@ -46,9 +46,6 @@ position = Vector2( 286.883, 134.183 )
 trigger_talk = false
 move_random = false
 
-[node name="Sprite" parent="YSort/Ed" index="1"]
-frame = 12
-
 [node name="Node2D3" type="Node2D" parent="YSort/Ed/CustomPath" index="0"]
 position = Vector2( -80.6295, 149.01 )
 
