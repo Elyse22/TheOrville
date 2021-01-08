@@ -6,12 +6,17 @@ export (Array, String) var dialogs
 signal stopped
 var index = -1
 
+var disabled := false
 
 func _ready():
 	hide()
 
 
 func play():
+	if disabled:
+		return
+	if visible:
+		return
 	index = -1
 	show()
 	next_dialog()
@@ -61,7 +66,7 @@ func stop():
 	index = -1
 	hide()
 	if one_shot:
-		queue_free()
+		disabled = true
 	
 	
 
