@@ -60,9 +60,6 @@ condition_items = [ "Wrench", "Iron Coil" ]
 branch_dialogs = [ [ "Did Bortus ask you to find some items?" ], [ "Ah, of course Bortus suggested these. It will help to adjust the quantum engine to deal with this, simple reality. Give me a sec to hook 'em up. ", "Okay boom, all done. I think you should check in with Gordon on the bridge and test the new adjustment." ] ]
 dialog_index = -2
 
-[node name="DialogPlayer" parent="YSort/BranchingNPC/HUD" index="0"]
-one_shot = true
-
 [node name="Lift" type="Area2D" parent="." groups=[
 "lift",
 ]]
