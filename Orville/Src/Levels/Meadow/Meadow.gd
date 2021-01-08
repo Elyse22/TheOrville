@@ -28,6 +28,9 @@ func _on_DialogPlayer_stopped2():
 		npc.walk_custom_path()
 		npc.reverse_path()
 		npc.connect("path_finished", npc, "custom_animation", ["disappear"])
+		npc.get_node("AnimationPlayer").connect("animation_finished", self, "_handle_anim", [npc])
 
-
+func _handle_anim(anim, npc):
+	if anim == "disappear":
+		npc.queue_free()
 
