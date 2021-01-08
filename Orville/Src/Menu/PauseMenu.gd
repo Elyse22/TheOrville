@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends PanelContainer
 
 export var paused: bool setget _set_paused
 func _set_paused(value):
@@ -15,9 +15,9 @@ func _ready():
 
 func save_game():
 	Data.save_game()
-	$Message.text = "GAME SAVED!"
+	$CenterContainer/VBoxContainer/Message.text = "GAME SAVED!"
 	yield(get_tree().create_timer(3), "timeout")
-	$Message.text = ""
+	$CenterContainer/VBoxContainer/Message.text = ""
 
 func back():
 	self.paused = false
