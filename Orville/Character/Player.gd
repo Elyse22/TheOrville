@@ -46,7 +46,7 @@ func _physics_process(delta):
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		input_vector = input_vector.normalized()
 		
-		if velocity != Vector2():
+		if velocity.length_squared() > 1.0:
 			var angle = rad2deg(velocity.angle())
 			if angle >= -30 and angle <= 30:
 				direction = "right"
