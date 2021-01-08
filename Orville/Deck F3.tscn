@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Deck F3.gd" type="Script" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Shuttlecraft.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Lift.tscn" type="PackedScene" id=6]
 [ext_resource path="res://DeckFBoundaries.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Src/DialogPlayer/DialogPlayer.tscn" type="PackedScene" id=8]
 
 [node name="DeckF2" type="Node2D"]
 script = ExtResource( 1 )
@@ -50,6 +51,12 @@ margin_top = 32.3277
 margin_right = 569.01
 margin_bottom = 46.3277
 text = "Locked"
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="DialogPlayer" parent="HUD" instance=ExtResource( 8 )]
+speakers = [ "Ed" ]
+dialogs = [ "Comms: All senior staff, report to Briefing Room. " ]
 [connection signal="body_entered" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_entered"]
 [connection signal="body_exited" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_exited"]
 [connection signal="body_entered" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_entered"]

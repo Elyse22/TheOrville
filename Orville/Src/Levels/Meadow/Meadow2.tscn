@@ -471,7 +471,7 @@ position = Vector2( -220.419, 85.462 )
 position = Vector2( 536.409, 35.8039 )
 npc_name = "Tomolen"
 npc_texture = ExtResource( 3 )
-condition_items = [ "Blue Crystal" ]
+condition_items = [ "Blue Crystal1", "Blue Crystal2", "Blue Crystal3" ]
 branch_dialogs = [ [ "You will find the Blue Crystal on the Moon. You're Shuttecraft is just across the bridge right?" ], [ "Wow, that was quick! Thank you so much, I hope we can repay you. " ] ]
 
 [node name="DialogPlayer" parent="YSort/BranchingNPC/HUD" index="0"]

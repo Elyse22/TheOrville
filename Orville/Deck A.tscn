@@ -84,10 +84,8 @@ texture = ExtResource( 3 )
 
 [node name="Portal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 374.881, 188.985 )
-id = ""
 next_scene_path = "res://Deck B.tscn"
 player_spawn_location = Vector2( 344, 182 )
-player_direction = "down"
 
 [node name="CollisionShape2D" parent="Portal" index="0"]
 position = Vector2( -2.15906, -4.98245 )
@@ -95,10 +93,8 @@ shape = SubResource( 1 )
 
 [node name="Portal2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 119.427, 62.9522 )
-id = ""
 next_scene_path = "res://Captains Office.tscn"
 player_spawn_location = Vector2( 191.8, 159.8 )
-player_direction = "down"
 
 [node name="CollisionShape2D" parent="Portal2" index="0"]
 shape = SubResource( 2 )
@@ -108,7 +104,6 @@ position = Vector2( 446.812, 96.8923 )
 id = "bridge_portal"
 next_scene_path = "res://Bridge.tscn"
 player_spawn_location = Vector2( 9.6, 128 )
-player_direction = "down"
 
 [node name="CollisionShape2D" parent="Portal3" index="0"]
 shape = SubResource( 3 )

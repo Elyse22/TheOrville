@@ -1838,7 +1838,7 @@ tracks/0/keys = {
 
 [sub_resource type="RectangleShape2D" id=74]
 resource_local_to_scene = true
-extents = Vector2( 5.2988, 17.8294 )
+extents = Vector2( 10.7494, 20.4574 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 11 )
@@ -2459,7 +2459,7 @@ speakers = [ "", "" ]
 dialogs = [ "", "" ]
 
 [node name="Portal" parent="." instance=ExtResource( 12 )]
-position = Vector2( 9.63743, 108.338 )
+position = Vector2( 6.71755, 108.338 )
 next_scene_path = "res://Deck A2.tscn"
 player_spawn_location = Vector2( 433.4, 91.6 )
 

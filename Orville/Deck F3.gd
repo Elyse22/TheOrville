@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var dialog_player = $HUD/DialogPlayer
 
 func _ready():
 	Data.current_deck_f = filename
@@ -10,4 +11,4 @@ func _ready():
 	Data.current_deck_b = "res://Deck B1.tscn"
 	Data.return_to_the_orville = true
 	Global.objective = "Go to Briefing Room on Deck A"
-	
+	$HUD/DialogPlayer.play()
