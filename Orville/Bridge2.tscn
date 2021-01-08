@@ -679,7 +679,7 @@ autostart = true
 [node name="CustomPath" type="Node" parent="YSort/NPC5"]
 
 [node name="Node2D" type="Node2D" parent="YSort/NPC5/CustomPath"]
-position = Vector2( 139.64, 36.9328 )
+position = Vector2( 128.527, 34.0649 )
 
 [node name="NPC3" type="KinematicBody2D" parent="YSort"]
 position = Vector2( -64.5259, 104.601 )

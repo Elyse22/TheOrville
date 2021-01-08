@@ -2453,6 +2453,7 @@ direction = "sit_right"
 
 [node name="Sprite" parent="YSort/NPC3" index="1"]
 texture = ExtResource( 18 )
+frame = 13
 
 [node name="DialogPlayer" parent="YSort/NPC3/HUD" index="0"]
 speakers = [ "", "" ]

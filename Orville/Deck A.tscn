@@ -104,6 +104,7 @@ position = Vector2( 446.812, 96.8923 )
 id = "bridge_portal"
 next_scene_path = "res://Bridge.tscn"
 player_spawn_location = Vector2( 9.6, 128 )
+player_direction = "right"
 
 [node name="CollisionShape2D" parent="Portal3" index="0"]
 shape = SubResource( 3 )

@@ -44,7 +44,7 @@ position = Vector2( 263.876, 167.686 )
 next_scene_path = "res://BriefingRoom.tscn"
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 348.316, 189.806 )
+position = Vector2( 348.316, 187.032 )
 
 [node name="CollisionShape2D13" parent="StaticBody2D2" index="13"]
 position = Vector2( -458.003, -100.839 )

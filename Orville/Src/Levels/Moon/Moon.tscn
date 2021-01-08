@@ -214,7 +214,7 @@ scale = Vector2( 1.1, 1.1 )
 npc_name = "Ed"
 npc_texture = ExtResource( 7 )
 condition_items = [ "Blue Crystal1", "Blue Crystal2", "Blue Crystal3" ]
-branch_dialogs = [ [ "Keep looking, I'm sure they're around here somewhere." ], [ "You found it? Great job, now let's get back to Tomolen. This pixel moon is giving me the heebie-jeebies. " ] ]
+branch_dialogs = [ [ "Keep looking, I'm sure there are 3 Blue Crystals around here somewhere." ], [ "You found them? Great job, let's get back to Tomolen. This pixel moon is giving me the heebie-jeebies. " ] ]
 direction = "right"
 
 [node name="Sprite" parent="YSort/BranchingNPC" index="1"]
@@ -380,10 +380,10 @@ item_sprite = ExtResource( 10 )
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 5 )]
-margin_left = 8.07943
-margin_top = 33.6731
-margin_right = 8.07947
-margin_bottom = 33.6731
+margin_left = -2.4177
+margin_top = -4.81674
+margin_right = -2.41772
+margin_bottom = -4.81671
 speakers = [ "Kelly" ]
 dialogs = [ "Heebie-jeebies?" ]
 

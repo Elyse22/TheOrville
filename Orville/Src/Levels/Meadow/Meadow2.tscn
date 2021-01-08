@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Src/Levels/Meadow/Meadow.tres" type="TileSet" id=1]
 [ext_resource path="res://Character/Player.tscn" type="PackedScene" id=2]
@@ -20,6 +20,21 @@
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 13 )
+
+[sub_resource type="Animation" id=13]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 14 ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 0.1
@@ -173,6 +188,36 @@ extents = Vector2( 7.09411, 7.92 )
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 22.0422, 22.7589 )
 
+[sub_resource type="Animation" id=14]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 14 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 14 ]
+}
+
 [node name="Meadow" type="Node2D"]
 script = ExtResource( 14 )
 
@@ -225,11 +270,13 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="YSort/NPC"]
 texture = ExtResource( 9 )
 hframes = 15
+frame = 14
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC"]
+anims/disappear = SubResource( 13 )
 anims/idle_down = SubResource( 2 )
 anims/idle_left = SubResource( 3 )
 anims/idle_right = SubResource( 4 )
@@ -313,11 +360,13 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="YSort/NPC2"]
 texture = ExtResource( 9 )
 hframes = 15
+frame = 14
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC2"]
+anims/disappear = SubResource( 14 )
 anims/idle_down = SubResource( 2 )
 anims/idle_left = SubResource( 3 )
 anims/idle_right = SubResource( 4 )
@@ -401,11 +450,13 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="YSort/NPC3"]
 texture = ExtResource( 9 )
 hframes = 15
+frame = 14
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="YSort/NPC3"]
+anims/disappear = SubResource( 15 )
 anims/idle_down = SubResource( 2 )
 anims/idle_left = SubResource( 3 )
 anims/idle_right = SubResource( 4 )
@@ -500,7 +551,7 @@ direction = "left"
 
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 12 )]
 speakers = [ "Ed", "Ed", "Tomolen", "Ed", "Hamelac", "Tomolen", "Ed", "Tomolen" ]
-dialogs = [ "Consider it a favour among friends. ", "Say... have you guys noticed anything different lately?", "What do you mean?", "Nothing seems a bit….pixelated to you? ", "No, nothing seems ‘pixelated’ to us. ", "Yeah, everything seems fine to me?", "Okay, just wondering. Well, it was good to see you again. Tomolen, if you ever need anything, just send a transmission. And be careful of those nebula's! ", "Thank you Captain. " ]
+dialogs = [ "Consider it a favour among friends. ", "Say... have you guys noticed anything different lately?", "What do you mean?", "Nothing looks a bit...pixelated to you? ", "No, nothing seems ‘pixelated’ to us. ", "Yeah, everything seems fine to me?", "Okay, just wondering. Well, it was good to see you again. Tomolen, if you ever need anything, just send a transmission. And be careful of those nebula's! ", "Thank you Captain. " ]
 [connection signal="body_entered" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_around"]
 [connection signal="body_exited" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_not_around"]
 [connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="YSort/NPC" method="dialog_player_stopped"]

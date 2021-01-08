@@ -14,7 +14,7 @@
 [ext_resource path="res://Deck C.gd" type="Script" id=12]
 [ext_resource path="res://RoomTrigger.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Src/Scanner/Item.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Assets/Wrench.png" type="Texture" id=15]
+[ext_resource path="res://Assets/IronCoil.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.6259, 1.4707 )
@@ -51,7 +51,7 @@ shape = SubResource( 1 )
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( -51.3192, 545.84 )
+position = Vector2( 157.195, 124.74 )
 
 [node name="StaticBody2D" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -243.364, 113.474 )
@@ -134,7 +134,7 @@ position = Vector2( -209.089, 572.403 )
 
 [node name="Item" parent="YSort" instance=ExtResource( 14 )]
 position = Vector2( -138.308, 204.768 )
-item_name = "Wrench"
+item_name = "Iron Coil"
 item_sprite = ExtResource( 15 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
