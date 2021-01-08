@@ -9,7 +9,7 @@ func _ready():
 	MusicController.play_moon_music()
 
 func _process(_delta):
-	if not Data.take_items_to_lemarr:
+	if not Data.take_items_to_lemarr and not Data.find_blue_crystals:
 		if Data.inventory_has("Blue Crystal1") and Data.inventory_has("Blue Crystal2") and Data.inventory_has("Blue Crystal3"):
 			Global.objective = "Speak with Captain Mercer"
 		else:
