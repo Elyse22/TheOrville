@@ -56,7 +56,7 @@ text = "Locked"
 
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 8 )]
 speakers = [ "Ed" ]
-dialogs = [ "Comms: All senior staff, report to Briefing Room. " ]
+dialogs = [ "Comms: All senior staff, report to the Briefing Room. " ]
 [connection signal="body_entered" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_entered"]
 [connection signal="body_exited" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_exited"]
 [connection signal="body_entered" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_entered"]

@@ -81,7 +81,7 @@ position = Vector2( 618.157, 44.0846 )
 scale = Vector2( 1.25, 1.35 )
 npc_name = "Dr. Finn"
 npc_texture = ExtResource( 9 )
-dialogs = [ "Sick bay has been full of concerned crew members requesting psychological scans, they keep insisting that ‘everything is different’. ", "I needed to take a walk. But something does seem strange..." ]
+dialogs = [ "Sick bay has been full of concerned crew members requesting psychological scans, they keep insisting that ‘everything is 'different'. ", "I needed to take a walk. But something does seem strange..." ]
 
 [node name="Portal2" type="Area2D" parent="YSort"]
 position = Vector2( 309.188, 199.238 )

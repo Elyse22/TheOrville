@@ -4,11 +4,11 @@
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( -12.2657, 27.3188 )
-b = Vector2( -9.13731, -1.31969 )
+b = Vector2( -9.52855, -1.35949 )
 
 [sub_resource type="SegmentShape2D" id=2]
 a = Vector2( -14.8689, -0.283756 )
-b = Vector2( -1.82013, 23.9823 )
+b = Vector2( -2.23077, 23.4928 )
 
 [sub_resource type="SegmentShape2D" id=3]
 a = Vector2( -20.7557, -3.80038 )
