@@ -120,6 +120,7 @@ layer = 10
 margin_right = -780.0
 margin_bottom = -76.0
 rect_min_size = Vector2( 500, 230 )
+one_shot = true
 speakers = [ "Ed" ]
 dialogs = [ "Commander %p, it's Captain Ed Mercer. Come see me in my office immediately." ]
 
@@ -128,8 +129,8 @@ position = Vector2( 46.1095, 11.5101 )
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2( -2.4805, 30.2375 )
-[connection signal="body_entered" from="Area2D" to="YSort/Player" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="YSort/Player" method="_on_Area2D_body_entered"]
 
 [editable path="Portal"]
 

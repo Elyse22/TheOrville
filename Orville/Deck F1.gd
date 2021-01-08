@@ -16,7 +16,9 @@ func _process(_delta):
 		else:
 			Global.objective = "Find Wrench and Iron Coil"
 
-func _on_DialogPlayer_stopped():
-	Data.take_items_to_lemarr = true
-	Global.objective = "Speak to Gordon on the Bridge on Deck A"
-	Data.enable_portal("bridge_portal")
+
+func _on_BranchingNPC_dialogue_finished(index):
+	if index == 1:
+		Data.take_items_to_lemarr = true
+		Global.objective = "Speak to Gordon on the Bridge on Deck A"
+		Data.enable_portal("bridge_portal")

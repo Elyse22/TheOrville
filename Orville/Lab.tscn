@@ -1505,7 +1505,7 @@ position = Vector2( 35.8772, 73.1076 )
 scale = Vector2( 1.2, 1.3 )
 npc_name = "Isaac"
 npc_texture = ExtResource( 5 )
-dialogs = [ "Commander %p, how may I be of assistance?", "The Captain has asked me to find you as the comms are malfunctioning. But, more importantly, we have found ourselves in a 2D pixelated universe! ", "I have already commenced full range scans on our surroundings, the computer database seems to be struggling with the input... I need more time to calculate the findings.", "Is there anything I can do to help?", "I am apprehensive of the idea that you could be of assistance, my intelligence far exceeds yours. ", "No doubt. ", "I would suggest that you speak to Lieutenant Commander LaMarr in engineering. The ship's quantum engine may not be compatible with this pixel reality. ", "I'm on it. " ]
+dialogs = [ "Commander %p, how may I be of assistance?", "The Captain has asked me to find you as the comms are malfunctioning. But, more importantly, we have found ourselves in a 2D pixelated universe! ", "I have already commenced full range scans on our surroundings, the computer seems to be struggling with the input... I need more time to calculate the findings.", "Is there anything I can do to help?", "I am apprehensive of the idea that you could be of assistance, my intelligence far exceeds yours. ", "No doubt. ", "I would suggest that you speak to Lieutenant Commander LaMarr in engineering. The ship's quantum engine may not be compatible with this pixel reality. ", "I'm on it. " ]
 speakers_dialogs = [ "Isaac", "%p", "Isaac", "%p", "Isaac", "%p", "Isaac", "%p" ]
 
 [node name="StaticBody2D2" parent="YSort" instance=ExtResource( 3 )]
