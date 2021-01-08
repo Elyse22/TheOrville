@@ -1791,8 +1791,10 @@ polygon = PoolVector2Array( 93.5606, 59.354, 235.592, 59.354, 234.621, 155.12, 2
 position = Vector2( 186.233, 164.009 )
 collision_layer = 2
 script = ExtResource( 12 )
+id = ""
 next_scene_path = "res://Deck A.tscn"
 player_spawn_location = Vector2( 118, 70 )
+player_direction = "down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 position = Vector2( 6.76367, 2.95395 )
@@ -1800,8 +1802,8 @@ shape = SubResource( 49 )
 [connection signal="animation_finished" from="YSort/NPC/AnimationPlayer" to="YSort/NPC" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_around"]
 [connection signal="body_exited" from="YSort/NPC/Area2D" to="YSort/NPC" method="player_not_around"]
-[connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
 [connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="YSort/NPC" method="dialog_player_stopped"]
+[connection signal="stopped" from="YSort/NPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
 [connection signal="timeout" from="YSort/NPC/MoveRandom" to="YSort/NPC" method="_on_MoveRandom_timeout"]
 [connection signal="body_entered" from="Portal" to="Portal" method="_on_Portal_body_entered"]
 

@@ -6,7 +6,8 @@ func _ready():
 		$YSort/Player.position = Data.player_position
 	Data.current_scene = filename
 	
-	
+	if Data.spoke_with_mercer:
+		$YSort/NPC.trigger_talk = false
 
 
 func _on_DialogPlayer_stopped():
