@@ -6,6 +6,9 @@ func _ready():
 	if Data.current_scene == filename:
 		$YSort/Player.position = Data.player_position
 	Data.current_scene = filename
+	
+	if not Data.spoke_with_isaac:
+		$YSort/NPC.queue_free()
 
 
 func _on_DialogPlayer_stopped():
