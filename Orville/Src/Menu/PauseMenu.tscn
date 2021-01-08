@@ -87,4 +87,4 @@ margin_bottom = 370.0
 text = "QUIT"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/SaveGame" to="." method="save_game"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Back" to="." method="back"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="CenterContainer/VBoxContainer" method="quit"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="quit"]
