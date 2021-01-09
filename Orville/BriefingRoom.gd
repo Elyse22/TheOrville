@@ -22,4 +22,4 @@ func _on_Timer_timeout():
 
 func _on_DialogPlayer_stopped():
 	Data.go_to_briefing_room = true
-	Global.objective = "Go to Mess Hall on Deck B"
+	Data.objective = "Go to Mess Hall on Deck B"

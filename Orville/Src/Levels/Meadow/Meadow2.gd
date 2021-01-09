@@ -14,7 +14,7 @@ func _ready():
 func _on_DialogPlayer_stopped():
 	$HUD/DialogPlayer.play()
 	Data.find_blue_crystals = true
-	Global.objective = "Return to The Orville"
+	Data.objective = "Return to The Orville"
 
 
 func _on_DialogPlayer_stopped2():

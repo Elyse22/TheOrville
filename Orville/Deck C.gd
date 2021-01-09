@@ -15,6 +15,6 @@ func _ready():
 	if Data.spoke_with_mercer:
 		$YSort/NPC.queue_free()
 	else:
-		Global.objective = "Speak to the Captain in his office on Deck A"
+		Data.objective = "Speak to the Captain in his office on Deck A"
 
 

@@ -20,7 +20,7 @@ func _on_Area2D_body_entered(body):
 func _on_DialogPlayer_stopped():
 	$HUD/DialogPlayer.play()
 	Data.find_tomolen = true
-	Global.objective = "Find 3 Blue Crystals on Nearby Moon"
+	Data.objective = "Find 3 Blue Crystals on Nearby Moon"
 
 
 func _on_DialogPlayer_stopped2():

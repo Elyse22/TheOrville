@@ -10,5 +10,5 @@ func _ready():
 	MusicController.play_briefing_music()
 	Data.current_deck_b = "res://Deck B1.tscn"
 	Data.return_to_the_orville = true
-	Global.objective = "Go to the Briefing Room on Deck A"
+	Data.objective = "Go to the Briefing Room on Deck A"
 	$HUD/DialogPlayer.play()

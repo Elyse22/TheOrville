@@ -13,4 +13,4 @@ func _ready():
 
 func _on_DialogPlayer_stopped():
 	Data.spoke_with_isaac = true
-	Global.objective = "Speak with LeMarr in Engineering on Deck F"
+	Data.objective = "Speak with LeMarr in Engineering on Deck F"

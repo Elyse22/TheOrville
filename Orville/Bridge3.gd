@@ -11,7 +11,7 @@ func _ready():
 
 func _on_DialogPlayer_stopped():
 	Data.spoke_with_gordon = true
-	Global.objective = "Go to the Shuttlecraft on Deck F"
+	Data.objective = "Go to the Shuttlecraft on Deck F"
 
 
 func _on_Timer_timeout():
@@ -21,4 +21,4 @@ func _on_Timer_timeout():
 func _on_Portal_body_entered(body):
 	if body.name == "Player" and not Data.spoke_with_gordon:
 		Data.spoke_with_gordon = true
-		Global.objective = "Go to the Shuttlecraft on Deck F"
+		Data.objective = "Go to the Shuttlecraft on Deck F"

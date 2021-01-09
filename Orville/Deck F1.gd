@@ -13,13 +13,13 @@ func _ready():
 func _process(_delta):
 	if not Data.take_items_to_lemarr:
 		if Data.inventory_has("Wrench") and Data.inventory_has("Iron Coil"):
-			Global.objective = "Take Wrench and Iron Coil to LeMarr"
+			Data.objective = "Take Wrench and Iron Coil to LeMarr"
 		else:
-			Global.objective = "Find Wrench and Iron Coil"
+			Data.objective = "Find Wrench and Iron Coil"
 
 
 func _on_BranchingNPC_dialogue_finished(index):
 	if index == 1:
 		Data.take_items_to_lemarr = true
-		Global.objective = "Speak to Gordon on the Bridge on Deck A"
+		Data.objective = "Speak to Gordon on the Bridge on Deck A"
 		Data.enable_portal("bridge_portal")

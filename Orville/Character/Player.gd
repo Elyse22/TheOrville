@@ -94,9 +94,9 @@ func _ready():
 
 
 func _process(_delta):
-	if Global.objective:
+	if Data.objective:
 		$HUD/Objective.visible = true
-		$HUD/Objective/PanelContainer/Label.text = str(Global.objective)
+		$HUD/Objective/PanelContainer/Label.text = str(Data.objective)
 	else:
 		$HUD/Objective.visible = false
 	
