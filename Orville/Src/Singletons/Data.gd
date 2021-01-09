@@ -62,6 +62,8 @@ var current_deck_f = "res://Deck F.tscn"
 
 var current_deck_b = "res://Deck B.tscn"
 
+var objective
+
 var disabled_portals = ["lab_portal","bortus_portal","bridge_portal"]
 func enable_portal(id: String):
 	disabled_portals.erase(id)
@@ -110,8 +112,10 @@ func load_game():
 	go_to_mess_hall = data.go_to_mess_hall
 	current_deck_f = data.current_deck_f
 	current_deck_b = data.current_deck_b
+	objective = data.objective
 	disabled_portals = data.disabled_portals
 	file.close()
+	MusicController.play_basic_music()
 
 func save_game():
 	var data = {
@@ -138,6 +142,7 @@ func save_game():
 		'go_to_mess_hall': go_to_mess_hall,
 		'current_deck_f': current_deck_f,
 		'current_deck_b': current_deck_b,
+		'objective': objective,
 		'disabled_portals': disabled_portals
 	}
 	var file = File.new()
