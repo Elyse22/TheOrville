@@ -526,7 +526,8 @@ position = Vector2( 566.972, 21.3037 )
 scale = Vector2( 1.2, 1.3 )
 npc_name = "GreyHairedGuy"
 npc_texture = ExtResource( 4 )
-trigger_talk = false
+dialogs = [ "Thank you for assisting us." ]
+speakers_dialogs = [ "GreyHairedGuy" ]
 move_random = false
 direction = "left"
 
@@ -556,7 +557,7 @@ dialogs = [ "Consider it a favour among friends. ", "Say... have you guys notice
 [connection signal="stopped" from="YSort/NPC3/HUD/DialogPlayer" to="YSort/NPC3" method="dialog_player_stopped"]
 [connection signal="timeout" from="YSort/NPC3/MoveRandom" to="YSort/NPC3" method="_on_MoveRandom_timeout"]
 [connection signal="stopped" from="YSort/BranchingNPC/HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
-[connection signal="stopped" from="HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
 [connection signal="stopped" from="HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped2"]
+[connection signal="stopped" from="HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
 
 [editable path="YSort/BranchingNPC"]

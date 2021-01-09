@@ -569,5 +569,5 @@ dialogs = [ "Tomolen, good to see you again. Is everything okay?", "Captain Merc
 [connection signal="stopped" from="YSort/NPC3/HUD/DialogPlayer" to="YSort/NPC3" method="dialog_player_stopped"]
 [connection signal="timeout" from="YSort/NPC3/MoveRandom" to="YSort/NPC3" method="_on_MoveRandom_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="stopped" from="HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
 [connection signal="stopped" from="HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped2"]
+[connection signal="stopped" from="HUD/DialogPlayer" to="." method="_on_DialogPlayer_stopped"]
