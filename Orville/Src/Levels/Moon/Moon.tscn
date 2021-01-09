@@ -380,10 +380,6 @@ item_sprite = ExtResource( 10 )
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 5 )]
-margin_left = -2.4177
-margin_top = -4.81674
-margin_right = -2.41772
-margin_bottom = -4.81671
 speakers = [ "Kelly" ]
 dialogs = [ "Heebie-jeebies?" ]
 
