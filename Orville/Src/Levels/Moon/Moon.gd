@@ -9,7 +9,7 @@ func _ready():
 	MusicController.play_moon_music()
 
 func _process(_delta):
-	if not Data.take_items_to_lemarr and not Data.find_blue_crystals:
+	if not Data.find_blue_crystals:
 		if Data.inventory_has("Blue Crystal1") and Data.inventory_has("Blue Crystal2") and Data.inventory_has("Blue Crystal3"):
 			Data.objective = "Speak with Captain Mercer"
 		else:
@@ -27,8 +27,6 @@ func _on_BranchingNPC_dialogue_finished(index):
 		$HUD/DialogPlayer.play()
 		Data.find_blue_crystals = true
 		Data.objective = "Return to Tomolen"
-	if index == 0:
-		Data.objective = "Find 3 Blue Crystals"
 
 
 func _on_Timer_timeout():
