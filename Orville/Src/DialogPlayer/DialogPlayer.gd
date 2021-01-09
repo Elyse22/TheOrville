@@ -34,8 +34,7 @@ func next_dialog():
 		$Overlay/Container/Speaker/Name.text = speakers[index].replace("%p", Data.character.name)
 
 		var file_name = str(speakers[index]).replace(" ", "").to_lower()
-		var file = File.new()
-		if file.file_exists("res://Assets/AllCharacters/Face/" + file_name + ".png"):
+		if ResourceLoader.exists("res://Assets/AllCharacters/Face/" + file_name + ".png"):
 			$Overlay/Container/Speaker/Icon.texture = load("res://Assets/AllCharacters/Face/" + file_name + ".png")
 		else:
 			$Overlay/Container/Speaker/Icon.texture = null
