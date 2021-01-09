@@ -27,6 +27,8 @@ func _on_BranchingNPC_dialogue_finished(index):
 		$HUD/DialogPlayer.play()
 		Data.find_blue_crystals = true
 		Global.objective = "Return to Tomolen"
+	if index == 0:
+		Global.objective = "Find 3 Blue Crystals"
 
 
 func _on_Timer_timeout():

@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Fonts/Space48.tres" type="DynamicFont" id=1]
-[ext_resource path="res://ExitButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Options.gd" type="Script" id=3]
 [ext_resource path="res://Game/Options/Volume.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/space age.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 42
+font_data = ExtResource( 5 )
 
 [node name="Options" type="Control"]
 anchor_right = 1.0
@@ -40,8 +44,13 @@ align = 1
 [node name="Volume" parent="CenterContainer/VBoxContainer" instance=ExtResource( 4 )]
 margin_right = 400.0
 
-[node name="Button" parent="CenterContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_left = 0.0
+[node name="Back" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 101.0
 margin_right = 400.0
 margin_bottom = 148.0
+custom_fonts/font = SubResource( 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Back" to="." method="_on_Back_pressed"]

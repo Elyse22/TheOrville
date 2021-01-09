@@ -20,9 +20,12 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Orville"
+config/name="The Orville - 2D Rescue"
+config/description="Episode 1"
 run/main_scene="res://Title Screen.tscn"
 config/use_custom_user_dir=true
+config/custom_user_dir_name="TheOrville"
+config/icon="res://icon.png"
 
 [autoload]
 

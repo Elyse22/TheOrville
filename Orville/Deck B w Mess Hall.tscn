@@ -444,6 +444,9 @@ trigger_talk = false
 move_random = false
 direction = "left"
 
+[node name="Sprite" parent="YSort/NPC10" index="1"]
+frame = 0
+
 [node name="MoveCooldown" parent="YSort/NPC10" index="7"]
 wait_time = 102.0
 autostart = true
@@ -554,7 +557,7 @@ shape = SubResource( 15 )
 [connection signal="stopped" from="YSort/NPC4/HUD/DialogPlayer" to="YSort/NPC4" method="dialog_player_stopped"]
 [connection signal="timeout" from="YSort/NPC4/MoveRandom" to="YSort/NPC4" method="_on_MoveRandom_timeout"]
 [connection signal="path_finished" from="YSort/NPC10" to="YSort/NPC10" method="custom_animation" binds= [ "idle_left" ]]
-[connection signal="path_finished" from="YSort/NPC10" to="YSort/NPC10" method="sit" binds= [ Vector2( 1002, -127 ), "right" ]]
+[connection signal="path_finished" from="YSort/NPC10" to="YSort/NPC10" method="sit" binds= [ Vector2( 1002, -127 ), "left" ]]
 [connection signal="body_entered" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_entered"]
 [connection signal="body_exited" from="RoomTrigger" to="RoomTrigger" method="_on_RoomTrigger_body_exited"]
 [connection signal="body_entered" from="RoomTrigger2" to="RoomTrigger2" method="_on_RoomTrigger2_body_entered"]

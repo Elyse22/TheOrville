@@ -2450,7 +2450,7 @@ npc_name = "Isaac"
 npc_texture = ExtResource( 18 )
 trigger_talk = false
 move_random = false
-direction = "right"
+direction = "sit_right"
 
 [node name="Sprite" parent="YSort/NPC3" index="1"]
 texture = ExtResource( 18 )
@@ -2490,9 +2490,9 @@ __meta__ = {
 [node name="DialogPlayer" parent="HUD" instance=ExtResource( 9 )]
 anchor_top = 0.001
 margin_left = 0.420924
-margin_top = -59.5132
+margin_top = -13.9011
 margin_right = 9.4209
-margin_bottom = -65.7931
+margin_bottom = -20.181
 speakers = [ "Ed", "Bortus" ]
 dialogs = [ "Kelly, Talla and %p, you're with me. Bortus, you have the Bridge. ", "Yes Captain." ]
 
@@ -2501,8 +2501,8 @@ position = Vector2( 131.366, 125.917 )
 [connection signal="body_entered" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_around"]
 [connection signal="body_exited" from="YSort/NPCTest/Area2D" to="YSort/NPCTest" method="player_not_around"]
 [connection signal="timeout" from="YSort/NPCTest/MoveRandom" to="YSort/NPCTest" method="_on_MoveRandom_timeout"]
-[connection signal="path_finished" from="YSort/NPC5" to="YSort/NPC5" method="sit" binds= [ Vector2( 130, 125 ), "right" ]]
 [connection signal="path_finished" from="YSort/NPC5" to="YSort/NPC5" method="custom_animation" binds= [ "disappear" ]]
+[connection signal="path_finished" from="YSort/NPC5" to="YSort/NPC5" method="sit" binds= [ Vector2( 130, 125 ), "right" ]]
 [connection signal="body_entered" from="YSort/NPC5/Area2D" to="YSort/NPC5" method="player_around"]
 [connection signal="body_exited" from="YSort/NPC5/Area2D" to="YSort/NPC5" method="player_not_around"]
 [connection signal="stopped" from="YSort/NPC5/HUD/DialogPlayer" to="YSort/NPC5" method="dialog_player_stopped"]
